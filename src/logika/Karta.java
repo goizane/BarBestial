@@ -1,4 +1,4 @@
-package paketea;
+package logika;
 
 public class Karta {
 	private int zenb;
