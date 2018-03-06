@@ -1,9 +1,10 @@
 package logika;
 
-public class Karta {
-	private int zenb;
-	//paketea
-private void gehitu(){
-	zenb=10;
-}
+public interface Karta {
+
+	
+	public static void animaladaEgin(){
+		
+	}
+
 }
