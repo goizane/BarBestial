@@ -18,6 +18,9 @@ public class Taula extends JFrame {
 	JMenu hasi = new JMenu();
 	JMenu laguntza = new JMenu();
 	JTextField[] kartak = new JTextField[4];
+	JPanel computerPanel= new JPanel();
+	JPanel gamePanel= new JPanel();
+	JPanel userPanel= new JPanel();
 
 	public static void main(String[] args) {
 
@@ -36,7 +39,7 @@ public class Taula extends JFrame {
 
 	public Taula() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(0, 0, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new FlowLayout());
@@ -48,10 +51,18 @@ public class Taula extends JFrame {
 		laguntza.setText("laguntza");
 		menuBarra.add(hasi);
 		menuBarra.add(laguntza);
-		eskukoKartakKargatu("Berdea");
+		eskukoKartakKargatu("Berdea",this.computerPanel);
+		computerPanel.setBounds(0, 0, 450, 100);
+		this.getContentPane().add(computerPanel);
+		gamePanel.setBounds(0, 0, 450, 100);
+		this.getContentPane().add(gamePanel);
+		eskukoKartakKargatu("Urdina",this.userPanel);
+		userPanel.setBounds(0, 0, 450, 100);
+		this.getContentPane().add(userPanel);
+		
 	}
 
-	public void eskukoKartakKargatu(String jokalaria) {
+	public void eskukoKartakKargatu(String jokalaria, JPanel panela) {
 		ImageIcon ii;
 		JLabel lable;
 		JScrollPane jsp;
@@ -85,62 +96,63 @@ public class Taula extends JFrame {
 					ii = new ImageIcon("src/fitxategiak/mofeta" + jokalaria + ".png");
 					lable = new JLabel(ii);
 					jsp = new JScrollPane(lable);
-					this.getContentPane().add(jsp);
+					panela.add(jsp);
+//					this.getContentPane().add(jsp);
 				} else if (karta == 2) {
 					ii = new ImageIcon("src/fitxategiak/loro" + jokalaria + ".png");
 					lable = new JLabel(ii);
 					jsp = new JScrollPane(lable);
-					this.getContentPane().add(jsp);
+					panela.add(jsp);
 				} else if (karta == 3) {
 					ii = new ImageIcon("src/fitxategiak/kanguro" + jokalaria + ".png");
 					lable = new JLabel(ii);
 					jsp = new JScrollPane(lable);
-					this.getContentPane().add(jsp);
+					panela.add(jsp);
 				} else if (karta == 4) {
 					ii = new ImageIcon("src/fitxategiak/tximino" + jokalaria + ".png");
 					lable = new JLabel(ii);
 					jsp = new JScrollPane(lable);
-					this.getContentPane().add(jsp);
+					panela.add(jsp);
 				} else if (karta == 5) {
 					ii = new ImageIcon("src/fitxategiak/kamaleoi" + jokalaria + ".png");
 					lable = new JLabel(ii);
 					jsp = new JScrollPane(lable);
-					this.getContentPane().add(jsp);
+					panela.add(jsp);
 				} else if (karta == 6) {
 					ii = new ImageIcon("src/fitxategiak/foka" + jokalaria + ".png");
 					lable = new JLabel(ii);
 					jsp = new JScrollPane(lable);
-					this.getContentPane().add(jsp);
+					panela.add(jsp);
 				} else if (karta == 7) {
 					ii = new ImageIcon("src/fitxategiak/zebra" + jokalaria + ".png");
 					lable = new JLabel(ii);
 					jsp = new JScrollPane(lable);
-					this.getContentPane().add(jsp);
+					panela.add(jsp);
 				} else if (karta == 8) {
 					ii = new ImageIcon("src/fitxategiak/jirafa" + jokalaria + ".png");
 					lable = new JLabel(ii);
 					jsp = new JScrollPane(lable);
-					this.getContentPane().add(jsp);
+					panela.add(jsp);
 				} else if (karta == 9) {
 					ii = new ImageIcon("src/fitxategiak/suge" + jokalaria + ".png");
 					lable = new JLabel(ii);
 					jsp = new JScrollPane(lable);
-					this.getContentPane().add(jsp);
+					panela.add(jsp);
 				} else if (karta == 10) {
 					ii = new ImageIcon("src/fitxategiak/krokodilo" + jokalaria + ".png");
 					lable = new JLabel(ii);
 					jsp = new JScrollPane(lable);
-					this.getContentPane().add(jsp);
+					panela.add(jsp);
 				} else if (karta == 11) {
 					ii = new ImageIcon("src/fitxategiak/hipopotamo" + jokalaria + ".png");
 					lable = new JLabel(ii);
 					jsp = new JScrollPane(lable);
-					this.getContentPane().add(jsp);
+					panela.add(jsp);
 				} else if (karta == 12) {
 					ii = new ImageIcon("src/fitxategiak/lehoi" + jokalaria + ".png");
 					lable = new JLabel(ii);
 					jsp = new JScrollPane(lable);
-					this.getContentPane().add(jsp);
+					panela.add(jsp);
 				}
 			}
 
