@@ -6,10 +6,14 @@ import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.FlowLayout;
 import java.awt.Frame;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.util.*;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import com.sun.prism.paint.Color;
 
 public class Taula extends JFrame {
 
@@ -18,12 +22,12 @@ public class Taula extends JFrame {
 	JMenu hasi = new JMenu();
 	JMenu laguntza = new JMenu();
 	JTextField[] kartak = new JTextField[4];
-	JPanel computerPanel= new JPanel();
-	JPanel gamePanel= new JPanel();
-	JPanel userPanel= new JPanel();
+	JPanel computerPanel= new JPanel(new GridBagLayout());
+	JPanel gamePanel= new JPanel(new GridBagLayout());
+	JPanel userPanel= new JPanel(new GridBagLayout());
 
 	public static void main(String[] args) {
-
+		
 		Frame frame = new Taula();
 		// JFrame frame = new JFrame("main");
 		// .setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -33,13 +37,13 @@ public class Taula extends JFrame {
 		 * ((JFrame) frame).getContentPane().add(jsp);
 		 */
 		frame.setSize(1000, 700);
-
+		
 		frame.setVisible(true);
 	}
 
 	public Taula() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(0, 0, 450, 300);
+		setBounds(0, 0, 450, 600);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new FlowLayout());
@@ -52,25 +56,27 @@ public class Taula extends JFrame {
 		menuBarra.add(hasi);
 		menuBarra.add(laguntza);
 		eskukoKartakKargatu("Berdea",this.computerPanel);
-		computerPanel.setBounds(0, 0, 450, 100);
+		computerPanel.setBounds(0, 0, 450, 150);
 		this.getContentPane().add(computerPanel);
-		gamePanel.setBounds(0, 0, 450, 100);
+		gamePanel.setBounds(0, 0, 450, 300);
+		jokokoKartakKargatu(gamePanel);
 		this.getContentPane().add(gamePanel);
 		eskukoKartakKargatu("Urdina",this.userPanel);
-		userPanel.setBounds(0, 0, 450, 100);
+		userPanel.setBounds(0, 0, 450, 150);
 		this.getContentPane().add(userPanel);
 		
 	}
 
 	public void eskukoKartakKargatu(String jokalaria, JPanel panela) {
 		ImageIcon ii;
+		GridBagConstraints c = new GridBagConstraints();
 		JLabel lable;
 		JScrollPane jsp;
 		if(jokalaria.equals("Berdea")){
 			ii = new ImageIcon("src/fitxategiak/karta.png");
 			 lable = new JLabel(ii);
 			 jsp = new JScrollPane(lable);
-			this.getContentPane().add(jsp);
+			panela.add(jsp,c);
 		}
 		boolean nahikoa = false;
 		boolean badago = false;
@@ -96,63 +102,63 @@ public class Taula extends JFrame {
 					ii = new ImageIcon("src/fitxategiak/mofeta" + jokalaria + ".png");
 					lable = new JLabel(ii);
 					jsp = new JScrollPane(lable);
-					panela.add(jsp);
+					panela.add(jsp,c);
 //					this.getContentPane().add(jsp);
 				} else if (karta == 2) {
 					ii = new ImageIcon("src/fitxategiak/loro" + jokalaria + ".png");
 					lable = new JLabel(ii);
 					jsp = new JScrollPane(lable);
-					panela.add(jsp);
+					panela.add(jsp,c);
 				} else if (karta == 3) {
 					ii = new ImageIcon("src/fitxategiak/kanguro" + jokalaria + ".png");
 					lable = new JLabel(ii);
 					jsp = new JScrollPane(lable);
-					panela.add(jsp);
+					panela.add(jsp,c);
 				} else if (karta == 4) {
 					ii = new ImageIcon("src/fitxategiak/tximino" + jokalaria + ".png");
 					lable = new JLabel(ii);
 					jsp = new JScrollPane(lable);
-					panela.add(jsp);
+					panela.add(jsp,c);
 				} else if (karta == 5) {
 					ii = new ImageIcon("src/fitxategiak/kamaleoi" + jokalaria + ".png");
 					lable = new JLabel(ii);
 					jsp = new JScrollPane(lable);
-					panela.add(jsp);
+					panela.add(jsp,c);
 				} else if (karta == 6) {
 					ii = new ImageIcon("src/fitxategiak/foka" + jokalaria + ".png");
 					lable = new JLabel(ii);
 					jsp = new JScrollPane(lable);
-					panela.add(jsp);
+					panela.add(jsp,c);
 				} else if (karta == 7) {
 					ii = new ImageIcon("src/fitxategiak/zebra" + jokalaria + ".png");
 					lable = new JLabel(ii);
 					jsp = new JScrollPane(lable);
-					panela.add(jsp);
+					panela.add(jsp,c);
 				} else if (karta == 8) {
 					ii = new ImageIcon("src/fitxategiak/jirafa" + jokalaria + ".png");
 					lable = new JLabel(ii);
 					jsp = new JScrollPane(lable);
-					panela.add(jsp);
+					panela.add(jsp,c);
 				} else if (karta == 9) {
 					ii = new ImageIcon("src/fitxategiak/suge" + jokalaria + ".png");
 					lable = new JLabel(ii);
 					jsp = new JScrollPane(lable);
-					panela.add(jsp);
+					panela.add(jsp,c);
 				} else if (karta == 10) {
 					ii = new ImageIcon("src/fitxategiak/krokodilo" + jokalaria + ".png");
 					lable = new JLabel(ii);
 					jsp = new JScrollPane(lable);
-					panela.add(jsp);
+					panela.add(jsp,c);
 				} else if (karta == 11) {
 					ii = new ImageIcon("src/fitxategiak/hipopotamo" + jokalaria + ".png");
 					lable = new JLabel(ii);
 					jsp = new JScrollPane(lable);
-					panela.add(jsp);
+					panela.add(jsp,c);
 				} else if (karta == 12) {
 					ii = new ImageIcon("src/fitxategiak/lehoi" + jokalaria + ".png");
 					lable = new JLabel(ii);
 					jsp = new JScrollPane(lable);
-					panela.add(jsp);
+					panela.add(jsp,c);
 				}
 			}
 
@@ -161,7 +167,29 @@ public class Taula extends JFrame {
 			ii = new ImageIcon("src/fitxategiak/karta.png");
 			 lable = new JLabel(ii);
 			 jsp = new JScrollPane(lable);
-			this.getContentPane().add(jsp);
+			panela.add(jsp,c);
 		}
+		
+	}
+
+	public void jokokoKartakKargatu(JPanel panela) {
+		ImageIcon ii;
+		GridBagConstraints c = new GridBagConstraints();
+		JLabel lable;
+		JScrollPane jsp;
+		ii = new ImageIcon("src/fitxategiak/zerrendaHasiera.png");
+		lable = new JLabel(ii);
+		jsp = new JScrollPane(lable);
+		panela.add(jsp, c);
+		for (int i = 0; i < 5; i++) {
+			ii = new ImageIcon("src/fitxategiak/kartaHutsa.jpg");
+			lable = new JLabel(ii);
+			jsp = new JScrollPane(lable);
+			panela.add(jsp, c);
+		}
+		ii = new ImageIcon("src/fitxategiak/zerrendaAmaiera.png");
+		lable = new JLabel(ii);
+		jsp = new JScrollPane(lable);
+		panela.add(jsp, c);
 	}
 }
