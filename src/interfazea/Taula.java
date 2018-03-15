@@ -90,7 +90,7 @@ public class Taula extends JFrame {
 		JButton lable;
 		JScrollPane jsp;
 		if (jokalaria.equals("Berdea")) {
-			ii = new ImageIcon("src/fitxategiak/zakarrontzia.png");
+			ii = new ImageIcon("src/fitxategiak/taberna.png");
 			lable = new JButton(ii);
 			jsp = new JScrollPane(lable);
 			panela.add(jsp, c);
@@ -193,7 +193,7 @@ public class Taula extends JFrame {
 			
 		}
 		if (jokalaria.equals("Berdea")) {
-			ii = new ImageIcon("src/fitxategiak/taberna.png");
+			ii = new ImageIcon("src/fitxategiak/zakarrontzia.png");
 			lable = new JButton(ii);
 			jsp = new JScrollPane(lable);
 			panela.add(jsp, c);
