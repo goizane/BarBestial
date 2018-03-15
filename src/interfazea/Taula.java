@@ -8,6 +8,7 @@ import java.awt.FlowLayout;
 import java.awt.Frame;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Insets;
 import java.awt.Window;
 import java.util.*;
 import javax.swing.JFrame;
@@ -34,24 +35,15 @@ public class Taula extends JFrame {
 
 	public static void main(String[] args) {
 
-		Frame frame = new Taula();
-		// JFrame frame = new JFrame("main");
-		// .setDefaultCloseOperation(EXIT_ON_CLOSE);
-		/*
-		 * ImageIcon ii = new ImageIcon("src/fitxategiak/mazo.png"); JLabel
-		 * lable = new JButton(ii); JScrollPane jsp = new JScrollPane(lable);
-		 * ((JFrame) frame).getContentPane().add(jsp);
-		 */
-		frame.setSize(1000, 700);
-
-		frame.setVisible(true);
+		bistaratu();
 	}
 
 	public static void bistaratu() {
 		Taula taula = new Taula();
-		taula.setTitle("Sudokua");
+		taula.setTitle("Bar Bestial");
 		taula.setVisible(true);
 		taula.setSize(1200, 700);
+		taula.setMaximumSize(new Dimension(1000, 700));
 		taula.pack();
 		taula.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
@@ -61,10 +53,6 @@ public class Taula extends JFrame {
 		eskema = new BorderLayout();
 		edukiontzia.setLayout(eskema);
 
-//		contentPane = new JPanel();
-//		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-//		contentPane.setLayout(new FlowLayout());
-//		setContentPane(contentPane);
 		// Menua
 		this.setJMenuBar(menuBarra);
 		this.setTitle("Bar Bestial");
@@ -72,16 +60,12 @@ public class Taula extends JFrame {
 		laguntza.setText("laguntza");
 		menuBarra.add(hasi);
 		menuBarra.add(laguntza);
-//		tabernaHasieratu(tabernPanel);
-//		edukiontzia.add(tabernPanel,BorderLayout.WEST);
 		eskukoKartakKargatu("Berdea", this.computerPanel);
 		edukiontzia.add(computerPanel,BorderLayout.NORTH);
 		jokokoKartakKargatu(gamePanel);
 		edukiontzia.add(gamePanel,BorderLayout.CENTER);
 		eskukoKartakKargatu("Urdina", this.userPanel);
 		edukiontzia.add(userPanel,BorderLayout.SOUTH);
-//		zakarrontziaHasieratu(tabernPanel);
-//		edukiontzia.add(trashPanel,BorderLayout.EAST);
 	}
 
 	public void eskukoKartakKargatu(String jokalaria, JPanel panela) {
@@ -219,28 +203,6 @@ public class Taula extends JFrame {
 			panela.add(jsp, c);
 		}
 		ii = new ImageIcon("src/fitxategiak/zerrendaAmaiera.png");
-		lable = new JButton(ii);
-		jsp = new JScrollPane(lable);
-		panela.add(jsp, c);
-		
-	}
-	public void tabernaHasieratu(JPanel panela) {
-		ImageIcon ii;
-		GridBagConstraints c = new GridBagConstraints();
-		JButton lable;
-		JScrollPane jsp;
-		ii = new ImageIcon("src/fitxategiak/taberna.png");
-		lable = new JButton(ii);
-		jsp = new JScrollPane(lable);
-		panela.add(jsp, c);
-		
-	}
-	public void zakarrontziaHasieratu(JPanel panela) {
-		ImageIcon ii;
-		GridBagConstraints c = new GridBagConstraints();
-		JButton lable;
-		JScrollPane jsp;
-		ii = new ImageIcon("src/fitxategiak/zakarrontzia.png");
 		lable = new JButton(ii);
 		jsp = new JScrollPane(lable);
 		panela.add(jsp, c);
