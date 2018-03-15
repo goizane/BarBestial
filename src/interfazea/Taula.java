@@ -65,7 +65,7 @@ public class Taula extends JFrame {
 //		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 //		contentPane.setLayout(new FlowLayout());
 //		setContentPane(contentPane);
-		// Menu
+		// Menua
 		this.setJMenuBar(menuBarra);
 		this.setTitle("Bar Bestial");
 		hasi.setText("Hasi");
