@@ -1,15 +1,13 @@
 package logika;
 
-public class FokaKarta implements Karta {
+public class FokaKarta extends Karta {
 	
 	//ATRIBUTUAK
 	private int zenb=6;
 	private boolean rekurrente = false;
 	
 	//ERAIKITZAILEA
-	public FokaKarta(int zenb, boolean rekurrente){
-		this.zenb = zenb;
-		this.rekurrente = rekurrente;
+	public FokaKarta(){
 	}
 
 

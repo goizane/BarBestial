@@ -1,15 +1,13 @@
 package logika;
 
-public class KamaleonKarta implements Karta {
+public class KamaleonKarta extends Karta {
 	
 	//ATRIBUTUAK
 	private int zenb=5;
 	private boolean rekurrente = false;
 	
 	//ERAIKITZAILEA
-	public KamaleonKarta(int zenb, boolean rekurrente){
-		this.zenb = zenb;
-		this.rekurrente = rekurrente;
+	public KamaleonKarta(){
 	}
 
 

@@ -18,4 +18,6 @@ public class Jokalari {
 	private void jokatu(){
 		
 	}
+	
+	
 }

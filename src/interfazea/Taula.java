@@ -14,6 +14,10 @@ import java.util.*;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import logika.KartaZerrenda;
+import logika.Tableroa;
+
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
@@ -52,7 +56,7 @@ public class Taula extends JFrame {
 		edukiontzia = getContentPane();
 		eskema = new BorderLayout();
 		edukiontzia.setLayout(eskema);
-
+		Tableroa.getTableroa().jokokoKartakHasieratu();
 		// Menua
 		this.setJMenuBar(menuBarra);
 		this.setTitle("Bar Bestial");
@@ -196,8 +200,9 @@ public class Taula extends JFrame {
 		lable = new JButton(ii);
 		jsp = new JScrollPane(lable);
 		panela.add(jsp, c);
-		for (int i = 0; i < 5; i++) {
-			ii = new ImageIcon("src/fitxategiak/kartaHutsa.jpg");
+		KartaZerrenda kartak= Tableroa.getTableroa().getJokokoKartak();
+		for (int i = 0; i<kartak.tamaina(); i++) {
+			ii = kartak.get(i).getIrudia();
 			lable = new JButton(ii);
 			jsp = new JScrollPane(lable);
 			panela.add(jsp, c);

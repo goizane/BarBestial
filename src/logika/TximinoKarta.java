@@ -1,6 +1,6 @@
 package logika;
 
-public class TximinoKarta implements Karta {
+public class TximinoKarta extends Karta {
 	
 	//ATRIBUTUAK
 	private int zenb=4;

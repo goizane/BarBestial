@@ -1,6 +1,6 @@
 package logika;
 
-public class LehoiKarta implements Karta {
+public class LehoiKarta extends Karta {
 	
 	//ATRIBUTUAK
 	private int zenb=12;
