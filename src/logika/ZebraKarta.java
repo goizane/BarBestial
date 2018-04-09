@@ -7,9 +7,7 @@ public class ZebraKarta extends Karta {
 	private boolean rekurrente = true;
 	
 	//ERAIKITZAILEA
-	public ZebraKarta(int zenb, boolean rekurrente){
-		this.zenb = zenb;
-		this.rekurrente = rekurrente;
+	public ZebraKarta(){
 	}
 
 

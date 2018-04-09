@@ -7,9 +7,7 @@ public class LehoiKarta extends Karta {
 	private boolean rekurrente = false;
 	
 	//ERAIKITZAILEA
-	public LehoiKarta(int zenb, boolean rekurrente){
-		this.zenb = zenb;
-		this.rekurrente = rekurrente;
+	public LehoiKarta(){
 	}
 
 

@@ -7,9 +7,7 @@ public class TximinoKarta extends Karta {
 	private boolean rekurrente = false;
 	
 	//ERAIKITZAILEA
-	public TximinoKarta(int zenb, boolean rekurrente){
-		this.zenb = zenb;
-		this.rekurrente = rekurrente;
+	public TximinoKarta(){
 	}
 
 

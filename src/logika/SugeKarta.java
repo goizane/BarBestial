@@ -7,9 +7,7 @@ public class SugeKarta extends Karta {
 	private boolean rekurrente = false;
 	
 	//ERAIKITZAILEA
-	public SugeKarta(int zenb, boolean rekurrente){
-		this.zenb = zenb;
-		this.rekurrente = rekurrente;
+	public SugeKarta(){
 	}
 
 

@@ -7,9 +7,7 @@ public class LoroKarta extends Karta {
 	private boolean rekurrente = false;
 	
 	//ERAIKITZAILEA
-	public LoroKarta(int zenb, boolean rekurrente){
-		this.zenb = zenb;
-		this.rekurrente = rekurrente;
+	public LoroKarta(){
 	}
 
 	public void animaladaEgin() {

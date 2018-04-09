@@ -7,9 +7,7 @@ public class MofetaKarta extends Karta {
 	private boolean rekurrente = false;
 	
 	//ERAIKITZAILEA
-	public MofetaKarta(int zenb, boolean rekurrente){
-		this.zenb = zenb;
-		this.rekurrente = rekurrente;
+	public MofetaKarta(){
 	}
 
 	public void animaladaEgin() {

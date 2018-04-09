@@ -1,13 +1,13 @@
 package logika;
 
-public class KokodriloKarta extends Karta {
+public class KamaleoiKarta extends Karta {
 	
 	//ATRIBUTUAK
-	private int zenb=10;
-	private boolean rekurrente = true;
+	private int zenb=5;
+	private boolean rekurrente = false;
 	
 	//ERAIKITZAILEA
-	public KokodriloKarta(){
+	public KamaleoiKarta(){
 	}
 
 
@@ -15,4 +15,5 @@ public class KokodriloKarta extends Karta {
 		// TODO Auto-generated method stub
 		
 	}
+
 }
