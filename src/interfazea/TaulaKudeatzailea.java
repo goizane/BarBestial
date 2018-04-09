@@ -28,4 +28,9 @@ public class TaulaKudeatzailea {
 		return taula;
 	}
 	
+	public void hasieratu(){
+		Taula t=new Taula();
+		t.bistaratu();
+	}
+	
 }
