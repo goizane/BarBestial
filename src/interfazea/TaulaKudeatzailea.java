@@ -3,7 +3,6 @@ package interfazea;
 public class TaulaKudeatzailea {
 	private static TaulaKudeatzailea taula = new TaulaKudeatzailea();
 
-	// Eraikitzailea
 	private TaulaKudeatzailea() {
 	}
 
