@@ -65,7 +65,7 @@ public class TaulaKudeatzailea {
 		else if(zenb==11){
 			karta=new HipopotamoKarta();
 		}
-		else if(zenb==121){
+		else if(zenb==12){
 			karta=new LehoiKarta();
 		}
 		return karta;
