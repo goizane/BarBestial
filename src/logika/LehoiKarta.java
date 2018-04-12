@@ -2,12 +2,11 @@ package logika;
 
 public class LehoiKarta extends Karta {
 	
-	//ATRIBUTUAK
-	private int zenb=12;
-	private boolean rekurrente = false;
-	
 	//ERAIKITZAILEA
 	public LehoiKarta(){
+		this.izena="lehoi";
+		this.zenb=12;
+		this.errekurtsiboa = false;
 	}
 
 

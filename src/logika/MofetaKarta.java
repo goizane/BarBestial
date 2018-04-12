@@ -2,12 +2,11 @@ package logika;
 
 public class MofetaKarta extends Karta {
 	
-	//ATRIBUTUAK
-	private int zenb=1;
-	private boolean rekurrente = false;
-	
 	//ERAIKITZAILEA
 	public MofetaKarta(){
+		this.izena="mofeta";
+		this.zenb=1;
+		this.errekurtsiboa = false;
 	}
 
 	public void animaladaEgin() {

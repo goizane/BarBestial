@@ -2,12 +2,11 @@ package logika;
 
 public class TximinoKarta extends Karta {
 	
-	//ATRIBUTUAK
-	private int zenb=4;
-	private boolean rekurrente = false;
-	
 	//ERAIKITZAILEA
 	public TximinoKarta(){
+		this.izena="tximino";
+		this.zenb=4;
+		this.errekurtsiboa = false;
 	}
 
 

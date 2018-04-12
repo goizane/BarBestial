@@ -2,12 +2,11 @@ package logika;
 
 public class FokaKarta extends Karta {
 	
-	//ATRIBUTUAK
-	private int zenb=6;
-	private boolean rekurrente = false;
-	
 	//ERAIKITZAILEA
 	public FokaKarta(){
+		this.izena="foka";
+		this.zenb=6;
+		this.errekurtsiboa = false;
 	}
 
 

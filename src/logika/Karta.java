@@ -3,10 +3,10 @@ package logika;
 import javax.swing.ImageIcon;
 
 public abstract class Karta {
-	private int zenb;
-	private ImageIcon irudia;
-	private boolean errekurtsiboa;
-	
+	protected int zenb;
+	protected ImageIcon irudia;
+	protected boolean errekurtsiboa;
+	protected String izena;
 	
 	public Karta(){
 		
@@ -31,5 +31,11 @@ public abstract class Karta {
 	}
 	public void setErrekurtsiboa(boolean errekurtsiboa) {
 		this.errekurtsiboa = errekurtsiboa;
+	}
+	public String getIzena() {
+		return izena;
+	}
+	public void setIzena(String izena) {
+		this.izena = izena;
 	}
 }

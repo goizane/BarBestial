@@ -2,12 +2,11 @@ package logika;
 
 public class KrokodiloKarta extends Karta {
 	
-	//ATRIBUTUAK
-	private int zenb=10;
-	private boolean rekurrente = true;
-	
 	//ERAIKITZAILEA
 	public KrokodiloKarta(){
+		this.izena="krokodilo";
+		this.zenb=10;
+		this.errekurtsiboa = true;
 	}
 
 

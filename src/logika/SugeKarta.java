@@ -2,12 +2,11 @@ package logika;
 
 public class SugeKarta extends Karta {
 	
-	//ATRIBUTUAK
-	private int zenb=9;
-	private boolean rekurrente = false;
-	
 	//ERAIKITZAILEA
 	public SugeKarta(){
+		this.izena="suge";
+		this.zenb=9;
+		this.errekurtsiboa = false;
 	}
 
 

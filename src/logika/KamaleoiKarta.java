@@ -2,12 +2,11 @@ package logika;
 
 public class KamaleoiKarta extends Karta {
 	
-	//ATRIBUTUAK
-	private int zenb=5;
-	private boolean rekurrente = false;
-	
 	//ERAIKITZAILEA
 	public KamaleoiKarta(){
+		this.izena="kamaleoi";
+		this.zenb=5;
+		this.errekurtsiboa = false;
 	}
 
 

@@ -15,6 +15,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import logika.Karta;
 import logika.KartaZerrenda;
 import logika.Tableroa;
 
@@ -39,7 +40,7 @@ public class Taula extends JFrame {
 
 	public static void main(String[] args) {
 
-		bistaratu();
+		TaulaKudeatzailea.getTaulaKudeatzailea().hasieratu();
 	}
 
 	public static void bistaratu() {
@@ -53,10 +54,14 @@ public class Taula extends JFrame {
 	}
 	
 	public Taula() {
+		taulaHasieratu();
+	}
+	
+	public void taulaHasieratu(){
 		edukiontzia = getContentPane();
 		eskema = new BorderLayout();
 		edukiontzia.setLayout(eskema);
-		Tableroa.getTableroa().jokokoKartakHasieratu();
+//		Tableroa.getTableroa().jokokoKartakHasieratu();
 		// Menua
 		this.setJMenuBar(menuBarra);
 		this.setTitle("Bar Bestial");
@@ -64,12 +69,43 @@ public class Taula extends JFrame {
 		laguntza.setText("laguntza");
 		menuBarra.add(hasi);
 		menuBarra.add(laguntza);
-		eskukoKartakKargatu("Berdea", this.computerPanel);
+//		eskukoKartakKargatu("Berdea", this.computerPanel);
+//		edukiontzia.add(computerPanel,BorderLayout.NORTH);
+//		jokokoKartakKargatu(gamePanel);
+//		edukiontzia.add(gamePanel,BorderLayout.CENTER);
+//		eskukoKartakKargatu("Urdina", this.userPanel);
+//		edukiontzia.add(userPanel,BorderLayout.SOUTH);
+	}
+	public void konputagailuaHasieratu(){
 		edukiontzia.add(computerPanel,BorderLayout.NORTH);
-		jokokoKartakKargatu(gamePanel);
+	}
+	public void erdiaHasieratu(){
 		edukiontzia.add(gamePanel,BorderLayout.CENTER);
-		eskukoKartakKargatu("Urdina", this.userPanel);
+	}
+	public void jokalariaHasieratu(){
 		edukiontzia.add(userPanel,BorderLayout.SOUTH);
+	}
+	public void gehituKarta(String jokalaria, Karta karta){
+		ImageIcon ii;
+		GridBagConstraints c = new GridBagConstraints();
+		JButton lable;
+		JScrollPane jsp;
+		if(jokalaria.equals("taberna.png") || jokalaria.equals("zakarrontzia.png") || jokalaria.equals("kartaHutsa.jpg")){
+			ii = new ImageIcon("src/fitxategiak/"+jokalaria);
+			lable = new JButton(ii);
+			jsp = new JScrollPane(lable);
+			computerPanel.add(jsp, c);
+		}else if(jokalaria.equals("Urdina")|| jokalaria.equals("karta.png")){
+			ii = new ImageIcon("src/fitxategiak/"+karta.getIzena()+jokalaria);
+			lable = new JButton(ii);
+			jsp = new JScrollPane(lable);
+			userPanel.add(jsp, c);
+		}else if(jokalaria.equals("Berdea") || jokalaria.equals("karta.png")){
+			ii = new ImageIcon("src/fitxategiak/"+karta.getIzena()+jokalaria);
+			lable = new JButton(ii);
+			jsp = new JScrollPane(lable);
+			computerPanel.add(jsp, c);
+		}
 	}
 
 	public void eskukoKartakKargatu(String jokalaria, JPanel panela) {

@@ -2,12 +2,12 @@ package logika;
 
 public class ZebraKarta extends Karta {
 	
-	//ATRIBUTUAK
-	private int zenb=7;
-	private boolean rekurrente = true;
 	
 	//ERAIKITZAILEA
 	public ZebraKarta(){
+		this.izena="zebra";
+		this.zenb=7;
+		this.errekurtsiboa = true;
 	}
 
 

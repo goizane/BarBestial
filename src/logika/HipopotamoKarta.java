@@ -2,12 +2,12 @@ package logika;
 
 public class HipopotamoKarta extends Karta {
 	
-	//ATRIBUTUAK
-	private int zenb=11;
-	private boolean rekurrente = true;
 	
 	//ERAIKITZAILEA
 	public HipopotamoKarta(){
+		this.izena="hipopotamo";
+		this.zenb=11;
+		this.errekurtsiboa = true;
 	}
 
 

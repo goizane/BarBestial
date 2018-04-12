@@ -2,12 +2,11 @@ package logika;
 
 public class KanguroKarta extends Karta {
 	
-	//ATRIBUTUAK
-	private int zenb=3;
-	private boolean rekurrente = false;
-	
 	//ERAIKITZAILEA
 	public KanguroKarta(){
+		this.izena="kanguro";
+		this.zenb=3;
+		this.errekurtsiboa = false;
 	}
 
 
