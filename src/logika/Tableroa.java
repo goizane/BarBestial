@@ -1,5 +1,9 @@
 package logika;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 import javax.swing.ImageIcon;
 
 public class Tableroa {
@@ -62,5 +66,53 @@ public class Tableroa {
 		}
 		return erantzuna;
 	}
+	
+	public boolean ilaraBeteta(){
+		boolean beteta = false;
+		if(jokokoKartak.tamaina()==5){
+			beteta= true;
+		}
+		return beteta;
+	}
 
+	public void ilaranKartaSartu(Karta k) {
+		this.jokokoKartak.gehituKarta(k);
+	
+		}
+	
+	public List<Integer> eskukoKartakKargatu(){
+		boolean nahikoa = false;
+		boolean badago = false;
+		int kont = 0;
+		List<Integer> kartaZerrenda = new ArrayList<Integer>();
+
+		while (!nahikoa) {
+			badago = false;
+			Random random = new Random();
+			int karta = random.nextInt(12 - 1 + 1) + 1;
+			for (int i = 0; i < kartaZerrenda.size(); i++) {
+				if (kartaZerrenda.get(i) == karta) {
+					badago = true;
+					break;
+				}
+			}
+			if (!badago) {
+				kartaZerrenda.add(karta);
+				if (kartaZerrenda.size() == 4) {
+					nahikoa = true;
+				}
+			}
+		}
+		return kartaZerrenda;
+	}
+	
+	public List<Integer> mazokoKartakKargatu(List<Integer> eskua){
+		List<Integer> mazoa = new ArrayList<Integer>();
+		for(int i : eskua){
+			if(!mazoa.contains(i)){
+				mazoa.add(i);
+			}
+		}
+		return mazoa;
+	}
 }

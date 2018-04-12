@@ -28,4 +28,9 @@ public class KartaZerrenda {
 	public void hasieratu(){
 		lista=new ArrayList<Karta>();
 	}
+	public void kenduKarta(Karta k){
+		lista.remove(k);
+	}
+	
+	
 }

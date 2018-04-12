@@ -1,10 +1,13 @@
 package interfazea;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import logika.FokaKarta;
 import logika.HipopotamoKarta;
 import logika.JirafaKarta;
+import logika.Jokalari;
 import logika.JokalariZerrenda;
 import logika.KamaleoiKarta;
 import logika.KanguroKarta;
@@ -17,6 +20,7 @@ import logika.LehoiKarta;
 import logika.LoroKarta;
 import logika.MofetaKarta;
 import logika.SugeKarta;
+import logika.Tableroa;
 import logika.TximinoKarta;
 import logika.ZebraKarta;
 
@@ -27,7 +31,8 @@ public class TaulaKudeatzailea {
 	private KartaZerrenda ordenagailuKartak=new KartaZerrenda();
 	private KartaZerrenda jokokoKartak=new KartaZerrenda();
 	private Taula t;
-
+	private Jokalari jokalari;
+	
 	private TaulaKudeatzailea() {
 	}
 
@@ -117,4 +122,29 @@ public class TaulaKudeatzailea {
 		}
 	}
 	
+	public void kartaBota(Karta k ){
+		jokalari.kartaBota(k);
+	}
+	
+	public boolean ilaraBeteta(){
+		return Tableroa.getTableroa().ilaraBeteta();
+	}
+	
+	public Karta mazotikKartaHartu(){
+		Karta k= jokalari.mazotikKartaHartu();
+		jokalari.mazokoKartaEskukoKartetara(k);
+		return k;
+	}
+	
+	public List<Integer> eskukoKartakKargatu(){
+		return Tableroa.getTableroa().eskukoKartakKargatu();
+		
+	}
+	public Karta kartaAurkitu(int i ){
+		return jokalari.kartaAurkitu(i);
+	}
+	
+	public Karta getKarta(int i){
+		return jokalariKartak.get(i);
+	}
 }
