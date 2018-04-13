@@ -1,6 +1,7 @@
 package interfazea;
 
 import javax.swing.*;
+
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.EventQueue;
@@ -17,7 +18,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import graphics.LehenengoPantaila;
+
 import logika.Karta;
 import logika.KartaZerrenda;
 import logika.Tableroa;
@@ -250,18 +251,18 @@ public class Taula extends JFrame {
 //	}
 	
 	public void eskukoKartakPantailaratu(JPanel panela){
-		JButton lable1;
-		JButton lable2;
-		JButton lable3;
-		JButton lable4;
+		JButton lable1 = null;
+		JButton lable2 = null;
+		JButton lable3 = null;
+		JButton lable4 = null;
 		ImageIcon ii = null;
 		String jokalaria = "Berdea";
 		GridBagConstraints c = new GridBagConstraints();
 		JScrollPane jsp;
 		List<Integer> eskukoKartak = TaulaKudeatzailea.getTaulaKudeatzailea().eskukoKartakKargatu();
-		for(int i =1; i<eskukoKartak.size(); i++){
+		for(int i =1; i<=eskukoKartak.size(); i++){
 			if (i ==1){
-				Integer karta = eskukoKartak.get(1);
+				Integer karta = eskukoKartak.get(0);
 				if (karta == 1) {
 					ii = new ImageIcon("src/fitxategiak/mofeta" + jokalaria + ".png");		
 				} else if (karta == 2) {
@@ -301,31 +302,11 @@ public class Taula extends JFrame {
 				lable1 = new JButton(ii);
 				jsp = new JScrollPane(lable1);
 				panela.add(jsp, c);
-				lable1.addActionListener(new ActionListener() {
-					
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						 if(TaulaKudeatzailea.getTaulaKudeatzailea().ilaraBeteta()){
-						 //mezu bat aterako da ilara beteta dagoela esaten
-					 }
-					 else{
-						 Karta karta = TaulaKudeatzailea.getTaulaKudeatzailea().getKarta(1);
-						 TaulaKudeatzailea.getTaulaKudeatzailea().kartaBota(karta);
-				// hemen grafika aldatu karten irudiak jokalaritik kendu eta mahaian jarriz (GRAFIKAN)
-				//ANIMALADA EGIN 
-						 Karta mazokoAzkena = TaulaKudeatzailea.getTaulaKudeatzailea().mazotikKartaHartu();
-					
-					//grafikan karta eguneratu
-					
-					
-					//ORDENAGAILUAREN TXANDA
-					 }
-					}
-		});
+				
 		
 					}
 			else if (i ==2){
-				Integer karta = eskukoKartak.get(2);
+				Integer karta = eskukoKartak.get(1);
 				if (karta == 1) {
 					ii = new ImageIcon("src/fitxategiak/mofeta" + jokalaria + ".png");		
 				} else if (karta == 2) {
@@ -358,36 +339,16 @@ public class Taula extends JFrame {
 				} else if (karta == 11) {
 					ii = new ImageIcon("src/fitxategiak/hipopotamo" + jokalaria + ".png");
 					
-				} else if (karta == 12) {
+				} else {
 					ii = new ImageIcon("src/fitxategiak/lehoi" + jokalaria + ".png");
 					
 				}
 				lable2 = new JButton(ii);
 				jsp = new JScrollPane(lable2);
 				panela.add(jsp, c);
-			
-				lable2.addActionListener(new ActionListener(){
-					
-					public void actionPerformed(ActionEvent e) {
-						 if(TaulaKudeatzailea.getTaulaKudeatzailea().ilaraBeteta()){
-						 //mezu bat aterako da ilara beteta dagoela esaten
-						 }else{
-						 Karta karta = TaulaKudeatzailea.getTaulaKudeatzailea().getKarta(2);
-						 TaulaKudeatzailea.getTaulaKudeatzailea().kartaBota(karta);
-						 // hemen grafika aldatu karten irudiak jokalaritik kendu eta mahaian jarriz (GRAFIKAN)
-						 //ANIMALADA EGIN 
-						 Karta mazokoAzkena = TaulaKudeatzailea.getTaulaKudeatzailea().mazotikKartaHartu();
-					
-						 //grafikan karta eguneratu
-					
-					
-						 //ORDENAGAILUAREN TXANDA
-					 }
-					}
-				});
 			}
 			else if (i ==3){
-				Integer karta = eskukoKartak.get(3);
+				Integer karta = eskukoKartak.get(2);
 				if (karta == 1) {
 					ii = new ImageIcon("src/fitxategiak/mofeta" + jokalaria + ".png");		
 				} else if (karta == 2) {
@@ -427,30 +388,10 @@ public class Taula extends JFrame {
 				lable3 = new JButton(ii);
 				jsp = new JScrollPane(lable3);
 				panela.add(jsp, c);
-				lable3.addActionListener(new ActionListener() {
-//					
-//					@Override
-//					public void actionPerformed(ActionEvent e) {
-//						 if(TaulaKudeatzaile.ilaraBeteta()){
-//						 //mezu bat aterako da ilara beteta dagoela esaten
-//					 }
-//					 else{
-//						 TaulaKudeatzailea.kartaBota(karta);
-				// hemen grafika aldatu karten irudiak jokalaritik kendu eta mahaian jarriz (GRAFIKAN)
-				//ANIMALADA EGIN 
-					//mazoko azten karta hartu (AUTOMATIKOKI)
-					//TaulaKudeatzailea.mazotikKartaHartu();
-					//grafikan karta eguneratu
-					
-					
-					//ORDENAGAILUAREN TXANDA
-//					 }
-//					}
-		//});
-		//
+				
 			}
 				else if (i ==4){
-				Integer karta = eskukoKartak.get(4);
+				Integer karta = eskukoKartak.get(3);
 				if (karta == 1) {
 					ii = new ImageIcon("src/fitxategiak/mofeta" + jokalaria + ".png");		
 				} else if (karta == 2) {
@@ -490,29 +431,110 @@ public class Taula extends JFrame {
 				lable4 = new JButton(ii);
 				jsp = new JScrollPane(lable4);
 				panela.add(jsp, c);
-				lable4.addActionListener(new ActionListener() {
-//					
-//					@Override
-//					public void actionPerformed(ActionEvent e) {
-//						 if(TaulaKudeatzaile.ilaraBeteta()){
-//						 //mezu bat aterako da ilara beteta dagoela esaten
-//					 }
-//					 else{
-//						 TaulaKudeatzailea.kartaBota(karta);
-				// hemen grafika aldatu karten irudiak jokalaritik kendu eta mahaian jarriz (GRAFIKAN)
-				//ANIMALADA EGIN 
-					//mazoko azten karta hartu (AUTOMATIKOKI)
-					//TaulaKudeatzailea.mazotikKartaHartu();
-					//grafikan karta eguneratu
-					
-					
-					//ORDENAGAILUAREN TXANDA
-//					 }
-//					}
-		//});
-		//
+				
 			}
+			lable1.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					
+				
+					 Karta karta = TaulaKudeatzailea.getTaulaKudeatzailea().getKarta(1);
+					 TaulaKudeatzailea.getTaulaKudeatzailea().kartaBota(karta);
 			
+					 karta.animaladaEgin();//ANIMALADA EGIN 
+					 
+					 //ANIMALADA ERREKURTSIBOAK EGIN
+					 if(TaulaKudeatzailea.getTaulaKudeatzailea().ilaraBeteta()){ //Lehenengo biak tabernan sartu eta azkena kanporatu
+						 TaulaKudeatzailea.getTaulaKudeatzailea().lehenengoBiakTabernanSartu();
+						 TaulaKudeatzailea.getTaulaKudeatzailea().azkenaKanporatu();
+					 }
+					 Karta mazokoAzkena = TaulaKudeatzailea.getTaulaKudeatzailea().mazotikKartaHartu();
+				
+					 //GRAFIKA EGUNERATU
+				
+				
+				//ORDENAGAILUAREN TXANDA
+				 
+				}
+	});
+			lable2.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					
+				
+					 Karta karta = TaulaKudeatzailea.getTaulaKudeatzailea().getKarta(2);
+					 TaulaKudeatzailea.getTaulaKudeatzailea().kartaBota(karta);
+			
+					 karta.animaladaEgin(); //ANIMALADA EGIN 
+					 
+					 //ANIMALADA ERREKURTSIBOAK EGIN
+					 
+					 if(TaulaKudeatzailea.getTaulaKudeatzailea().ilaraBeteta()){
+						 TaulaKudeatzailea.getTaulaKudeatzailea().lehenengoBiakTabernanSartu();
+						 TaulaKudeatzailea.getTaulaKudeatzailea().azkenaKanporatu();
+					 }
+					 Karta mazokoAzkena = TaulaKudeatzailea.getTaulaKudeatzailea().mazotikKartaHartu();
+				
+				
+				
+				
+				//ORDENAGAILUAREN TXANDA
+				 
+				}
+	});
+			lable3.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					
+					 Karta karta = TaulaKudeatzailea.getTaulaKudeatzailea().getKarta(3);
+					 TaulaKudeatzailea.getTaulaKudeatzailea().kartaBota(karta);
+					 
+					 karta.animaladaEgin();//ANIMALADA EGIN 
+					 
+					 //ANIMALADA ERREKURTSIBOAK EGIN
+					 if(TaulaKudeatzailea.getTaulaKudeatzailea().ilaraBeteta()){
+						 TaulaKudeatzailea.getTaulaKudeatzailea().lehenengoBiakTabernanSartu();
+						 TaulaKudeatzailea.getTaulaKudeatzailea().azkenaKanporatu();
+					 }
+					 Karta mazokoAzkena = TaulaKudeatzailea.getTaulaKudeatzailea().mazotikKartaHartu();
+				
+				
+				
+				
+				//ORDENAGAILUAREN TXANDA
+				 
+				}
+	});
+			lable4.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					
+					 Karta karta = TaulaKudeatzailea.getTaulaKudeatzailea().getKarta(4);
+					 TaulaKudeatzailea.getTaulaKudeatzailea().kartaBota(karta);
+			
+			
+					 karta.animaladaEgin(); //ANIMALADA EGIN 
+					 
+			//ANIMALARA ERREKURTSIBOAK EGIN
+					 
+					 if(TaulaKudeatzailea.getTaulaKudeatzailea().ilaraBeteta()){//ILARA BETETA DAGOEN BEGIRATU
+						 TaulaKudeatzailea.getTaulaKudeatzailea().lehenengoBiakTabernanSartu();
+						 TaulaKudeatzailea.getTaulaKudeatzailea().azkenaKanporatu();
+					 }
+					 
+					 
+					 Karta mazokoAzkena = TaulaKudeatzailea.getTaulaKudeatzailea().mazotikKartaHartu();
+				
+				
+				
+				//ORDENAGAILUAREN TXANDA
+				 
+				}
+	});
 		}
 	}
 

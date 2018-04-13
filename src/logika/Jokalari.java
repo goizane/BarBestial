@@ -25,14 +25,14 @@ public class Jokalari {
 	public void eskukoKartakKargatu(List<Integer> lista){
 		for(int i : lista){
 			Karta k = null;
-			k = kartaAurkitu(i);
+			k = KartaSortzailea.getKartaSortzailea().sortuKarta(i);
 			this.eskukoKartak.gehituKarta(k);		
 		}
 	}
 	public void mazoaKargatu(List<Integer> lista){
 		for(int i : lista){
 			Karta k = null;
-			k = kartaAurkitu(i);
+			k = KartaSortzailea.getKartaSortzailea().sortuKarta(i);;
 			this.mazoa.push(k);
 		}
 	
@@ -51,33 +51,7 @@ public class Jokalari {
 	public KartaZerrenda getEskukoKartak(){
 	return this.eskukoKartak;
 	}
-	public Karta kartaAurkitu(Integer i){
-		Karta k = null;
-		if(i==1){
-			k= new MofetaKarta();
-		}else if(i==2){
-			k= new LoroKarta();
-		}else if(i==3){
-			k= new KanguroKarta();
-		}else if(i==4){
-			k= new TximinoKarta();
-		}else if(i==5){
-			k= new KamaleoiKarta();
-		}else if(i==6){
-			k= new FokaKarta();
-		}else if(i==7){
-			k= new ZebraKarta();
-		}else if(i==8){
-			k= new JirafaKarta();
-		}else if(i==9){
-			k= new SugeKarta();
-		}else if(i==10){
-			k= new KrokodiloKarta();
-		}else if(i==11){
-			k= new HipopotamoKarta();
-		}else if(i==12){
-			k= new LehoiKarta();
-		}
-		return k;
-	}
+	
+	
+	
 }

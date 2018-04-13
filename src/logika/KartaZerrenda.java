@@ -32,5 +32,33 @@ public class KartaZerrenda {
 		lista.remove(k);
 	}
 	
+	public Karta kartaAltuenaBilatu(){
+		Karta altuena = null;
+		int balioa = 0;
+		for(Karta k : this.lista){
+			if(k.zenb>balioa){
+				balioa = k.zenb;
+				altuena = k;
+			}
+		}
+		return altuena;
+	}
 	
+	public boolean dauka(Karta k){
+		boolean dauka = false;
+		if(this.lista.contains(k)){
+			dauka = true;
+		}
+		return dauka;
+	}
+	
+	public Karta kartaBilatu(Karta k){
+		Karta karta = null;
+		for(Karta kar : this.lista){
+			if(kar==k){
+				karta = kar;
+			}
+		}
+		return karta;
+	}
 }

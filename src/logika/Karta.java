@@ -12,7 +12,7 @@ public abstract class Karta {
 		
 	}
 	public void animaladaEgin(){
-		
+				
 	}
 	public int getZenb(){
 		return zenb;

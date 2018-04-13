@@ -10,6 +10,8 @@ public class Tableroa {
 	private static Tableroa nTableroa;
 	private KartaZerrenda jokokoKartak;
 	private JokalariZerrenda jokalariak;
+	private KartaZerrenda tabernakoKartak;
+	private KartaZerrenda kalekoKartak;
 	
 	private Tableroa(){
 		
@@ -115,4 +117,24 @@ public class Tableroa {
 		}
 		return mazoa;
 	}
+	
+	public void ilarakoLehenengoBiakSartu(){
+		for(int i =0; i<2; i++){
+			Karta k = this.jokokoKartak.get(i);
+			this.tabernakoKartak.gehituKarta(k);
+			this.jokokoKartak.kenduKarta(k);
+		}
+	}
+	
+	public void azkenaKamporatu(){
+		Karta k = this.jokokoKartak.get(3);
+		this.kalekoKartak.gehituKarta(k);
+		this.jokokoKartak.kenduKarta(k);
+	}
+
+	public void jokokoKartetatikKartaKendu(Karta k) {
+		this.jokokoKartak.kenduKarta(k);
+		
+	}
+	
 }

@@ -141,10 +141,22 @@ public class TaulaKudeatzailea {
 		
 	}
 	public Karta kartaAurkitu(int i ){
-		return jokalari.kartaAurkitu(i);
+		return KartaSortzailea.getKartaSortzailea().sortuKarta(i);
 	}
 	
 	public Karta getKarta(int i){
 		return jokalariKartak.get(i);
+	}
+	
+	public void animaladaEgin(){
+		
+	}
+	
+	public void lehenengoBiakTabernanSartu(){
+		Tableroa.getTableroa().ilarakoLehenengoBiakSartu();
+	}
+	
+	public void azkenaKanporatu(){
+		Tableroa.getTableroa().azkenaKamporatu();
 	}
 }
