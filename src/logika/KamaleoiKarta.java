@@ -10,7 +10,7 @@ public class KamaleoiKarta extends Karta {
 	}
 
 
-	public void animaladaEgin() {
+	public void animaladaEgin() { // nahi duen animaliaren animalada egiten du
 		// TODO Auto-generated method stub
 		
 	}

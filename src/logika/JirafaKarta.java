@@ -10,8 +10,14 @@ public class JirafaKarta extends Karta {
 	}
 
 
-	public void animaladaEgin() {
-		// TODO Auto-generated method stub
+	public void animaladaEgin() { // bere aurretik dagoen karta bera baino txikiagoa bada saltatzen du
+		KartaZerrenda jokokoKartak =Tableroa.getTableroa().getJokokoKartak();
+		int pos = jokokoKartak.tamaina();
+		Karta jirafa = jokokoKartak.get(pos);
+		Karta aurrekoa = jokokoKartak.get(pos-1);
+		if(aurrekoa.zenb<8){
+			jokokoKartak.kartaPosizioBateanSartu(jirafa, pos-1);
+		}
 		
 	}
 

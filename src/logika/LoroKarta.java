@@ -9,7 +9,7 @@ public class LoroKarta extends Karta {
 		this.errekurtsiboa = false;
 	}
 
-	public void animaladaEgin() {
+	public void animaladaEgin() { //jokalariak aukeratutako kartari patada eman
 		// TODO Auto-generated method stub
 		
 	}

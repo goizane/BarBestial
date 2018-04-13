@@ -11,7 +11,7 @@ public class ZebraKarta extends Karta {
 	}
 
 
-	public void animaladaEgin() {
+	public void animaladaEgin() { // ez ditu kokrodiloak eta hipopotamoak pasatzen uzten
 		// TODO Auto-generated method stub
 		
 	}

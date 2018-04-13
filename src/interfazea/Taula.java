@@ -45,6 +45,7 @@ public class Taula extends JFrame {
 	public static void main(String[] args) {
 
 		TaulaKudeatzailea.getTaulaKudeatzailea().hasieratu();
+		
 	}
 
 	public static void bistaratu() {
@@ -77,7 +78,7 @@ public class Taula extends JFrame {
 //		edukiontzia.add(computerPanel,BorderLayout.NORTH);
 //		jokokoKartakKargatu(gamePanel);
 //		edukiontzia.add(gamePanel,BorderLayout.CENTER);
-//		eskukoKartakKargatu("Urdina", this.userPanel);
+		eskukoKartakPantailaratu(this.userPanel);
 //		edukiontzia.add(userPanel,BorderLayout.SOUTH);
 	}
 	public void konputagailuaHasieratu(){
@@ -260,7 +261,7 @@ public class Taula extends JFrame {
 		GridBagConstraints c = new GridBagConstraints();
 		JScrollPane jsp;
 		List<Integer> eskukoKartak = TaulaKudeatzailea.getTaulaKudeatzailea().eskukoKartakKargatu();
-		for(int i =1; i<=eskukoKartak.size(); i++){
+		for(int i =1; i<=4; i++){
 			if (i ==1){
 				Integer karta = eskukoKartak.get(0);
 				if (karta == 1) {
@@ -439,7 +440,7 @@ public class Taula extends JFrame {
 				public void actionPerformed(ActionEvent e) {
 					
 				
-					 Karta karta = TaulaKudeatzailea.getTaulaKudeatzailea().getKarta(1);
+					 Karta karta = TaulaKudeatzailea.getTaulaKudeatzailea().getKarta(0);
 					 TaulaKudeatzailea.getTaulaKudeatzailea().kartaBota(karta);
 			
 					 karta.animaladaEgin();//ANIMALADA EGIN 
@@ -464,7 +465,7 @@ public class Taula extends JFrame {
 				public void actionPerformed(ActionEvent e) {
 					
 				
-					 Karta karta = TaulaKudeatzailea.getTaulaKudeatzailea().getKarta(2);
+					 Karta karta = TaulaKudeatzailea.getTaulaKudeatzailea().getKarta(1);
 					 TaulaKudeatzailea.getTaulaKudeatzailea().kartaBota(karta);
 			
 					 karta.animaladaEgin(); //ANIMALADA EGIN 
@@ -489,7 +490,7 @@ public class Taula extends JFrame {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					
-					 Karta karta = TaulaKudeatzailea.getTaulaKudeatzailea().getKarta(3);
+					 Karta karta = TaulaKudeatzailea.getTaulaKudeatzailea().getKarta(2);
 					 TaulaKudeatzailea.getTaulaKudeatzailea().kartaBota(karta);
 					 
 					 karta.animaladaEgin();//ANIMALADA EGIN 
@@ -513,7 +514,7 @@ public class Taula extends JFrame {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					
-					 Karta karta = TaulaKudeatzailea.getTaulaKudeatzailea().getKarta(4);
+					 Karta karta = TaulaKudeatzailea.getTaulaKudeatzailea().getKarta(3);
 					 TaulaKudeatzailea.getTaulaKudeatzailea().kartaBota(karta);
 			
 			

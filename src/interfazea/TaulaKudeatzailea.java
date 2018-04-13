@@ -55,6 +55,8 @@ public class TaulaKudeatzailea {
 		t.konputagailuaHasieratu();
 		t.erdiaHasieratu();
 		t.jokalariaHasieratu();
+		
+		
 	}
 	
 	public Karta kartaKargatu(KartaZerrenda zerrenda){

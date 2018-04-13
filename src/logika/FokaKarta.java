@@ -10,8 +10,8 @@ public class FokaKarta extends Karta {
 	}
 
 
-	public void animaladaEgin() {
-		// TODO Auto-generated method stub
+	public void animaladaEgin() { //atearen eta patadaren posizioak aldatzen ditu
+		Tableroa.getTableroa().getJokokoKartak().zerrendarenOrdenaAldatu();
 		
 	}
 

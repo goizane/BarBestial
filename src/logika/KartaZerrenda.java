@@ -1,6 +1,8 @@
 package logika;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 public class KartaZerrenda {
 
@@ -44,21 +46,55 @@ public class KartaZerrenda {
 		return altuena;
 	}
 	
-	public boolean dauka(Karta k){
-		boolean dauka = false;
-		if(this.lista.contains(k)){
-			dauka = true;
-		}
-		return dauka;
-	}
-	
-	public Karta kartaBilatu(Karta k){
-		Karta karta = null;
-		for(Karta kar : this.lista){
-			if(kar==k){
-				karta = kar;
+	public boolean errepikatutaDago(int zenb){
+		int zenbat =0;
+		boolean errepikatuta = false;
+		for(Karta k : this.lista){
+			if(zenb == k.zenb){
+				zenbat++;
 			}
 		}
-		return karta;
+		if(zenbat >=2){
+		   errepikatuta = true;
+		}
+		return errepikatuta;
 	}
+	
+	
+	
+	public Karta azkenKartaBilatu(int zenb){
+		Karta azkena = null;
+		for(Karta k : this.lista){
+			if(k.zenb == zenb){
+				azkena = k;
+			}
+		}
+		return azkena;
+	}
+	
+	public void kartaPosizioBateanSartu(Karta k, int pos){
+		ArrayList<Karta> zerrendaBerria = null;
+		int kont = 0;
+		for(Karta karta : this.lista){
+			if(kont == pos){
+				zerrendaBerria.add(k);
+			}
+			
+			zerrendaBerria.add(karta);
+			
+		}
+		this.lista = zerrendaBerria;
+	}
+	
+	public void zerrendarenOrdenaAldatu(){
+		ArrayList<Karta> zerrendaBerria = null;
+		for(int i = this.lista.size()-1; i>=0; i--){
+			Karta k = this.lista.get(i);
+			zerrendaBerria.add(k);
+		}
+		this.lista= zerrendaBerria;
+	}
+	
+
+	
 }

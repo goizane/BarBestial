@@ -38,4 +38,5 @@ public abstract class Karta {
 	public void setIzena(String izena) {
 		this.izena = izena;
 	}
+	
 }

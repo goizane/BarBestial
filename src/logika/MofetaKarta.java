@@ -13,10 +13,13 @@ public class MofetaKarta extends Karta {
 		KartaZerrenda jokokoKartak = Tableroa.getTableroa().getJokokoKartak();
 		for(int i =0; i<2; i++){
 			Karta k =jokokoKartak.kartaAltuenaBilatu();
-			Tableroa.getTableroa().jokokoKartetatikKartaKendu(k);
-			if(jokokoKartak.dauka(k)){
-				Karta kar = jokokoKartak.kartaBilatu(k);
-				jokokoKartak.kenduKarta(kar);
+			if(jokokoKartak.errepikatutaDago(k.zenb)){
+				for(int j =0; j<jokokoKartak.tamaina(); j++){
+					if(jokokoKartak.get(j) == k){
+						jokokoKartak.kenduKarta(jokokoKartak.get(j));
+					}
+				}
+				jokokoKartak.kenduKarta(k);
 			}
 		}
 		
