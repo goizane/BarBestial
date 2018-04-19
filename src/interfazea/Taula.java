@@ -129,13 +129,12 @@ public class Taula extends JFrame implements Observer{
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					
-					System.out.println(karta.getIzena());
+					// Hasta aquí está bien
 				
-					 Karta gureKarta = TaulaKudeatzailea.getTaulaKudeatzailea().getKarta(karta.getZenb());
-//					 TaulaKudeatzailea.getTaulaKudeatzailea().kartaBota(karta);
-					 System.out.println("ActionListener barruan!");
+					 Karta karta = TaulaKudeatzailea.getTaulaKudeatzailea().getKarta(0);
+					 TaulaKudeatzailea.getTaulaKudeatzailea().kartaBota(karta);
 			
-//					 karta.animaladaEgin();//ANIMALADA EGIN 
+					 karta.animaladaEgin();//ANIMALADA EGIN 
 					 
 					 //ANIMALADA ERREKURTSIBOAK EGIN
 					 if(TaulaKudeatzailea.getTaulaKudeatzailea().ilaraBeteta()){ //Lehenengo biak tabernan sartu eta azkena kanporatu
@@ -160,25 +159,27 @@ public class Taula extends JFrame implements Observer{
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
+
 					
-				
-					 Karta karta = TaulaKudeatzailea.getTaulaKudeatzailea().getKarta(0);
-					 TaulaKudeatzailea.getTaulaKudeatzailea().kartaBota(karta);
-			
-					 karta.animaladaEgin();//ANIMALADA EGIN 
-					 
-					 //ANIMALADA ERREKURTSIBOAK EGIN
-					 if(TaulaKudeatzailea.getTaulaKudeatzailea().ilaraBeteta()){ //Lehenengo biak tabernan sartu eta azkena kanporatu
-						 TaulaKudeatzailea.getTaulaKudeatzailea().lehenengoBiakTabernanSartu();
-						 TaulaKudeatzailea.getTaulaKudeatzailea().azkenaKanporatu();
-					 }
-					 Karta mazokoAzkena = TaulaKudeatzailea.getTaulaKudeatzailea().mazotikKartaHartu();
-				
-					 //GRAFIKA EGUNERATU
-				
-				
-				//ORDENAGAILUAREN TXANDA
-				 
+
+					Karta karta = TaulaKudeatzailea.getTaulaKudeatzailea().getKarta(0);
+
+					TaulaKudeatzailea.getTaulaKudeatzailea().kartaBota(karta);
+
+					karta.animaladaEgin();//ANIMALADA EGIN 
+
+					//ANIMALADA ERREKURTSIBOAK EGIN
+					if(TaulaKudeatzailea.getTaulaKudeatzailea().ilaraBeteta()){ //Lehenengo biak tabernan sartu eta azkena kanporatu
+						TaulaKudeatzailea.getTaulaKudeatzailea().lehenengoBiakTabernanSartu();
+						TaulaKudeatzailea.getTaulaKudeatzailea().azkenaKanporatu();
+					}
+					Karta mazokoAzkena = TaulaKudeatzailea.getTaulaKudeatzailea().mazotikKartaHartu();
+
+					//GRAFIKA EGUNERATU
+
+
+					//ORDENAGAILUAREN TXANDA
+
 				}
 	});
 			jsp = new JScrollPane(lable);

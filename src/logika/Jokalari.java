@@ -22,18 +22,18 @@ public class Jokalari {
 	private void jokatu(){
 		
 	}
-	public void eskukoKartakKargatu(KartaZerrenda lista){
-		for(int i=0; i<lista.tamaina(); i++){
-//			Karta k = null;
-//			k = KartaSortzailea.getKartaSortzailea().sortuKarta(i);
-			this.eskukoKartak.gehituKarta(lista.get(i));		
+	public void eskukoKartakKargatu(List<Integer> lista){
+		for(int i : lista){
+			Karta k = null;
+			k = KartaSortzailea.getKartaSortzailea().sortuKarta(i);
+			this.eskukoKartak.gehituKarta(k);		
 		}
 	}
-	public void mazoaKargatu(KartaZerrenda lista){
-		for(int i=0; i<lista.tamaina(); i++){
-//			Karta k = null;
-//			k = KartaSortzailea.getKartaSortzailea().sortuKarta(i);;
-			this.mazoa.push(lista.get(i));
+	public void mazoaKargatu(List<Integer> lista){
+		for(int i : lista){
+			Karta k = null;
+			k = KartaSortzailea.getKartaSortzailea().sortuKarta(i);;
+			this.mazoa.push(k);
 		}
 	
 	}
@@ -52,15 +52,6 @@ public class Jokalari {
 	return this.eskukoKartak;
 	}
 	
-	public void jokalariKartakHasieratu(){
-//		jokalariKartak=new KartaZerrenda();
-		eskukoKartak = Tableroa.getTableroa().eskukoKartakKargatu();
-//		Karta karta;
-//		for(int i=0;i<12;i++){
-//			karta=kartaKargatu(jokalariKartak);
-//			jokalariKartak.gehituKarta(karta);
-//		}
-//	}
 	
-}
+	
 }

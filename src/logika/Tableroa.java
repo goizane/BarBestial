@@ -82,53 +82,31 @@ public class Tableroa {
 	
 		}
 	
-	public Karta eskukoKartakKargatu(KartaZerrenda zerrenda){
-		Karta erantzuna;
-		boolean badago = true;
-		Random random = new Random();
-		int kartaZenb=random.nextInt(12 - 1 + 1) + 1;
-		if(zerrenda.tamaina()>0){
-			while(badago){
-				for (int i = 0; i < zerrenda.tamaina(); i++) {
-					if (zerrenda.get(i).getZenb() != kartaZenb) {
-						badago = false;
-						break;
-					}
-				}
-				if(badago){
-					kartaZenb = random.nextInt(12 - 1 + 1) + 1;
+	public List<Integer> eskukoKartakKargatu(){
+		boolean nahikoa = false;
+		boolean badago = false;
+		int kont = 0;
+		List<Integer> kartaZerrenda = new ArrayList<Integer>();
+
+		while (!nahikoa) {
+			badago = false;
+			Random random = new Random();
+			int karta = random.nextInt(12 - 1 + 1) + 1;
+			for (int i = 0; i < kartaZerrenda.size(); i++) {
+				if (kartaZerrenda.get(i) == karta) {
+					badago = true;
+					break;
 				}
 			}
-		}else{
-			badago=false;
+			if (!badago) {
+				kartaZerrenda.add(karta);
+				if (kartaZerrenda.size() == 4) {
+					nahikoa = true;
+				}
+			}
 		}
-		
-		if (!badago) {
-			erantzuna=KartaSortzailea.getKartaSortzailea().sortuKarta(kartaZenb);
-		}else{
-			erantzuna=null;
-		}
-		return erantzuna;	
+		return kartaZerrenda;
 	}
-	
-//	public void hasi(){
-//		Jokalari j1 =jokalariak.getJokalariZerrenda().getJok(0);
-//		Jokalari j2 =jokalariak.getJokalariZerrenda().getJok(1);
-//		
-//		KartaZerrenda kartZer = this.eskukoKartakKargatu();
-//		KartaZerrenda eskukoZer = null;
-//		KartaZerrenda mazoZer = null;
-//		for (int i=0; i<4; i++) {
-//			eskukoZer.gehituKarta(kartZer.get(i));
-//		}
-//		for (int i=4; i<12; i++) {
-//			mazoZer.gehituKarta(kartZer.get(i));
-//		}
-//		j1.eskukoKartakKargatu(eskukoZer);
-//		j1.mazoaKargatu(mazoZer);
-//		j2.eskukoKartakKargatu(eskukoZer);
-//		j2.mazoaKargatu(mazoZer);
-//	}
 	
 	public List<Integer> mazokoKartakKargatu(List<Integer> eskua){
 		List<Integer> mazoa = new ArrayList<Integer>();
