@@ -27,11 +27,11 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
 
-public class Taula extends JFrame {
+public class Taula extends JFrame implements Observer{
 	private BorderLayout eskema;
 	private Container edukiontzia;
 	private GridBagConstraints mugak;
-
+	private static Taula taula;
 	private JMenuBar menuBarra = new JMenuBar();
 	private JMenu hasi = new JMenu();
 	private JMenu laguntza = new JMenu();
@@ -42,24 +42,28 @@ public class Taula extends JFrame {
 	private JPanel trashPanel = new JPanel(new GridBagLayout());
 	private JPanel tabernPanel = new JPanel(new GridBagLayout());
 
-	public static void main(String[] args) {
+	public static void main(String[] args){
 
 		TaulaKudeatzailea.getTaulaKudeatzailea().hasieratu();
 		
 	}
-
-	public static void bistaratu() {
-		Taula taula = new Taula();
+	public static synchronized Taula getInstantzia(){
+		if(taula==null){
+			taula=new Taula();
+		}
+		return taula;
+	}
+	public void bistaratu() {
 		taula.setTitle("Bar Bestial");
 		taula.setVisible(true);
 		taula.setSize(1200, 700);
 		taula.setMaximumSize(new Dimension(1000, 700));
 		taula.pack();
 		taula.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 	}
 	
-	public Taula() {
-		taulaHasieratu();
+	private Taula() {
 	}
 	
 	public void taulaHasieratu(){
@@ -68,8 +72,8 @@ public class Taula extends JFrame {
 		edukiontzia.setLayout(eskema);
 //		Tableroa.getTableroa().jokokoKartakHasieratu();
 		// Menua
-		this.setJMenuBar(menuBarra);
-		this.setTitle("Bar Bestial");
+		taula.setJMenuBar(menuBarra);
+		taula.setTitle("Bar Bestial");
 		hasi.setText("Hasi");
 		laguntza.setText("laguntza");
 		menuBarra.add(hasi);
@@ -78,7 +82,7 @@ public class Taula extends JFrame {
 //		edukiontzia.add(computerPanel,BorderLayout.NORTH);
 //		jokokoKartakKargatu(gamePanel);
 //		edukiontzia.add(gamePanel,BorderLayout.CENTER);
-		eskukoKartakPantailaratu(this.userPanel);
+//		eskukoKartakPantailaratu(this.userPanel);
 //		edukiontzia.add(userPanel,BorderLayout.SOUTH);
 	}
 	public void konputagailuaHasieratu(){
@@ -90,26 +94,48 @@ public class Taula extends JFrame {
 	public void jokalariaHasieratu(){
 		edukiontzia.add(userPanel,BorderLayout.SOUTH);
 	}
+	public void gehituMazoa(String jokalaria){
+		ImageIcon ii;
+		GridBagConstraints c = new GridBagConstraints();
+		JButton lable;
+		JScrollPane jsp;
+		if(jokalaria.equals("Urdina")){
+			ii = new ImageIcon("src/fitxategiak/karta.png");
+			lable = new JButton(ii);
+			jsp = new JScrollPane(lable);
+			userPanel.add(jsp, c);
+		}else{
+			ii = new ImageIcon("src/fitxategiak/karta.png");
+			lable = new JButton(ii);
+			jsp = new JScrollPane(lable);
+			computerPanel.add(jsp, c);
+		}
+	}
 	public void gehituKarta(String jokalaria, Karta karta){
 		ImageIcon ii;
 		GridBagConstraints c = new GridBagConstraints();
 		JButton lable;
 		JScrollPane jsp;
-		if(jokalaria.equals("taberna.png") || jokalaria.equals("zakarrontzia.png") || jokalaria.equals("kartaHutsa.jpg")){
+		if(jokalaria.equals("taberna.png") || jokalaria.equals("zakarrontzia.png") ){
 			ii = new ImageIcon("src/fitxategiak/"+jokalaria);
 			lable = new JButton(ii);
 			jsp = new JScrollPane(lable);
 			computerPanel.add(jsp, c);
 		}else if(jokalaria.equals("Urdina")|| jokalaria.equals("karta.png")){
-			ii = new ImageIcon("src/fitxategiak/"+karta.getIzena()+jokalaria);
+			ii = new ImageIcon("src/fitxategiak/"+karta.getIzena()+jokalaria+".png");
 			lable = new JButton(ii);
 			jsp = new JScrollPane(lable);
 			userPanel.add(jsp, c);
 		}else if(jokalaria.equals("Berdea") || jokalaria.equals("karta.png")){
-			ii = new ImageIcon("src/fitxategiak/"+karta.getIzena()+jokalaria);
+			ii = new ImageIcon("src/fitxategiak/"+karta.getIzena()+jokalaria+".png");
 			lable = new JButton(ii);
 			jsp = new JScrollPane(lable);
 			computerPanel.add(jsp, c);
+		}else if(jokalaria.equals("kartaHutsa.jpg")){
+			ii = new ImageIcon("src/fitxategiak/kartaHutsa.jpg");
+			lable = new JButton(ii);
+			jsp = new JScrollPane(lable);
+			gamePanel.add(jsp, c);
 		}
 	}
 
@@ -559,6 +585,11 @@ public class Taula extends JFrame {
 		lable = new JButton(ii);
 		jsp = new JScrollPane(lable);
 		panela.add(jsp, c);
+		
+	}
+	@Override
+	public void update(Observable arg0, Object arg1) {
+		// TODO Auto-generated method stub
 		
 	}
 	

@@ -2,6 +2,7 @@ package interfazea;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
 import java.util.Random;
 
 import logika.FokaKarta;
@@ -24,7 +25,7 @@ import logika.Tableroa;
 import logika.TximinoKarta;
 import logika.ZebraKarta;
 
-public class TaulaKudeatzailea {
+public class TaulaKudeatzailea extends Observable {
 	private static TaulaKudeatzailea taula = new TaulaKudeatzailea();
 	private JokalariZerrenda jokalariak;
 	private KartaZerrenda jokalariKartak=new KartaZerrenda();
@@ -44,8 +45,8 @@ public class TaulaKudeatzailea {
 	}
 	
 	public void hasieratu(){
-		t=new Taula();
-		t.bistaratu();
+		t=Taula.getInstantzia();
+		t.taulaHasieratu();
 		jokalariKartakHasieratu();
 		konputagailuKartakHasieratu();
 		erdikoKartakHasieratu();
@@ -55,24 +56,32 @@ public class TaulaKudeatzailea {
 		t.konputagailuaHasieratu();
 		t.erdiaHasieratu();
 		t.jokalariaHasieratu();
-		
-		
+		t.bistaratu();
 	}
 	
 	public Karta kartaKargatu(KartaZerrenda zerrenda){
 		Karta erantzuna;
 		boolean badago = true;
 		Random random = new Random();
-		int kartaZenb = random.nextInt(12 - 1 + 1) + 1;
-		while(badago){
-			for (int i = 0; i < zerrenda.tamaina(); i++) {
-				if (zerrenda.get(i).getZenb() != kartaZenb) {
-					badago = true;
-					break;
+		int kartaZenb=random.nextInt(12 - 1 + 1) + 1;
+		if(zerrenda.tamaina()>0){
+			while(badago){
+				for (int i = 0; i < zerrenda.tamaina(); i++) {
+					if (zerrenda.get(i).getZenb() != kartaZenb) {
+						badago = false;
+						break;
+					}
 				}
+				if(badago){
+					kartaZenb = random.nextInt(12 - 1 + 1) + 1;
+				}
+				
+				
 			}
-			
+		}else{
+			badago=false;
 		}
+		
 		
 		
 		
@@ -111,14 +120,24 @@ public class TaulaKudeatzailea {
 	public void taularatuKartak(KartaZerrenda kartak, String jokalaria){
 		if(jokalaria.equals("Berdea")){
 			t.gehituKarta("taberna.png", null);
+			t.gehituMazoa("Berdea");
 		}
-		for(int i=0;i<4;i++){
-			if("".equals(jokalaria)){
-				t.gehituKarta("kartaHutsa.jpg", kartak.get(i));
-			}else{
+		if(!"".equals(jokalaria)){
+			for(int i=0;i<4;i++){
+			
 				t.gehituKarta(jokalaria, kartak.get(i));
+				
+			}
+			
+			if(jokalaria.equals("Urdina")){
+				t.gehituMazoa("Urdina");
+			}
+		}else{
+			for(int i=0;i<5;i++){
+				t.gehituKarta("kartaHutsa.jpg", null);
 			}
 		}
+		
 		if(jokalaria.equals("Berdea")){
 			t.gehituKarta("zakarrontzia.png", null);
 		}
