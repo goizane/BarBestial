@@ -129,11 +129,13 @@ public class Taula extends JFrame implements Observer{
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					
+					System.out.println(karta.getIzena());
 				
-					 Karta karta = TaulaKudeatzailea.getTaulaKudeatzailea().getKarta(0);
-					 TaulaKudeatzailea.getTaulaKudeatzailea().kartaBota(karta);
+					 Karta gureKarta = TaulaKudeatzailea.getTaulaKudeatzailea().getKarta(karta.getZenb());
+//					 TaulaKudeatzailea.getTaulaKudeatzailea().kartaBota(karta);
+					 System.out.println("ActionListener barruan!");
 			
-					 karta.animaladaEgin();//ANIMALADA EGIN 
+//					 karta.animaladaEgin();//ANIMALADA EGIN 
 					 
 					 //ANIMALADA ERREKURTSIBOAK EGIN
 					 if(TaulaKudeatzailea.getTaulaKudeatzailea().ilaraBeteta()){ //Lehenengo biak tabernan sartu eta azkena kanporatu

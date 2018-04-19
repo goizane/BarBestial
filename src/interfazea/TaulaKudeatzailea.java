@@ -28,11 +28,11 @@ import logika.ZebraKarta;
 public class TaulaKudeatzailea extends Observable {
 	private static TaulaKudeatzailea taula = new TaulaKudeatzailea();
 	private JokalariZerrenda jokalariak;
-	private KartaZerrenda jokalariKartak=new KartaZerrenda();
+	private KartaZerrenda jokalariKartak =new KartaZerrenda();
 	private KartaZerrenda ordenagailuKartak=new KartaZerrenda();
 	private KartaZerrenda jokokoKartak=new KartaZerrenda();
 	private Taula t;
-	private Jokalari jokalari;
+	private Jokalari jokalari = new Jokalari("Urdina");
 	
 	private TaulaKudeatzailea() {
 	}
@@ -47,7 +47,9 @@ public class TaulaKudeatzailea extends Observable {
 	public void hasieratu(){
 		t=Taula.getInstantzia();
 		t.taulaHasieratu();
-		jokalariKartakHasieratu();
+		jokalari.jokalariKartakHasieratu();
+//		System.out.println("Hasieratu dira");
+//		System.out.println(jokalariKartak.get(1).getIzena());
 		konputagailuKartakHasieratu();
 		erdikoKartakHasieratu();
 		taularatuKartak(ordenagailuKartak,"Berdea");
@@ -57,6 +59,7 @@ public class TaulaKudeatzailea extends Observable {
 		t.erdiaHasieratu();
 		t.jokalariaHasieratu();
 		t.bistaratu();
+		
 	}
 	
 	public Karta kartaKargatu(KartaZerrenda zerrenda){
@@ -75,15 +78,10 @@ public class TaulaKudeatzailea extends Observable {
 				if(badago){
 					kartaZenb = random.nextInt(12 - 1 + 1) + 1;
 				}
-				
-				
 			}
 		}else{
 			badago=false;
 		}
-		
-		
-		
 		
 		if (!badago) {
 			erantzuna=KartaSortzailea.getKartaSortzailea().sortuKarta(kartaZenb);
@@ -94,13 +92,15 @@ public class TaulaKudeatzailea extends Observable {
 		
 		
 	}
-	public void jokalariKartakHasieratu(){
-		Karta karta;
-		for(int i=0;i<12;i++){
-			karta=kartaKargatu(jokalariKartak);
-			jokalariKartak.gehituKarta(karta);
-		}
-	}
+//	public void jokalariKartakHasieratu(){
+////		jokalariKartak=new KartaZerrenda();
+////		jokalariKartak = Tableroa.getTableroa().eskukoKartakKargatu();
+//		Karta karta;
+//		for(int i=0;i<12;i++){
+//			karta=kartaKargatu(jokalariKartak);
+//			jokalariKartak.gehituKarta(karta);
+//		}
+//	}
 	
 	public void konputagailuKartakHasieratu(){
 		Karta karta;
@@ -157,8 +157,8 @@ public class TaulaKudeatzailea extends Observable {
 		return k;
 	}
 	
-	public List<Integer> eskukoKartakKargatu(){
-		return Tableroa.getTableroa().eskukoKartakKargatu();
+	public KartaZerrenda eskukoKartakKargatu(){
+		return (KartaZerrenda) Tableroa.getTableroa().eskukoKartakKargatu();
 		
 	}
 	public Karta kartaAurkitu(int i ){

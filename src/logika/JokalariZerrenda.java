@@ -22,7 +22,9 @@ public class JokalariZerrenda {
 		return nireJokalariZerrenda;
 	}
 	
-
+	public Jokalari getJok(int i){
+		return jokZer.get(i);
+	}
 	
 	
 }
