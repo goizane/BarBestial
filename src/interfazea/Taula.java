@@ -18,7 +18,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-
+import logika.Jokalari;
 import logika.Karta;
 import logika.KartaZerrenda;
 import logika.Tableroa;
@@ -116,6 +116,7 @@ public class Taula extends JFrame implements Observer{
 		GridBagConstraints c = new GridBagConstraints();
 		JButton lable;
 		JScrollPane jsp;
+	
 		if(jokalaria.equals("taberna.png") || jokalaria.equals("zakarrontzia.png") ){
 			ii = new ImageIcon("src/fitxategiak/"+jokalaria);
 			lable = new JButton(ii);
@@ -124,17 +125,19 @@ public class Taula extends JFrame implements Observer{
 		}else if(jokalaria.equals("Urdina")){
 			ii = new ImageIcon("src/fitxategiak/"+karta.getIzena()+jokalaria+".png");
 			lable = new JButton(ii);
+			
 			lable.addActionListener(new ActionListener() {
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					
-					// Hasta aquí está bien
+					KartaZerrenda kZer = TaulaKudeatzailea.getTaulaKudeatzailea().eskukoKartakLortu();
 				
-					 Karta karta = TaulaKudeatzailea.getTaulaKudeatzailea().getKarta(0);
+					 Karta karta = kZer.get(0);//0 jokalariak klik egiten duen kartaren posizioagaitik aldatu
+					 System.out.println("klik egindako karta: " + karta.getIzena());
 					 TaulaKudeatzailea.getTaulaKudeatzailea().kartaBota(karta);
 			
-					 karta.animaladaEgin();//ANIMALADA EGIN 
+//					 karta.animaladaEgin();//ANIMALADA EGIN 
 					 
 					 //ANIMALADA ERREKURTSIBOAK EGIN
 					 if(TaulaKudeatzailea.getTaulaKudeatzailea().ilaraBeteta()){ //Lehenengo biak tabernan sartu eta azkena kanporatu
@@ -153,35 +156,9 @@ public class Taula extends JFrame implements Observer{
 			jsp = new JScrollPane(lable);
 			userPanel.add(jsp, c);
 		}else if(jokalaria.equals("Berdea")){
-			ii = new ImageIcon("src/fitxategiak/"+karta.getIzena()+jokalaria+".png");
+			ii = new ImageIcon("src/fitxategiak/karta.png");
 			lable = new JButton(ii);
-			lable.addActionListener(new ActionListener() {
-				
-				@Override
-				public void actionPerformed(ActionEvent e) {
-
-					
-
-					Karta karta = TaulaKudeatzailea.getTaulaKudeatzailea().getKarta(0);
-
-					TaulaKudeatzailea.getTaulaKudeatzailea().kartaBota(karta);
-
-					karta.animaladaEgin();//ANIMALADA EGIN 
-
-					//ANIMALADA ERREKURTSIBOAK EGIN
-					if(TaulaKudeatzailea.getTaulaKudeatzailea().ilaraBeteta()){ //Lehenengo biak tabernan sartu eta azkena kanporatu
-						TaulaKudeatzailea.getTaulaKudeatzailea().lehenengoBiakTabernanSartu();
-						TaulaKudeatzailea.getTaulaKudeatzailea().azkenaKanporatu();
-					}
-					Karta mazokoAzkena = TaulaKudeatzailea.getTaulaKudeatzailea().mazotikKartaHartu();
-
-					//GRAFIKA EGUNERATU
-
-
-					//ORDENAGAILUAREN TXANDA
-
-				}
-	});
+			
 			jsp = new JScrollPane(lable);
 			computerPanel.add(jsp, c);
 		}else if(jokalaria.equals("kartaHutsa.jpg")){

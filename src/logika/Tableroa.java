@@ -9,7 +9,7 @@ import javax.swing.ImageIcon;
 public class Tableroa {
 	private static Tableroa nTableroa;
 	private KartaZerrenda jokokoKartak;
-	private JokalariZerrenda jokalariak;
+	private static JokalariZerrenda jokalariak;
 	private KartaZerrenda tabernakoKartak;
 	private KartaZerrenda kalekoKartak;
 	
@@ -23,6 +23,26 @@ public class Tableroa {
 		}
 		return nTableroa;
 	}
+	
+	public  void tableroaHasieratu(){
+		System.out.println("TABLEROA HASIERATU");
+		JokalariZerrenda jokZer = new JokalariZerrenda();
+	
+		Jokalari j1= new Jokalari("Urdina"); //pertsona
+		System.out.println("jokalari urdina sortu da!");
+		Jokalari j2 = new Jokalari("Berdea"); //ordenagailua
+		System.out.println("jokalari urdina sortu da!");
+		System.out.println("JOKALARI BERDEA");
+		j1.jokalariaHasieratu();
+		System.out.println("JOKALARI URDINA");
+		j2.jokalariaHasieratu();
+		jokZer.gehituJokalaria(j1);
+		jokZer.gehituJokalaria(j2);
+		this.jokalariak = jokZer;
+	
+	}
+	
+
 	
 	public KartaZerrenda getJokokoKartak() {
 		return jokokoKartak;
@@ -39,6 +59,7 @@ public class Tableroa {
 	public void setJokalariak(JokalariZerrenda jokalariak) {
 		this.jokalariak = jokalariak;
 	}
+	
 
 	public void jolastuKarta(Karta karta){
 		Karta aukeratutakoKarta=bilatuKarta();
@@ -79,45 +100,48 @@ public class Tableroa {
 
 	public void ilaranKartaSartu(Karta k) {
 		this.jokokoKartak.gehituKarta(k);
+		for(int i =0; i<jokokoKartak.tamaina(); i++){
+			System.out.println(jokokoKartak.get(i).getIzena());
+		}
 	
 		}
 	
-	public List<Integer> eskukoKartakKargatu(){
-		boolean nahikoa = false;
-		boolean badago = false;
-		int kont = 0;
-		List<Integer> kartaZerrenda = new ArrayList<Integer>();
-
-		while (!nahikoa) {
-			badago = false;
-			Random random = new Random();
-			int karta = random.nextInt(12 - 1 + 1) + 1;
-			for (int i = 0; i < kartaZerrenda.size(); i++) {
-				if (kartaZerrenda.get(i) == karta) {
-					badago = true;
-					break;
-				}
-			}
-			if (!badago) {
-				kartaZerrenda.add(karta);
-				if (kartaZerrenda.size() == 4) {
-					nahikoa = true;
-				}
-			}
-		}
-		return kartaZerrenda;
-	}
-	
-	public List<Integer> mazokoKartakKargatu(List<Integer> eskua){
-		List<Integer> mazoa = new ArrayList<Integer>();
-		for(int i : eskua){
-			if(!mazoa.contains(i)){
-				mazoa.add(i);
-			}
-		}
-		return mazoa;
-	}
-	
+//	public List<Integer> eskukoKartakKargatu(){
+//		boolean nahikoa = false;
+//		boolean badago = false;
+//		int kont = 0;
+//		List<Integer> kartaZerrenda = new ArrayList<Integer>();
+//
+//		while (!nahikoa) {
+//			badago = false;
+//			Random random = new Random();
+//			int karta = random.nextInt(12 - 1 + 1) + 1;
+//			for (int i = 0; i < kartaZerrenda.size(); i++) {
+//				if (kartaZerrenda.get(i) == karta) {
+//					badago = true;
+//					break;
+//				}
+//			}
+//			if (!badago) {
+//				kartaZerrenda.add(karta);
+//				if (kartaZerrenda.size() == 4) {
+//					nahikoa = true;
+//				}
+//			}
+//		}
+//		return kartaZerrenda;
+//	}
+//	
+//	public List<Integer> mazokoKartakKargatu(List<Integer> eskua){
+//		List<Integer> mazoa = new ArrayList<Integer>();
+//		for(int i : eskua){
+//			if(!mazoa.contains(i)){
+//				mazoa.add(i);
+//			}
+//		}
+//		return mazoa;
+//	}
+//	
 	public void ilarakoLehenengoBiakSartu(){
 		for(int i =0; i<2; i++){
 			Karta k = this.jokokoKartak.get(i);
@@ -136,5 +160,7 @@ public class Tableroa {
 		this.jokokoKartak.kenduKarta(k);
 		
 	}
-	
+//	public static void main(String[] args) {
+//		tableroaHasieratu();
+//	}
 }

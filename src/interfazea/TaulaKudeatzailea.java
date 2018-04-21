@@ -47,10 +47,13 @@ public class TaulaKudeatzailea extends Observable {
 	public void hasieratu(){
 		t=Taula.getInstantzia();
 		t.taulaHasieratu();
-		jokalariKartakHasieratu();
-		konputagailuKartakHasieratu();
-
+		Tableroa.getTableroa().tableroaHasieratu();
 		erdikoKartakHasieratu();
+	
+		this.jokalariKartak = Tableroa.getTableroa().getJokalariak().getJok(0).getEskukoKartak();
+		this.ordenagailuKartak = Tableroa.getTableroa().getJokalariak().getJok(1).getEskukoKartak();
+		String jokalari = Tableroa.getTableroa().getJokalariak().getJok(0).getKolorea();
+		String ordenagailu = Tableroa.getTableroa().getJokalariak().getJok(1).getKolorea();
 		taularatuKartak(ordenagailuKartak,"Berdea");
 		taularatuKartak(jokokoKartak,"");
 		taularatuKartak(jokalariKartak,"Urdina");
@@ -60,56 +63,56 @@ public class TaulaKudeatzailea extends Observable {
 		t.bistaratu();
 	}
 	
-	public Karta kartaKargatu(KartaZerrenda zerrenda){
-		Karta erantzuna;
-		boolean badago = true;
-		Random random = new Random();
-		int kartaZenb=random.nextInt(12 - 1 + 1) + 1;
-		if(zerrenda.tamaina()>0){
-			while(badago){
-				for (int i = 0; i < zerrenda.tamaina(); i++) {
-					if (zerrenda.get(i).getZenb() != kartaZenb) {
-						badago = false;
-						break;
-					}
-				}
-				if(badago){
-					kartaZenb = random.nextInt(12 - 1 + 1) + 1;
-				}
-				
-				
-			}
-		}else{
-			badago=false;
-		}
-		
-		
-		
-		
-		if (!badago) {
-			erantzuna=KartaSortzailea.getKartaSortzailea().sortuKarta(kartaZenb);
-		}else{
-			erantzuna=null;
-		}
-		return erantzuna;
-		
-		
-	}
-	public void jokalariKartakHasieratu(){
-		Karta karta;
-		for(int i=0;i<12;i++){
-			karta=kartaKargatu(jokalariKartak);
-			jokalariKartak.gehituKarta(karta);
-		}
-	}
-	
-	public void konputagailuKartakHasieratu(){
-		Karta karta;
-		for(int i=0;i<12;i++){
-			karta=kartaKargatu(ordenagailuKartak);
-			ordenagailuKartak.gehituKarta(karta);
-		}
-	}
+//	public Karta kartaKargatu(KartaZerrenda zerrenda){
+//		Karta erantzuna;
+//		boolean badago = true;
+//		Random random = new Random();
+//		int kartaZenb=random.nextInt(12 - 1 + 1) + 1;
+//		if(zerrenda.tamaina()>0){
+//			while(badago){
+//				for (int i = 0; i < zerrenda.tamaina(); i++) {
+//					if (zerrenda.get(i).getZenb() != kartaZenb) {
+//						badago = false;
+//						break;
+//					}
+//				}
+//				if(badago){
+//					kartaZenb = random.nextInt(12 - 1 + 1) + 1;
+//				}
+//				
+//				
+//			}
+//		}else{
+//			badago=false;
+//		}
+//		
+//		
+//		
+//		
+//		if (!badago) {
+//			erantzuna=KartaSortzailea.getKartaSortzailea().sortuKarta(kartaZenb);
+//		}else{
+//			erantzuna=null;
+//		}
+//		return erantzuna;
+//		
+//		
+//	}
+//	public void jokalariKartakHasieratu(){
+//		Karta karta;
+//		for(int i=0;i<12;i++){
+//			karta=kartaKargatu(jokalariKartak);
+//			jokalariKartak.gehituKarta(karta);
+//		}
+//	}
+//	
+//	public void konputagailuKartakHasieratu(){
+//		Karta karta;
+//		for(int i=0;i<12;i++){
+//			karta=kartaKargatu(ordenagailuKartak);
+//			ordenagailuKartak.gehituKarta(karta);
+//		}
+//	}
 	public void erdikoKartakHasieratu(){
 		Karta karta;
 		for(int i=0;i<5;i++){
@@ -145,7 +148,7 @@ public class TaulaKudeatzailea extends Observable {
 	}
 	
 	public void kartaBota(Karta k ){
-		jokalari.kartaBota(k);
+		Tableroa.getTableroa().getJokalariak().getJok(0).kartaBota(k);
 	}
 	
 	public boolean ilaraBeteta(){
@@ -158,11 +161,11 @@ public class TaulaKudeatzailea extends Observable {
 		return k;
 	}
 	
-	public List<Integer> eskukoKartakKargatu(){
-		return Tableroa.getTableroa().eskukoKartakKargatu();
-		
-	}
-	public Karta kartaAurkitu(int i ){
+//	public List<Integer> eskukoKartakKargatu(){
+//		return Tableroa.getTableroa().eskukoKartakKargatu();
+//		
+//	}
+	public Karta kartaAurkitu(int i){
 		return KartaSortzailea.getKartaSortzailea().sortuKarta(i);
 	}
 	
@@ -180,5 +183,9 @@ public class TaulaKudeatzailea extends Observable {
 	
 	public void azkenaKanporatu(){
 		Tableroa.getTableroa().azkenaKamporatu();
+	}
+	
+	public KartaZerrenda eskukoKartakLortu(){
+		return Jokalari.getEskukoKartak();
 	}
 }

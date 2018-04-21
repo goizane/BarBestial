@@ -9,7 +9,7 @@ public class JokalariZerrenda {
 	private static JokalariZerrenda nireJokalariZerrenda = null;
 	
 	//ERAIKITZAILEA
-	private JokalariZerrenda(){
+	JokalariZerrenda(){
 		this.jokZer = new ArrayList<Jokalari>(); 
 	}
 	
@@ -22,7 +22,11 @@ public class JokalariZerrenda {
 		return nireJokalariZerrenda;
 	}
 	
-
+	public Jokalari getJok(int i){
+		return jokZer.get(i);
+		}
 	
-	
+	public void gehituJokalaria(Jokalari j){
+		jokZer.add(j);
+	}
 }
