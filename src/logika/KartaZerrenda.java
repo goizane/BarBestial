@@ -32,6 +32,7 @@ public class KartaZerrenda {
 	}
 	public void kenduKarta(Karta k){
 		lista.remove(k);
+		System.out.println("kendutako karta: " + k.getIzena());
 	}
 	
 	public Karta kartaAltuenaBilatu(){
@@ -45,7 +46,9 @@ public class KartaZerrenda {
 		}
 		return altuena;
 	}
-	
+	public boolean hutsikDago(){
+		 return this.lista.isEmpty();
+	}
 	public boolean errepikatutaDago(int zenb){
 		int zenbat =0;
 		boolean errepikatuta = false;

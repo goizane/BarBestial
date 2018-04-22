@@ -8,7 +8,7 @@ import javax.swing.ImageIcon;
 
 public class Tableroa {
 	private static Tableroa nTableroa;
-	private KartaZerrenda jokokoKartak;
+	private KartaZerrenda jokokoKartak= new KartaZerrenda();
 	private static JokalariZerrenda jokalariak;
 	private KartaZerrenda tabernakoKartak;
 	private KartaZerrenda kalekoKartak;
@@ -29,17 +29,21 @@ public class Tableroa {
 		JokalariZerrenda jokZer = new JokalariZerrenda();
 	
 		Jokalari j1= new Jokalari("Urdina"); //pertsona
-		System.out.println("jokalari urdina sortu da!");
+//		System.out.println("jokalari urdina sortu da!");
 		Jokalari j2 = new Jokalari("Berdea"); //ordenagailua
-		System.out.println("jokalari urdina sortu da!");
-		System.out.println("JOKALARI BERDEA");
+//		System.out.println("jokalari urdina sortu da!");
+//		System.out.println("JOKALARI BERDEA");
 		j1.jokalariaHasieratu();
-		System.out.println("JOKALARI URDINA");
+//		System.out.println("JOKALARI URDINA");
 		j2.jokalariaHasieratu();
 		jokZer.gehituJokalaria(j1);
 		jokZer.gehituJokalaria(j2);
 		this.jokalariak = jokZer;
 	
+	}
+	
+	public void jokatu(Karta k, int jok){
+		this.jokalariak.getJok(jok).jokatu(k);
 	}
 	
 
@@ -66,19 +70,28 @@ public class Tableroa {
 		aukeratutakoKarta.setZenb(karta.getZenb());
 		aukeratutakoKarta.setIrudia(karta.getIrudia());
 	}
+	
 	public void jokokoKartakHasieratu(){
-		jokokoKartak=new KartaZerrenda();
-		Karta karta;
-		ImageIcon irudia;
-		for(int i=0;i<5;i++){
-			karta=new KartaHutsa();
-			irudia= new ImageIcon("src/fitxategiak/KartaHutsa.jpg");
-			karta.setIrudia(irudia);
-			karta.setZenb(0);
-			jokokoKartak.gehituKarta(karta);
-			
+		KartaZerrenda jokokoKart = new KartaZerrenda();
+		for(int i = 0; i<4; i++){
+			jokokoKart.gehituKarta(null);
 		}
+		this.jokokoKartak = jokokoKart;
 	}
+	
+//	public void jokokoKartakHasieratu(){
+//		jokokoKartak=new KartaZerrenda();
+//		Karta karta;
+//		ImageIcon irudia;
+//		for(int i=0;i<5;i++){
+//			karta=new KartaHutsa();
+//			irudia= new ImageIcon("src/fitxategiak/KartaHutsa.jpg");
+//			karta.setIrudia(irudia);
+//			karta.setZenb(0);
+//			jokokoKartak.gehituKarta(karta);
+//			
+//		}
+//	}
 	
 	public Karta bilatuKarta(){
 		Karta erantzuna= null;
@@ -100,6 +113,7 @@ public class Tableroa {
 
 	public void ilaranKartaSartu(Karta k) {
 		this.jokokoKartak.gehituKarta(k);
+		System.out.println("JOKOKO KARTAK: "+ k.getIzena()+ "REKIN");
 		for(int i =0; i<jokokoKartak.tamaina(); i++){
 			System.out.println(jokokoKartak.get(i).getIzena());
 		}

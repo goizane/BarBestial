@@ -135,8 +135,11 @@ public class Taula extends JFrame implements Observer{
 				
 					 Karta karta = kZer.get(0);//0 jokalariak klik egiten duen kartaren posizioagaitik aldatu
 					 System.out.println("klik egindako karta: " + karta.getIzena());
-					 TaulaKudeatzailea.getTaulaKudeatzailea().kartaBota(karta);
-			
+					 TaulaKudeatzailea.getTaulaKudeatzailea().jokatu(karta,0);
+					 System.out.println("Karta bota da");
+					 
+					 TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
+					 
 //					 karta.animaladaEgin();//ANIMALADA EGIN 
 					 
 					 //ANIMALADA ERREKURTSIBOAK EGIN
@@ -167,6 +170,18 @@ public class Taula extends JFrame implements Observer{
 			jsp = new JScrollPane(lable);
 			gamePanel.add(jsp, c);
 		}
+		else if(jokalaria.equals("")){
+			if(karta.equals(null)){
+				ii = new ImageIcon("src/fitxategiak/kartaHutsa.jpg");
+			}
+			else{
+				ii = new ImageIcon("src/fitxategiak/"+karta.getIzena()+jokalaria+".png");
+			}
+			lable = new JButton(ii);
+			jsp = new JScrollPane(lable);
+			gamePanel.add(jsp, c);
+		}
+		
 	}
 
 	

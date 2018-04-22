@@ -58,27 +58,47 @@ public class Jokalari {
 		while(kont<=4){
 			k = KartaSortzailea.getKartaSortzailea().sortuKarta(lista.get(i));
 			this.eskukoKartak.gehituKarta(k);
+			
 			System.out.println(kont+" - "+k.getIzena()+" karta eskuko kartetan sartu da!");
 			kont ++;
 			i++;
 		}
+		System.out.println("eskuko karten tam: " + eskukoKartak.tamaina());
 		while(4<=kont&& kont<=12){
 			k = KartaSortzailea.getKartaSortzailea().sortuKarta(lista.get(i));
 			this.mazoa.push(k);
 			System.out.println(kont+" - "+k.getIzena()+" karta mazoan sartu da!");
+			
 			kont++;
 			i++;
 		}
+		System.out.println("mazoaren tam: " + mazoa.size());
 	}
 
-	public void kartaBota(Karta k){
+	public void jokatu(Karta k){
+			KartaZerrenda eskKartak = new KartaZerrenda();
 			Tableroa.getTableroa().ilaranKartaSartu(k);
 			eskukoKartak.kenduKarta(k);
-			System.out.println("karta sartu da: " + k.getIzena());
+			for(int i = 0; i<3; i++){
+				eskKartak.gehituKarta(eskukoKartak.get(i));
+			}
+			Karta mazokoKarta = mazotikKartaHartu();
+			System.out.println("mazoko karta: " + mazokoKarta.getIzena());
+			eskKartak.gehituKarta(mazokoKarta);
+			
+			
+			 eskukoKartak = eskKartak;
+			
+			System.out.println("ESKUKO KARTAK: " + k.getIzena()+ "BARIK");
+			System.out.println("eskuko karten tam: " + eskukoKartak.tamaina());
+			for(int i = 0; i<eskukoKartak.tamaina(); i++){
+				System.out.println(eskukoKartak.get(i).getIzena());
+			}
 		}
 		
 	public Karta mazotikKartaHartu(){
 		 return this.mazoa.pop();
+		
 	}
 	public void mazokoKartaEskukoKartetara(Karta k){
 		this.eskukoKartak.gehituKarta(k);

@@ -48,7 +48,7 @@ public class TaulaKudeatzailea extends Observable {
 		t=Taula.getInstantzia();
 		t.taulaHasieratu();
 		Tableroa.getTableroa().tableroaHasieratu();
-		erdikoKartakHasieratu();
+
 	
 		this.jokalariKartak = Tableroa.getTableroa().getJokalariak().getJok(0).getEskukoKartak();
 		this.ordenagailuKartak = Tableroa.getTableroa().getJokalariak().getJok(1).getEskukoKartak();
@@ -63,6 +63,27 @@ public class TaulaKudeatzailea extends Observable {
 		t.bistaratu();
 	}
 	
+	public KartaZerrenda getJokokoKartak(){
+		return Tableroa.getTableroa().getJokokoKartak();
+	}
+	
+	public void grafikaEguneratu(){
+		t=Taula.getInstantzia();
+		Tableroa.getTableroa();
+		t.taulaHasieratu();
+		this.jokokoKartak = Tableroa.getTableroa().getJokokoKartak();
+		this.jokalariKartak = Tableroa.getTableroa().getJokalariak().getJok(0).getEskukoKartak();
+		this.ordenagailuKartak = Tableroa.getTableroa().getJokalariak().getJok(1).getEskukoKartak();
+		String jokalari = Tableroa.getTableroa().getJokalariak().getJok(0).getKolorea();
+		String ordenagailu = Tableroa.getTableroa().getJokalariak().getJok(1).getKolorea();
+		taularatuKartak(ordenagailuKartak,"Berdea");
+		taularatuKartak(jokokoKartak,"");
+		taularatuKartak(jokalariKartak,"Urdina");
+		t.konputagailuaHasieratu();
+		t.erdiaHasieratu();
+		t.jokalariaHasieratu();
+		t.bistaratu();
+	}
 //	public Karta kartaKargatu(KartaZerrenda zerrenda){
 //		Karta erantzuna;
 //		boolean badago = true;
@@ -113,42 +134,44 @@ public class TaulaKudeatzailea extends Observable {
 //			ordenagailuKartak.gehituKarta(karta);
 //		}
 //	}
-	public void erdikoKartakHasieratu(){
-		Karta karta;
-		for(int i=0;i<5;i++){
-			karta=new KartaHutsa();
-			jokokoKartak.gehituKarta(karta);
-		}
-	}
+
 	
-	public void taularatuKartak(KartaZerrenda kartak, String jokalaria){
-		if(jokalaria.equals("Berdea")){
+	public void taularatuKartak(KartaZerrenda kartak, String kolorea){
+		if(kolorea.equals("Berdea")){
 			t.gehituKarta("taberna.png", null);
 			t.gehituMazoa("Berdea");
 		}
-		if(!"".equals(jokalaria)){
+		if(!"".equals(kolorea)){
 			for(int i=0;i<4;i++){
 			
-				t.gehituKarta(jokalaria, kartak.get(i));
+				t.gehituKarta(kolorea, kartak.get(i));
 				
 			}
 			
-			if(jokalaria.equals("Urdina")){
+			if(kolorea.equals("Urdina")){
 				t.gehituMazoa("Urdina");
 			}
 		}else{
-			for(int i=0;i<5;i++){
-				t.gehituKarta("kartaHutsa.jpg", null);
+			if(kartak.hutsikDago()){
+				for(int i=0;i<5;i++){
+					t.gehituKarta("kartaHutsa.jpg", null);
+				}
+			}else{
+				for(int i=0;i<5;i++){
+					t.gehituKarta("", kartak.get(i));
+				}
+			
 			}
 		}
 		
-		if(jokalaria.equals("Berdea")){
+		if(kolorea.equals("Berdea")){
 			t.gehituKarta("zakarrontzia.png", null);
 		}
 	}
 	
-	public void kartaBota(Karta k ){
-		Tableroa.getTableroa().getJokalariak().getJok(0).kartaBota(k);
+	public void jokatu(Karta k, int jok ){
+		Tableroa.getTableroa().jokatu(k, jok);
+	
 	}
 	
 	public boolean ilaraBeteta(){
