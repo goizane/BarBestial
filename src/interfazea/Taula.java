@@ -44,6 +44,11 @@ public class Taula extends JFrame {
 	private JPanel userPanel = new JPanel(new GridBagLayout());
 	private JPanel trashPanel = new JPanel(new GridBagLayout());
 	private JPanel tabernPanel = new JPanel(new GridBagLayout());
+	JButton lable = new JButton();
+	JButton lable1 = new JButton();
+	JButton lable2 = new JButton();
+	JButton lable3 = new JButton();
+	JButton lable4 = new JButton();
 
 	public static void main(String[] args){
 
@@ -116,16 +121,16 @@ public class Taula extends JFrame {
 	public void gehituKarta(String jokalaria, Karta karta){
 		ImageIcon ii;
 		GridBagConstraints c = new GridBagConstraints();
-		JButton lable = null;
-		JButton lable1 = null;
-		JButton lable2 = null;
-		JButton lable3 = null;
-		JButton lable4 = null;
+//		JButton lable = null;
+//		JButton lable1 = null;
+//		JButton lable2 = null;
+//		JButton lable3 = null;
+//		JButton lable4 = null;
 		JScrollPane jsp;
 	
 		if(jokalaria.equals("taberna.png") || jokalaria.equals("zakarrontzia.png") ){
 			ii = new ImageIcon("src/fitxategiak/"+jokalaria);
-			lable = new JButton(ii);
+			lable.setIcon(ii);
 			jsp = new JScrollPane(lable);
 			computerPanel.add(jsp, c);
 		}else if(jokalaria.equals("Urdina")){
