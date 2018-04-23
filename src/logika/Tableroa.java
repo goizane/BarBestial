@@ -45,9 +45,17 @@ public class Tableroa {
 	
 	public void jokatu(Karta k, int jok){
 		this.jokalariak.getJok(jok).jokatu(k);
+		k.animaladaEgin();
+		animaladaErrekurtsiboakEgin();
 	}
 	
-
+	public void animaladaErrekurtsiboakEgin(){
+		for( int i =0; i<this.jokokoKartak.tamaina(); i++){
+			if(jokokoKartak.get(i).errekurtsiboa){
+				jokokoKartak.get(i).animaladaEgin();
+			}
+		}
+	}
 	
 	public KartaZerrenda getJokokoKartak() {
 		return jokokoKartak;

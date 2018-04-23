@@ -208,7 +208,11 @@ public class TaulaKudeatzailea extends Observable {
 		Tableroa.getTableroa().azkenaKamporatu();
 	}
 	
-	public KartaZerrenda eskukoKartakLortu(){
-		return Jokalari.getEskukoKartak();
+	public KartaZerrenda JokalariarenEskukoKartakLortu(){
+		return Tableroa.getTableroa().getJokalariak().getJok(0).getEskukoKartak();
+	}
+	
+	public KartaZerrenda OrdenagailuarenEskukoKartakLortu(){
+		return Tableroa.getTableroa().getJokalariak().getJok(1).getEskukoKartak();
 	}
 }

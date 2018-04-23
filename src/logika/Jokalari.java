@@ -43,7 +43,7 @@ public class Jokalari {
 			
 			if(!kartaZerrenda.contains(zenb)){
 				kartaZerrenda.add(zenb);
-				System.out.println(kont +"sartu da "+zenb);
+//				System.out.println(kont +"sartu da "+zenb);
 				kont++;
 			}
 		}
@@ -59,15 +59,15 @@ public class Jokalari {
 			k = KartaSortzailea.getKartaSortzailea().sortuKarta(lista.get(i));
 			this.eskukoKartak.gehituKarta(k);
 			
-			System.out.println(kont+" - "+k.getIzena()+" karta eskuko kartetan sartu da!");
+//			System.out.println(kont+" - "+k.getIzena()+" karta eskuko kartetan sartu da!");
 			kont ++;
 			i++;
 		}
-		System.out.println("eskuko karten tam: " + eskukoKartak.tamaina());
+//		System.out.println("eskuko karten tam: " + eskukoKartak.tamaina());
 		while(4<=kont&& kont<=12){
 			k = KartaSortzailea.getKartaSortzailea().sortuKarta(lista.get(i));
 			this.mazoa.push(k);
-			System.out.println(kont+" - "+k.getIzena()+" karta mazoan sartu da!");
+//			System.out.println(kont+" - "+k.getIzena()+" karta mazoan sartu da!");
 			
 			kont++;
 			i++;
