@@ -50,6 +50,17 @@ public class KartaZerrenda {
 		}
 		return altuena;
 	}
+	
+	public boolean ilaraBeteta(){
+		boolean beteta = false;
+		Karta k = new KartaHutsa();
+		if(this.lista.contains(k)){
+			beteta= true;
+			System.out.println("Beteta dago!");
+		}
+		return beteta;
+	}
+	
 	public boolean hutsikDago(){
 		 return this.lista.isEmpty();
 	}

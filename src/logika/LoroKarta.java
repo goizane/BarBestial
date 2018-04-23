@@ -9,9 +9,11 @@ public class LoroKarta extends Karta {
 		this.errekurtsiboa = false;
 	}
 
-	public void animaladaEgin() { //jokalariak aukeratutako kartari patada eman
+	public void animaladaEgin(Karta k) { //jokalariak aukeratutako kartari patada eman
 		// TODO Auto-generated method stub
 		System.out.println("LOROAREN ANIMALADA");
+		Tableroa.getTableroa().getJokokoKartak().kenduKarta(k);
+		
 	}
 	
 }

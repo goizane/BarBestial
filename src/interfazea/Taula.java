@@ -20,6 +20,7 @@ import javax.swing.border.EmptyBorder;
 
 import logika.FokaKarta;
 import logika.Jokalari;
+import logika.KanguroKarta;
 import logika.Karta;
 import logika.KartaZerrenda;
 import logika.MofetaKarta;
@@ -218,16 +219,13 @@ public class Taula extends JFrame {
 		//JOKALARIAREN TXANDA
 		 KartaZerrenda jKartak = TaulaKudeatzailea.getTaulaKudeatzailea().JokalariarenEskukoKartakLortu();
 	
-		 Karta jkarta = jKartak.get(botoia);
-		 System.out.println("Jokalariak klik egindako karta: " + jkarta.getIzena());
-
+//		 Karta jkarta = jKartak.get(botoia);
+//		 System.out.println("Jokalariak klik egindako karta: " + jkarta.getIzena());
+		 Karta jkarta = new KanguroKarta();
 		 System.out.println(botoia);
 		 System.out.println("JOKOKO KARTAK");
 		
-		 if(TaulaKudeatzailea.getTaulaKudeatzailea().ilaraBeteta()){ //Lehenengo biak tabernan sartu eta azkena kanporatu
-			 TaulaKudeatzailea.getTaulaKudeatzailea().lehenengoBiakTabernanSartu();
-			 TaulaKudeatzailea.getTaulaKudeatzailea().azkenaKanporatu();
-		 }
+		
 		
 		 TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu(jkarta, 0);
 		 
@@ -240,10 +238,7 @@ public class Taula extends JFrame {
 		 
 		 System.out.println("JOKOKO KARTAK");
 		 
-		 if(TaulaKudeatzailea.getTaulaKudeatzailea().ilaraBeteta()){ //Lehenengo biak tabernan sartu eta azkena kanporatu
-			 TaulaKudeatzailea.getTaulaKudeatzailea().lehenengoBiakTabernanSartu();
-			 TaulaKudeatzailea.getTaulaKudeatzailea().azkenaKanporatu();
-		 }
+		 
 		 TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu(okarta, 1);
 	}
 

@@ -38,5 +38,9 @@ public abstract class Karta {
 	public void setIzena(String izena) {
 		this.izena = izena;
 	}
+	public void animaladaEgin(int i) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

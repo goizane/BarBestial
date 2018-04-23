@@ -11,12 +11,14 @@ public class Jokalari {
 	private String izena;
 	private static KartaZerrenda eskukoKartak;
 	private Stack<Karta> mazoa;
+	private int lortutakoPuntuak;
 	
 	//ERAIKITZAILEA
 	public Jokalari(String izena){
 		this.izena= new String();
 		this.eskukoKartak = new KartaZerrenda();
 		this.mazoa = new Stack<Karta>();
+		
 	}
 	
 	//METODOAK
@@ -80,12 +82,19 @@ public class Jokalari {
 			Tableroa.getTableroa().ilaranKartaSartu(k);
 		
 			eskukoKartak.kenduKarta(k);
+			if(eskukoKartak.hutsikDago()){
+				Tableroa.getTableroa().getJokalariak().getJok(0).puntuakZenbatu();
+				Tableroa.getTableroa().getJokalariak().getJok(1).puntuakZenbatu();
+			}
 			for(int i = 0; i<3; i++){
 				eskKartak.gehituKarta(eskukoKartak.get(i));
 			}
-			Karta mazokoKarta = mazotikKartaHartu();
-			System.out.println("mazoko karta: " + mazokoKarta.getIzena());
-			eskKartak.gehituKarta(mazokoKarta);
+			if(!mazoa.isEmpty()){
+				Karta mazokoKarta = mazotikKartaHartu();
+				System.out.println("mazoko karta: " + mazokoKarta.getIzena());
+				eskKartak.gehituKarta(mazokoKarta);
+			}
+			
 			
 			
 			 eskukoKartak = eskKartak;
@@ -101,6 +110,11 @@ public class Jokalari {
 		 return this.mazoa.pop();
 		
 	}
+	
+	public void puntuakZenbatu(){
+		
+	}
+	
 	public void mazokoKartaEskukoKartetara(Karta k){
 		this.eskukoKartak.gehituKarta(k);
 	}

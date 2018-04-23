@@ -6,6 +6,8 @@ import java.util.Random;
 
 import javax.swing.ImageIcon;
 
+import interfazea.TaulaKudeatzailea;
+
 public class Tableroa {
 	private static Tableroa nTableroa;
 	private KartaZerrenda jokokoKartak= new KartaZerrenda();
@@ -47,6 +49,10 @@ public class Tableroa {
 		this.jokalariak.getJok(jok).jokatu(k);
 		k.animaladaEgin();
 		animaladaErrekurtsiboakEgin();
+		if(jokokoKartak.ilaraBeteta()){ //Lehenengo biak tabernan sartu eta azkena kanporatu
+			 ilarakoLehenengoBiakSartu();
+			 azkenaKanporatu();
+		 }
 	}
 	
 	public void animaladaErrekurtsiboakEgin(){
@@ -102,15 +108,7 @@ public class Tableroa {
 		return erantzuna;
 	}
 	
-	public boolean ilaraBeteta(){
-		boolean beteta = false;
-		Karta k = new KartaHutsa();
-		if(jokokoKartak.dauka(k)){
-			beteta= true;
-			System.out.println("Beteta dago!");
-		}
-		return beteta;
-	}
+	
 
 	public void ilaranKartaSartu(Karta k) {
 		int pos = jokokoKartak.tamainaKartaHutsBarik();
@@ -173,7 +171,7 @@ public class Tableroa {
 		}
 	}
 	
-	public void azkenaKamporatu(){
+	public void azkenaKanporatu(){
 		Karta k = this.jokokoKartak.get(3);
 		this.kalekoKartak.gehituKarta(k);
 		this.jokokoKartak.kenduKarta(k);

@@ -174,9 +174,7 @@ public class TaulaKudeatzailea extends Observable {
 	
 	}
 	
-	public boolean ilaraBeteta(){
-		return Tableroa.getTableroa().ilaraBeteta();
-	}
+	
 	
 	public Karta mazotikKartaHartu(){
 		Karta k= jokalari.mazotikKartaHartu();
@@ -200,13 +198,8 @@ public class TaulaKudeatzailea extends Observable {
 		
 	}
 	
-	public void lehenengoBiakTabernanSartu(){
-		Tableroa.getTableroa().ilarakoLehenengoBiakSartu();
-	}
 	
-	public void azkenaKanporatu(){
-		Tableroa.getTableroa().azkenaKamporatu();
-	}
+	
 	
 	public KartaZerrenda JokalariarenEskukoKartakLortu(){
 		return Tableroa.getTableroa().getJokalariak().getJok(0).getEskukoKartak();
