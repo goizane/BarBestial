@@ -78,6 +78,7 @@ public class Jokalari {
 	public void jokatu(Karta k){
 			KartaZerrenda eskKartak = new KartaZerrenda();
 			Tableroa.getTableroa().ilaranKartaSartu(k);
+		
 			eskukoKartak.kenduKarta(k);
 			for(int i = 0; i<3; i++){
 				eskKartak.gehituKarta(eskukoKartak.get(i));

@@ -11,7 +11,7 @@ public class LoroKarta extends Karta {
 
 	public void animaladaEgin() { //jokalariak aukeratutako kartari patada eman
 		// TODO Auto-generated method stub
-		
+		System.out.println("LOROAREN ANIMALADA");
 	}
 	
 }

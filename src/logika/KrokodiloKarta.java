@@ -12,6 +12,6 @@ public class KrokodiloKarta extends Karta {
 
 	public void animaladaEgin() {
 		// TODO Auto-generated method stub
-		
+		System.out.println("KROKODILOAREN ANIMALADA");
 	}
 }

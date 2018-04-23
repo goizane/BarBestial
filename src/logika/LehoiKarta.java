@@ -12,7 +12,7 @@ public class LehoiKarta extends Karta {
 
 	public void animaladaEgin() {
 		// TODO Auto-generated method stub
-		
+		System.out.println("LEHOIAREN ANIMALADA");
 	}
 
 }

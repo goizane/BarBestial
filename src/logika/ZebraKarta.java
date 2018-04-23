@@ -13,7 +13,7 @@ public class ZebraKarta extends Karta {
 
 	public void animaladaEgin() { // ez ditu kokrodiloak eta hipopotamoak pasatzen uzten
 		// TODO Auto-generated method stub
-		
+		System.out.println("ZEBRAREN ANIMALADA");
 	}
 
 }

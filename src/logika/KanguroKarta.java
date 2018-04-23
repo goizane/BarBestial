@@ -12,7 +12,7 @@ public class KanguroKarta extends Karta {
 
 	public void animaladaEgin() { //karta 1 edo bi saltatzen ditu (jokalariak aukeratzen du)
 		// TODO Auto-generated method stub
-		
+		System.out.println("KANGUROAREN ANIMALADA");
 	}
 	
 }

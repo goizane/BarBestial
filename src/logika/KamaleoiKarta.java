@@ -12,7 +12,7 @@ public class KamaleoiKarta extends Karta {
 
 	public void animaladaEgin() { // nahi duen animaliaren animalada egiten du
 		// TODO Auto-generated method stub
-		
+		System.out.println("KAMALEOIAREN ANIMALADA");
 	}
 
 }

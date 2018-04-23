@@ -27,6 +27,10 @@ public class KartaZerrenda {
 		return lista.get(i);
 	}
 	
+	public boolean dauka (Karta k){
+		return this.lista.contains(k);
+	}
+	
 	public void hasieratu(){
 		lista=new ArrayList<Karta>();
 	}
@@ -63,6 +67,20 @@ public class KartaZerrenda {
 		return errepikatuta;
 	}
 	
+	public int tamainaKartaHutsBarik(){
+		int kont =0;
+		
+		
+			for(Karta k : this.lista){
+				if(k.zenb!=0){
+				
+				kont ++;
+				}
+			}
+			return kont;
+		}
+		
+	
 	
 	
 	public Karta azkenKartaBilatu(int zenb){
@@ -76,27 +94,40 @@ public class KartaZerrenda {
 	}
 	
 	public void kartaPosizioBateanSartu(Karta k, int pos){
-		ArrayList<Karta> zerrendaBerria = null;
-		int kont = 0;
-		for(Karta karta : this.lista){
-			if(kont == pos){
+		ArrayList<Karta> zerrendaBerria = new ArrayList<Karta>();
+		for (int i = 0; i<this.lista.size();i++){
+			Karta h = new KartaHutsa();
+			if(i == pos){
 				zerrendaBerria.add(k);
+				
+			}else{
+				zerrendaBerria.add(this.lista.get(i));
 			}
-			
-			zerrendaBerria.add(karta);
-			
 		}
 		this.lista = zerrendaBerria;
 	}
 	
-	public void zerrendarenOrdenaAldatu(){
-		ArrayList<Karta> zerrendaBerria = null;
-		for(int i = this.lista.size()-1; i>=0; i--){
-			Karta k = this.lista.get(i);
-			zerrendaBerria.add(k);
-		}
+	
+	
+	public void ordenardenaAldatu(){
+		ArrayList<Karta> zerrendaBerria = new ArrayList<Karta>();
+		
+			for(int i = this.lista.size()-1; i>=0; i--){
+				Karta k = this.lista.get(i);
+				zerrendaBerria.add(k);
+			}
+			if(zerrendaBerria.size()<5){
+				for(int j = zerrendaBerria.size(); j<=5; j++){
+					Karta h = new KartaHutsa();
+					zerrendaBerria.add(h);
+				}
+			}
+		
+
 		this.lista= zerrendaBerria;
+		
 	}
+	
 	
 
 	

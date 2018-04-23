@@ -11,8 +11,9 @@ public class FokaKarta extends Karta {
 
 
 	public void animaladaEgin() { //atearen eta patadaren posizioak aldatzen ditu
-		Tableroa.getTableroa().getJokokoKartak().zerrendarenOrdenaAldatu();
 		
+		Tableroa.getTableroa().zerrendarenOrdenaAldatu();
+		System.out.println("FOKAREN ANIMALADA");
 	}
 
 }

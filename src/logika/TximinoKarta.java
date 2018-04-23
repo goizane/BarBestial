@@ -14,7 +14,7 @@ public class TximinoKarta extends Karta {
 								  // bi baldin badaude: krokodiloak eta hipopotamoak ilaratik kanporatu
 											  		  //tximinoa lehenengo jarriko da eta beste tximinoak bere atzetik jarriko ditu
 		KartaZerrenda jokokoKartak = Tableroa.getTableroa().getJokokoKartak();
-		
+		System.out.println("TXIMINOAREN ANIMALADA");
 		if(jokokoKartak.errepikatutaDago(4)){
 			for(int i=0; i<jokokoKartak.tamaina();i++){
 				if(jokokoKartak.get(i).zenb==10|| jokokoKartak.get(i).zenb==11){

@@ -38,6 +38,7 @@ public class Tableroa {
 		j2.jokalariaHasieratu();
 		jokZer.gehituJokalaria(j1);
 		jokZer.gehituJokalaria(j2);
+		jokokoKartakHasieratu();
 		this.jokalariak = jokZer;
 	
 	}
@@ -73,26 +74,16 @@ public class Tableroa {
 	
 	public void jokokoKartakHasieratu(){
 		KartaZerrenda jokokoKart = new KartaZerrenda();
-		for(int i = 0; i<4; i++){
-			jokokoKart.gehituKarta(null);
+		System.out.println("JOKOKO KARTAK HASIERATU:");
+		for(int i = 0; i<5; i++){
+			Karta k = new KartaHutsa();
+			jokokoKart.gehituKarta(k);
+			System.out.println(k.getZenb());
 		}
 		this.jokokoKartak = jokokoKart;
 	}
 	
-//	public void jokokoKartakHasieratu(){
-//		jokokoKartak=new KartaZerrenda();
-//		Karta karta;
-//		ImageIcon irudia;
-//		for(int i=0;i<5;i++){
-//			karta=new KartaHutsa();
-//			irudia= new ImageIcon("src/fitxategiak/KartaHutsa.jpg");
-//			karta.setIrudia(irudia);
-//			karta.setZenb(0);
-//			jokokoKartak.gehituKarta(karta);
-//			
-//		}
-//	}
-	
+
 	public Karta bilatuKarta(){
 		Karta erantzuna= null;
 		for(int i = 0; i<jokokoKartak.tamaina();i++){
@@ -105,20 +96,30 @@ public class Tableroa {
 	
 	public boolean ilaraBeteta(){
 		boolean beteta = false;
-		if(jokokoKartak.tamaina()==5){
+		Karta k = new KartaHutsa();
+		if(jokokoKartak.dauka(k)){
 			beteta= true;
+			System.out.println("Beteta dago!");
 		}
 		return beteta;
 	}
 
 	public void ilaranKartaSartu(Karta k) {
-		this.jokokoKartak.gehituKarta(k);
+		int pos = jokokoKartak.tamainaKartaHutsBarik();
+	
+		System.out.println("jok tam: " +jokokoKartak.tamainaKartaHutsBarik());
+		this.jokokoKartak.kartaPosizioBateanSartu(k, pos);
 		System.out.println("JOKOKO KARTAK: "+ k.getIzena()+ "REKIN");
+		
 		for(int i =0; i<jokokoKartak.tamaina(); i++){
+			System.out.println("jokoko karten tam: " + jokokoKartak.tamaina());
 			System.out.println(jokokoKartak.get(i).getIzena());
 		}
+	}
 	
-		}
+	
+	
+		
 	
 //	public List<Integer> eskukoKartakKargatu(){
 //		boolean nahikoa = false;
@@ -174,7 +175,34 @@ public class Tableroa {
 		this.jokokoKartak.kenduKarta(k);
 		
 	}
-//	public static void main(String[] args) {
-//		tableroaHasieratu();
-//	}
+	
+	public void zerrendarenOrdenaAldatu(){
+		for (int i = 0; i< jokokoKartak.tamaina(); i++){
+			System.out.println(jokokoKartak.get(i).zenb);
+		}
+		KartaZerrenda kZer = new KartaZerrenda();
+		boolean amaitu = false;
+		System.out.println("tamaina: "+this.jokokoKartak.tamainaKartaHutsBarik());
+		if(this.jokokoKartak.tamainaKartaHutsBarik()==1){
+			
+			kZer = this.jokokoKartak;
+		}else{
+		
+				for(int i =0; i<jokokoKartak.tamaina(); i++){
+					
+					if(this.jokokoKartak.get(i).getZenb()!=0){
+						kZer.gehituKarta(this.jokokoKartak.get(i));
+					}
+				}		
+				
+			
+			kZer.ordenardenaAldatu();
+		}
+		
+		
+		for (int i = 0; i< kZer.tamaina(); i++){
+			System.out.println(kZer.get(i).zenb);
+		}
+	}
+	
 }

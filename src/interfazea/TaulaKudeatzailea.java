@@ -48,10 +48,11 @@ public class TaulaKudeatzailea extends Observable {
 		t=Taula.getInstantzia();
 		t.taulaHasieratu();
 		Tableroa.getTableroa().tableroaHasieratu();
-
+	
 	
 		this.jokalariKartak = Tableroa.getTableroa().getJokalariak().getJok(0).getEskukoKartak();
 		this.ordenagailuKartak = Tableroa.getTableroa().getJokalariak().getJok(1).getEskukoKartak();
+		this.jokokoKartak = Tableroa.getTableroa().getJokokoKartak();
 		String jokalari = Tableroa.getTableroa().getJokalariak().getJok(0).getKolorea();
 		String ordenagailu = Tableroa.getTableroa().getJokalariak().getJok(1).getKolorea();
 		taularatuKartak(ordenagailuKartak,"Berdea");
@@ -67,10 +68,11 @@ public class TaulaKudeatzailea extends Observable {
 		return Tableroa.getTableroa().getJokokoKartak();
 	}
 	
-	public void grafikaEguneratu(){
+	public void grafikaEguneratu(Karta k, int jok){
 		t=Taula.getInstantzia();
-		Tableroa.getTableroa();
 		t.taulaHasieratu();
+		Tableroa.getTableroa().jokatu(k, jok);
+		
 		this.jokokoKartak = Tableroa.getTableroa().getJokokoKartak();
 		this.jokalariKartak = Tableroa.getTableroa().getJokalariak().getJok(0).getEskukoKartak();
 		this.ordenagailuKartak = Tableroa.getTableroa().getJokalariak().getJok(1).getEskukoKartak();
@@ -78,6 +80,7 @@ public class TaulaKudeatzailea extends Observable {
 		String ordenagailu = Tableroa.getTableroa().getJokalariak().getJok(1).getKolorea();
 		taularatuKartak(ordenagailuKartak,"Berdea");
 		taularatuKartak(jokokoKartak,"");
+		
 		taularatuKartak(jokalariKartak,"Urdina");
 		t.konputagailuaHasieratu();
 		t.erdiaHasieratu();
@@ -151,17 +154,14 @@ public class TaulaKudeatzailea extends Observable {
 			if(kolorea.equals("Urdina")){
 				t.gehituMazoa("Urdina");
 			}
-		}else{
-			if(kartak.hutsikDago()){
+		}else{ //"" --> jokoko kartak
+			
 				for(int i=0;i<5;i++){
-					t.gehituKarta("kartaHutsa.jpg", null);
-				}
-			}else{
-				for(int i=0;i<5;i++){
-					t.gehituKarta("", kartak.get(i));
+					t.gehituKarta(kolorea, kartak.get(i));
 				}
 			
-			}
+		
+			
 		}
 		
 		if(kolorea.equals("Berdea")){
