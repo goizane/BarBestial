@@ -217,24 +217,45 @@ public class Taula extends JFrame {
 	}
 	
 	public void actionListener(int botoia) {
-
-
 		//JOKALARIAREN TXANDA
 		KartaZerrenda jKartak = TaulaKudeatzailea.getTaulaKudeatzailea().JokalariarenEskukoKartakLortu();
 
 		Karta jkarta = jKartak.get(botoia);
-		//		 System.out.println("Jokalariak klik egindako karta: " + jkarta.getIzena());
+//		 System.out.println("Jokalariak klik egindako karta: " + jkarta.getIzena());
 //		Karta jkarta = new KanguroKarta();
 		System.out.println(botoia);
 		System.out.println("JOKOKO KARTAK");
 		
+		TaulaKudeatzailea.getTaulaKudeatzailea().jokatu(jkarta, 0);
+		if(jkarta.getZenb()==2){ //loro kartak aukeratu behar du 
+			if(TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartenTam()!=1){
+				new LoroUI();
+			}
+		}
+		else if(jkarta.getZenb()==3){ //kanguroak zenbat salto egin nahi dituen aukeratu behar du(1 edo 2)
+
+			new KanguroUI();
+
+		}
+		else if(jkarta.getZenb()==5){
+			new KamaleoiUI();
+		}
+		else{
+//			TaulaKudeatzailea.getTaulaKudeatzailea().animaladaEgin(jkarta);
+//			TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
+		}
+
+
 //		ImageIcon i = new ImageIcon("src/fitxategiak/"+jkarta.getIzena()+"Urdina.png");
 //		JButton kartaBerria = new JButton(i);
 //		gamePanel.add(kartaBerria);
 
+		TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakBetetaSartuKanporatu();
 
 		TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu(jkarta, 0);
 
+		
+		
 		//ORDENAGAILUAREN TXANDA
 		KartaZerrenda oKartak = TaulaKudeatzailea.getTaulaKudeatzailea().OrdenagailuarenEskukoKartakLortu();
 
@@ -245,6 +266,6 @@ public class Taula extends JFrame {
 		System.out.println("JOKOKO KARTAK");
 
 
-		TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu(okarta, 1);
+//		TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu(okarta, 1);
 	}
 }
