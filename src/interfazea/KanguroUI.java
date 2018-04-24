@@ -2,13 +2,16 @@ package interfazea;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.AbstractButton;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
@@ -22,6 +25,8 @@ public class KanguroUI extends JFrame {
 	JButton botoia1 = new JButton();
 	JButton botoia2 = new JButton();
 	JLabel label = new JLabel();
+	JPanel zenbakienPanela = new JPanel();
+	
 	public KanguroUI(){
 		super("Kanguro panela");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -29,9 +34,14 @@ public class KanguroUI extends JFrame {
 		add(label,BorderLayout.NORTH );
 		botoia1.setText("1");
 		botoia2.setText("2");
-		setLayout(new GridLayout(1,0));
-		add(botoia1);
-		add(botoia2);
+		
+		
+		zenbakienPanela.setLayout(new GridLayout(1, 2));
+		zenbakienPanela.add(botoia1);
+		zenbakienPanela.add(botoia2);
+		add(zenbakienPanela, BorderLayout.SOUTH);
+		pack();
+		setVisible(true);
 		
 		botoia1.addActionListener(new ActionListener() {
 			
@@ -39,7 +49,10 @@ public class KanguroUI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				Karta k = new KanguroKarta();
-				k.animaladaEgin(1);
+				TaulaKudeatzailea.getTaulaKudeatzailea().kanguroariSaltoaEsleitu(1);
+				TaulaKudeatzailea.getTaulaKudeatzailea().animaladaEgin(k);
+				System.out.println("salto bat egin nahi du");
+				setVisible(false);
 			}
 });
 		
@@ -49,7 +62,10 @@ public class KanguroUI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				Karta k = new KanguroKarta();
-				k.animaladaEgin(2);
+				TaulaKudeatzailea.getTaulaKudeatzailea().kanguroariSaltoaEsleitu(2);
+				TaulaKudeatzailea.getTaulaKudeatzailea().animaladaEgin(k);
+				System.out.println(" bi salto egin nahi ditu");
+				setVisible(false);
 			}
 });
 		pack();

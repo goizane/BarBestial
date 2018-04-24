@@ -47,13 +47,22 @@ public class Tableroa {
 	
 	public void jokatu(Karta k, int jok){
 		this.jokalariak.getJok(jok).jokatu(k);
-		k.animaladaEgin();
-		animaladaErrekurtsiboakEgin();
-		if(jokokoKartak.ilaraBeteta()){ //Lehenengo biak tabernan sartu eta azkena kanporatu
+		
+	}
+	
+	public boolean jokokoKartakBeteta(){
+		boolean beteta = false;
+		if(jokokoKartak.ilaraBeteta()){
+			beteta = true;
+		}
+		return beteta;
+	}
+	public void jokokoKartakSartuKanporatu(){
+		 //Lehenengo biak tabernan sartu eta azkena kanporatu
 			 ilarakoLehenengoBiakSartu();
 			 azkenaKanporatu();
 		 }
-	}
+	
 	
 	public void animaladaErrekurtsiboakEgin(){
 		for( int i =0; i<this.jokokoKartak.tamaina(); i++){
@@ -97,7 +106,7 @@ public class Tableroa {
 		this.jokokoKartak = jokokoKart;
 	}
 	
-
+	
 	public Karta bilatuKarta(){
 		Karta erantzuna= null;
 		for(int i = 0; i<jokokoKartak.tamaina();i++){
@@ -127,42 +136,6 @@ public class Tableroa {
 	
 		
 	
-//	public List<Integer> eskukoKartakKargatu(){
-//		boolean nahikoa = false;
-//		boolean badago = false;
-//		int kont = 0;
-//		List<Integer> kartaZerrenda = new ArrayList<Integer>();
-//
-//		while (!nahikoa) {
-//			badago = false;
-//			Random random = new Random();
-//			int karta = random.nextInt(12 - 1 + 1) + 1;
-//			for (int i = 0; i < kartaZerrenda.size(); i++) {
-//				if (kartaZerrenda.get(i) == karta) {
-//					badago = true;
-//					break;
-//				}
-//			}
-//			if (!badago) {
-//				kartaZerrenda.add(karta);
-//				if (kartaZerrenda.size() == 4) {
-//					nahikoa = true;
-//				}
-//			}
-//		}
-//		return kartaZerrenda;
-//	}
-//	
-//	public List<Integer> mazokoKartakKargatu(List<Integer> eskua){
-//		List<Integer> mazoa = new ArrayList<Integer>();
-//		for(int i : eskua){
-//			if(!mazoa.contains(i)){
-//				mazoa.add(i);
-//			}
-//		}
-//		return mazoa;
-//	}
-//	
 	public void ilarakoLehenengoBiakSartu(){
 		for(int i =0; i<2; i++){
 			Karta k = this.jokokoKartak.get(i);
@@ -210,5 +183,7 @@ public class Tableroa {
 			System.out.println(kZer.get(i).zenb);
 		}
 	}
+	
+	
 	
 }

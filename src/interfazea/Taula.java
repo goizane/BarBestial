@@ -20,9 +20,11 @@ import javax.swing.border.EmptyBorder;
 
 import logika.FokaKarta;
 import logika.Jokalari;
+import logika.KamaleoiKarta;
 import logika.KanguroKarta;
 import logika.Karta;
 import logika.KartaZerrenda;
+import logika.LoroKarta;
 import logika.MofetaKarta;
 import logika.Tableroa;
 
@@ -229,22 +231,42 @@ public class Taula extends JFrame {
 		 Karta jkarta = new KanguroKarta();
 		 System.out.println(botoia);
 		 System.out.println("JOKOKO KARTAK");
+		 TaulaKudeatzailea.getTaulaKudeatzailea().jokatu(jkarta, 0);
+		 if(jkarta.getZenb()==2){ //loro kartak aukeratu behar du 
+			 if(TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartenTam()!=1){
+					new LoroUI();
+				}
+		 }
+		 else if(jkarta.getZenb()==3){ //kanguroak zenbat salto egin nahi dituen aukeratu behar du(1 edo 2)
+			
+			 new KanguroUI();
+			 
+		 }
+		 else if(jkarta.getZenb()==5){
+			 new KamaleoiUI();
+		 }
+		 else{
+			 TaulaKudeatzailea.getTaulaKudeatzailea().animaladaEgin(jkarta);
+		 }
 		
+		 
 		
-		
-		 TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu(jkarta, 0);
+		 TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
+		 TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakBetetaSartuKanporatu();
+		 
+		 //GRAFIKA EGUNERATU
 		 
 		 //ORDENAGAILUAREN TXANDA
-		 KartaZerrenda oKartak = TaulaKudeatzailea.getTaulaKudeatzailea().OrdenagailuarenEskukoKartakLortu();
-			
-		 Karta okarta = jKartak.get(1);
-		 System.out.println("Ordenagailuak aukeratutako karta: " + okarta.getIzena());
-
+//		 KartaZerrenda oKartak = TaulaKudeatzailea.getTaulaKudeatzailea().OrdenagailuarenEskukoKartakLortu();
+//			
+//		 Karta okarta = jKartak.get(1);
+//		 System.out.println("Ordenagailuak aukeratutako karta: " + okarta.getIzena());
+//
+//		 
+//		 System.out.println("JOKOKO KARTAK");
+//		 
 		 
-		 System.out.println("JOKOKO KARTAK");
 		 
-		 
-		 TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu(okarta, 1);
 	}
 
 	

@@ -1,7 +1,7 @@
 package logika;
 
 public class KamaleoiKarta extends Karta {
-	
+	static Karta kopiatu;
 	//ERAIKITZAILEA
 	public KamaleoiKarta(){
 		this.izena="kamaleoi";
@@ -13,6 +13,10 @@ public class KamaleoiKarta extends Karta {
 	public void animaladaEgin() { // nahi duen animaliaren animalada egiten du
 		// TODO Auto-generated method stub
 		System.out.println("KAMALEOIAREN ANIMALADA");
+		kopiatu.animaladaEgin();
 	}
-
+	
+	public static void kopiatzekoKartaEguneratu(Karta k ){
+		kopiatu = k;
+	}
 }

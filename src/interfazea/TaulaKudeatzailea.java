@@ -168,10 +168,9 @@ public class TaulaKudeatzailea extends Observable {
 			t.gehituKarta("zakarrontzia.png", null);
 		}
 	}
-	
-	public void jokatu(Karta k, int jok ){
-		Tableroa.getTableroa().jokatu(k, jok);
-	
+
+	public void animaladaErrekurtsiboakEgin(){
+		Tableroa.getTableroa().animaladaErrekurtsiboakEgin();
 	}
 	
 	
@@ -182,10 +181,32 @@ public class TaulaKudeatzailea extends Observable {
 		return k;
 	}
 	
-//	public List<Integer> eskukoKartakKargatu(){
-//		return Tableroa.getTableroa().eskukoKartakKargatu();
-//		
-//	}
+	public void jokokoKartakBetetaSartuKanporatu(){ //jokokoKarten ilara beteta badago lehenengo biak sartu eta azkena kanporatzen du
+		if(Tableroa.getTableroa().jokokoKartakBeteta()){
+			Tableroa.getTableroa().jokokoKartakSartuKanporatu();
+		}
+	}
+	
+	public int jokokoKartenTam(){
+		return Tableroa.getTableroa().getJokokoKartak().tamaina();
+	}
+	
+	public void kartaKendu(Karta k){
+		jokokoKartak.kenduKarta(k);
+	}
+	
+	public void loroariKartaEsleitu( Karta k){
+		LoroKarta.kenduKarEguneratu(k);
+	}
+	
+	public String getKartaIzena(int i){
+		return Tableroa.getTableroa().getJokokoKartak().get(i).getIzena();
+	}
+	
+	public void kanguroariSaltoaEsleitu( int i ){
+		KanguroKarta.saltoa(i);
+	}
+	
 	public Karta kartaAurkitu(int i){
 		return KartaSortzailea.getKartaSortzailea().sortuKarta(i);
 	}
@@ -194,11 +215,17 @@ public class TaulaKudeatzailea extends Observable {
 		return jokalariKartak.get(i);
 	}
 	
-	public void animaladaEgin(){
-		
+	public void kamaleoiarenKopiatuKartaEguneratu(Karta k){
+		KamaleoiKarta.kopiatzekoKartaEguneratu( k );
 	}
 	
+	public void animaladaEgin(Karta k ){
+		k.animaladaEgin();
+	}
 	
+	public void jokatu(Karta k, int jok){
+		Tableroa.getTableroa().jokatu(k, jok);
+	}
 	
 	
 	public KartaZerrenda JokalariarenEskukoKartakLortu(){

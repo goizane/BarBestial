@@ -74,7 +74,7 @@ public class Jokalari {
 			kont++;
 			i++;
 		}
-		System.out.println("mazoaren tam: " + mazoa.size());
+//		System.out.println("mazoaren tam: " + mazoa.size());
 	}
 
 	public void jokatu(Karta k){
@@ -100,7 +100,7 @@ public class Jokalari {
 			 eskukoKartak = eskKartak;
 			
 			System.out.println("ESKUKO KARTAK: " + k.getIzena()+ "BARIK");
-			System.out.println("eskuko karten tam: " + eskukoKartak.tamaina());
+//			System.out.println("eskuko karten tam: " + eskukoKartak.tamaina());
 			for(int i = 0; i<eskukoKartak.tamaina(); i++){
 				System.out.println(eskukoKartak.get(i).getIzena());
 			}
