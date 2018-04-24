@@ -1,7 +1,6 @@
 package interfazea;
 
 import javax.swing.*;
-
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.EventQueue;
@@ -17,17 +16,13 @@ import java.util.*;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
 import logika.FokaKarta;
 import logika.Jokalari;
-import logika.KamaleoiKarta;
 import logika.KanguroKarta;
 import logika.Karta;
 import logika.KartaZerrenda;
-import logika.LoroKarta;
 import logika.MofetaKarta;
 import logika.Tableroa;
-
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
@@ -46,11 +41,11 @@ public class Taula extends JFrame {
 	private JPanel userPanel = new JPanel(new GridBagLayout());
 	private JPanel trashPanel = new JPanel(new GridBagLayout());
 	private JPanel tabernPanel = new JPanel(new GridBagLayout());
-	JButton lable = new JButton();
-	JButton lable1 = new JButton();
-	JButton lable2 = new JButton();
-	JButton lable3 = new JButton();
-	JButton lable4 = new JButton();
+	private JButton lable0 = new JButton();
+	private JButton lable1 = new JButton();
+	private JButton lable2 = new JButton();
+	private JButton lable3 = new JButton();
+	private JButton lable4 = new JButton();
 
 	public static void main(String[] args){
 
@@ -104,19 +99,13 @@ public class Taula extends JFrame {
 		edukiontzia.add(userPanel,BorderLayout.SOUTH);
 	}
 	public void gehituMazoa(String jokalaria){
-		ImageIcon ii;
+		ImageIcon ii = new ImageIcon("src/fitxategiak/karta.png");
 		GridBagConstraints c = new GridBagConstraints();
-		JButton lable;
-		JScrollPane jsp;
+		JButton lable = new JButton(ii);
+		JScrollPane jsp = new JScrollPane(lable);
 		if(jokalaria.equals("Urdina")){
-			ii = new ImageIcon("src/fitxategiak/karta.png");
-			lable = new JButton(ii);
-			jsp = new JScrollPane(lable);
 			userPanel.add(jsp, c);
 		}else{
-			ii = new ImageIcon("src/fitxategiak/karta.png");
-			lable = new JButton(ii);
-			jsp = new JScrollPane(lable);
 			computerPanel.add(jsp, c);
 		}
 	}
@@ -132,8 +121,8 @@ public class Taula extends JFrame {
 	
 		if(jokalaria.equals("taberna.png") || jokalaria.equals("zakarrontzia.png") ){
 			ii = new ImageIcon("src/fitxategiak/"+jokalaria);
-			lable.setIcon(ii);
-			jsp = new JScrollPane(lable);
+			lable0 = new JButton(ii);
+			jsp = new JScrollPane(lable0);
 			computerPanel.add(jsp, c);
 		}else if(jokalaria.equals("Urdina")){
 			int i = 1;
@@ -198,14 +187,14 @@ public class Taula extends JFrame {
 			userPanel.add(jsp, c);
 		}else if(jokalaria.equals("Berdea")){
 			ii = new ImageIcon("src/fitxategiak/karta.png");
-			lable = new JButton(ii);
+			lable0 = new JButton(ii);
 			
-			jsp = new JScrollPane(lable);
+			jsp = new JScrollPane(lable0);
 			computerPanel.add(jsp, c);
 		}else if(jokalaria.equals("kartaHutsa.jpg")){
 			ii = new ImageIcon("src/fitxategiak/kartaHutsa.jpg");
-			lable = new JButton(ii);
-			jsp = new JScrollPane(lable);
+			lable0 = new JButton(ii);
+			jsp = new JScrollPane(lable0);
 			gamePanel.add(jsp, c);
 		}
 		else if(jokalaria.equals("")){
@@ -215,64 +204,47 @@ public class Taula extends JFrame {
 			else{
 				ii = new ImageIcon("src/fitxategiak/"+karta.getIzena()+jokalaria+".png");
 			}
-			lable = new JButton(ii);
-			jsp = new JScrollPane(lable);
+			lable0 = new JButton(ii);
+			jsp = new JScrollPane(lable0);
 			gamePanel.add(jsp, c);
 		}
 		
 	}
-	public void actionListener(int botoia) {
-		
-		//JOKALARIAREN TXANDA
-		 KartaZerrenda jKartak = TaulaKudeatzailea.getTaulaKudeatzailea().JokalariarenEskukoKartakLortu();
 	
-		 Karta jkarta = jKartak.get(botoia);
-//		 System.out.println("Jokalariak klik egindako karta: " + jkarta.getIzena());
-		 
-		 System.out.println(botoia);
-		 System.out.println("JOKOKO KARTAK");
-		 TaulaKudeatzailea.getTaulaKudeatzailea().jokatu(jkarta, 0);
-		 if(jkarta.getZenb()==2){ //loro kartak aukeratu behar du 
-			 if(TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartenTam()!=1){
-					new LoroUI();
-				}
-		 }
-		 else if(jkarta.getZenb()==3){ //kanguroak zenbat salto egin nahi dituen aukeratu behar du(1 edo 2)
-			
-			 new KanguroUI();
-			 
-		 }
-		 else if(jkarta.getZenb()==5){
-			 new KamaleoiUI();
-		 }
-		 else{
-			 TaulaKudeatzailea.getTaulaKudeatzailea().animaladaEgin(jkarta);
-			 TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
-		 }
-		
-		 
-		
-		 
-		 TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakBetetaSartuKanporatu();
-		 
-		 //GRAFIKA EGUNERATU
-		 
-		 //ORDENAGAILUAREN TXANDA
-//		 KartaZerrenda oKartak = TaulaKudeatzailea.getTaulaKudeatzailea().OrdenagailuarenEskukoKartakLortu();
-//			
-//		 Karta okarta = jKartak.get(1);
-//		 System.out.println("Ordenagailuak aukeratutako karta: " + okarta.getIzena());
-//
-//		 
-//		 System.out.println("JOKOKO KARTAK");
-//		 
-		 
-		 
+	public void eguneraketa() {
+		KartaZerrenda jKartak = TaulaKudeatzailea.getTaulaKudeatzailea().JokalariarenEskukoKartakLortu();
+		KartaZerrenda oKartak = TaulaKudeatzailea.getTaulaKudeatzailea().OrdenagailuarenEskukoKartakLortu();
 	}
-
 	
+	public void actionListener(int botoia) {
 
 
-	
+		//JOKALARIAREN TXANDA
+		KartaZerrenda jKartak = TaulaKudeatzailea.getTaulaKudeatzailea().JokalariarenEskukoKartakLortu();
 
+		Karta jkarta = jKartak.get(botoia);
+		//		 System.out.println("Jokalariak klik egindako karta: " + jkarta.getIzena());
+//		Karta jkarta = new KanguroKarta();
+		System.out.println(botoia);
+		System.out.println("JOKOKO KARTAK");
+		
+//		ImageIcon i = new ImageIcon("src/fitxategiak/"+jkarta.getIzena()+"Urdina.png");
+//		JButton kartaBerria = new JButton(i);
+//		gamePanel.add(kartaBerria);
+
+
+		TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu(jkarta, 0);
+
+		//ORDENAGAILUAREN TXANDA
+		KartaZerrenda oKartak = TaulaKudeatzailea.getTaulaKudeatzailea().OrdenagailuarenEskukoKartakLortu();
+
+		Karta okarta = oKartak.get(1);
+		System.out.println("Ordenagailuak aukeratutako karta: " + okarta.getIzena());
+
+
+		System.out.println("JOKOKO KARTAK");
+
+
+		TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu(okarta, 1);
+	}
 }

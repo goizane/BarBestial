@@ -25,7 +25,7 @@ import logika.Tableroa;
 import logika.TximinoKarta;
 import logika.ZebraKarta;
 
-public class TaulaKudeatzailea extends Observable {
+public class TaulaKudeatzailea {
 	private static TaulaKudeatzailea taula = new TaulaKudeatzailea();
 	private JokalariZerrenda jokalariak;
 	private KartaZerrenda jokalariKartak=new KartaZerrenda();
@@ -80,7 +80,6 @@ public class TaulaKudeatzailea extends Observable {
 		String ordenagailu = Tableroa.getTableroa().getJokalariak().getJok(1).getKolorea();
 		taularatuKartak(ordenagailuKartak,"Berdea");
 		taularatuKartak(jokokoKartak,"");
-		
 		taularatuKartak(jokalariKartak,"Urdina");
 		t.konputagailuaHasieratu();
 		t.erdiaHasieratu();
@@ -140,33 +139,52 @@ public class TaulaKudeatzailea extends Observable {
 
 	
 	public void taularatuKartak(KartaZerrenda kartak, String kolorea){
-		if(kolorea.equals("Berdea")){
+		if (kolorea.equals("Berdea")) {
 			t.gehituKarta("taberna.png", null);
 			t.gehituMazoa("Berdea");
-		}
-		if(!"".equals(kolorea)){
 			for(int i=0;i<4;i++){
-			
 				t.gehituKarta(kolorea, kartak.get(i));
-				
 			}
-			
-			if(kolorea.equals("Urdina")){
-				t.gehituMazoa("Urdina");
-			}
-		}else{ //"" --> jokoko kartak
-			
-				for(int i=0;i<5;i++){
-					t.gehituKarta(kolorea, kartak.get(i));
-				}
-			
-		
-			
-		}
-		
-		if(kolorea.equals("Berdea")){
 			t.gehituKarta("zakarrontzia.png", null);
 		}
+		else if (kolorea.equals("Urdina")) {
+			for(int i=0;i<4;i++){
+				t.gehituKarta(kolorea, kartak.get(i));
+			}
+			t.gehituMazoa("Urdina");
+		}
+		else {
+			for(int i=0;i<5;i++){
+				t.gehituKarta(kolorea, kartak.get(i));
+			}
+		}
+		
+		
+		
+//		if(kolorea.equals("Berdea")){
+//			t.gehituKarta("taberna.png", null);
+//			t.gehituMazoa("Berdea");
+//		}
+//		if(!"".equals(kolorea)){
+//			for(int i=0;i<4;i++){
+//			
+//				t.gehituKarta(kolorea, kartak.get(i));
+//				
+//			}
+//			
+//			if(kolorea.equals("Urdina")){
+//				t.gehituMazoa("Urdina");
+//			}
+//		}else{ //"" --> jokoko kartak
+//			
+//				for(int i=0;i<5;i++){
+//					t.gehituKarta(kolorea, kartak.get(i));
+//				}
+//		}
+//		
+//		if(kolorea.equals("Berdea")){
+//			t.gehituKarta("zakarrontzia.png", null);
+//		}
 	}
 
 	public void animaladaErrekurtsiboakEgin(){

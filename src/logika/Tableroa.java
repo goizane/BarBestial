@@ -11,7 +11,7 @@ import interfazea.TaulaKudeatzailea;
 public class Tableroa {
 	private static Tableroa nTableroa;
 	private KartaZerrenda jokokoKartak= new KartaZerrenda();
-	private static JokalariZerrenda jokalariak;
+	private JokalariZerrenda jokalariak;
 	private KartaZerrenda tabernakoKartak;
 	private KartaZerrenda kalekoKartak;
 	
