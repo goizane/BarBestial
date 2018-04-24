@@ -14,7 +14,12 @@ public class HipopotamoKarta extends Karta {
 	public void animaladaEgin() {
 		// TODO Auto-generated method stub
 		System.out.println("HIPOPOTAMOAREN ANIMALADA");
-		Tableroa.getTableroa().getJokokoKartak().txikiagoakDirenKartakEzabatu(11);
+		if(Tableroa.getTableroa().getJokokoKartak().dauka(7)){
+			Tableroa.getTableroa().getJokokoKartak().txikiagoakDirenKartakEzabatu(11);
+		}
+		else{
+			Tableroa.getTableroa().getJokokoKartak().txikiagoakEzabatuZebraBarik(11);
+		}
 	}
 
 }

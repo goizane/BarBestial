@@ -106,13 +106,15 @@ public class KartaZerrenda {
 	
 	public void kartaPosizioBateanSartu(Karta k, int pos){
 		ArrayList<Karta> zerrendaBerria = new ArrayList<Karta>();
+		System.out.println(k.getIzena() + " karta "+ pos +"posizioan sartu:");
 		for (int i = 0; i<this.lista.size();i++){
 			
 			if(i == pos){
 				zerrendaBerria.add(k);
-				
+				System.out.println(k.getIzena()+ " karta "+ i + "posizioan sartu da");
 			}else{
 				zerrendaBerria.add(this.lista.get(i));
+				System.out.println(this.lista.get(i).getIzena());
 			}
 		
 		}
@@ -144,11 +146,18 @@ public class KartaZerrenda {
 	
 	public void saltatu(int salto){
 		System.out.println("saltatun sartu da!");
-		int s = salto +1;
-		int posizioa = this.lista.size()-s;
-		System.out.println("posizioa: " + posizioa);
-		int tamaina = this.lista.size()-1;
-		Karta k = new KanguroKarta();
+		
+		int tamaina = 0;
+		for(int t =0; t<this.lista.size(); t++){
+			if(this.lista.get(t).getZenb()!=0){
+				tamaina++;
+			}
+		}
+		int s = salto;
+		int posizioa = tamaina-s;
+		System.out.println("animalia" + posizioa+1 + " posizioan sartu behar da ");
+		System.out.println("Zerrendaren tamaina: " +tamaina);
+		Karta k = Tableroa.getTableroa().getJokokoKartak().get(tamaina-1);
 		ArrayList<Karta> zerrendaBerria = new ArrayList<Karta>();
 		if(posizioa<0){
 			zerrendaBerria = this.lista;
@@ -172,49 +181,102 @@ public class KartaZerrenda {
 		
 	}
 
-	public void txikiagoakDirenKartakEzabatu(int zenb ){
-		ArrayList<Karta> kz = new ArrayList<Karta>();
-		boolean amaitu = false;
-		if(!this.lista.contains(new ZebraKarta())){
+	public void biKartaAltuenakKenduZerrendaTxikia(){
+		ArrayList<Karta> zb = new ArrayList<Karta>();
+		int tamaina =0;
+		for (Karta k : this.lista){
+			if(k.getZenb()!=0){
+				tamaina++;
+			}
+		}
+		if(tamaina ==1){
+			zb = this.lista;
+			
+		}
+		else if(tamaina ==2){
+			zb.add(this.lista.get(1));
+		}
+		else{
+			zb.add(this.lista.get(2));
+		}
+		for(int i = zb.size()-1; i<=5; i++){
+			Karta h = new KartaHutsa();
+			zb.add(h);
+			
+		}
+		this.lista= zb;
+		for(Karta kar : this.lista){
+			System.out.println(kar.getIzena());
+		}
+	}
+	
+	public boolean dauka(int i){
+		boolean dauka = false;
+		if(this.lista.contains(this.get(i))){
+			dauka = true;
+		}
+		return dauka;
+	}
+	
+	public void txikiagoakEzabatuZebraBarik( int zenb){
+			ArrayList<Karta> kz = new ArrayList<Karta>();
+			System.out.println(zenb +" baino txikiagoak diren kartak ezabatu");
+			System.out.println("zebrak barrera modukoa da");
+			System.out.println("Ez dago zebrarik");
 			for( int i =0 ; i<this.lista.size(); i++){
 				if(this.lista.get(i).getZenb()>=zenb|| this.lista.get(i).getZenb()==0){
 					kz.add(this.lista.get(i));
+					System.out.println(this.lista.get(i).getIzena());
 				}
 			}
 			
 		}
-		else{
-			while(!amaitu){
+		public void txikiagoakDirenKartakEzabatu(int zenb ){
+			ArrayList<Karta> kz = new ArrayList<Karta>();
+			System.out.println(zenb +" baino txikiagoak diren kartak ezabatu");
+			System.out.println("zebrak barrera modukoa da");
+			System.out.println("Zebra dago!");
+			
 				for( int i =0 ; i<this.lista.size(); i++){
 					if(this.lista.get(i).getZenb()==7){
-						amaitu = true;
-					}
-					if(this.lista.get(i).getZenb()>=zenb){
+						System.out.println("Zebra aurkitu dugu --> ezin du jarraitu");
 						kz.add(this.lista.get(i));
+						System.out.println(this.lista.get(i).getIzena());
+						}
+					else if(this.lista.get(i).getZenb()>=zenb){
+						kz.add(this.lista.get(i));
+						System.out.println(this.lista.get(i).getIzena());
 					}
 				}
-			}
+			
 			if(kz.size()<5){
 				for(int j = kz.size()-1; j<=5; j++){
 					Karta h = new KartaHutsa();
 					kz.add(h);
+					System.out.println(h.getIzena());
 				}
 				
 			}
+			this.lista = kz;
 		}
 		
-		this.lista = kz;
-	}
+		
+	
 	
 	public void tximinoakKanporatu() {
 		 ArrayList<Karta> zer = new ArrayList<Karta>();
+		
 		if(!this.lista.contains(new TximinoKarta())){
 			zer = this.lista;
+			System.out.println("Ez dago tximinorik!");
 		}
+		 
 		else{
+			System.out.println("TXIMINO GABEKO LISTA");
 			for(int i = 0; i< this.lista.size(); i++){
 				if(this.lista.get(i).getZenb()!= 4){
 					zer.add(this.lista.get(i));
+					System.out.println(this.lista.get(i).getIzena());
 				}
 			}
 		}
@@ -222,6 +284,7 @@ public class KartaZerrenda {
 			for(int j = zer.size(); j<=5; j++){
 				Karta h = new KartaHutsa();
 				zer.add(h);
+				System.out.println(h.getIzena());
 			}
 			
 		}

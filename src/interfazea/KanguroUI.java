@@ -47,11 +47,12 @@ public class KanguroUI extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				System.out.println("salto bat egin nahi du");
 				Karta k = new KanguroKarta();
 				TaulaKudeatzailea.getTaulaKudeatzailea().kanguroariSaltoaEsleitu(1);
 				TaulaKudeatzailea.getTaulaKudeatzailea().animaladaEgin(k);
-				System.out.println("salto bat egin nahi du");
+				TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
+				
 				setVisible(false);
 			}
 });
@@ -60,11 +61,12 @@ public class KanguroUI extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				System.out.println(" bi salto egin nahi ditu");
 				Karta k = new KanguroKarta();
 				TaulaKudeatzailea.getTaulaKudeatzailea().kanguroariSaltoaEsleitu(2);
 				TaulaKudeatzailea.getTaulaKudeatzailea().animaladaEgin(k);
-				System.out.println(" bi salto egin nahi ditu");
+				
+				TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
 				setVisible(false);
 			}
 });

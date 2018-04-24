@@ -226,9 +226,9 @@ public class Taula extends JFrame {
 		//JOKALARIAREN TXANDA
 		 KartaZerrenda jKartak = TaulaKudeatzailea.getTaulaKudeatzailea().JokalariarenEskukoKartakLortu();
 	
-//		 Karta jkarta = jKartak.get(botoia);
+		 Karta jkarta = jKartak.get(botoia);
 //		 System.out.println("Jokalariak klik egindako karta: " + jkarta.getIzena());
-		 Karta jkarta = new KanguroKarta();
+		 
 		 System.out.println(botoia);
 		 System.out.println("JOKOKO KARTAK");
 		 TaulaKudeatzailea.getTaulaKudeatzailea().jokatu(jkarta, 0);
@@ -247,11 +247,12 @@ public class Taula extends JFrame {
 		 }
 		 else{
 			 TaulaKudeatzailea.getTaulaKudeatzailea().animaladaEgin(jkarta);
+			 TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
 		 }
 		
 		 
 		
-		 TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
+		 
 		 TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakBetetaSartuKanporatu();
 		 
 		 //GRAFIKA EGUNERATU

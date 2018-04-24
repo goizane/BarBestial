@@ -183,12 +183,13 @@ public class TaulaKudeatzailea extends Observable {
 	
 	public void jokokoKartakBetetaSartuKanporatu(){ //jokokoKarten ilara beteta badago lehenengo biak sartu eta azkena kanporatzen du
 		if(Tableroa.getTableroa().jokokoKartakBeteta()){
+			System.out.println("Tableroa beteta dago! --> lehenengo biak tabernara eta azkena kanpora");
 			Tableroa.getTableroa().jokokoKartakSartuKanporatu();
 		}
 	}
 	
 	public int jokokoKartenTam(){
-		return Tableroa.getTableroa().getJokokoKartak().tamaina();
+		return Tableroa.getTableroa().getJokokoKartak().tamainaKartaHutsBarik();
 	}
 	
 	public void kartaKendu(Karta k){

@@ -65,9 +65,11 @@ public class Tableroa {
 	
 	
 	public void animaladaErrekurtsiboakEgin(){
+		System.out.println("ANIMALADA ERREKURTSIBOAK:");
 		for( int i =0; i<this.jokokoKartak.tamaina(); i++){
 			if(jokokoKartak.get(i).errekurtsiboa){
 				jokokoKartak.get(i).animaladaEgin();
+				System.out.println("animalada errekurtsibo: "+ jokokoKartak.get(i).getIzena());
 			}
 		}
 	}
@@ -122,13 +124,13 @@ public class Tableroa {
 	public void ilaranKartaSartu(Karta k) {
 		int pos = jokokoKartak.tamainaKartaHutsBarik();
 	
-		System.out.println("jok tam: " +jokokoKartak.tamainaKartaHutsBarik());
+//		System.out.println("jok tam: " +jokokoKartak.tamainaKartaHutsBarik());
 		this.jokokoKartak.kartaPosizioBateanSartu(k, pos);
-		System.out.println("JOKOKO KARTAK: "+ k.getIzena()+ "REKIN");
+//		System.out.println("JOKOKO KARTAK: "+ k.getIzena()+ "REKIN");
 		
 		for(int i =0; i<jokokoKartak.tamaina(); i++){
-			System.out.println("jokoko karten tam: " + jokokoKartak.tamaina());
-			System.out.println(jokokoKartak.get(i).getIzena());
+//			System.out.println("jokoko karten tam: " + jokokoKartak.tamaina());
+//			System.out.println(jokokoKartak.get(i).getIzena());
 		}
 	}
 	
@@ -140,13 +142,16 @@ public class Tableroa {
 		for(int i =0; i<2; i++){
 			Karta k = this.jokokoKartak.get(i);
 			this.tabernakoKartak.gehituKarta(k);
+			System.out.println("Tabernan sartu: "+k.getIzena());
 			this.jokokoKartak.kenduKarta(k);
+			
 		}
 	}
 	
 	public void azkenaKanporatu(){
 		Karta k = this.jokokoKartak.get(3);
 		this.kalekoKartak.gehituKarta(k);
+		System.out.println("Patada eman: " + k.getIzena());
 		this.jokokoKartak.kenduKarta(k);
 	}
 

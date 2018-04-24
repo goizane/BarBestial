@@ -12,7 +12,12 @@ public class LoroKarta extends Karta {
 	public void animaladaEgin() { //jokalariak aukeratutako kartari patada eman
 		// TODO Auto-generated method stub
 		System.out.println("LOROAREN ANIMALADA");
-//		Tableroa.getTableroa().getJokokoKartak().kenduKarta(kenduKar);
+		System.out.println(kenduKar.getIzena()+ " karta kendu");
+		Tableroa.getTableroa().getJokokoKartak().kenduKarta(kenduKar);
+		KartaZerrenda jj = Tableroa.getTableroa().getJokokoKartak();
+		for(int i =0; i< jj.tamaina(); i++){
+			System.out.println(jj.get(i).getIzena());
+		}
 		
 	}
 	

@@ -10,20 +10,27 @@ public class MofetaKarta extends Karta {
 	}
 
 	public void animaladaEgin() { //2 karta altuenak ilaratik kanporatzen ditu
-		KartaZerrenda jokokoKartak = Tableroa.getTableroa().getJokokoKartak();
-		System.out.println("MOFETAREN ANIMALDA");
-		for(int i =0; i<2; i++){
-			Karta k =jokokoKartak.kartaAltuenaBilatu();
-			System.out.println("karta altuena: "+ k.getIzena());
-			if(jokokoKartak.errepikatutaDago(k.zenb)){
-				for(int j =0; j<jokokoKartak.tamaina(); j++){
-					if(jokokoKartak.get(j) == k){
-						jokokoKartak.kenduKarta(jokokoKartak.get(j));
-					}
+		if(Tableroa.getTableroa().getJokokoKartak().tamainaKartaHutsBarik()<=3){
+			System.out.println("zerrenda 3 karta edo gutxiago ditu --> mofeta bakarrik");
+			Tableroa.getTableroa().getJokokoKartak().biKartaAltuenakKenduZerrendaTxikia();
+		}
+		else{
+			for(int i = 0; i<2; i++){
+				Karta altuena = Tableroa.getTableroa().getJokokoKartak().kartaAltuenaBilatu();
+				System.out.println("karta altuena: " + altuena);
+				Tableroa.getTableroa().getJokokoKartak().kenduKarta(altuena);
+				if(Tableroa.getTableroa().getJokokoKartak().dauka(altuena)){
+					System.out.println("errepikatuta dago");
+					Tableroa.getTableroa().getJokokoKartak().kenduKarta(altuena);
 				}
-				jokokoKartak.kenduKarta(k);
 			}
 		}
+		if(Tableroa.getTableroa().getJokokoKartak().tamaina()<5){
+			for( int j = Tableroa.getTableroa().getJokokoKartak().tamaina(); j<=5; j++){
+				Karta h = new KartaHutsa();
+				Tableroa.getTableroa().getJokokoKartak().gehituKarta(h);
+			}
+	}
 		
 	}
 	

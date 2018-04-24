@@ -38,7 +38,7 @@ public class LoroUI extends JFrame {
 			
 				int tam = TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartenTam();
 				
-				System.out.println(tam);
+				System.out.println("Tamaina karta huts barik"+tam);
 				if(tam==2){
 					String testua1 = TaulaKudeatzailea.getTaulaKudeatzailea().getKartaIzena(0);
 										
@@ -115,6 +115,7 @@ public class LoroUI extends JFrame {
 					TaulaKudeatzailea.getTaulaKudeatzailea().loroariKartaEsleitu(k);
 					
 					loro.animaladaEgin();
+					TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
 					setVisible(false);
 				}
 	});
@@ -126,6 +127,7 @@ public class LoroUI extends JFrame {
 					
 					TaulaKudeatzailea.getTaulaKudeatzailea().loroariKartaEsleitu(k);
 					loro.animaladaEgin();
+					TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
 					setVisible(false);
 				}
 	});
@@ -137,6 +139,7 @@ public class LoroUI extends JFrame {
 					
 					TaulaKudeatzailea.getTaulaKudeatzailea().loroariKartaEsleitu(k);
 					loro.animaladaEgin();
+					TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
 					setVisible(false);
 				}
 	});
@@ -148,6 +151,7 @@ public class LoroUI extends JFrame {
 					
 					TaulaKudeatzailea.getTaulaKudeatzailea().loroariKartaEsleitu(k);
 					loro.animaladaEgin();
+					TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
 					setVisible(false);
 				}
 	});
