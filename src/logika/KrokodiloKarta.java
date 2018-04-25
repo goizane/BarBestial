@@ -15,7 +15,8 @@ public class KrokodiloKarta extends Karta {
 	public void animaladaEgin() { // Bera baino txikiagoak diren animaliak botatzen ditu
 		// TODO Auto-generated method stub
 		System.out.println("KROKODILOAREN ANIMALADA");
-		if(Tableroa.getTableroa().getJokokoKartak().dauka(7)){
+		Karta zebra = new ZebraKarta("");
+		if(Tableroa.getTableroa().getJokokoKartak().dauka(zebra)){
 			Tableroa.getTableroa().getJokokoKartak().txikiagoakDirenKartakEzabatu(10);
 		}
 		else{

@@ -67,7 +67,7 @@ public class KartaZerrenda {
 	public boolean ilaraBeteta(){
 		boolean beteta = false;
 		Karta k = new KartaHutsa();
-		if(this.lista.contains(k)){
+		if(!this.lista.contains(k)){
 			beteta= true;
 			System.out.println("Beteta dago!");
 		}
@@ -119,19 +119,25 @@ public class KartaZerrenda {
 	
 	public void kartaPosizioBateanSartu(Karta k, int pos){
 		ArrayList<Karta> zerrendaBerria = new ArrayList<Karta>();
-		System.out.println(k.getIzena() + " karta "+ pos +"posizioan sartu:");
+		
+		System.out.println("karta posizio batean sartu");
 		for (int i = 0; i<this.lista.size();i++){
 			
 			if(i == pos){
 				zerrendaBerria.add(k);
-				System.out.println(k.getIzena()+ " karta "+ i + "posizioan sartu da");
+				
 			}else{
 				zerrendaBerria.add(this.lista.get(i));
-				System.out.println(this.lista.get(i).getIzena());
+//				System.out.println(this.lista.get(i).getIzena());
 			}
 		
 		}
 		this.lista = zerrendaBerria;
+		System.out.println("jokoko kartak aukeratutako karta sartuta");
+		for(Karta ka : this.lista){
+			System.out.println(ka.getIzena());
+			
+		}
 	}
 	
 	
@@ -233,6 +239,7 @@ public class KartaZerrenda {
 	
 	public void txikiagoakEzabatuZebraBarik( int zenb){
 			ArrayList<Karta> kz = new ArrayList<Karta>();
+			
 			System.out.println(zenb +" baino txikiagoak diren kartak ezabatu");
 			System.out.println("zebrak barrera modukoa da");
 			System.out.println("Ez dago zebrarik");
@@ -242,6 +249,13 @@ public class KartaZerrenda {
 					System.out.println(this.lista.get(i).getIzena());
 				}
 			}
+			if(kz.size()<5){
+				for(int j = kz.size(); j<=5; j++){
+					Karta h = new KartaHutsa();
+					kz.add(h);
+				}
+			}
+			this.lista = kz;
 			
 		}
 		public void txikiagoakDirenKartakEzabatu(int zenb ){

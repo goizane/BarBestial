@@ -116,6 +116,14 @@ public class LoroUI extends JFrame {
 					
 					loro.animaladaEgin();
 					TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
+					TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakHustu();
+					if(TaulaKudeatzailea.getTaulaKudeatzailea().irabazlea(0)){
+						new IrabaziUI();
+					}
+					TaulaKudeatzailea.getTaulaKudeatzailea().ordenagailuarenTxanda();
+					if(TaulaKudeatzailea.getTaulaKudeatzailea().irabazlea(1)){
+						new GalduUI();
+					}
 					setVisible(false);
 				}
 	});
@@ -128,6 +136,14 @@ public class LoroUI extends JFrame {
 					TaulaKudeatzailea.getTaulaKudeatzailea().loroariKartaEsleitu(k);
 					loro.animaladaEgin();
 					TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
+					TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakHustu();
+					if(TaulaKudeatzailea.getTaulaKudeatzailea().irabazlea(0)){
+						new IrabaziUI();
+					}
+					TaulaKudeatzailea.getTaulaKudeatzailea().ordenagailuarenTxanda();
+					if(TaulaKudeatzailea.getTaulaKudeatzailea().irabazlea(1)){
+						new GalduUI();
+					}
 					setVisible(false);
 				}
 	});
@@ -140,6 +156,15 @@ public class LoroUI extends JFrame {
 					TaulaKudeatzailea.getTaulaKudeatzailea().loroariKartaEsleitu(k);
 					loro.animaladaEgin();
 					TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
+					
+					TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakHustu();
+					if(TaulaKudeatzailea.getTaulaKudeatzailea().irabazlea(0)){
+						new IrabaziUI();
+					}
+					TaulaKudeatzailea.getTaulaKudeatzailea().ordenagailuarenTxanda();
+					if(TaulaKudeatzailea.getTaulaKudeatzailea().irabazlea(1)){
+						new GalduUI();
+					}
 					setVisible(false);
 				}
 	});
@@ -152,6 +177,14 @@ public class LoroUI extends JFrame {
 					TaulaKudeatzailea.getTaulaKudeatzailea().loroariKartaEsleitu(k);
 					loro.animaladaEgin();
 					TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
+					TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakHustu();
+					if(TaulaKudeatzailea.getTaulaKudeatzailea().irabazlea(0)){
+						new IrabaziUI();
+					}
+					TaulaKudeatzailea.getTaulaKudeatzailea().ordenagailuarenTxanda();
+					if(TaulaKudeatzailea.getTaulaKudeatzailea().irabazlea(1)){
+						new GalduUI();
+					}
 					setVisible(false);
 				}
 	});

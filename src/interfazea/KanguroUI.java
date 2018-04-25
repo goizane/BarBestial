@@ -52,7 +52,14 @@ public class KanguroUI extends JFrame {
 				TaulaKudeatzailea.getTaulaKudeatzailea().kanguroariSaltoaEsleitu(1);
 				TaulaKudeatzailea.getTaulaKudeatzailea().animaladaEgin(k);
 				TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
-				
+				TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakHustu();
+				if(TaulaKudeatzailea.getTaulaKudeatzailea().irabazlea(0)){
+					new IrabaziUI();
+				}
+				TaulaKudeatzailea.getTaulaKudeatzailea().ordenagailuarenTxanda();
+				if(TaulaKudeatzailea.getTaulaKudeatzailea().irabazlea(1)){
+					new GalduUI();
+				}
 				setVisible(false);
 			}
 });
@@ -67,6 +74,14 @@ public class KanguroUI extends JFrame {
 				TaulaKudeatzailea.getTaulaKudeatzailea().animaladaEgin(k);
 				
 				TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
+				TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakHustu();
+				if(TaulaKudeatzailea.getTaulaKudeatzailea().irabazlea(0)){
+					new IrabaziUI();
+				}
+				TaulaKudeatzailea.getTaulaKudeatzailea().ordenagailuarenTxanda();
+				if(TaulaKudeatzailea.getTaulaKudeatzailea().irabazlea(1)){
+					new GalduUI();
+				}
 				setVisible(false);
 			}
 });

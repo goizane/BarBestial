@@ -15,7 +15,8 @@ public class HipopotamoKarta extends Karta {
 	public void animaladaEgin() {
 		// TODO Auto-generated method stub
 		System.out.println("HIPOPOTAMOAREN ANIMALADA");
-		if(Tableroa.getTableroa().getJokokoKartak().dauka(7)){
+		Karta zebra = new ZebraKarta("");
+		if(Tableroa.getTableroa().getJokokoKartak().dauka(zebra)){
 			Tableroa.getTableroa().getJokokoKartak().txikiagoakDirenKartakEzabatu(11);
 		}
 		else{

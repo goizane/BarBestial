@@ -222,10 +222,10 @@ public class Taula extends JFrame {
 
 		Karta jkarta = jKartak.get(botoia);
 //		 System.out.println("Jokalariak klik egindako karta: " + jkarta.getIzena());
-//		Karta jkarta = new KanguroKarta();
+//		Karta jkarta = new KanguroKarta("");
 		System.out.println(botoia);
 		System.out.println("JOKOKO KARTAK");
-		
+		System.out.println("jokatu -->");
 		TaulaKudeatzailea.getTaulaKudeatzailea().jokatu(jkarta, 0);
 		if(jkarta.getZenb()==2){ //loro kartak aukeratu behar du 
 			if(TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartenTam()!=1){
@@ -243,41 +243,38 @@ public class Taula extends JFrame {
 		else{
 			TaulaKudeatzailea.getTaulaKudeatzailea().animaladaEgin(jkarta);
 			TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
+			TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakHustu();
+			if(TaulaKudeatzailea.getTaulaKudeatzailea().irabazlea(0)){
+				new IrabaziUI();
+			}
+			TaulaKudeatzailea.getTaulaKudeatzailea().ordenagailuarenTxanda();
+			if(TaulaKudeatzailea.getTaulaKudeatzailea().irabazlea(1)){
+				new GalduUI();
+			}
 		}
 
 
 //		ImageIcon i = new ImageIcon("src/fitxategiak/"+jkarta.getIzena()+"Urdina.png");
 //		JButton kartaBerria = new JButton(i);
 //		gamePanel.add(kartaBerria);
-		if(Tableroa.getTableroa().jokokoKartakBeteta()){
-			TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakBetetaSartuKanporatu();
-		}
-		if(TaulaKudeatzailea.getTaulaKudeatzailea().jokoaAmaitu(0)){
-			new IrabaziUI();
-		}
-		
-		TaulaKudeatzailea.getTaulaKudeatzailea().ordenagailuarenTxanda();
-		
-		if(Tableroa.getTableroa().jokokoKartakBeteta()){
-			TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakBetetaSartuKanporatu();
-		}
-		if(TaulaKudeatzailea.getTaulaKudeatzailea().jokoaAmaitu(1)){
-			new GalduUI();
-		}
-		TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu(jkarta);
-
 		
 		
-		//ORDENAGAILUAREN TXANDA
-		KartaZerrenda oKartak = TaulaKudeatzailea.getTaulaKudeatzailea().OrdenagailuarenEskukoKartakLortu();
+//		TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
 
-		Karta okarta = oKartak.get(1);
-		System.out.println("Ordenagailuak aukeratutako karta: " + okarta.getIzena());
-
-
-		System.out.println("JOKOKO KARTAK");
+	}
+	
+		
+		
+//		//ORDENAGAILUAREN TXANDA
+//		KartaZerrenda oKartak = TaulaKudeatzailea.getTaulaKudeatzailea().OrdenagailuarenEskukoKartakLortu();
+//
+//		Karta okarta = oKartak.get(1);
+//		System.out.println("Ordenagailuak aukeratutako karta: " + okarta.getIzena());
+//
+//
+//		System.out.println("JOKOKO KARTAK");
 
 
 //		TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu(okarta, 1);
-	}
+//	}
 }

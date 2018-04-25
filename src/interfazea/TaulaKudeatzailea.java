@@ -199,11 +199,8 @@ public class TaulaKudeatzailea {
 		return k;
 	}
 	
-	public void jokokoKartakBetetaSartuKanporatu(){ //jokokoKarten ilara beteta badago lehenengo biak sartu eta azkena kanporatzen du
-		if(Tableroa.getTableroa().jokokoKartakBeteta()){
-			System.out.println("Tableroa beteta dago! --> lehenengo biak tabernara eta azkena kanpora");
-			Tableroa.getTableroa().jokokoKartakSartuKanporatu();
-		}
+	public void jokokoKartakHustu(){
+		Tableroa.getTableroa().jokokoKartakHustu();
 	}
 	
 	public int jokokoKartenTam(){
@@ -250,6 +247,14 @@ public class TaulaKudeatzailea {
 	
 	public void jokatu(Karta k, int jok){
 		Tableroa.getTableroa().jokatu(k, jok);
+	}
+	
+	public boolean irabazlea(int i){
+		boolean irabazi =false;
+		if(Tableroa.getTableroa().getJokalariak().getJok(i).jokoaAmaituDa()){
+			irabazi = true;
+		}
+		return irabazi;
 	}
 	
 	public void ordenagailuarenTxanda(){

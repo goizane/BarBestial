@@ -20,6 +20,7 @@ public class LehoiKarta extends Karta {
 		Karta lehoia = new LehoiKarta(this.kolorea);
 		
 	if(Tableroa.getTableroa().getJokokoKartak().tamainaKartaHutsBarik()>1){
+		System.out.println("karta bat bakarrik dago");
 		if(Tableroa.getTableroa().getJokokoKartak().errepikatutaDago(12)){
 			Tableroa.getTableroa().azkenaKanporatu();
 			
