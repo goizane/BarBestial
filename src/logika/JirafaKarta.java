@@ -2,11 +2,13 @@ package logika;
 
 public class JirafaKarta extends Karta {
 	
+	private String kolorea;
 	//ERAIKITZAILEA
-	public JirafaKarta(){
+	public JirafaKarta(String kolorea){
 		this.izena="jirafa";
 		this.zenb=8;
 		this.errekurtsiboa = true;
+		this.kolorea = kolorea;
 	}
 
 

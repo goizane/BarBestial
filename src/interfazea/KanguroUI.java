@@ -48,7 +48,7 @@ public class KanguroUI extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("salto bat egin nahi du");
-				Karta k = new KanguroKarta();
+				Karta k = new KanguroKarta("");
 				TaulaKudeatzailea.getTaulaKudeatzailea().kanguroariSaltoaEsleitu(1);
 				TaulaKudeatzailea.getTaulaKudeatzailea().animaladaEgin(k);
 				TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
@@ -62,7 +62,7 @@ public class KanguroUI extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				System.out.println(" bi salto egin nahi ditu");
-				Karta k = new KanguroKarta();
+				Karta k = new KanguroKarta("");
 				TaulaKudeatzailea.getTaulaKudeatzailea().kanguroariSaltoaEsleitu(2);
 				TaulaKudeatzailea.getTaulaKudeatzailea().animaladaEgin(k);
 				

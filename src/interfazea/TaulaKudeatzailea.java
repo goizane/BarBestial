@@ -68,10 +68,10 @@ public class TaulaKudeatzailea {
 		return Tableroa.getTableroa().getJokokoKartak();
 	}
 	
-	public void grafikaEguneratu(Karta k, int jok){
+	public void grafikaEguneratu(Karta k ){
 		t=Taula.getInstantzia();
 		t.taulaHasieratu();
-		Tableroa.getTableroa().jokatu(k, jok);
+		
 		
 		this.jokokoKartak = Tableroa.getTableroa().getJokokoKartak();
 		this.jokalariKartak = Tableroa.getTableroa().getJokalariak().getJok(0).getEskukoKartak();
@@ -214,9 +214,15 @@ public class TaulaKudeatzailea {
 		jokokoKartak.kenduKarta(k);
 	}
 	
+	public boolean jokoaAmaitu(int i){
+		return Tableroa.getTableroa().getJokalariak().getJok(i).jokoaAmaituDa();
+	}
+	
 	public void loroariKartaEsleitu( Karta k){
 		LoroKarta.kenduKarEguneratu(k);
 	}
+	
+	
 	
 	public String getKartaIzena(int i){
 		return Tableroa.getTableroa().getJokokoKartak().get(i).getIzena();
@@ -226,9 +232,9 @@ public class TaulaKudeatzailea {
 		KanguroKarta.saltoa(i);
 	}
 	
-	public Karta kartaAurkitu(int i){
-		return KartaSortzailea.getKartaSortzailea().sortuKarta(i);
-	}
+//	public Karta kartaAurkitu(int i){
+//		return KartaSortzailea.getKartaSortzailea().sortuKarta(i);
+//	}
 	
 	public Karta getKarta(int i){
 		return jokalariKartak.get(i);
@@ -246,6 +252,9 @@ public class TaulaKudeatzailea {
 		Tableroa.getTableroa().jokatu(k, jok);
 	}
 	
+	public void ordenagailuarenTxanda(){
+		Tableroa.getTableroa().ordenagailuarenTxanda();
+	}
 	
 	public KartaZerrenda JokalariarenEskukoKartakLortu(){
 		return Tableroa.getTableroa().getJokalariak().getJok(0).getEskukoKartak();

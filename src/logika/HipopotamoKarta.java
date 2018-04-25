@@ -1,13 +1,14 @@
 package logika;
 
 public class HipopotamoKarta extends Karta {
-	
+	private String kolorea;
 	
 	//ERAIKITZAILEA
-	public HipopotamoKarta(){
+	public HipopotamoKarta(String kolorea){
 		this.izena="hipopotamo";
 		this.zenb=11;
 		this.errekurtsiboa = true;
+		this.kolorea = kolorea;
 	}
 
 

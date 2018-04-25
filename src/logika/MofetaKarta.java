@@ -2,11 +2,13 @@ package logika;
 
 public class MofetaKarta extends Karta {
 	
+	private String kolorea;
 	//ERAIKITZAILEA
 	public MofetaKarta(){
 		this.izena="mofeta";
 		this.zenb=1;
 		this.errekurtsiboa = false;
+		this.kolorea= kolorea;
 	}
 
 	public void animaladaEgin() { //2 karta altuenak ilaratik kanporatzen ditu

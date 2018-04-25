@@ -2,12 +2,13 @@ package logika;
 
 public class ZebraKarta extends Karta {
 	
-	
+	private String kolorea;
 	//ERAIKITZAILEA
-	public ZebraKarta(){
+	public ZebraKarta(String kolorea){
 		this.izena="zebra";
 		this.zenb=7;
 		this.errekurtsiboa = true;
+		this.kolorea = kolorea;
 	}
 
 

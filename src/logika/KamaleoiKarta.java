@@ -2,11 +2,13 @@ package logika;
 
 public class KamaleoiKarta extends Karta {
 	static Karta kopiatu;
+	private String kolorea;
 	//ERAIKITZAILEA
-	public KamaleoiKarta(){
+	public KamaleoiKarta(String kolorea){
 		this.izena="kamaleoi";
 		this.zenb=5;
 		this.errekurtsiboa = false;
+		this.kolorea = kolorea;
 	}
 
 

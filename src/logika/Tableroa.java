@@ -35,9 +35,9 @@ public class Tableroa {
 		Jokalari j2 = new Jokalari("Berdea"); //ordenagailua
 //		System.out.println("jokalari urdina sortu da!");
 //		System.out.println("JOKALARI BERDEA");
-		j1.jokalariaHasieratu();
+		j1.jokalariaHasieratu("urdina");
 //		System.out.println("JOKALARI URDINA");
-		j2.jokalariaHasieratu();
+		j2.jokalariaHasieratu("berdea");
 		jokZer.gehituJokalaria(j1);
 		jokZer.gehituJokalaria(j2);
 		jokokoKartakHasieratu();
@@ -48,6 +48,16 @@ public class Tableroa {
 	public void jokatu(Karta k, int jok){
 		this.jokalariak.getJok(jok).jokatu(k);
 		
+	}
+	
+	public int irabazlea(){
+		int irabazlea;
+		if(puntuakKontatu(0)> puntuakKontatu(1)){
+			irabazlea = 0;
+		}else{
+			irabazlea = 1;
+		}
+		return irabazlea;
 	}
 	
 	public boolean jokokoKartakBeteta(){
@@ -62,6 +72,9 @@ public class Tableroa {
 			 ilarakoLehenengoBiakSartu();
 			 azkenaKanporatu();
 		 }
+	public int puntuakKontatu(int jok){
+		return tabernakoKartak.puntuakKontatu(jok);
+	}
 	
 	
 	public void animaladaErrekurtsiboakEgin(){
@@ -119,6 +132,12 @@ public class Tableroa {
 		return erantzuna;
 	}
 	
+	public void ordenagailuarenTxanda(){
+		Karta k =jokalariak.getJok(1).getEskukoKartak().get(1);
+		jokatu(k,1);
+		k.animaladaEgin();
+		animaladaErrekurtsiboakEgin();
+	}
 	
 
 	public void ilaranKartaSartu(Karta k) {

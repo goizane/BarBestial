@@ -241,18 +241,30 @@ public class Taula extends JFrame {
 			new KamaleoiUI();
 		}
 		else{
-//			TaulaKudeatzailea.getTaulaKudeatzailea().animaladaEgin(jkarta);
-//			TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
+			TaulaKudeatzailea.getTaulaKudeatzailea().animaladaEgin(jkarta);
+			TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
 		}
 
 
 //		ImageIcon i = new ImageIcon("src/fitxategiak/"+jkarta.getIzena()+"Urdina.png");
 //		JButton kartaBerria = new JButton(i);
 //		gamePanel.add(kartaBerria);
-
-		TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakBetetaSartuKanporatu();
-
-		TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu(jkarta, 0);
+		if(Tableroa.getTableroa().jokokoKartakBeteta()){
+			TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakBetetaSartuKanporatu();
+		}
+		if(TaulaKudeatzailea.getTaulaKudeatzailea().jokoaAmaitu(0)){
+			new IrabaziUI();
+		}
+		
+		TaulaKudeatzailea.getTaulaKudeatzailea().ordenagailuarenTxanda();
+		
+		if(Tableroa.getTableroa().jokokoKartakBeteta()){
+			TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakBetetaSartuKanporatu();
+		}
+		if(TaulaKudeatzailea.getTaulaKudeatzailea().jokoaAmaitu(1)){
+			new GalduUI();
+		}
+		TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu(jkarta);
 
 		
 		

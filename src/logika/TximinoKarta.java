@@ -2,11 +2,13 @@ package logika;
 
 public class TximinoKarta extends Karta {
 	
+	private String kolorea;
 	//ERAIKITZAILEA
-	public TximinoKarta(){
+	public TximinoKarta(String kolorea){
 		this.izena="tximino";
 		this.zenb=4;
 		this.errekurtsiboa = false;
+		this.kolorea = kolorea;
 	}
 
 

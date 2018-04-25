@@ -2,11 +2,13 @@ package logika;
 
 public class KrokodiloKarta extends Karta {
 	
+	private String kolorea;
 	//ERAIKITZAILEA
-	public KrokodiloKarta(){
+	public KrokodiloKarta(String kolorea){
 		this.izena="krokodilo";
 		this.zenb=10;
 		this.errekurtsiboa = true;
+		this.kolorea = kolorea;
 	}
 
 

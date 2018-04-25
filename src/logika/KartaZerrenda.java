@@ -39,6 +39,19 @@ public class KartaZerrenda {
 		System.out.println("kendutako karta: " + k.getIzena());
 	}
 	
+	public int puntuakKontatu(int i){
+		int puntuak =0;
+		for(Karta k : this.lista){
+			if(i==0 && k.kolorea == "urdina"){
+				puntuak++;
+			}
+			else if(i==1 && k.kolorea == "berdea"){
+				puntuak++;
+			}
+		}
+		return puntuak;
+	}
+	
 	public Karta kartaAltuenaBilatu(){
 		Karta altuena = null;
 		int balioa = 0;
@@ -266,7 +279,7 @@ public class KartaZerrenda {
 	public void tximinoakKanporatu() {
 		 ArrayList<Karta> zer = new ArrayList<Karta>();
 		
-		if(!this.lista.contains(new TximinoKarta())){
+		if(!this.lista.contains(new TximinoKarta(""))){
 			zer = this.lista;
 			System.out.println("Ez dago tximinorik!");
 		}

@@ -7,6 +7,8 @@ public abstract class Karta {
 	protected ImageIcon irudia;
 	protected boolean errekurtsiboa;
 	protected String izena;
+	public String kolorea;
+	
 	
 	public Karta(){
 		

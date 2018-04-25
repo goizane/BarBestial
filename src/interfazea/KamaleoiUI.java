@@ -75,7 +75,7 @@ public class KamaleoiUI extends JFrame {
 		pack();
 		setVisible(true);
 		
-		Karta kamaleoi = new KamaleoiKarta();
+		Karta kamaleoi = new KamaleoiKarta("");
 		botoia1.addActionListener(new ActionListener() {
 		
 	
@@ -96,7 +96,7 @@ public class KamaleoiUI extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				Karta k = new LoroKarta();
+				Karta k = new LoroKarta("");
 			
 				TaulaKudeatzailea.getTaulaKudeatzailea().kamaleoiarenKopiatuKartaEguneratu(k);
 				new LoroUI();
@@ -110,7 +110,7 @@ public class KamaleoiUI extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				Karta k = new KanguroKarta();
+				Karta k = new KanguroKarta("");
 			
 				TaulaKudeatzailea.getTaulaKudeatzailea().kamaleoiarenKopiatuKartaEguneratu(k);
 				new KanguroUI();
@@ -124,7 +124,7 @@ public class KamaleoiUI extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				Karta k = new TximinoKarta();
+				Karta k = new TximinoKarta("");
 			
 				TaulaKudeatzailea.getTaulaKudeatzailea().kamaleoiarenKopiatuKartaEguneratu(k);
 				
@@ -138,7 +138,7 @@ public class KamaleoiUI extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				Karta k = new FokaKarta();
+				Karta k = new FokaKarta("");
 			
 				TaulaKudeatzailea.getTaulaKudeatzailea().kamaleoiarenKopiatuKartaEguneratu(k);
 				
@@ -152,7 +152,7 @@ public class KamaleoiUI extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				Karta k = new ZebraKarta();
+				Karta k = new ZebraKarta("");
 			
 				TaulaKudeatzailea.getTaulaKudeatzailea().kamaleoiarenKopiatuKartaEguneratu(k);
 				
@@ -166,7 +166,7 @@ public class KamaleoiUI extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				Karta k = new JirafaKarta();
+				Karta k = new JirafaKarta("");
 			
 				TaulaKudeatzailea.getTaulaKudeatzailea().kamaleoiarenKopiatuKartaEguneratu(k);
 				
@@ -180,7 +180,7 @@ public class KamaleoiUI extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				Karta k = new SugeKarta();
+				Karta k = new SugeKarta("");
 			
 				TaulaKudeatzailea.getTaulaKudeatzailea().kamaleoiarenKopiatuKartaEguneratu(k);
 				
@@ -194,7 +194,7 @@ public class KamaleoiUI extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				Karta k = new KrokodiloKarta();
+				Karta k = new KrokodiloKarta("");
 			
 				TaulaKudeatzailea.getTaulaKudeatzailea().kamaleoiarenKopiatuKartaEguneratu(k);
 				
@@ -208,7 +208,7 @@ public class KamaleoiUI extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				Karta k = new HipopotamoKarta();
+				Karta k = new HipopotamoKarta("");
 			
 				TaulaKudeatzailea.getTaulaKudeatzailea().kamaleoiarenKopiatuKartaEguneratu(k);
 				
@@ -222,7 +222,7 @@ public class KamaleoiUI extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				Karta k = new LehoiKarta();
+				Karta k = new LehoiKarta("");
 			
 				TaulaKudeatzailea.getTaulaKudeatzailea().kamaleoiarenKopiatuKartaEguneratu(k);
 				

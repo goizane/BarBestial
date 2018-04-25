@@ -4,11 +4,13 @@ import interfazea.KanguroUI;
 
 public class KanguroKarta extends Karta {
 	private static int salto;
+	private String kolorea;
 	//ERAIKITZAILEA
-	public KanguroKarta(){
+	public KanguroKarta(String kolorea){
 		this.izena="kanguro";
 		this.zenb=3;
 		this.errekurtsiboa = false;
+		this.kolorea = kolorea;
 	}
 
 

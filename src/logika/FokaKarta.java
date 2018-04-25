@@ -2,11 +2,13 @@ package logika;
 
 public class FokaKarta extends Karta {
 	
+	private String kolorea;
 	//ERAIKITZAILEA
-	public FokaKarta(){
+	public FokaKarta(String kolorea){
 		this.izena="foka";
 		this.zenb=6;
 		this.errekurtsiboa = false;
+		this.kolorea = kolorea;
 	}
 
 

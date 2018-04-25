@@ -104,7 +104,7 @@ public class LoroUI extends JFrame {
 			pack();
 			setVisible(true);
 			
-			Karta loro = new LoroKarta();
+			Karta loro = new LoroKarta(""); 
 			botoia1.addActionListener(new ActionListener() {
 				
 				@Override

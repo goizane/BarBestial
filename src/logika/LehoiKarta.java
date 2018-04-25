@@ -2,11 +2,13 @@ package logika;
 
 public class LehoiKarta extends Karta {
 	
+	private String kolorea;
 	//ERAIKITZAILEA
-	public LehoiKarta(){
+	public LehoiKarta(String kolorea){
 		this.izena="lehoi";
 		this.zenb=12;
 		this.errekurtsiboa = false;
+		this.kolorea = kolorea;
 	}
 
 
@@ -15,7 +17,7 @@ public class LehoiKarta extends Karta {
 									// bestela: lehoia ez da sartzen
 		// TODO Auto-generated method stub
 		System.out.println("LEHOIAREN ANIMALADA");
-		Karta lehoia = new LehoiKarta();
+		Karta lehoia = new LehoiKarta(this.kolorea);
 		
 	if(Tableroa.getTableroa().getJokokoKartak().tamainaKartaHutsBarik()>1){
 		if(Tableroa.getTableroa().getJokokoKartak().errepikatutaDago(12)){
