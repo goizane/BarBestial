@@ -18,7 +18,7 @@ public abstract class Karta {
 	}
 	
 	public String getKolorea(){
-		return kolorea;
+		return this.kolorea;
 	}
 	public int getZenb(){
 		return zenb;
@@ -48,5 +48,9 @@ public abstract class Karta {
 		// TODO Auto-generated method stub
 		
 	}
+	public void koloreaEguneratu(String kolorea2) {
+		this.kolorea= kolorea2;
+	}
+	
 	
 }

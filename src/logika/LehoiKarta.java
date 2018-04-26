@@ -17,7 +17,7 @@ public class LehoiKarta extends Karta {
 									// bestela: lehoia ez da sartzen
 		// TODO Auto-generated method stub
 		System.out.println("LEHOIAREN ANIMALADA");
-		Karta lehoia = new LehoiKarta(this.kolorea);
+		Karta lehoia = Tableroa.getTableroa().azkenKartaLortu();
 		
 	if(Tableroa.getTableroa().getJokokoKartak().tamainaKartaHutsBarik()>1){
 		

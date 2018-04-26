@@ -30,14 +30,14 @@ public class Tableroa {
 		System.out.println("TABLEROA HASIERATU");
 		JokalariZerrenda jokZer = new JokalariZerrenda();
 	
-		Jokalari j1= new Jokalari("urdina"); //pertsona
+		Jokalari j1= new Jokalari("Urdina"); //pertsona
 //		System.out.println("jokalari urdina sortu da!");
-		Jokalari j2 = new Jokalari("berdea"); //ordenagailua
+		Jokalari j2 = new Jokalari("Berdea"); //ordenagailua
 //		System.out.println("jokalari urdina sortu da!");
-//		System.out.println("JOKALARI BERDEA");
-		j1.jokalariaHasieratu("urdina");
-//		System.out.println("JOKALARI URDINA");
-		j2.jokalariaHasieratu("berdea");
+		System.out.println("JOKALARI BERDEA");
+		j1.jokalariaHasieratu("Urdina");
+		System.out.println("JOKALARI URDINA");
+		j2.jokalariaHasieratu("Berdea");
 		tabernakoKartakHasieratu();
 		kalekoKartakHasieratu();
 		jokZer.gehituJokalaria(j1);
@@ -108,6 +108,8 @@ public class Tableroa {
 		}
 	}
 	
+
+	
 	public void jokokoKartakHustu(){
 		System.out.println("jokokoKartak hustu?");
 		if(jokokoKartakBeteta()){
@@ -162,12 +164,18 @@ public class Tableroa {
 	}
 	
 	public void ordenagailuarenTxanda(){
-		Karta k =jokalariak.getJok(1).getEskukoKartak().get(1);
+		Jokalari ordenagailua = jokalariak.getJok(1);
+		System.out.println("JOKLALARIAREN KOLOREA: "+ ordenagailua.getKolorea());
+		
+		KartaZerrenda kz =ordenagailua.getEskukoKartak();
+		Karta k = kz.get(1);
+		System.out.println("__________________________________________________________ "+k.getIzena());
+		System.out.println("ORDENAGAILUAREN KARTA: " + k.getIzena()+"KOLOREA: "+ k.getKolorea());
 		jokatu(k,1);
 		if(k.getZenb()==2){
-			LoroKarta.kenduKarEguneratu(jokokoKartak.get(0));
+			LoroKarta.kenduKarEguneratu(jokokoKartak.get(0)); //loroak beti lehenengo karta kentzen du
 		}
-		else if(k.getZenb()==5){
+		else if(k.getZenb()==5){ // kamaleoiak beti mofeta bezala jokatzen du
 			Karta mofeta = new MofetaKarta("");
 			KamaleoiKarta.kopiatzekoKartaEguneratu(mofeta);
 		}
@@ -181,13 +189,13 @@ public class Tableroa {
 		System.out.println("jokoko kartetan sartu -->");
 		int pos = jokokoKartak.tamainaKartaHutsBarik();
 	
-		System.out.println("jok tam: " +jokokoKartak.tamainaKartaHutsBarik());
+//		System.out.println("jok tam: " +jokokoKartak.tamainaKartaHutsBarik());
 		this.jokokoKartak.kartaPosizioBateanSartu(k, pos);
 		System.out.println("JOKOKO KARTAK: "+ k.getIzena()+ "REKIN");
 		
 		for(int i =0; i<jokokoKartak.tamaina(); i++){
-			System.out.println("jokoko karten tam: " + jokokoKartak.tamaina());
-			System.out.println(jokokoKartak.get(i).getIzena());
+//			System.out.println("jokoko karten tam: " + jokokoKartak.tamaina());
+			System.out.println(jokokoKartak.get(i).getIzena()+ "-------------> kolorea:" + jokokoKartak.get(i).getKolorea());
 		}
 	}
 	
@@ -211,6 +219,12 @@ public class Tableroa {
 		this.kalekoKartak.gehituKarta(k);
 		System.out.println("Patada eman: " + k.getIzena());
 		this.jokokoKartak.kenduKarta(k);
+	}
+	
+	public Karta azkenKartaLortu(){
+		int azkena = jokokoKartak.tamainaKartaHutsBarik() - 1;
+		Karta k = this.jokokoKartak.get(azkena);
+		return k;
 	}
 
 	public void jokokoKartetatikKartaKendu(Karta k) {

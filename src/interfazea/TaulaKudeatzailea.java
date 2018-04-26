@@ -1,29 +1,13 @@
 package interfazea;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Observable;
-import java.util.Random;
-
-import logika.FokaKarta;
-import logika.HipopotamoKarta;
-import logika.JirafaKarta;
 import logika.Jokalari;
 import logika.JokalariZerrenda;
 import logika.KamaleoiKarta;
 import logika.KanguroKarta;
 import logika.Karta;
-import logika.KartaHutsa;
-import logika.KartaSortzailea;
 import logika.KartaZerrenda;
-import logika.KrokodiloKarta;
-import logika.LehoiKarta;
 import logika.LoroKarta;
-import logika.MofetaKarta;
-import logika.SugeKarta;
 import logika.Tableroa;
-import logika.TximinoKarta;
-import logika.ZebraKarta;
 
 public class TaulaKudeatzailea {
 	private static TaulaKudeatzailea taula = new TaulaKudeatzailea();
@@ -45,23 +29,13 @@ public class TaulaKudeatzailea {
 	}
 	
 	public void hasieratu(){
-//		t=Taula.getInstantzia();
-//		t.taulaHasieratu();
+		Taula t = new Taula();
 		Tableroa.getTableroa().tableroaHasieratu();
+		t.pantailaratuOrdenagailuKartak();
+		t.pantailaratuJokokoKartak();
+		t.pantailaratuJokalariKartak();
 	
-	
-		this.jokalariKartak = Tableroa.getTableroa().getJokalariak().getJok(0).getEskukoKartak();
-		this.ordenagailuKartak = Tableroa.getTableroa().getJokalariak().getJok(1).getEskukoKartak();
-		this.jokokoKartak = Tableroa.getTableroa().getJokokoKartak();
-		String jokalari = Tableroa.getTableroa().getJokalariak().getJok(0).getKolorea();
-		String ordenagailu = Tableroa.getTableroa().getJokalariak().getJok(1).getKolorea();
-//		taularatuKartak(ordenagailuKartak,"Berdea");
-//		taularatuKartak(jokokoKartak,"");
-//		taularatuKartak(jokalariKartak,"Urdina");
-//		t.konputagailuaHasieratu();
-//		t.erdiaHasieratu();
-//		t.jokalariaHasieratu();
-//		t.bistaratu();
+
 	}
 	
 	public KartaZerrenda getJokokoKartak(){
@@ -69,124 +43,13 @@ public class TaulaKudeatzailea {
 	}
 	
 	public void grafikaEguneratu( ){
-//		t=Taula.getInstantzia();
-//		t.taulaHasieratu();
-		
-//		t.ezabatuPanelak();
-		
-		this.jokokoKartak = Tableroa.getTableroa().getJokokoKartak();
-		this.jokalariKartak = Tableroa.getTableroa().getJokalariak().getJok(0).getEskukoKartak();
-		this.ordenagailuKartak = Tableroa.getTableroa().getJokalariak().getJok(1).getEskukoKartak();
-		String jokalari = Tableroa.getTableroa().getJokalariak().getJok(0).getKolorea();
-		String ordenagailu = Tableroa.getTableroa().getJokalariak().getJok(1).getKolorea();
-//		taularatuKartak(ordenagailuKartak,"Berdea");
-//		taularatuKartak(jokokoKartak,"");
-//		taularatuKartak(jokalariKartak,"Urdina");
-////		t.konputagailuaHasieratu();
-//		t.erdiaHasieratu();
-//		t.jokalariaHasieratu();
-//		t.bistaratu();
-	}
-//	public Karta kartaKargatu(KartaZerrenda zerrenda){
-//		Karta erantzuna;
-//		boolean badago = true;
-//		Random random = new Random();
-//		int kartaZenb=random.nextInt(12 - 1 + 1) + 1;
-//		if(zerrenda.tamaina()>0){
-//			while(badago){
-//				for (int i = 0; i < zerrenda.tamaina(); i++) {
-//					if (zerrenda.get(i).getZenb() != kartaZenb) {
-//						badago = false;
-//						break;
-//					}
-//				}
-//				if(badago){
-//					kartaZenb = random.nextInt(12 - 1 + 1) + 1;
-//				}
-//				
-//				
-//			}
-//		}else{
-//			badago=false;
-//		}
-//		
-//		
-//		
-//		
-//		if (!badago) {
-//			erantzuna=KartaSortzailea.getKartaSortzailea().sortuKarta(kartaZenb);
-//		}else{
-//			erantzuna=null;
-//		}
-//		return erantzuna;
-//		
-//		
-//	}
-//	public void jokalariKartakHasieratu(){
-//		Karta karta;
-//		for(int i=0;i<12;i++){
-//			karta=kartaKargatu(jokalariKartak);
-//			jokalariKartak.gehituKarta(karta);
-//		}
-//	}
-//	
-//	public void konputagailuKartakHasieratu(){
-//		Karta karta;
-//		for(int i=0;i<12;i++){
-//			karta=kartaKargatu(ordenagailuKartak);
-//			ordenagailuKartak.gehituKarta(karta);
-//		}
-//	}
-
+//		t.setVisible(false);
+		t = new Taula();
+		t.pantailaratuOrdenagailuKartak();
+		t.pantailaratuJokokoKartak();
+		t.pantailaratuJokalariKartak();
 	
-//	public void taularatuKartak(KartaZerrenda kartak, String kolorea){
-//		if (kolorea.equals("Berdea")) {
-//			t.gehituKarta("taberna.png", null,0);
-//			t.gehituMazoa("Berdea");
-//			for(int i=0;i<4;i++){
-//				t.gehituKarta(kolorea, kartak.get(i),0);
-//			}
-//			t.gehituKarta("zakarrontzia.png", null,0);
-//		}
-//		else if (kolorea.equals("Urdina")) {
-//			for(int i=0;i<4;i++){
-//				t.gehituKarta(kolorea, kartak.get(i), i);
-//			}
-//			t.gehituMazoa("Urdina");
-//		}
-//		else {
-//			for(int i=0;i<5;i++){
-//				t.gehituKarta(kolorea, kartak.get(i),i);
-//			}
-//		}
-		
-		
-		
-//		if(kolorea.equals("Berdea")){
-//			t.gehituKarta("taberna.png", null);
-//			t.gehituMazoa("Berdea");
-//		}
-//		if(!"".equals(kolorea)){
-//			for(int i=0;i<4;i++){
-//			
-//				t.gehituKarta(kolorea, kartak.get(i));
-//				
-//			}
-//			
-//			if(kolorea.equals("Urdina")){
-//				t.gehituMazoa("Urdina");
-//			}
-//		}else{ //"" --> jokoko kartak
-//			
-//				for(int i=0;i<5;i++){
-//					t.gehituKarta(kolorea, kartak.get(i));
-//				}
-//		}
-//		
-//		if(kolorea.equals("Berdea")){
-//			t.gehituKarta("zakarrontzia.png", null);
-//		}
-//	}
+	}
 
 	public void animaladaErrekurtsiboakEgin(){
 		Tableroa.getTableroa().animaladaErrekurtsiboakEgin();
@@ -230,9 +93,7 @@ public class TaulaKudeatzailea {
 		KanguroKarta.saltoa(i);
 	}
 	
-//	public Karta kartaAurkitu(int i){
-//		return KartaSortzailea.getKartaSortzailea().sortuKarta(i);
-//	}
+
 	
 	public Karta getKarta(int i){
 		return jokalariKartak.get(i);

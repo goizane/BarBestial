@@ -57,9 +57,12 @@ public class Jokalari {
 		int kont =1;
 		int i =0;
 		Karta k = null;
+		System.out.println("ESKUKO KARTAK");
 		while(kont<=4){
 			k = KartaSortzailea.getKartaSortzailea().sortuKarta(lista.get(i), kolorea);
 			this.eskukoKartak.gehituKarta(k);
+			k.koloreaEguneratu(kolorea);
+			System.out.println(k.getIzena() +"KOLOREA: "+ k.getKolorea());
 			kont ++;
 			i++;
 		}
@@ -67,7 +70,8 @@ public class Jokalari {
 		while(4<=kont&& kont<=12){
 			k = KartaSortzailea.getKartaSortzailea().sortuKarta(lista.get(i), kolorea);
 			this.mazoa.push(k);
-
+			k.koloreaEguneratu(kolorea);
+			System.out.println(k.getIzena() +"KOLOREA: "+ k.getKolorea());
 			kont++;
 			i++;
 		}
@@ -77,7 +81,7 @@ public class Jokalari {
 	public void jokatu(Karta k){
 			KartaZerrenda eskKartak = new KartaZerrenda();
 			Tableroa.getTableroa().ilaranKartaSartu(k);
-		
+			System.out.println("jokatutako Karta :" + k.getIzena());
 			eskukoKartak.kenduKarta(k);
 			for(int i = 0; i<3; i++){
 				eskKartak.gehituKarta(eskukoKartak.get(i));

@@ -1,32 +1,18 @@
 package interfazea;
 
-import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.EventQueue;
-import java.awt.FlowLayout;
-import java.awt.Frame;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
 import java.awt.GridLayout;
-import java.awt.Insets;
-import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.*;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import logika.FokaKarta;
-import logika.Jokalari;
-import logika.KanguroKarta;
+
 import logika.Karta;
 import logika.KartaZerrenda;
-import logika.MofetaKarta;
-import logika.Tableroa;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Container;
 
 public class Taula extends JFrame {
 	
@@ -36,7 +22,36 @@ public class Taula extends JFrame {
 	ImageIcon kartaHutsa = new ImageIcon("src/fitxategiak/kartaHutsa.jpg");
 	ImageIcon tabernaKarta = new ImageIcon("src/fitxategiak/taberna.png");
 	ImageIcon kaleaKarta =new ImageIcon("src/fitxategiak/zakarrontzia.png");
-	ImageIcon sugeBerdea = new ImageIcon("src/fitxategiak/zebraBerdea.png");
+	
+	//IRUDI BERDEAK
+	
+	ImageIcon mofetaBerdea = new ImageIcon("src/fitxategiak/mofetaBerdea.png");
+	ImageIcon loroBerdea = new ImageIcon("src/fitxategiak/loroBerdea.png");
+	ImageIcon fokaBerdea = new ImageIcon("src/fitxategiak/fokaBerdea.png");
+	ImageIcon sugeBerdea = new ImageIcon("src/fitxategiak/sugeBerdea.png");
+	ImageIcon zebraBerdea = new ImageIcon("src/fitxategiak/zebraBerdea.png");
+	ImageIcon lehoiBerdea = new ImageIcon("src/fitxategiak/lehoiBerdea.png");
+	ImageIcon kanguroBerdea = new ImageIcon("src/fitxategiak/kanguroBerdea.png");
+	ImageIcon jirafaBerdea = new ImageIcon("src/fitxategiak/jirafaBerdea.png");
+	ImageIcon hipopotamoBerdea = new ImageIcon("src/fitxategiak/hipopotamoBerdea.png");
+	ImageIcon tximinoBerdea = new ImageIcon("src/fitxategiak/tximinoBerdea.png");
+	ImageIcon krokodiloBerdea = new ImageIcon("src/fitxategiak/krokodiloBerdea.png");
+	ImageIcon kamaleoiBerdea = new ImageIcon("src/fitxategiak/kamaleoiBerdea.png");
+	
+	//IRUDI URDINAK
+	
+	ImageIcon mofetaUrdina = new ImageIcon("src/fitxategiak/mofetaUrdina.png");
+	ImageIcon loroUrdina = new ImageIcon("src/fitxategiak/loroUrdina.png");
+	ImageIcon fokaUrdina = new ImageIcon("src/fitxategiak/fokaUrdina.png");
+	ImageIcon sugeUrdina = new ImageIcon("src/fitxategiak/sugeUrdina.png");
+	ImageIcon zebraUrdina = new ImageIcon("src/fitxategiak/zebraUrdina.png");
+	ImageIcon lehoiUrdina = new ImageIcon("src/fitxategiak/lehoiUrdina.png");
+	ImageIcon kanguroUrdina = new ImageIcon("src/fitxategiak/kanguroUrdina.png");
+	ImageIcon jirafaUrdina = new ImageIcon("src/fitxategiak/jirafaUrdina.png");
+	ImageIcon hipopotamoUrdina = new ImageIcon("src/fitxategiak/hipopotamoUrdina.png");
+	ImageIcon tximinoUrdina = new ImageIcon("src/fitxategiak/tximinoUrdina.png");
+	ImageIcon krokodiloUrdina = new ImageIcon("src/fitxategiak/krokodiloUrdina.png");
+	ImageIcon kamaleoiUrdina = new ImageIcon("src/fitxategiak/kamaleoiUrdina.png");
 	
 	
 	JPanel panelNagusia = new JPanel();
@@ -113,9 +128,11 @@ public class Taula extends JFrame {
 		add(ordenagailuKartak, BorderLayout.NORTH);
 		add(jokokoKartak, BorderLayout.CENTER);
 		add(jokalariKartak, BorderLayout.SOUTH);
-		
 		setVisible(true);
 		setSize(1200, 700);
+		setMaximumSize(new Dimension(1000, 700));
+		setPreferredSize(new Dimension(1000, 700));
+		
 		pack();
 		
 		
@@ -138,37 +155,110 @@ public class Taula extends JFrame {
 			jokokoKarta1.setIcon(kartaHutsa);
 		}
 		else{
-			ImageIcon jokokoIrudia1 = new ImageIcon("/src/fitxategiak/"+ z.get(0).getIzena()+ z.get(0).getKolorea()+".png");
+			ImageIcon jokokoIrudia1 = irudiaEsleituJokokoKartei(z.get(0));
 			jokokoKarta1.setIcon(jokokoIrudia1);
 		}
 		if(z.get(1).getZenb()==0){
 			jokokoKarta2.setIcon(kartaHutsa);
 		}
 		else{
-			ImageIcon jokokoIrudia2 = new ImageIcon("/src/fitxategiak/"+ z.get(1).getIzena()+ z.get(1).getKolorea()+".png");
+			ImageIcon jokokoIrudia2 = irudiaEsleituJokokoKartei(z.get(1));
 			jokokoKarta2.setIcon(jokokoIrudia2);
 		}
 		if(z.get(2).getZenb()==0){
 			jokokoKarta3.setIcon(kartaHutsa);
 		}
 		else{
-			ImageIcon jokokoIrudia3 = new ImageIcon("/src/fitxategiak/"+ z.get(2).getIzena()+ z.get(2).getKolorea()+".png");
+			ImageIcon jokokoIrudia3 = irudiaEsleituJokokoKartei(z.get(2));
 			jokokoKarta3.setIcon(jokokoIrudia3);
 		}
 		if(z.get(3).getZenb()==0){
 			jokokoKarta4.setIcon(kartaHutsa);
 		}
 		else{
-			ImageIcon jokokoIrudia4 = new ImageIcon("/src/fitxategiak/"+ z.get(3).getIzena()+ z.get(3).getKolorea()+".png");
+			ImageIcon jokokoIrudia4 =irudiaEsleituJokokoKartei(z.get(3));
 			jokokoKarta4.setIcon(jokokoIrudia4);
 		}
 		if(z.get(4).getZenb()==0){
 			jokokoKarta5.setIcon(kartaHutsa);
 		}
 		else{
-			ImageIcon jokokoIrudia5 = new ImageIcon("/src/fitxategiak/"+ z.get(4).getIzena()+ z.get(4).getKolorea()+".png");
+			ImageIcon jokokoIrudia5 = irudiaEsleituJokokoKartei(z.get(4));
 			jokokoKarta5.setIcon(jokokoIrudia5);
 		}
+		
+	}
+	
+	public ImageIcon irudiaEsleituJokokoKartei(Karta k){
+		
+		if(k.getKolorea()=="Urdina"){
+			if(k.getZenb()==1){
+				return this.mofetaUrdina;
+			}
+			else if(k.getZenb()==2){
+				return this.loroUrdina;
+			}
+			else if(k.getZenb()==3){
+				return kanguroUrdina;
+			}
+			else if(k.getZenb()==4){
+				return tximinoUrdina;
+			}
+			else if(k.getZenb()==5){
+				return kamaleoiUrdina;
+			}
+			else if(k.getZenb()==6){
+				return fokaUrdina;
+			}
+			else if(k.getZenb()==7){
+				return zebraUrdina;
+			}else if(k.getZenb()==8){
+				return jirafaUrdina;
+			}else if(k.getZenb()==9){
+				return sugeUrdina;
+			}else if(k.getZenb()==10){
+				return krokodiloUrdina;
+			}else if(k.getZenb()==11){
+				return hipopotamoUrdina;
+			}else {
+				return lehoiUrdina;
+			}
+		}else if( k.getKolorea()=="Berdea"){
+			if(k.getZenb()==1){
+				return this.mofetaBerdea;
+			}
+			else if(k.getZenb()==2){
+				return this.loroBerdea;
+			}
+			else if(k.getZenb()==3){
+				return kanguroBerdea;
+			}
+			else if(k.getZenb()==4){
+				return tximinoBerdea;
+			}
+			else if(k.getZenb()==5){
+				return kamaleoiBerdea;
+			}
+			else if(k.getZenb()==6){
+				return fokaBerdea;
+			}
+			else if(k.getZenb()==7){
+				return zebraBerdea;
+			}else if(k.getZenb()==8){
+				return jirafaBerdea;
+			}else if(k.getZenb()==9){
+				return sugeBerdea;
+			}else if(k.getZenb()==10){
+				return krokodiloBerdea;
+			}else if(k.getZenb()==11){
+				return hipopotamoBerdea;
+			}else {
+				return lehoiBerdea;
+			}
+		}else{
+			return null;
+		}
+		
 		
 	}
 	
@@ -178,34 +268,162 @@ public class Taula extends JFrame {
 	
 		
 	
-			ImageIcon jokalariIrudia1 = new ImageIcon("/src/fitxategiak/"+ z.get(0).getIzena()+ z.get(0).getKolorea()+".png");
+			ImageIcon jokalariIrudia1 = irudiaEsleituJokokoKartei(z.get(0));
 			jokalariKarta1.setIcon(jokalariIrudia1);
-		
+			
 		
 	
-			ImageIcon jokalariIrudia2 = new ImageIcon("/src/fitxategiak/kartaHutsa.jpg");
-			jokalariKarta2.setIcon(sugeBerdea);
+			ImageIcon jokalariIrudia2 = irudiaEsleituJokokoKartei(z.get(1));
+			jokalariKarta2.setIcon(jokalariIrudia2);
 		
-			ImageIcon jokalariIrudia3 = new ImageIcon("/src/fitxategiak/"+ z.get(2).getIzena()+ z.get(2).getKolorea()+".png");
+			ImageIcon jokalariIrudia3 =irudiaEsleituJokokoKartei(z.get(2));
 			jokalariKarta3.setIcon(jokalariIrudia3);
 	
-			ImageIcon jokalariIrudia4 = new ImageIcon("/src/fitxategiak/"+ z.get(3).getIzena()+ z.get(3).getKolorea()+".png");
+			ImageIcon jokalariIrudia4 = irudiaEsleituJokokoKartei(z.get(3));
 			jokalariKarta4.setIcon(jokalariIrudia4);
 		
 		
 			jokalariMazoa.setIcon(karta);
+			
+			
+			//ACTION LISTENER-AK
+		
+			
+			jokalariKarta1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				try {
+					akzioa(0);
+				} catch (InterruptedException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				System.out.println("posizioa: 2");
+			}
+});
+		
+			jokalariKarta2.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					
+					try {
+						akzioa(1);
+					} catch (InterruptedException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					System.out.println("posizioa: 2");
+				}
+	});
+			
+			jokalariKarta3.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					
+					try {
+						akzioa(2);
+					} catch (InterruptedException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					System.out.println("posizioa: 2");
+				}
+	});
+			
+			jokalariKarta4.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					
+					try {
+						akzioa(3);
+					} catch (InterruptedException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					System.out.println("posizioa: 2");
+				}
+	});
+			
+	}
+	
+	public void akzioa(int botoia) throws InterruptedException {
+		//JOKALARIAREN TXANDA
+		KartaZerrenda jKartak = TaulaKudeatzailea.getTaulaKudeatzailea().JokalariarenEskukoKartakLortu();
+
+		Karta jkarta = jKartak.get(botoia);
+
+		System.out.println("_________________________________________________JOKALARIAK JOKATU:");
+		TaulaKudeatzailea.getTaulaKudeatzailea().jokatu(jkarta, 0);
+		
+		if(jkarta.getZenb()==2 ){ //loro kartak aukeratu behar du 
+			if(TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartenTam()!=1){
+				new LoroUI();
+			}
+		}
+		else if(jkarta.getZenb()==3){ //kanguroak zenbat salto egin nahi dituen aukeratu behar du(1 edo 2)
+
+			new KanguroUI();
+
+		}
+		else if(jkarta.getZenb()==5){
+			new KamaleoiUI();
+		}
+		else{
+			TaulaKudeatzailea.getTaulaKudeatzailea().animaladaEgin(jkarta);
+			TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
+		
+			TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
+			TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
+		
+			TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakHustu();
+			TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
+	
+			if(TaulaKudeatzailea.getTaulaKudeatzailea().irabazlea(0)){
+				new IrabaziUI();
+			}
+			System.out.println("_________________________________________________ORDENAGAILUAK JOKATU:");
+			TaulaKudeatzailea.getTaulaKudeatzailea().ordenagailuarenTxanda();
+			TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
+			if(TaulaKudeatzailea.getTaulaKudeatzailea().irabazlea(1)){
+				new GalduUI();
+			}
+		}
+//		edukiontzia.remove(userPanel);
+//		gamePanel.remove(lable0);
+//		userPanel.remove(lable1);
+//		userPanel.remove(lable2);
+//		
+//		edukiontzia.remove(gamePanel);
+		
+
+
+//		ImageIcon i = new ImageIcon("src/fitxategiak/"+jkarta.getIzena()+"Urdina.png");
+//		JButton kartaBerria = new JButton(i);
+//		gamePanel.add(kartaBerria);
 		
 		
+		
+
+	}
+	public void ezabatuPanelak() {
+		// TODO Auto-generated method stub
+		panelNagusia.remove(jokalariKartak);
+		panelNagusia.remove(jokokoKartak);
+//		userPanel =new JPanel(new GridBagLayout());
+//		gamePanel = new JPanel(new GridBagLayout());
 	}
 	
 	public static void main(String[] args) {
 		
 		TaulaKudeatzailea.getTaulaKudeatzailea().hasieratu();
 		//taula kudeatzailean hasieratu
-		Taula t =new Taula();
-		t.pantailaratuOrdenagailuKartak();
-		t.pantailaratuJokokoKartak();
-		t.pantailaratuJokalariKartak();
+//		Taula t =new Taula();
+		
 		
 	}
 	
