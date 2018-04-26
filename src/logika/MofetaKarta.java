@@ -4,7 +4,7 @@ public class MofetaKarta extends Karta {
 	
 	private String kolorea;
 	//ERAIKITZAILEA
-	public MofetaKarta(){
+	public MofetaKarta(String kolorea){
 		this.izena="mofeta";
 		this.zenb=1;
 		this.errekurtsiboa = false;
@@ -14,7 +14,9 @@ public class MofetaKarta extends Karta {
 	public void animaladaEgin() { //2 karta altuenak ilaratik kanporatzen ditu
 		if(Tableroa.getTableroa().getJokokoKartak().tamainaKartaHutsBarik()<=3){
 			System.out.println("zerrenda 3 karta edo gutxiago ditu --> mofeta bakarrik");
+			System.out.println(" zerrenda tamaina mofeta: " + Tableroa.getTableroa().getJokokoKartak().tamaina());
 			Tableroa.getTableroa().getJokokoKartak().biKartaAltuenakKenduZerrendaTxikia();
+			System.out.println(" zerrenda tamaina mofeta LAKSJDFC: " + Tableroa.getTableroa().getJokokoKartak().tamaina());
 		}
 		else{
 			for(int i = 0; i<2; i++){
@@ -28,6 +30,7 @@ public class MofetaKarta extends Karta {
 			}
 		}
 		if(Tableroa.getTableroa().getJokokoKartak().tamaina()<5){
+			
 			for( int j = Tableroa.getTableroa().getJokokoKartak().tamaina(); j<=5; j++){
 				Karta h = new KartaHutsa();
 				Tableroa.getTableroa().getJokokoKartak().gehituKarta(h);

@@ -8,6 +8,7 @@ import java.awt.FlowLayout;
 import java.awt.Frame;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 import java.awt.Insets;
 import java.awt.Window;
 import java.awt.event.ActionEvent;
@@ -28,253 +29,184 @@ import java.awt.Component;
 import java.awt.Container;
 
 public class Taula extends JFrame {
-	private BorderLayout eskema;
-	private Container edukiontzia;
-	private GridBagConstraints mugak;
-	private static Taula taula;
-	private JMenuBar menuBarra = new JMenuBar();
-	private JMenu hasi = new JMenu();
-	private JMenu laguntza = new JMenu();
-	private JTextField[] kartak = new JTextField[4];
-	private JPanel computerPanel = new JPanel(new GridBagLayout());
-	private JPanel gamePanel = new JPanel(new GridBagLayout());
-	private JPanel userPanel = new JPanel(new GridBagLayout());
-	private JPanel trashPanel = new JPanel(new GridBagLayout());
-	private JPanel tabernPanel = new JPanel(new GridBagLayout());
-	private JButton lable0 = new JButton();
-	private JButton lable1 = new JButton();
-	private JButton lable2 = new JButton();
-	private JButton lable3 = new JButton();
-	private JButton lable4 = new JButton();
-
-	public static void main(String[] args){
-
-		TaulaKudeatzailea.getTaulaKudeatzailea().hasieratu();
+	
+	//KARTAK
+	
+	ImageIcon karta = new ImageIcon("src/fitxategiak/karta.png");
+	ImageIcon kartaHutsa = new ImageIcon("src/fitxategiak/kartaHutsa.jpg");
+	ImageIcon tabernaKarta = new ImageIcon("src/fitxategiak/taberna.png");
+	ImageIcon kaleaKarta =new ImageIcon("src/fitxategiak/zakarrontzia.png");
+	ImageIcon sugeBerdea = new ImageIcon("src/fitxategiak/zebraBerdea.png");
+	
+	
+	JPanel panelNagusia = new JPanel();
+	JPanel ordenagailuKartak = new JPanel();
+	JPanel jokokoKartak = new JPanel();
+	JPanel jokalariKartak = new JPanel();
+	
+	//ORDENAGAILUAREN KARTAK
+	
+	JLabel ordenagailuKarta1 = new JLabel();
+	JLabel ordenagailuKarta2 = new JLabel();
+	JLabel ordenagailuKarta3 = new JLabel();
+	JLabel ordenagailuKarta4 = new JLabel();
+	JLabel ordenagailuMazoa = new JLabel();
+	
+	
+	
+	//JOKOKO KARTAK
+	
+	JLabel taberna = new JLabel();
+	JLabel jokokoKarta1 = new JLabel();
+	JLabel jokokoKarta2 = new JLabel();
+	JLabel jokokoKarta3 = new JLabel();
+	JLabel jokokoKarta4 = new JLabel();
+	JLabel jokokoKarta5 = new JLabel();
+	JLabel kalea = new JLabel();
+	
+	//JOKALARIAREN BOTOIAK
+	
+	JButton jokalariKarta1 = new JButton();
+	JButton jokalariKarta2 = new JButton();
+	JButton jokalariKarta3 = new JButton();
+	JButton jokalariKarta4 = new JButton();
+	JButton jokalariMazoa = new JButton();
+	
+	public Taula(){
+		super("Taula");
 		
-	}
-	public static synchronized Taula getInstantzia(){
-		if(taula==null){
-			taula=new Taula();
-		}
-		return taula;
-	}
-	public void bistaratu() {
-		taula.setTitle("Bar Bestial");
-		taula.setVisible(true);
-		taula.setSize(1200, 700);
-		taula.setMaximumSize(new Dimension(1000, 700));
-		taula.pack();
-		taula.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-	}
-	
-	
-	
-	public void taulaHasieratu(){
-		edukiontzia = getContentPane();
-		eskema = new BorderLayout();
-		edukiontzia.setLayout(eskema);
-//		Tableroa.getTableroa().jokokoKartakHasieratu();
-		// Menua
-		taula.setJMenuBar(menuBarra);
-		taula.setTitle("Bar Bestial");
-		hasi.setText("Hasi");
-		laguntza.setText("laguntza");
-		menuBarra.add(hasi);
-		menuBarra.add(laguntza);
-//		eskukoKartakKargatu("Berdea", this.computerPanel);
-//		edukiontzia.add(computerPanel,BorderLayout.NORTH);
-//		jokokoKartakKargatu(gamePanel);
-//		edukiontzia.add(gamePanel,BorderLayout.CENTER);
-//		eskukoKartakPantailaratu(this.userPanel);
-//		edukiontzia.add(userPanel,BorderLayout.SOUTH);
-	}
-	public void konputagailuaHasieratu(){
-		edukiontzia.add(computerPanel,BorderLayout.NORTH);
-	}
-	public void erdiaHasieratu(){
-		edukiontzia.add(gamePanel,BorderLayout.CENTER);
-	}
-	public void jokalariaHasieratu(){
-		edukiontzia.add(userPanel,BorderLayout.SOUTH);
-	}
-	public void gehituMazoa(String jokalaria){
-		ImageIcon ii = new ImageIcon("src/fitxategiak/karta.png");
-		GridBagConstraints c = new GridBagConstraints();
-		JButton lable = new JButton(ii);
-		JScrollPane jsp = new JScrollPane(lable);
-		if(jokalaria.equals("Urdina")){
-			userPanel.add(jsp, c);
-		}else{
-			computerPanel.add(jsp, c);
-		}
-	}
-	public void gehituKarta(String jokalaria, Karta karta){
-		ImageIcon ii;
-		GridBagConstraints c = new GridBagConstraints();
-//		JButton lable = null;
-//		JButton lable1 = null;
-//		JButton lable2 = null;
-//		JButton lable3 = null;
-//		JButton lable4 = null;
-		JScrollPane jsp;
-	
-		if(jokalaria.equals("taberna.png") || jokalaria.equals("zakarrontzia.png") ){
-			ii = new ImageIcon("src/fitxategiak/"+jokalaria);
-			lable0 = new JButton(ii);
-			jsp = new JScrollPane(lable0);
-			computerPanel.add(jsp, c);
-		}else if(jokalaria.equals("Urdina")){
-			int i = 1;
-			ii = new ImageIcon("src/fitxategiak/"+karta.getIzena()+jokalaria+".png");
-			if(i==1){
-				lable1 = new JButton(ii);
-				lable1.addActionListener(new ActionListener() {
-					
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						
-						actionListener(0);
-						System.out.println("posizioa: 1");
-					}
-		});
-				jsp = new JScrollPane(lable1);
-				
-			}
-			else if(i ==2){
-				lable2 = new JButton(ii);
-					lable2.addActionListener(new ActionListener() {
-					
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						
-						actionListener(1);
-						System.out.println("posizioa: 2");
-					}
-		});
-				jsp = new JScrollPane(lable2);
-				
-			}
-			else if(i ==3){
-				lable3 = new JButton(ii);
-				lable3.addActionListener(new ActionListener() {
-					
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						
-						actionListener(2);
-						System.out.println("posizioa: 3");
-					}
-		});
-				jsp = new JScrollPane(lable3);
-				
-			}
-			else{
-				lable4 = new JButton(ii);
-				lable4.addActionListener(new ActionListener() {
-					
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						
-						actionListener(3);
-						System.out.println("posizioa: 4");
-					}
-		});
-				jsp = new JScrollPane(lable4);
-				i++;
-			}
-			i++;
-			userPanel.add(jsp, c);
-		}else if(jokalaria.equals("Berdea")){
-			ii = new ImageIcon("src/fitxategiak/karta.png");
-			lable0 = new JButton(ii);
-			
-			jsp = new JScrollPane(lable0);
-			computerPanel.add(jsp, c);
-		}else if(jokalaria.equals("kartaHutsa.jpg")){
-			ii = new ImageIcon("src/fitxategiak/kartaHutsa.jpg");
-			lable0 = new JButton(ii);
-			jsp = new JScrollPane(lable0);
-			gamePanel.add(jsp, c);
-		}
-		else if(jokalaria.equals("")){
-			if(karta.getZenb()==(0)){
-				ii = new ImageIcon("src/fitxategiak/kartaHutsa.jpg");
-			}
-			else{
-				ii = new ImageIcon("src/fitxategiak/"+karta.getIzena()+jokalaria+".png");
-			}
-			lable0 = new JButton(ii);
-			jsp = new JScrollPane(lable0);
-			gamePanel.add(jsp, c);
-		}
+		// ordenagailuko kartak ordenagailuKartak panelean sartu
+		ordenagailuKartak.add(ordenagailuKarta1);
+		ordenagailuKartak.add(ordenagailuKarta2);
+		ordenagailuKartak.add(ordenagailuKarta3);
+		ordenagailuKartak.add(ordenagailuKarta4);
+		ordenagailuKartak.add(ordenagailuMazoa);
+		
+		ordenagailuKartak.setLayout(new GridLayout(1,5));
+		
+		//jokoko kartak jokokoKartak panelean sartu
+		jokokoKartak.add(taberna);
+		jokokoKartak.add(jokokoKarta1);
+		jokokoKartak.add(jokokoKarta2);
+		jokokoKartak.add(jokokoKarta3);
+		jokokoKartak.add(jokokoKarta4);
+		jokokoKartak.add(jokokoKarta5);
+		jokokoKartak.add(kalea);
+		
+		jokokoKartak.setLayout(new GridLayout(1,7));
+		
+		//jokalariaren kartak jokalariKartak panelean sartu
+		
+		jokalariKartak.add(jokalariKarta1);
+		jokalariKartak.add(jokalariKarta2);
+		jokalariKartak.add(jokalariKarta3);
+		jokalariKartak.add(jokalariKarta4);
+		jokalariKartak.add(jokalariMazoa);
+		
+		jokalariKartak.setLayout(new GridLayout(1,5));
+		
+		//panel nagusian sartu
+		getContentPane();
+		
+		add(ordenagailuKartak, BorderLayout.NORTH);
+		add(jokokoKartak, BorderLayout.CENTER);
+		add(jokalariKartak, BorderLayout.SOUTH);
+		
+		setVisible(true);
+		setSize(1200, 700);
+		pack();
+		
 		
 	}
 	
-	public void eguneraketa() {
-		KartaZerrenda jKartak = TaulaKudeatzailea.getTaulaKudeatzailea().JokalariarenEskukoKartakLortu();
-		KartaZerrenda oKartak = TaulaKudeatzailea.getTaulaKudeatzailea().OrdenagailuarenEskukoKartakLortu();
+	public void pantailaratuOrdenagailuKartak(){
+		ordenagailuKarta1.setIcon(karta);
+		ordenagailuKarta2.setIcon(karta);
+		ordenagailuKarta3.setIcon(karta);
+		ordenagailuKarta4.setIcon(karta);
+		ordenagailuMazoa.setIcon(karta);
 	}
 	
-	public void actionListener(int botoia) {
-		//JOKALARIAREN TXANDA
-		KartaZerrenda jKartak = TaulaKudeatzailea.getTaulaKudeatzailea().JokalariarenEskukoKartakLortu();
-
-		Karta jkarta = jKartak.get(botoia);
-//		 System.out.println("Jokalariak klik egindako karta: " + jkarta.getIzena());
-//		Karta jkarta = new KanguroKarta("");
-		System.out.println(botoia);
-		System.out.println("JOKOKO KARTAK");
-		System.out.println("jokatu -->");
-		TaulaKudeatzailea.getTaulaKudeatzailea().jokatu(jkarta, 0);
-		if(jkarta.getZenb()==2){ //loro kartak aukeratu behar du 
-			if(TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartenTam()!=1){
-				new LoroUI();
-			}
-		}
-		else if(jkarta.getZenb()==3){ //kanguroak zenbat salto egin nahi dituen aukeratu behar du(1 edo 2)
-
-			new KanguroUI();
-
-		}
-		else if(jkarta.getZenb()==5){
-			new KamaleoiUI();
+	public void pantailaratuJokokoKartak(){
+		KartaZerrenda z = new KartaZerrenda();
+		z= TaulaKudeatzailea.getTaulaKudeatzailea().getJokokoKartak();
+		taberna.setIcon(tabernaKarta);
+		kalea.setIcon(kaleaKarta);
+		if(z.get(0).getZenb()==0){
+			jokokoKarta1.setIcon(kartaHutsa);
 		}
 		else{
-			TaulaKudeatzailea.getTaulaKudeatzailea().animaladaEgin(jkarta);
-			TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
-			TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakHustu();
-			if(TaulaKudeatzailea.getTaulaKudeatzailea().irabazlea(0)){
-				new IrabaziUI();
-			}
-			TaulaKudeatzailea.getTaulaKudeatzailea().ordenagailuarenTxanda();
-			if(TaulaKudeatzailea.getTaulaKudeatzailea().irabazlea(1)){
-				new GalduUI();
-			}
+			ImageIcon jokokoIrudia1 = new ImageIcon("/src/fitxategiak/"+ z.get(0).getIzena()+ z.get(0).getKolorea()+".png");
+			jokokoKarta1.setIcon(jokokoIrudia1);
 		}
-
-
-//		ImageIcon i = new ImageIcon("src/fitxategiak/"+jkarta.getIzena()+"Urdina.png");
-//		JButton kartaBerria = new JButton(i);
-//		gamePanel.add(kartaBerria);
+		if(z.get(1).getZenb()==0){
+			jokokoKarta2.setIcon(kartaHutsa);
+		}
+		else{
+			ImageIcon jokokoIrudia2 = new ImageIcon("/src/fitxategiak/"+ z.get(1).getIzena()+ z.get(1).getKolorea()+".png");
+			jokokoKarta2.setIcon(jokokoIrudia2);
+		}
+		if(z.get(2).getZenb()==0){
+			jokokoKarta3.setIcon(kartaHutsa);
+		}
+		else{
+			ImageIcon jokokoIrudia3 = new ImageIcon("/src/fitxategiak/"+ z.get(2).getIzena()+ z.get(2).getKolorea()+".png");
+			jokokoKarta3.setIcon(jokokoIrudia3);
+		}
+		if(z.get(3).getZenb()==0){
+			jokokoKarta4.setIcon(kartaHutsa);
+		}
+		else{
+			ImageIcon jokokoIrudia4 = new ImageIcon("/src/fitxategiak/"+ z.get(3).getIzena()+ z.get(3).getKolorea()+".png");
+			jokokoKarta4.setIcon(jokokoIrudia4);
+		}
+		if(z.get(4).getZenb()==0){
+			jokokoKarta5.setIcon(kartaHutsa);
+		}
+		else{
+			ImageIcon jokokoIrudia5 = new ImageIcon("/src/fitxategiak/"+ z.get(4).getIzena()+ z.get(4).getKolorea()+".png");
+			jokokoKarta5.setIcon(jokokoIrudia5);
+		}
 		
-		
-//		TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
-
 	}
 	
+	public void pantailaratuJokalariKartak(){
+		KartaZerrenda z = new KartaZerrenda();
+		z= TaulaKudeatzailea.getTaulaKudeatzailea().JokalariarenEskukoKartakLortu();
+	
+		
+	
+			ImageIcon jokalariIrudia1 = new ImageIcon("/src/fitxategiak/"+ z.get(0).getIzena()+ z.get(0).getKolorea()+".png");
+			jokalariKarta1.setIcon(jokalariIrudia1);
 		
 		
-//		//ORDENAGAILUAREN TXANDA
-//		KartaZerrenda oKartak = TaulaKudeatzailea.getTaulaKudeatzailea().OrdenagailuarenEskukoKartakLortu();
-//
-//		Karta okarta = oKartak.get(1);
-//		System.out.println("Ordenagailuak aukeratutako karta: " + okarta.getIzena());
-//
-//
-//		System.out.println("JOKOKO KARTAK");
-
-
-//		TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu(okarta, 1);
-//	}
-}
+	
+			ImageIcon jokalariIrudia2 = new ImageIcon("/src/fitxategiak/kartaHutsa.jpg");
+			jokalariKarta2.setIcon(sugeBerdea);
+		
+			ImageIcon jokalariIrudia3 = new ImageIcon("/src/fitxategiak/"+ z.get(2).getIzena()+ z.get(2).getKolorea()+".png");
+			jokalariKarta3.setIcon(jokalariIrudia3);
+	
+			ImageIcon jokalariIrudia4 = new ImageIcon("/src/fitxategiak/"+ z.get(3).getIzena()+ z.get(3).getKolorea()+".png");
+			jokalariKarta4.setIcon(jokalariIrudia4);
+		
+		
+			jokalariMazoa.setIcon(karta);
+		
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		TaulaKudeatzailea.getTaulaKudeatzailea().hasieratu();
+		//taula kudeatzailean hasieratu
+		Taula t =new Taula();
+		t.pantailaratuOrdenagailuKartak();
+		t.pantailaratuJokokoKartak();
+		t.pantailaratuJokalariKartak();
+		
+	}
+	
+	}

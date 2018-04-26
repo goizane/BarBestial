@@ -82,7 +82,7 @@ public class KamaleoiUI extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				
-				Karta k = new MofetaKarta();
+				Karta k = new MofetaKarta("");
 			
 				TaulaKudeatzailea.getTaulaKudeatzailea().kamaleoiarenKopiatuKartaEguneratu(k);
 				

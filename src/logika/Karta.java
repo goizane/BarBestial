@@ -16,6 +16,10 @@ public abstract class Karta {
 	public void animaladaEgin(){
 				
 	}
+	
+	public String getKolorea(){
+		return kolorea;
+	}
 	public int getZenb(){
 		return zenb;
 	}

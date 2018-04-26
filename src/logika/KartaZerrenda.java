@@ -67,7 +67,7 @@ public class KartaZerrenda {
 	public boolean ilaraBeteta(){
 		boolean beteta = false;
 		Karta k = new KartaHutsa();
-		if(!this.lista.contains(k)){
+		if(this.lista.contains(k)){
 			beteta= true;
 			System.out.println("Beteta dago!");
 		}
@@ -183,6 +183,7 @@ public class KartaZerrenda {
 			System.out.println(" posizioa < 0");
 		}
 			else{
+				
 				for (int i = 0; i<this.lista.size();i++){
 					if(i == posizioa){
 						zerrendaBerria.add(k);
@@ -193,6 +194,14 @@ public class KartaZerrenda {
 						System.out.println(this.lista.get(i).getIzena()+" gehitu da");
 					}
 				}
+				zerrendaBerria.remove(zerrendaBerria.size()-1);
+				if(zerrendaBerria.size()<5){
+					for(int j = zerrendaBerria.size()-1; j<=5; j++){
+						Karta h = new KartaHutsa();
+						zerrendaBerria.add(h);
+					}
+				}
+				this.lista = zerrendaBerria;
 			}
 		
 		this.lista = zerrendaBerria;
@@ -218,9 +227,11 @@ public class KartaZerrenda {
 		else{
 			zb.add(this.lista.get(2));
 		}
-		for(int i = zb.size()-1; i<=5; i++){
+		for(int i = zb.size(); i<5; i++){
+			System.out.println(zb.size());
 			Karta h = new KartaHutsa();
 			zb.add(h);
+			
 			
 		}
 		this.lista= zb;

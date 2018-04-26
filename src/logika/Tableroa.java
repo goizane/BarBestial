@@ -30,18 +30,39 @@ public class Tableroa {
 		System.out.println("TABLEROA HASIERATU");
 		JokalariZerrenda jokZer = new JokalariZerrenda();
 	
-		Jokalari j1= new Jokalari("Urdina"); //pertsona
+		Jokalari j1= new Jokalari("urdina"); //pertsona
 //		System.out.println("jokalari urdina sortu da!");
-		Jokalari j2 = new Jokalari("Berdea"); //ordenagailua
+		Jokalari j2 = new Jokalari("berdea"); //ordenagailua
 //		System.out.println("jokalari urdina sortu da!");
 //		System.out.println("JOKALARI BERDEA");
 		j1.jokalariaHasieratu("urdina");
 //		System.out.println("JOKALARI URDINA");
 		j2.jokalariaHasieratu("berdea");
+		tabernakoKartakHasieratu();
+		kalekoKartakHasieratu();
 		jokZer.gehituJokalaria(j1);
 		jokZer.gehituJokalaria(j2);
 		jokokoKartakHasieratu();
 		this.jokalariak = jokZer;
+	
+	}
+	
+	public void tabernakoKartakHasieratu(){
+		KartaZerrenda z = new KartaZerrenda();
+		for(int i =0; i<24; i++){
+			Karta h = new KartaHutsa();
+			z.gehituKarta(h);
+		}
+		tabernakoKartak =z;
+	}
+	
+	public void kalekoKartakHasieratu(){
+		KartaZerrenda z = new KartaZerrenda();
+		for(int i =0; i<24; i++){
+			Karta h = new KartaHutsa();
+			z.gehituKarta(h);
+		}
+		kalekoKartak = z;
 	
 	}
 	
@@ -143,6 +164,13 @@ public class Tableroa {
 	public void ordenagailuarenTxanda(){
 		Karta k =jokalariak.getJok(1).getEskukoKartak().get(1);
 		jokatu(k,1);
+		if(k.getZenb()==2){
+			LoroKarta.kenduKarEguneratu(jokokoKartak.get(0));
+		}
+		else if(k.getZenb()==5){
+			Karta mofeta = new MofetaKarta("");
+			KamaleoiKarta.kopiatzekoKartaEguneratu(mofeta);
+		}
 		k.animaladaEgin();
 		animaladaErrekurtsiboakEgin();
 		jokokoKartakHustu();
@@ -178,7 +206,8 @@ public class Tableroa {
 	}
 	
 	public void azkenaKanporatu(){
-		Karta k = this.jokokoKartak.get(3);
+		int azkena = jokokoKartak.tamainaKartaHutsBarik() - 1;
+		Karta k = this.jokokoKartak.get(azkena);
 		this.kalekoKartak.gehituKarta(k);
 		System.out.println("Patada eman: " + k.getIzena());
 		this.jokokoKartak.kenduKarta(k);

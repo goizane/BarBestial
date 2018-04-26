@@ -19,7 +19,7 @@ public class KartaSortzailea {
 		if(zenb==0){
 			karta=new KartaHutsa();
 		}else if(zenb==1){
-			karta=new MofetaKarta();
+			karta=new MofetaKarta(kolorea);
 		}
 		else if(zenb==2){
 			karta=new LoroKarta(kolorea);

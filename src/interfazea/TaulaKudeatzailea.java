@@ -45,8 +45,8 @@ public class TaulaKudeatzailea {
 	}
 	
 	public void hasieratu(){
-		t=Taula.getInstantzia();
-		t.taulaHasieratu();
+//		t=Taula.getInstantzia();
+//		t.taulaHasieratu();
 		Tableroa.getTableroa().tableroaHasieratu();
 	
 	
@@ -55,36 +55,37 @@ public class TaulaKudeatzailea {
 		this.jokokoKartak = Tableroa.getTableroa().getJokokoKartak();
 		String jokalari = Tableroa.getTableroa().getJokalariak().getJok(0).getKolorea();
 		String ordenagailu = Tableroa.getTableroa().getJokalariak().getJok(1).getKolorea();
-		taularatuKartak(ordenagailuKartak,"Berdea");
-		taularatuKartak(jokokoKartak,"");
-		taularatuKartak(jokalariKartak,"Urdina");
-		t.konputagailuaHasieratu();
-		t.erdiaHasieratu();
-		t.jokalariaHasieratu();
-		t.bistaratu();
+//		taularatuKartak(ordenagailuKartak,"Berdea");
+//		taularatuKartak(jokokoKartak,"");
+//		taularatuKartak(jokalariKartak,"Urdina");
+//		t.konputagailuaHasieratu();
+//		t.erdiaHasieratu();
+//		t.jokalariaHasieratu();
+//		t.bistaratu();
 	}
 	
 	public KartaZerrenda getJokokoKartak(){
 		return Tableroa.getTableroa().getJokokoKartak();
 	}
 	
-	public void grafikaEguneratu(Karta k ){
-		t=Taula.getInstantzia();
-		t.taulaHasieratu();
+	public void grafikaEguneratu( ){
+//		t=Taula.getInstantzia();
+//		t.taulaHasieratu();
 		
+//		t.ezabatuPanelak();
 		
 		this.jokokoKartak = Tableroa.getTableroa().getJokokoKartak();
 		this.jokalariKartak = Tableroa.getTableroa().getJokalariak().getJok(0).getEskukoKartak();
 		this.ordenagailuKartak = Tableroa.getTableroa().getJokalariak().getJok(1).getEskukoKartak();
 		String jokalari = Tableroa.getTableroa().getJokalariak().getJok(0).getKolorea();
 		String ordenagailu = Tableroa.getTableroa().getJokalariak().getJok(1).getKolorea();
-		taularatuKartak(ordenagailuKartak,"Berdea");
-		taularatuKartak(jokokoKartak,"");
-		taularatuKartak(jokalariKartak,"Urdina");
-		t.konputagailuaHasieratu();
-		t.erdiaHasieratu();
-		t.jokalariaHasieratu();
-		t.bistaratu();
+//		taularatuKartak(ordenagailuKartak,"Berdea");
+//		taularatuKartak(jokokoKartak,"");
+//		taularatuKartak(jokalariKartak,"Urdina");
+////		t.konputagailuaHasieratu();
+//		t.erdiaHasieratu();
+//		t.jokalariaHasieratu();
+//		t.bistaratu();
 	}
 //	public Karta kartaKargatu(KartaZerrenda zerrenda){
 //		Karta erantzuna;
@@ -138,26 +139,26 @@ public class TaulaKudeatzailea {
 //	}
 
 	
-	public void taularatuKartak(KartaZerrenda kartak, String kolorea){
-		if (kolorea.equals("Berdea")) {
-			t.gehituKarta("taberna.png", null);
-			t.gehituMazoa("Berdea");
-			for(int i=0;i<4;i++){
-				t.gehituKarta(kolorea, kartak.get(i));
-			}
-			t.gehituKarta("zakarrontzia.png", null);
-		}
-		else if (kolorea.equals("Urdina")) {
-			for(int i=0;i<4;i++){
-				t.gehituKarta(kolorea, kartak.get(i));
-			}
-			t.gehituMazoa("Urdina");
-		}
-		else {
-			for(int i=0;i<5;i++){
-				t.gehituKarta(kolorea, kartak.get(i));
-			}
-		}
+//	public void taularatuKartak(KartaZerrenda kartak, String kolorea){
+//		if (kolorea.equals("Berdea")) {
+//			t.gehituKarta("taberna.png", null,0);
+//			t.gehituMazoa("Berdea");
+//			for(int i=0;i<4;i++){
+//				t.gehituKarta(kolorea, kartak.get(i),0);
+//			}
+//			t.gehituKarta("zakarrontzia.png", null,0);
+//		}
+//		else if (kolorea.equals("Urdina")) {
+//			for(int i=0;i<4;i++){
+//				t.gehituKarta(kolorea, kartak.get(i), i);
+//			}
+//			t.gehituMazoa("Urdina");
+//		}
+//		else {
+//			for(int i=0;i<5;i++){
+//				t.gehituKarta(kolorea, kartak.get(i),i);
+//			}
+//		}
 		
 		
 		
@@ -185,7 +186,7 @@ public class TaulaKudeatzailea {
 //		if(kolorea.equals("Berdea")){
 //			t.gehituKarta("zakarrontzia.png", null);
 //		}
-	}
+//	}
 
 	public void animaladaErrekurtsiboakEgin(){
 		Tableroa.getTableroa().animaladaErrekurtsiboakEgin();

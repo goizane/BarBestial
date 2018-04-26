@@ -110,13 +110,14 @@ public class LoroUI extends JFrame {
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					
-					Karta k = TaulaKudeatzailea.getTaulaKudeatzailea().getKarta(0);
+					Karta k = TaulaKudeatzailea.getTaulaKudeatzailea().getJokokoKartak().get(0);
 				
 					TaulaKudeatzailea.getTaulaKudeatzailea().loroariKartaEsleitu(k);
 					
 					loro.animaladaEgin();
 					TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
 					TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakHustu();
+					TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
 					if(TaulaKudeatzailea.getTaulaKudeatzailea().irabazlea(0)){
 						new IrabaziUI();
 					}
@@ -131,7 +132,7 @@ public class LoroUI extends JFrame {
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					Karta k = TaulaKudeatzailea.getTaulaKudeatzailea().getKarta(1);
+					Karta k = TaulaKudeatzailea.getTaulaKudeatzailea().getJokokoKartak().get(1);
 					
 					TaulaKudeatzailea.getTaulaKudeatzailea().loroariKartaEsleitu(k);
 					loro.animaladaEgin();
@@ -151,7 +152,7 @@ public class LoroUI extends JFrame {
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					Karta k = TaulaKudeatzailea.getTaulaKudeatzailea().getKarta(2);
+					Karta k = TaulaKudeatzailea.getTaulaKudeatzailea().getJokokoKartak().get(2);
 					
 					TaulaKudeatzailea.getTaulaKudeatzailea().loroariKartaEsleitu(k);
 					loro.animaladaEgin();
@@ -172,7 +173,7 @@ public class LoroUI extends JFrame {
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					Karta k = TaulaKudeatzailea.getTaulaKudeatzailea().getKarta(3);
+					Karta k = TaulaKudeatzailea.getTaulaKudeatzailea().getJokokoKartak().get(3);
 					
 					TaulaKudeatzailea.getTaulaKudeatzailea().loroariKartaEsleitu(k);
 					loro.animaladaEgin();
