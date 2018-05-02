@@ -265,24 +265,41 @@ public class Taula extends JFrame {
 	public void pantailaratuJokalariKartak(){
 		KartaZerrenda z = new KartaZerrenda();
 		z= TaulaKudeatzailea.getTaulaKudeatzailea().JokalariarenEskukoKartakLortu();
-	
-		
-	
+
+
+		if (z.get(0).getZenb()==0) {
+			jokalariKarta1.setIcon(kartaHutsa);
+		}
+		else {
 			ImageIcon jokalariIrudia1 = irudiaEsleituJokokoKartei(z.get(0));
 			jokalariKarta1.setIcon(jokalariIrudia1);
-			
+		}
 		
-	
+		if (z.get(1).getZenb()==0) {
+			jokalariKarta2.setIcon(kartaHutsa);
+		}
+		else {
 			ImageIcon jokalariIrudia2 = irudiaEsleituJokokoKartei(z.get(1));
 			jokalariKarta2.setIcon(jokalariIrudia2);
+		}
 		
+		if (z.get(2).getZenb()==0) {
+			jokalariKarta3.setIcon(kartaHutsa);
+		}
+		else {
 			ImageIcon jokalariIrudia3 =irudiaEsleituJokokoKartei(z.get(2));
 			jokalariKarta3.setIcon(jokalariIrudia3);
-	
+		}
+
+
+		if (z.get(3).getZenb()==0) {
+			jokalariKarta4.setIcon(kartaHutsa);
+		}
+		else {
 			ImageIcon jokalariIrudia4 = irudiaEsleituJokokoKartei(z.get(3));
 			jokalariKarta4.setIcon(jokalariIrudia4);
-		
-		
+		}
+
 			jokalariMazoa.setIcon(karta);
 			
 			

@@ -58,10 +58,6 @@ public class KartaZerrenda {
 		return puntuak;
 	}
 	
-//	public void zerrendarenOrdenaAldatu(){
-//		ArrayList<Karta> zer = new ArrayList<Karta>();
-//		for(i= this.lista)
-//	}
 	
 	public Karta kartaAltuenaBilatu(){
 		Karta altuena = null;
@@ -266,7 +262,15 @@ public class KartaZerrenda {
 		}
 		
 		
-	
+	public Karta kartaLortuZenbakiarekin(int zenb) {
+		Karta k = null;
+		for (int i=0; i<this.lista.size(); i++) {
+			if (this.lista.get(i).getZenb()==zenb) {
+				k = this.lista.get(i);
+			}
+		}
+		return k;
+	}
 	
 	public void tximinoakKanporatu() {
 		 ArrayList<Karta> zer = new ArrayList<Karta>();
@@ -297,9 +301,35 @@ public class KartaZerrenda {
 		
 		
 	}
+	
+	// quickSort zerrenda ordenatzeko
+	public void zerrendaOrdenatu(int hasiera, int bukaera) {
+		if (bukaera - hasiera >= 0) {
+			int ind = zatiketa(this.lista, hasiera, bukaera);
+			zerrendaOrdenatu(hasiera, ind - 1);
+			zerrendaOrdenatu(ind + 1, bukaera);
+		}
+	}
+
+	private int zatiketa(ArrayList<Karta> list, int i, int f) {
+		Karta a = list.get(i);
+
+		int ezker = i;
+		int eskuin = f;
+
+		while (ezker < eskuin) {
+			while (list.get(ezker).compareTo(a) <= 0 && ezker < eskuin)
+				ezker++;
+			while (list.get(eskuin).compareTo(a) > 0)
+				eskuin--;
+
+			if (ezker < eskuin)
+				Collections.swap(list, ezker, eskuin);
+		}
+		list.set(i, list.get(eskuin));
+		list.set(eskuin, a);
+
+		return eskuin;
 	}
 	
-	
-
-	
-
+}

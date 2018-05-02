@@ -15,6 +15,7 @@ public class SugeKarta extends Karta {
 	public void animaladaEgin() { //animaliak handienetik txikienera ordenatzen ditu
 		// TODO Auto-generated method stub
 		System.out.println("SUGEAREN ANIMALADA");
+		Tableroa.getTableroa().jokokoKartakOrdenatu();
 	}
 
 }

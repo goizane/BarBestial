@@ -52,5 +52,9 @@ public abstract class Karta {
 		this.kolorea= kolorea2;
 	}
 	
+	public int compareTo(Karta a) {
+		Integer zen = a.getZenb();
+		return (Integer.valueOf(zenb)).compareTo(zen);
+	}
 	
 }

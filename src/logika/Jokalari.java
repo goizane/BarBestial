@@ -87,6 +87,9 @@ public class Jokalari {
 			Tableroa.getTableroa().ilaranKartaSartu(k);
 			System.out.println("jokatutako Karta :" + k.getIzena());
 			eskukoKartak.kenduKarta(k);
+			if (eskukoKartak.tamaina()<5) {
+				eskukoKartak.gehituKarta(new KartaHutsa());
+			}
 			for(int i = 0; i<3; i++){
 				eskKartak.gehituKarta(eskukoKartak.get(i));
 			}

@@ -272,34 +272,88 @@ public class Tableroa {
 	}
 	
 	public void zerrendarenOrdenaAldatu(){
-		for (int i = 0; i< jokokoKartak.tamaina(); i++){
-			System.out.println(jokokoKartak.get(i).zenb);
-		}
-		KartaZerrenda kZer = new KartaZerrenda();
-		boolean amaitu = false;
-		System.out.println("tamaina: "+this.jokokoKartak.tamainaKartaHutsBarik());
-		if(this.jokokoKartak.tamainaKartaHutsBarik()==1){
-			
-			kZer = this.jokokoKartak;
-		}else{
-		
-				for(int i =0; i<jokokoKartak.tamaina(); i++){
-					
-					if(this.jokokoKartak.get(i).getZenb()!=0){
-						kZer.gehituKarta(this.jokokoKartak.get(i));
-					}
-				}		
-				
-			
-			kZer.ordenardenaAldatu();
+		KartaZerrenda zer = new KartaZerrenda();
+		for(int i=jokokoKartak.tamainaKartaHutsBarik()-1; i>=0; i--) {
+			zer.gehituKarta(jokokoKartak.get(i));
 		}
 		
-		
-		for (int i = 0; i< kZer.tamaina(); i++){
-			System.out.println(kZer.get(i).zenb);
+		if (zer.tamaina()<5) {
+			for (int j=zer.tamaina(); j<=5; j++) {
+				zer.gehituKarta(new KartaHutsa());
+			}
 		}
+		
+		jokokoKartak = zer;
+		
+		
+//		for (int i = 0; i< jokokoKartak.tamaina(); i++){
+//			System.out.println(jokokoKartak.get(i).zenb);
+//		}
+//		KartaZerrenda kZer = new KartaZerrenda();
+//		boolean amaitu = false;
+//		System.out.println("tamaina: "+this.jokokoKartak.tamainaKartaHutsBarik());
+//		if(this.jokokoKartak.tamainaKartaHutsBarik()==1){
+//			
+//			kZer = this.jokokoKartak;
+//		}else{
+//		
+//				for(int i =0; i<jokokoKartak.tamaina(); i++){
+//					
+//					if(this.jokokoKartak.get(i).getZenb()!=0){
+//						kZer.gehituKarta(this.jokokoKartak.get(i));
+//					}
+//				}		
+//				
+//			
+//			kZer.ordenardenaAldatu();
+//		}
+//		
+//		
+//		for (int i = 0; i< kZer.tamaina(); i++){
+//			System.out.println(kZer.get(i).zenb);
+//		}
 	}
 	
 	
+	public void tximinoAnimalada() {
+		if (!jokokoKartak.errepikatutaDago(4)) {
+			System.out.println("Tximino bakarra dago!");
+		}
+		else {
+			
+			if (jokokoKartak.dauka(11)) {
+				Karta k = jokokoKartak.kartaLortuZenbakiarekin(11);
+				jokokoKartak.kenduKarta(k);
+			} else if (jokokoKartak.dauka(10)) {
+				Karta k = jokokoKartak.kartaLortuZenbakiarekin(10);
+				jokokoKartak.kenduKarta(k);
+			} else {
+				System.out.println("Ez dago krokodilo edo hipopotamorik!");
+			}
+		}
+		
+		int tximinoPos = jokokoKartak.tamainaKartaHutsBarik()-1;
+		KartaZerrenda zer = new KartaZerrenda();
+		Karta tximinoKarta = jokokoKartak.get(tximinoPos);
+		jokokoKartak.kenduKarta(tximinoKarta);
+		zer.gehituKarta(tximinoKarta);
+		tximinoKarta = jokokoKartak.kartaLortuZenbakiarekin(4);
+		jokokoKartak.kenduKarta(tximinoKarta);
+		zer.gehituKarta(tximinoKarta);
+		for (int i=0; i<jokokoKartak.tamainaKartaHutsBarik(); i++) {
+			zer.gehituKarta(jokokoKartak.get(i));
+		}
+		if (zer.tamaina()<5) {
+			for (int j=zer.tamaina(); j<=5; j++) {
+				zer.set(new KartaHutsa(), j);
+			}
+		}
+		
+		jokokoKartak = zer;
+	}
+	
+	public void jokokoKartakOrdenatu() {
+		jokokoKartak.zerrendaOrdenatu(0, jokokoKartak.tamainaKartaHutsBarik()-1);
+	}
 	
 }
