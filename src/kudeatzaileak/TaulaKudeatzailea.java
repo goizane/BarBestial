@@ -1,5 +1,6 @@
-package interfazea;
+package kudeatzaileak;
 
+import interfazea.Taula;
 import logika.Jokalari;
 import logika.JokalariZerrenda;
 import logika.KamaleoiKarta;

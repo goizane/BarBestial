@@ -2,7 +2,7 @@ package logika;
 
 import interfazea.GalduUI;
 import interfazea.IrabaziUI;
-import interfazea.TaulaKudeatzailea;
+import kudeatzaileak.TaulaKudeatzailea;
 
 public class ZebraKarta extends Karta {
 	

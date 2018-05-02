@@ -6,7 +6,7 @@ import java.util.Random;
 
 import javax.swing.ImageIcon;
 
-import interfazea.TaulaKudeatzailea;
+import kudeatzaileak.TaulaKudeatzailea;
 
 public class Tableroa {
 	private static Tableroa nTableroa;

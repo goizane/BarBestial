@@ -11,6 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import kudeatzaileak.TaulaKudeatzailea;
 import logika.Karta;
 import logika.KartaZerrenda;
 
