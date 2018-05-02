@@ -138,6 +138,7 @@ public class LoroUI extends JFrame {
 					loro.animaladaEgin();
 					TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
 					TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakHustu();
+					TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
 					if(TaulaKudeatzailea.getTaulaKudeatzailea().irabazlea(0)){
 						new IrabaziUI();
 					}
@@ -159,6 +160,7 @@ public class LoroUI extends JFrame {
 					TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
 					
 					TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakHustu();
+					TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
 					if(TaulaKudeatzailea.getTaulaKudeatzailea().irabazlea(0)){
 						new IrabaziUI();
 					}
@@ -179,6 +181,7 @@ public class LoroUI extends JFrame {
 					loro.animaladaEgin();
 					TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
 					TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakHustu();
+					TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
 					if(TaulaKudeatzailea.getTaulaKudeatzailea().irabazlea(0)){
 						new IrabaziUI();
 					}

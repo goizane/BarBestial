@@ -19,7 +19,8 @@ public class KanguroKarta extends Karta {
 		System.out.println("KANGUROAREN ANIMALADA");
 		int s = this.salto;
 	
-		Tableroa.getTableroa().getJokokoKartak().saltatu(s);
+		Tableroa.getTableroa().saltatu(s);
+		
 		
 		
 	}

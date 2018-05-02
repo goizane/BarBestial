@@ -26,6 +26,18 @@ public class JokalariZerrenda {
 		return jokZer.get(i);
 		}
 	
+	public Jokalari getJokalari(String kolorea){
+		if(kolorea == "Berdea"){
+			return jokZer.get(1);
+		}else{
+				return jokZer.get(0);
+			}
+		
+			
+		}
+		
+	
+	
 	public void gehituJokalaria(Jokalari j){
 		jokZer.add(j);
 	}

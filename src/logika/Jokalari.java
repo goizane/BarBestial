@@ -12,12 +12,14 @@ public class Jokalari {
 	private static KartaZerrenda eskukoKartak;
 	private Stack<Karta> mazoa;
 	private int lortutakoPuntuak;
+	private String kolorea;
 	
 	//ERAIKITZAILEA
-	public Jokalari(String izena){
+	public Jokalari(String kolorea){
 		this.izena= new String();
 		this.eskukoKartak = new KartaZerrenda();
 		this.mazoa = new Stack<Karta>();
+		this.kolorea = kolorea;
 		
 	}
 	
@@ -77,7 +79,9 @@ public class Jokalari {
 		}
 
 	}
-
+	public void jokalariarenKoloreaHasieratu(String kol){
+		this.kolorea = kol;
+	}
 	public void jokatu(Karta k){
 			KartaZerrenda eskKartak = new KartaZerrenda();
 			Tableroa.getTableroa().ilaranKartaSartu(k);

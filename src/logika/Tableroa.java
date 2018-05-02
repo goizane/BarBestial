@@ -31,8 +31,10 @@ public class Tableroa {
 		JokalariZerrenda jokZer = new JokalariZerrenda();
 	
 		Jokalari j1= new Jokalari("Urdina"); //pertsona
+		j1.jokalariarenKoloreaHasieratu("Urdina");
 //		System.out.println("jokalari urdina sortu da!");
 		Jokalari j2 = new Jokalari("Berdea"); //ordenagailua
+		j1.jokalariarenKoloreaHasieratu("Berdea");
 //		System.out.println("jokalari urdina sortu da!");
 		System.out.println("JOKALARI BERDEA");
 		j1.jokalariaHasieratu("Urdina");
@@ -70,6 +72,38 @@ public class Tableroa {
 		this.jokalariak.getJok(jok).jokatu(k);
 		
 	}
+	
+	public void saltatu(int salto){
+		KartaZerrenda zer = jokokoKartak;
+		if(zer.tamainaKartaHutsBarik()==1){
+			System.out.println("Ez du saltorik egingo bakarrik dagoelako");
+		}
+		else if(zer.tamainaKartaHutsBarik()==2){
+			Karta k1= zer.get(0);
+			Karta k2 = zer.get(1);
+			zer.set(k1, 1);
+			zer.set(k2, 0);
+		}
+		else{
+			int azkenAurrekoarenPos = zer.tamainaKartaHutsBarik()-3;
+			int azkenarenPos= zer.tamainaKartaHutsBarik()-2;
+			int kanguroPos = zer.tamainaKartaHutsBarik()-1;
+			Karta kAzkenAurreko = zer.get(azkenAurrekoarenPos);
+			Karta kAzkena= zer.get(azkenarenPos);
+			Karta kKanguro = zer.get(kanguroPos);
+			
+			if(salto == 1){
+				zer.set(kAzkena, kanguroPos);
+				zer.set(kKanguro, azkenarenPos);
+			}
+			else{
+				zer.set(kKanguro, azkenAurrekoarenPos);
+				zer.set(kAzkena, kanguroPos);
+				zer.set(kAzkenAurreko, azkenarenPos);
+			}
+		}
+	}
+	
 	
 	public int irabazlea(){
 		int irabazlea;
@@ -164,11 +198,16 @@ public class Tableroa {
 	}
 	
 	public void ordenagailuarenTxanda(){
-		Jokalari ordenagailua = jokalariak.getJok(1);
+		Jokalari ordenagailua = jokalariak.getJokalari("Berdea");
+		System.out.println(ordenagailua);
 		System.out.println("JOKLALARIAREN KOLOREA: "+ ordenagailua.getKolorea());
 		
 		KartaZerrenda kz =ordenagailua.getEskukoKartak();
+		for(int i  =0; i<kz.tamaina(); i++){
+			System.out.println("karta: " + kz.get(i).getIzena()+" Kolorea: "+ kz.get(i).getKolorea());
+		}
 		Karta k = kz.get(1);
+		System.out.println("ordenagailuak aukeratutako karta: " + k.getIzena()+ "kolorea: " + k.getKolorea());
 		System.out.println("__________________________________________________________ "+k.getIzena());
 		System.out.println("ORDENAGAILUAREN KARTA: " + k.getIzena()+"KOLOREA: "+ k.getKolorea());
 		jokatu(k,1);

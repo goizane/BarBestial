@@ -386,12 +386,12 @@ public class Taula extends JFrame {
 			if(TaulaKudeatzailea.getTaulaKudeatzailea().irabazlea(0)){
 				new IrabaziUI();
 			}
-			System.out.println("_________________________________________________ORDENAGAILUAK JOKATU:");
-			TaulaKudeatzailea.getTaulaKudeatzailea().ordenagailuarenTxanda();
-			TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
-			if(TaulaKudeatzailea.getTaulaKudeatzailea().irabazlea(1)){
-				new GalduUI();
-			}
+//			System.out.println("_________________________________________________ORDENAGAILUAK JOKATU:");
+//			TaulaKudeatzailea.getTaulaKudeatzailea().ordenagailuarenTxanda();
+//			TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
+//			if(TaulaKudeatzailea.getTaulaKudeatzailea().irabazlea(1)){
+//				new GalduUI();
+//			}
 		}
 //		edukiontzia.remove(userPanel);
 //		gamePanel.remove(lable0);

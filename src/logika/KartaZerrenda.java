@@ -36,6 +36,12 @@ public class KartaZerrenda {
 	}
 	public void kenduKarta(Karta k){
 		lista.remove(k);
+		if(lista.size()<5){
+			for(int i = lista.size(); i<=5; i++){
+				Karta h = new KartaHutsa();
+				lista.add(h);
+			}
+		}
 		System.out.println("kendutako karta: " + k.getIzena());
 	}
 	
@@ -51,6 +57,11 @@ public class KartaZerrenda {
 		}
 		return puntuak;
 	}
+	
+//	public void zerrendarenOrdenaAldatu(){
+//		ArrayList<Karta> zer = new ArrayList<Karta>();
+//		for(i= this.lista)
+//	}
 	
 	public Karta kartaAltuenaBilatu(){
 		Karta altuena = null;
@@ -161,52 +172,8 @@ public class KartaZerrenda {
 		
 	}
 	
-	
-	
-	public void saltatu(int salto){
-		System.out.println("saltatun sartu da!");
-		
-		int tamaina = 0;
-		for(int t =0; t<this.lista.size(); t++){
-			if(this.lista.get(t).getZenb()!=0){
-				tamaina++;
-			}
-		}
-		int s = salto;
-		int posizioa = tamaina-s;
-		System.out.println("animalia" + posizioa+1 + " posizioan sartu behar da ");
-		System.out.println("Zerrendaren tamaina: " +tamaina);
-		Karta k = Tableroa.getTableroa().getJokokoKartak().get(tamaina-1);
-		ArrayList<Karta> zerrendaBerria = new ArrayList<Karta>();
-		if(posizioa<0){
-			zerrendaBerria = this.lista;
-			System.out.println(" posizioa < 0");
-		}
-			else{
-				
-				for (int i = 0; i<this.lista.size();i++){
-					if(i == posizioa){
-						zerrendaBerria.add(k);
-						System.out.println(k.getIzena()+"karta gehitu da");
-						
-					}else{
-						zerrendaBerria.add(this.lista.get(i));
-						System.out.println(this.lista.get(i).getIzena()+" gehitu da");
-					}
-				}
-				zerrendaBerria.remove(zerrendaBerria.size()-1);
-				if(zerrendaBerria.size()<5){
-					for(int j = zerrendaBerria.size()-1; j<=5; j++){
-						Karta h = new KartaHutsa();
-						zerrendaBerria.add(h);
-					}
-				}
-				this.lista = zerrendaBerria;
-			}
-		
-		this.lista = zerrendaBerria;
-		
-		
+	public void set(Karta k, int pos){
+		lista.set(pos, k);
 	}
 
 	public void biKartaAltuenakKenduZerrendaTxikia(){
