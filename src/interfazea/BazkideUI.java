@@ -1,6 +1,9 @@
 package interfazea;
 
 import javax.swing.*;
+
+import kudeatzaileak.BazkideKud;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -58,15 +61,19 @@ public class BazkideUI extends JFrame {
 		panelNagusia.add(erdiPanela, BorderLayout.CENTER);
 	}
 	
-	public void hegoaldea() {		
+	public void hegoaldea() {
+		String user = this.setUser();
+		String email = this.setEmail();
+		String pass = this.setPassword();
 		JButton sartuBotoia = new JButton("Bazkide egin!");
-//		sartuBotoia.addActionListener(new ActionListener() {
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				BazkideUI baz = new BazkideUI();
-//				nagusia.dispose();
-//			}
-//		});
+		sartuBotoia.addActionListener(new ActionListener() {
+			@Override
+			
+			public void actionPerformed(ActionEvent e) {
+				BazkideKud.getInstantzia().bazkideaSartu(user, email, pass);
+				nagusia.dispose();
+			}
+		});
 			
 		JPanel behekoPanela= new JPanel();
 		behekoPanela.add(sartuBotoia);
