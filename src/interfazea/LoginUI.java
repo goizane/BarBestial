@@ -17,7 +17,7 @@ public class LoginUI extends JFrame {
 	JTextField pasahitzaArea = new JTextField();
 	
 	public LoginUI() {
-		nagusia = new JFrame("Bezero-aplikazioa: Login pantaila");
+		nagusia = new JFrame("Login pantaila");
 		panelNagusia.setLayout(new BorderLayout());
 		panelNagusia.setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
 		iparraldea();
@@ -70,7 +70,21 @@ public class LoginUI extends JFrame {
 //				nagusia.dispose();
 //			}
 //		});
-		panelNagusia.add(loginBotoia, BorderLayout.SOUTH);
+		
+		JButton bazkideBotoia = new JButton("Bazkide egin!");
+		bazkideBotoia.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				BazkideUI baz = new BazkideUI();
+				baz.bistaratu();
+				nagusia.dispose();
+			}
+		});
+			
+		JPanel behekoPanela= new JPanel();
+		behekoPanela.add(loginBotoia);
+		behekoPanela.add(bazkideBotoia);
+		panelNagusia.add(behekoPanela, BorderLayout.SOUTH);
 	}
 	
 	public String setUser() {
