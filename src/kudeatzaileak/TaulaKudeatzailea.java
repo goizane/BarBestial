@@ -29,9 +29,9 @@ public class TaulaKudeatzailea {
 		return taula;
 	}
 	
-	public void hasieratu(){
+	public void hasieratu(String izena){
 		Taula t = new Taula();
-		Tableroa.getTableroa().tableroaHasieratu();
+		Tableroa.getTableroa().tableroaHasieratu(izena);
 		t.pantailaratuOrdenagailuKartak();
 		t.pantailaratuJokokoKartak();
 		t.pantailaratuJokalariKartak();
@@ -130,5 +130,9 @@ public class TaulaKudeatzailea {
 	
 	public KartaZerrenda OrdenagailuarenEskukoKartakLortu(){
 		return Tableroa.getTableroa().getJokalariak().getJok(1).getEskukoKartak();
+	}
+
+	public String getIzena() {
+		return Jokalari.getIzena();
 	}
 }

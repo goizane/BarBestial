@@ -26,12 +26,13 @@ public class Tableroa {
 		return nTableroa;
 	}
 	
-	public  void tableroaHasieratu(){
+	public  void tableroaHasieratu(String izena){
 		System.out.println("TABLEROA HASIERATU");
 		JokalariZerrenda jokZer = new JokalariZerrenda();
 	
 		Jokalari j1= new Jokalari("Urdina"); //pertsona
 		j1.jokalariarenKoloreaHasieratu("Urdina");
+		j1.izenaHasieratu(izena);
 //		System.out.println("jokalari urdina sortu da!");
 		Jokalari j2 = new Jokalari("Berdea"); //ordenagailua
 		j1.jokalariarenKoloreaHasieratu("Berdea");

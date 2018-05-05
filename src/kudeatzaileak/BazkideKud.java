@@ -1,6 +1,8 @@
 package kudeatzaileak;
 
 
+import java.sql.ResultSet;
+
 import kudeatzaileak.DBKudeatzaile;
 
 public class BazkideKud {
@@ -17,5 +19,12 @@ private static final BazkideKud bazkideKud = new BazkideKud();
 		DBKudeatzaile dbkud = DBKudeatzaile.getInstantzia();
 		dbkud.execSQL("INSERT INTO Jokalari (izena, email, pasahitza) VALUES ( '"+ izena +"','"+ email +"','"+ pasahitza +"' );");
 	}
+	
+	public void bazkidearenPasahitzaLortu(String izena){
+		DBKudeatzaile dbkud = DBKudeatzaile.getInstantzia();
+		ResultSet rs = dbkud.execSQL("SELECT pasahitza FROM Jokalari WHERE Jokalari.izena = 'izena';");
+	}
+	
+	
 	
 }

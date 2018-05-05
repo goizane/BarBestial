@@ -1,6 +1,10 @@
 package interfazea;
 
 import javax.swing.*;
+
+import kudeatzaileak.BazkideKud;
+import kudeatzaileak.TaulaKudeatzailea;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -59,24 +63,29 @@ public class LoginUI extends JFrame {
 	}
 	
 	public void hegoaldea() {
+		String izena = setUser();
+		String email = setEmail();
+		String pasahitza = setPassword();
 		JButton loginBotoia = new JButton("Login");
-//		loginBotoia.addActionListener(new ActionListener() {
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
+		loginBotoia.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
 //				Kudeatzailea.getInstantzia().setErabiltzailea(erabiltzaileArea.getText());
 //				Kudeatzailea.getInstantzia().setPasahitza(pasahitzaArea.getText());
 //				Data db = new Data();
 //				Connection konexioa = db.conn;
-//				nagusia.dispose();
-//			}
-//		});
+				TaulaKudeatzailea.getTaulaKudeatzailea().hasieratu(izena);
+				nagusia.dispose();
+			}
+		});
 		
 		JButton bazkideBotoia = new JButton("Bazkide egin!");
+	
 		bazkideBotoia.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				BazkideUI baz = new BazkideUI();
-				baz.bistaratu();
+				BazkideKud.getInstantzia().bazkideaSartu(izena, email, pasahitza);
+				TaulaKudeatzailea.getTaulaKudeatzailea().hasieratu(izena);
 				nagusia.dispose();
 			}
 		});

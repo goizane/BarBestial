@@ -125,7 +125,7 @@ public class Taula extends JFrame {
 		
 		//panel nagusian sartu
 		getContentPane();
-		
+				
 		add(ordenagailuKartak, BorderLayout.NORTH);
 		add(jokokoKartak, BorderLayout.CENTER);
 		add(jokalariKartak, BorderLayout.SOUTH);
@@ -438,7 +438,7 @@ public class Taula extends JFrame {
 	
 	public static void main(String[] args) {
 		
-		TaulaKudeatzailea.getTaulaKudeatzailea().hasieratu();
+//		TaulaKudeatzailea.getTaulaKudeatzailea().hasieratu();
 		//taula kudeatzailean hasieratu
 //		Taula t =new Taula();
 		

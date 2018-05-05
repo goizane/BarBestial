@@ -8,7 +8,8 @@ import java.util.Stack;
 public class Jokalari {
 
 	//ATRIBUTUAK
-	private String izena;
+	private static String izena;
+	
 	private static KartaZerrenda eskukoKartak;
 	private Stack<Karta> mazoa;
 	private int lortutakoPuntuak;
@@ -32,8 +33,12 @@ public class Jokalari {
 		return mazoa;
 	}
 	
-	public String getKolorea(){
+	public static String getIzena(){
 		return izena;
+	}
+	
+	public String getKolorea(){
+		return kolorea;
 	}
 	
 	public List<Integer> kartakNahastu(){
@@ -81,6 +86,10 @@ public class Jokalari {
 	}
 	public void jokalariarenKoloreaHasieratu(String kol){
 		this.kolorea = kol;
+	}
+	
+	public void izenaHasieratu(String izena){
+		this.izena= izena;
 	}
 	public void jokatu(Karta k){
 			KartaZerrenda eskKartak = new KartaZerrenda();
