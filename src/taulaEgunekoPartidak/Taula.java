@@ -23,7 +23,7 @@ public class Taula extends JFrame{
 	JPanel botoiak = new JPanel();
 	
 	public Taula(){
-		super("Bitecoin salmenten taula");
+		super("GAURKO PARTIDAK");
 		irten.setText("Irten");
 		berriroHasi.setText("Berriro hasi");
 		zurePartidak.setText("Zure partidak ikusi");

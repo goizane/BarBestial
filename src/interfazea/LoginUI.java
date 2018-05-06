@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import kudeatzaileak.LoginKud;
 import kudeatzaileak.TaulaKudeatzailea;
 
 public class LoginUI extends JFrame {
@@ -79,9 +80,16 @@ public class LoginUI extends JFrame {
 					
 					
 					public void actionPerformed(ActionEvent e) {
-						String izena = TaulaKudeatzailea.getTaulaKudeatzailea().getIzena();
-						TaulaKudeatzailea.getTaulaKudeatzailea().hasieratu(izena);
-						setVisible(false);
+						boolean zuzena = LoginKud.getInstantzia().frogatuLogin(izena.getText(), pasahitza.getText());
+//						String izena = TaulaKudeatzailea.getTaulaKudeatzailea().getIzena();
+						if (zuzena==true) {
+							TaulaKudeatzailea.getTaulaKudeatzailea().hasieratu(izena.getText());
+							setVisible(false);
+						}
+						else {
+							new LoginErroreUI();
+							setVisible(false);
+						}
 					}
 			});
 	}

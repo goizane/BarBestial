@@ -49,7 +49,7 @@ public class TableModelEgunekoPartidak extends AbstractTableModel{
 	
 	public void kargatu(){
 		hasieratuZutabeIzenak();
-		List<String[]> partidaH = PartidaKud.getInstantzia().getPartidak();
+		List<String[]> partidaH = PartidaKud.getInstantzia().getGaurkoPartidak();
 		for(String[] p : partidaH ){
 			System.out.println(p[0]);
 			datuak.add(new Lag(p[0],p[1]));

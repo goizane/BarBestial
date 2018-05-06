@@ -9,13 +9,19 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenuBar;
 import javax.swing.JPanel;
-
 import kudeatzaileak.TaulaKudeatzailea;
 import logika.Karta;
 import logika.KartaZerrenda;
 
 public class Taula extends JFrame {
+	
+	// MENU AUKERAK
+	JMenuBar menuBarra = new JMenuBar();
+	JButton egunekoPartidak = new JButton();
+	JButton historikoa = new JButton();
+	JButton jokalariPartidak = new JButton();
 	
 	//KARTAK
 	
@@ -93,6 +99,15 @@ public class Taula extends JFrame {
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
+		// Menu barra panelan sartu
+		egunekoPartidak.setText("	Ranking: Eguneko partidak!	");
+		jokalariPartidak.setText("	Ranking: Zure partida onenak!	");
+		historikoa.setText("	Ranking: Historikoki partida onenak!	");
+		menuBarra.add(egunekoPartidak);
+		menuBarra.add(jokalariPartidak);
+		menuBarra.add(historikoa);
+		setJMenuBar(menuBarra);
+		
 		// ordenagailuko kartak ordenagailuKartak panelean sartu
 		ordenagailuKartak.add(ordenagailuKarta1);
 		ordenagailuKartak.add(ordenagailuKarta2);
@@ -130,6 +145,7 @@ public class Taula extends JFrame {
 		add(jokokoKartak, BorderLayout.CENTER);
 		add(jokalariKartak, BorderLayout.SOUTH);
 		setVisible(true);
+		setTitle("BAR BESTIAL");
 		setSize(1200, 700);
 		setMaximumSize(new Dimension(1000, 700));
 		setPreferredSize(new Dimension(1000, 700));
@@ -138,6 +154,7 @@ public class Taula extends JFrame {
 		
 		
 	}
+
 	
 	public void pantailaratuOrdenagailuKartak(){
 		ordenagailuKarta1.setIcon(karta);
@@ -366,6 +383,36 @@ public class Taula extends JFrame {
 					System.out.println("posizioa: 2");
 				}
 	});
+			
+			
+			// MenuBarra botoietako actionListener-ak Ranking-ak bistaratzeko
+			
+			egunekoPartidak.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+
+					new taulaEgunekoPartidak.Taula();
+				}
+			});
+			
+			jokalariPartidak.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+
+					new taulaJokalaria.Taula();
+				}
+			});
+			
+			historikoa.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+
+					new taulaHistorikoa.Taula();
+				}
+			});
 			
 	}
 	
