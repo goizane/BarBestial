@@ -1,121 +1,92 @@
 package interfazea;
 
-import javax.swing.*;
-
-import kudeatzaileak.BazkideKud;
-import kudeatzaileak.TaulaKudeatzailea;
-
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import kudeatzaileak.TaulaKudeatzailea;
 
 public class LoginUI extends JFrame {
 	
-	private static final long serialVersionUID = 1L;
+	JTextField izena = new JTextField();
+	JTextField pasahitza = new JTextField();
 	
-	private JFrame nagusia;
-	private JPanel panelNagusia = new JPanel();
-	JTextField erabiltzaileArea = new JTextField();
-	JTextField emailArea = new JTextField();
-	JTextField pasahitzaArea = new JTextField();
+	JLabel izenaL = new JLabel();
+	JLabel pasahitzaL = new JLabel();
 	
-	public LoginUI() {
-		nagusia = new JFrame("Login pantaila");
-		panelNagusia.setLayout(new BorderLayout());
-		panelNagusia.setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
-		iparraldea();
-		erdialdea();
-		hegoaldea();
-		nagusia.getContentPane().add(panelNagusia);
-	}
+	JButton bazkide = new JButton();
+	JButton atzera = new JButton();
+	JButton login = new JButton();
 	
-	public void iparraldea() {
-		JLabel azalpenLabela = new JLabel("Zure datuak sartu:");
-		panelNagusia.add(azalpenLabela, BorderLayout.NORTH);
-	}
+	JPanel datuak = new JPanel();
+	JPanel botoiak = new JPanel();
 	
-	public void erdialdea() {
-		JLabel erabiltzaileLabela = new JLabel("Erabiltzaile-izena: ");
-		JPanel erabiltzailePanela = new JPanel();
-		erabiltzailePanela.setLayout(new BoxLayout(erabiltzailePanela, BoxLayout.X_AXIS));
-		erabiltzailePanela.add(erabiltzaileLabela);
-		erabiltzailePanela.add(erabiltzaileArea);
+	public LoginUI(){
+		super("Login pantaila");
 		
-		JLabel emailLabela = new JLabel("Email kontua: ");
-		JPanel emailPanela = new JPanel();
-		emailPanela.setLayout(new BoxLayout(emailPanela, BoxLayout.X_AXIS));
-		emailPanela.add(emailLabela);
-		emailPanela.add(emailArea);
+		izenaL.setText("Izena: ");
+		pasahitzaL.setText("Pasahitza: ");
+		bazkide.setText("Bazkide egin!");
+		atzera.setText("Atzera");
+		login.setText("Login");
 		
-		JLabel pasahitzaLabela = new JLabel("Pasahitza: ");
-		JPanel pasahitzaPanela = new JPanel();
-		pasahitzaPanela.setLayout(new BoxLayout(pasahitzaPanela, BoxLayout.X_AXIS));
-		pasahitzaPanela.add(pasahitzaLabela);
-		pasahitzaPanela.add(pasahitzaArea);
+		datuak.add(izenaL);
+		datuak.add(izena);
+		datuak.add(pasahitzaL);
+		datuak.add(pasahitza);
 		
-		JPanel erdiPanela = new JPanel();
-		erdiPanela.setLayout(new BoxLayout(erdiPanela, BoxLayout.Y_AXIS));
-		erdiPanela.add(erabiltzailePanela);
-		erdiPanela.add(emailPanela);
-		erdiPanela.add(pasahitzaPanela);
-		panelNagusia.add(erdiPanela, BorderLayout.CENTER);
-	}
-	
-	public void hegoaldea() {
-		String izena = setUser();
-		String email = setEmail();
-		String pasahitza = setPassword();
-		JButton loginBotoia = new JButton("Login");
-		loginBotoia.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-//				Kudeatzailea.getInstantzia().setErabiltzailea(erabiltzaileArea.getText());
-//				Kudeatzailea.getInstantzia().setPasahitza(pasahitzaArea.getText());
-//				Data db = new Data();
-//				Connection konexioa = db.conn;
-				TaulaKudeatzailea.getTaulaKudeatzailea().hasieratu(izena);
-				nagusia.dispose();
-			}
-		});
 		
-		JButton bazkideBotoia = new JButton("Bazkide egin!");
-	
-		bazkideBotoia.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				BazkideKud.getInstantzia().bazkideaSartu(izena, email, pasahitza);
-				TaulaKudeatzailea.getTaulaKudeatzailea().hasieratu(izena);
-				nagusia.dispose();
-			}
-		});
+		datuak.setLayout(new GridLayout(2, 2));
+		
+		botoiak.add(bazkide);
+		botoiak.add(atzera);
+		botoiak.add(login);
+		
+		botoiak.setLayout(new GridLayout(1, 3));
+		
+		add(datuak, BorderLayout.NORTH);
+		add(botoiak, BorderLayout.SOUTH);
+		pack();
+		setVisible(true);
+		
+		bazkide.addActionListener(new ActionListener() {
 			
-		JPanel behekoPanela= new JPanel();
-		behekoPanela.add(loginBotoia);
-		behekoPanela.add(bazkideBotoia);
-		panelNagusia.add(behekoPanela, BorderLayout.SOUTH);
+			
+			public void actionPerformed(ActionEvent e) {
+				BazkideEginUI b =new BazkideEginUI();
+				b.bistaratu();
+				setVisible(false);
+			}
+	});
+		atzera.addActionListener(new ActionListener() {
+			
+			
+			public void actionPerformed(ActionEvent e) {
+				LehenengoPantailaUI lp =new LehenengoPantailaUI();
+				
+				setVisible(false);
+			}
+	});
+		
+		login.addActionListener(new ActionListener() {
+					
+					
+					public void actionPerformed(ActionEvent e) {
+						String izena = TaulaKudeatzailea.getTaulaKudeatzailea().getIzena();
+						TaulaKudeatzailea.getTaulaKudeatzailea().hasieratu(izena);
+						setVisible(false);
+					}
+			});
 	}
-	
-	public String setUser() {
-		return this.erabiltzaileArea.getText();
-	}
-	
-	public String setEmail() {
-		return this.emailArea.getText();
-	}
-	
-	public String setPassword() {
-		return this.pasahitzaArea.getText();
-	}
-	
-	public void bistaratu() {
-		nagusia.setSize(275, 125);
-		nagusia.setVisible(true);
-		nagusia.setDefaultCloseOperation(EXIT_ON_CLOSE);
+	public static void main(String[] args) {
+		new LoginUI();
 	}
 
-	public static void main(String[] args) {
-		LoginUI pantaila = new LoginUI();
-		pantaila.bistaratu();
-	}
 }
