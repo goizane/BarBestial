@@ -11,6 +11,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenuBar;
 import javax.swing.JPanel;
+
+import kudeatzaileak.PartidaKud;
 import kudeatzaileak.TaulaKudeatzailea;
 import logika.Karta;
 import logika.KartaZerrenda;
@@ -310,7 +312,7 @@ public class Taula extends JFrame {
 		}
 
 
-		if (z.get(3).getZenb()==0) {
+		if ( z.tamaina()<4) {
 			jokalariKarta4.setIcon(kartaHutsa);
 		}
 		else {
@@ -419,7 +421,11 @@ public class Taula extends JFrame {
 	public void akzioa(int botoia) throws InterruptedException {
 		//JOKALARIAREN TXANDA
 		KartaZerrenda jKartak = TaulaKudeatzailea.getTaulaKudeatzailea().JokalariarenEskukoKartakLortu();
-
+		for(int i = 0; i<jKartak.tamaina(); i++){
+			System.out.println(" ----------------------> GRAFIKAN: " + jKartak.get(i).getIzena()+ "   " + jKartak.get(i).kolorea);
+		}
+		
+		
 		Karta jkarta = jKartak.get(botoia);
 
 		System.out.println("_________________________________________________JOKALARIAK JOKATU:");
@@ -448,33 +454,63 @@ public class Taula extends JFrame {
 			TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakHustu();
 			TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
 	
-			if(TaulaKudeatzailea.getTaulaKudeatzailea().irabazlea(0)){
-				new IrabaziUI();
+			if(TaulaKudeatzailea.getTaulaKudeatzailea().amaitu()){
+				System.out.println("____________________________________________________AMAITU IF-EAN SARTU DA");
+				if(TaulaKudeatzailea.getTaulaKudeatzailea().pertsonaIrabazi()){
+					new IrabaziUI();
+					
+					String izena = TaulaKudeatzailea.getTaulaKudeatzailea().getIzena();
+					int puntuazioa = TaulaKudeatzailea.getTaulaKudeatzailea().getPuntuazioa();
+					PartidaKud.getInstantzia().partidaGehitu(izena, puntuazioa);
+				}	
+				else if(TaulaKudeatzailea.getTaulaKudeatzailea().berdinketa()){
+					new BerdinketaUI();
+					String izena = TaulaKudeatzailea.getTaulaKudeatzailea().getIzena();
+					int puntuazioa = TaulaKudeatzailea.getTaulaKudeatzailea().getPuntuazioa();
+					PartidaKud.getInstantzia().partidaGehitu(izena, puntuazioa);
+					System.out.println("_________________________________________________BERDINKETA");
+				}else{
+					new GalduUI();
+					String izena = TaulaKudeatzailea.getTaulaKudeatzailea().getIzena();
+					int puntuazioa = TaulaKudeatzailea.getTaulaKudeatzailea().getPuntuazioa();
+					PartidaKud.getInstantzia().partidaGehitu(izena, puntuazioa);
+				}
+
+					}else{ 
+							System.out.println("_________________________________________________ORDENAGAILUAK JOKATU:");
+							TaulaKudeatzailea.getTaulaKudeatzailea().ordenagailuarenTxanda();
+							TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
+							if(TaulaKudeatzailea.getTaulaKudeatzailea().amaitu()){
+								System.out.println("____________________________________________________AMAITU IF-EAN SARTU DA");
+								if(TaulaKudeatzailea.getTaulaKudeatzailea().pertsonaIrabazi()){
+									new IrabaziUI();
+								String izena = TaulaKudeatzailea.getTaulaKudeatzailea().getIzena();
+								int puntuazioa = TaulaKudeatzailea.getTaulaKudeatzailea().getPuntuazioa();
+								PartidaKud.getInstantzia().partidaGehitu(izena, puntuazioa);
+							}else if(TaulaKudeatzailea.getTaulaKudeatzailea().berdinketa()){
+									new BerdinketaUI();
+									System.out.println("_________________________________________________BERDINKETA");
+									String izena = TaulaKudeatzailea.getTaulaKudeatzailea().getIzena();
+									int puntuazioa = TaulaKudeatzailea.getTaulaKudeatzailea().getPuntuazioa();
+									PartidaKud.getInstantzia().partidaGehitu(izena, puntuazioa);
+				
+								}else{
+									new GalduUI();
+									String izena = TaulaKudeatzailea.getTaulaKudeatzailea().getIzena();
+									int puntuazioa = TaulaKudeatzailea.getTaulaKudeatzailea().getPuntuazioa();
+									PartidaKud.getInstantzia().partidaGehitu(izena, puntuazioa);
+								}
+						}
 			}
-//			System.out.println("_________________________________________________ORDENAGAILUAK JOKATU:");
-//			TaulaKudeatzailea.getTaulaKudeatzailea().ordenagailuarenTxanda();
-//			TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
-//			if(TaulaKudeatzailea.getTaulaKudeatzailea().irabazlea(1)){
-//				new GalduUI();
-//			}
 		}
-//		edukiontzia.remove(userPanel);
-//		gamePanel.remove(lable0);
-//		userPanel.remove(lable1);
-//		userPanel.remove(lable2);
-//		
-//		edukiontzia.remove(gamePanel);
-		
-
-
-//		ImageIcon i = new ImageIcon("src/fitxategiak/"+jkarta.getIzena()+"Urdina.png");
-//		JButton kartaBerria = new JButton(i);
-//		gamePanel.add(kartaBerria);
-		
-		
-		
-
 	}
+				
+			
+				
+		
+			
+
+	
 	public void ezabatuPanelak() {
 		// TODO Auto-generated method stub
 		panelNagusia.remove(jokalariKartak);
@@ -485,7 +521,7 @@ public class Taula extends JFrame {
 	
 	public static void main(String[] args) {
 		
-//		TaulaKudeatzailea.getTaulaKudeatzailea().hasieratu();
+		TaulaKudeatzailea.getTaulaKudeatzailea().hasieratu("ane");
 		//taula kudeatzailean hasieratu
 //		Taula t =new Taula();
 		

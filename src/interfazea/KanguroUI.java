@@ -55,12 +55,16 @@ public class KanguroUI extends JFrame {
 				TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
 				TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakHustu();
 				TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
-				if(TaulaKudeatzailea.getTaulaKudeatzailea().irabazlea(0)){
-					new IrabaziUI();
-				}
-				TaulaKudeatzailea.getTaulaKudeatzailea().ordenagailuarenTxanda();
-				if(TaulaKudeatzailea.getTaulaKudeatzailea().irabazlea(1)){
-					new GalduUI();
+				if(TaulaKudeatzailea.getTaulaKudeatzailea().amaitu()){
+					if(TaulaKudeatzailea.getTaulaKudeatzailea().pertsonaIrabazi()){
+						new IrabaziUI();
+					}	
+					else if(TaulaKudeatzailea.getTaulaKudeatzailea().berdinketa()){
+						new BerdinketaUI();
+
+					}else{
+						new GalduUI();
+					}
 				}
 				setVisible(false);
 			}
@@ -78,12 +82,16 @@ public class KanguroUI extends JFrame {
 				TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
 				TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakHustu();
 				TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
-				if(TaulaKudeatzailea.getTaulaKudeatzailea().irabazlea(0)){
-					new IrabaziUI();
-				}
-				TaulaKudeatzailea.getTaulaKudeatzailea().ordenagailuarenTxanda();
-				if(TaulaKudeatzailea.getTaulaKudeatzailea().irabazlea(1)){
-					new GalduUI();
+				if(TaulaKudeatzailea.getTaulaKudeatzailea().amaitu()){
+					if(TaulaKudeatzailea.getTaulaKudeatzailea().pertsonaIrabazi()){
+						new IrabaziUI();
+					}	
+					else if(TaulaKudeatzailea.getTaulaKudeatzailea().berdinketa()){
+						new BerdinketaUI();
+
+					}else{
+						new GalduUI();
+					}
 				}
 				setVisible(false);
 			}

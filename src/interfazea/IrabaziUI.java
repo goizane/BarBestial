@@ -5,6 +5,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -16,13 +17,15 @@ import logika.MofetaKarta;
 
 public class IrabaziUI extends JFrame {
 	JLabel label1 = new JLabel();
-
+	ImageIcon irabazi = new ImageIcon("src/fitxategiak/irabazi.jpg");
 	JButton irtenBotoia = new JButton();
 	JButton berriroHasiBotoia = new JButton();
 	JButton gaurkoPartidakIkusi = new JButton();
 	JButton zurePartidakIkusi = new JButton();
 	JButton partidaOnenakIkusi = new JButton();
 	JPanel botoiak = new JPanel();
+	JPanel botoiDanak = new JPanel();
+	JLabel irudia = new JLabel();
 	
 	public IrabaziUI(){
 		super("Irabazi panela");
@@ -34,6 +37,7 @@ public class IrabaziUI extends JFrame {
 		zurePartidakIkusi.setText("Zure partidak ikusi");
 		partidaOnenakIkusi.setText("Partida onenak ikusi");
 		
+		irudia.setIcon(irabazi);
 		
 		botoiak.add(berriroHasiBotoia);
 		botoiak.add(gaurkoPartidakIkusi);
@@ -41,10 +45,11 @@ public class IrabaziUI extends JFrame {
 		botoiak.add(partidaOnenakIkusi);
 		
 		botoiak.setLayout(new GridLayout(2,2));
-		
+		botoiDanak.add(botoiak, BorderLayout.NORTH);
+		botoiDanak.add(irtenBotoia, BorderLayout.SOUTH);
 		add(label1,BorderLayout.NORTH );
-		add(botoiak, BorderLayout.CENTER);
-		add(irtenBotoia,BorderLayout.SOUTH );
+		add(irudia, BorderLayout.CENTER);
+		add(botoiDanak,BorderLayout.SOUTH );
 		pack();
 		setVisible(true);
 		

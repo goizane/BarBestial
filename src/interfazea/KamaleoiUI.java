@@ -86,8 +86,21 @@ public class KamaleoiUI extends JFrame {
 				Karta k = new MofetaKarta("");
 			
 				TaulaKudeatzailea.getTaulaKudeatzailea().kamaleoiarenKopiatuKartaEguneratu(k);
-				
 				kamaleoi.animaladaEgin();
+				TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
+				TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakHustu();
+				TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
+				if(TaulaKudeatzailea.getTaulaKudeatzailea().amaitu()){
+					if(TaulaKudeatzailea.getTaulaKudeatzailea().pertsonaIrabazi()){
+						new IrabaziUI();
+					}	
+					else if(TaulaKudeatzailea.getTaulaKudeatzailea().berdinketa()){
+						new BerdinketaUI();
+
+					}else{
+						new GalduUI();
+					}
+				}
 				setVisible(false);
 			}
 });
@@ -102,6 +115,20 @@ public class KamaleoiUI extends JFrame {
 				TaulaKudeatzailea.getTaulaKudeatzailea().kamaleoiarenKopiatuKartaEguneratu(k);
 				new LoroUI();
 				kamaleoi.animaladaEgin();
+				TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
+				TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakHustu();
+				TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
+				if(TaulaKudeatzailea.getTaulaKudeatzailea().amaitu()){
+					if(TaulaKudeatzailea.getTaulaKudeatzailea().pertsonaIrabazi()){
+						new IrabaziUI();
+					}	
+					else if(TaulaKudeatzailea.getTaulaKudeatzailea().berdinketa()){
+						new BerdinketaUI();
+
+					}else{
+						new GalduUI();
+					}
+				}
 				setVisible(false);
 			}
 });
@@ -116,6 +143,20 @@ public class KamaleoiUI extends JFrame {
 				TaulaKudeatzailea.getTaulaKudeatzailea().kamaleoiarenKopiatuKartaEguneratu(k);
 				new KanguroUI();
 				kamaleoi.animaladaEgin();
+				TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
+				TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakHustu();
+				TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
+				if(TaulaKudeatzailea.getTaulaKudeatzailea().amaitu()){
+					if(TaulaKudeatzailea.getTaulaKudeatzailea().pertsonaIrabazi()){
+						new IrabaziUI();
+					}	
+					else if(TaulaKudeatzailea.getTaulaKudeatzailea().berdinketa()){
+						new BerdinketaUI();
+
+					}else{
+						new GalduUI();
+					}
+				}
 				setVisible(false);
 			}
 });
@@ -130,6 +171,21 @@ public class KamaleoiUI extends JFrame {
 				TaulaKudeatzailea.getTaulaKudeatzailea().kamaleoiarenKopiatuKartaEguneratu(k);
 				
 				kamaleoi.animaladaEgin();
+				
+				TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
+				TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakHustu();
+				TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
+				if(TaulaKudeatzailea.getTaulaKudeatzailea().amaitu()){
+					if(TaulaKudeatzailea.getTaulaKudeatzailea().pertsonaIrabazi()){
+						new IrabaziUI();
+					}	
+					else if(TaulaKudeatzailea.getTaulaKudeatzailea().berdinketa()){
+						new BerdinketaUI();
+
+					}else{
+						new GalduUI();
+					}
+				}
 				setVisible(false);
 			}
 });
@@ -144,6 +200,20 @@ public class KamaleoiUI extends JFrame {
 				TaulaKudeatzailea.getTaulaKudeatzailea().kamaleoiarenKopiatuKartaEguneratu(k);
 				
 				kamaleoi.animaladaEgin();
+				TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
+				TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakHustu();
+				TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
+				if(TaulaKudeatzailea.getTaulaKudeatzailea().amaitu()){
+					if(TaulaKudeatzailea.getTaulaKudeatzailea().pertsonaIrabazi()){
+						new IrabaziUI();
+					}	
+					else if(TaulaKudeatzailea.getTaulaKudeatzailea().berdinketa()){
+						new BerdinketaUI();
+
+					}else{
+						new GalduUI();
+					}
+				}
 				setVisible(false);
 			}
 });
@@ -158,6 +228,20 @@ public class KamaleoiUI extends JFrame {
 				TaulaKudeatzailea.getTaulaKudeatzailea().kamaleoiarenKopiatuKartaEguneratu(k);
 				
 				kamaleoi.animaladaEgin();
+				TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
+				TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakHustu();
+				TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
+				if(TaulaKudeatzailea.getTaulaKudeatzailea().amaitu()){
+					if(TaulaKudeatzailea.getTaulaKudeatzailea().pertsonaIrabazi()){
+						new IrabaziUI();
+					}	
+					else if(TaulaKudeatzailea.getTaulaKudeatzailea().berdinketa()){
+						new BerdinketaUI();
+
+					}else{
+						new GalduUI();
+					}
+				}
 				setVisible(false);
 			}
 });
@@ -172,6 +256,20 @@ public class KamaleoiUI extends JFrame {
 				TaulaKudeatzailea.getTaulaKudeatzailea().kamaleoiarenKopiatuKartaEguneratu(k);
 				
 				kamaleoi.animaladaEgin();
+				TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
+				TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakHustu();
+				TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
+				if(TaulaKudeatzailea.getTaulaKudeatzailea().amaitu()){
+					if(TaulaKudeatzailea.getTaulaKudeatzailea().pertsonaIrabazi()){
+						new IrabaziUI();
+					}	
+					else if(TaulaKudeatzailea.getTaulaKudeatzailea().berdinketa()){
+						new BerdinketaUI();
+
+					}else{
+						new GalduUI();
+					}
+				}
 				setVisible(false);
 			}
 });
@@ -186,6 +284,20 @@ public class KamaleoiUI extends JFrame {
 				TaulaKudeatzailea.getTaulaKudeatzailea().kamaleoiarenKopiatuKartaEguneratu(k);
 				
 				kamaleoi.animaladaEgin();
+				TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
+				TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakHustu();
+				TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
+				if(TaulaKudeatzailea.getTaulaKudeatzailea().amaitu()){
+					if(TaulaKudeatzailea.getTaulaKudeatzailea().pertsonaIrabazi()){
+						new IrabaziUI();
+					}	
+					else if(TaulaKudeatzailea.getTaulaKudeatzailea().berdinketa()){
+						new BerdinketaUI();
+
+					}else{
+						new GalduUI();
+					}
+				}
 				setVisible(false);
 			}
 });
@@ -200,6 +312,20 @@ public class KamaleoiUI extends JFrame {
 				TaulaKudeatzailea.getTaulaKudeatzailea().kamaleoiarenKopiatuKartaEguneratu(k);
 				
 				kamaleoi.animaladaEgin();
+				TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
+				TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakHustu();
+				TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
+				if(TaulaKudeatzailea.getTaulaKudeatzailea().amaitu()){
+					if(TaulaKudeatzailea.getTaulaKudeatzailea().pertsonaIrabazi()){
+						new IrabaziUI();
+					}	
+					else if(TaulaKudeatzailea.getTaulaKudeatzailea().berdinketa()){
+						new BerdinketaUI();
+
+					}else{
+						new GalduUI();
+					}
+				}
 				setVisible(false);
 			}
 });
@@ -214,6 +340,20 @@ public class KamaleoiUI extends JFrame {
 				TaulaKudeatzailea.getTaulaKudeatzailea().kamaleoiarenKopiatuKartaEguneratu(k);
 				
 				kamaleoi.animaladaEgin();
+				TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
+				TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakHustu();
+				TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
+				if(TaulaKudeatzailea.getTaulaKudeatzailea().amaitu()){
+					if(TaulaKudeatzailea.getTaulaKudeatzailea().pertsonaIrabazi()){
+						new IrabaziUI();
+					}	
+					else if(TaulaKudeatzailea.getTaulaKudeatzailea().berdinketa()){
+						new BerdinketaUI();
+
+					}else{
+						new GalduUI();
+					}
+				}
 				setVisible(false);
 			}
 });
@@ -228,6 +368,20 @@ public class KamaleoiUI extends JFrame {
 				TaulaKudeatzailea.getTaulaKudeatzailea().kamaleoiarenKopiatuKartaEguneratu(k);
 				
 				kamaleoi.animaladaEgin();
+				TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
+				TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakHustu();
+				TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
+				if(TaulaKudeatzailea.getTaulaKudeatzailea().amaitu()){
+					if(TaulaKudeatzailea.getTaulaKudeatzailea().pertsonaIrabazi()){
+						new IrabaziUI();
+					}	
+					else if(TaulaKudeatzailea.getTaulaKudeatzailea().berdinketa()){
+						new BerdinketaUI();
+
+					}else{
+						new GalduUI();
+					}
+				}
 				setVisible(false);
 			}
 });

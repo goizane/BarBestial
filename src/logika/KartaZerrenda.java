@@ -71,19 +71,27 @@ public class KartaZerrenda {
 		return altuena;
 	}
 	
-	public boolean ilaraBeteta(){
-		boolean beteta = false;
-		Karta k = new KartaHutsa();
-		if(this.lista.contains(k)){
-			beteta= true;
-			System.out.println("Beteta dago!");
-		}
-		return beteta;
-	}
+
 	
 	public boolean hutsikDago(){
 		 return this.lista.isEmpty();
 	}
+	
+	public boolean hutsik(){ //zerrenda karta hutsez beteta badago TRUE bueltatzen du
+		boolean hutsik = false;
+		int kop =0;
+		for(Karta k : this.lista){
+			if(k.getZenb()==0){
+				kop++;
+			}
+		}
+		if(kop == 3){
+			hutsik = true;
+		}
+		System.out.println("karta huts kopurua ---------------->" + kop);
+		return hutsik;
+	}
+	
 	public boolean errepikatutaDago(int zenb){
 		int zenbat =0;
 		boolean errepikatuta = false;
@@ -132,6 +140,7 @@ public class KartaZerrenda {
 			
 			if(i == pos){
 				zerrendaBerria.add(k);
+				zerrendaBerria.add(this.lista.get(i));
 				
 			}else{
 				zerrendaBerria.add(this.lista.get(i));

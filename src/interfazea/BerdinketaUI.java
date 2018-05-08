@@ -1,5 +1,4 @@
 package interfazea;
-
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -14,9 +13,11 @@ import javax.swing.JPanel;
 
 import kudeatzaileak.TaulaKudeatzailea;
 
-public class GalduUI extends JFrame {
+import kudeatzaileak.TaulaKudeatzailea;
+
+public class BerdinketaUI extends JFrame{
 	JLabel label1 = new JLabel();
-	ImageIcon galdu = new ImageIcon("src/fitxategiak/galdu.jpg");
+	ImageIcon berdindu = new ImageIcon("src/fitxategiak/berdinketa.jpg");
 	JButton irtenBotoia = new JButton();
 	JButton berriroHasiBotoia = new JButton();
 	JButton gaurkoPartidakIkusi = new JButton();
@@ -26,17 +27,18 @@ public class GalduUI extends JFrame {
 	JPanel botoiDanak = new JPanel();
 	JLabel irudia = new JLabel();
 	
-	public GalduUI(){
-		super("Galdu panela");
+	public BerdinketaUI(){
+		super("Berdinketa panela");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		label1.setText("GALDU DUZU..");
+		label1.setText("BERDINKETA EGON DA!");
 		irtenBotoia.setText("Irten");
 		berriroHasiBotoia.setText("Berriro hasi");
 		gaurkoPartidakIkusi.setText("Gaurko partidak ikusi");
 		zurePartidakIkusi.setText("Zure partidak ikusi");
 		partidaOnenakIkusi.setText("Partida onenak ikusi");
 		
-		irudia.setIcon(galdu);
+		irudia.setIcon(berdindu);
+		
 		
 		botoiak.add(berriroHasiBotoia);
 		botoiak.add(gaurkoPartidakIkusi);
@@ -104,8 +106,9 @@ public class GalduUI extends JFrame {
 		}
 });
 }
+	
 	public static void main(String[] args) {
-		new GalduUI();
+		new BerdinketaUI();
 	}
 
 }

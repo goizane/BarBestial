@@ -3,6 +3,7 @@ package kudeatzaileak;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import kudeatzaileak.DBKudeatzaile;
@@ -95,8 +96,10 @@ public class PartidaKud {
 		return partidak;
 	}
 
-	public void partidaGehitu(String data, String izena, String puntuazioa){
+	public void partidaGehitu(String izena, int puntuazioa){
 		DBKudeatzaile dbkud = DBKudeatzaile.getInstantzia();
-		dbkud.execSQL("INSERT INTO  (data, izena, puntuazioa) VALUES ( '"+ data +"','"+ izena +"','"+ puntuazioa+"' );");
+		java.util.Date fecha = new Date();
+		String data = fecha.toString();
+		dbkud.execSQL("INSERT INTO  data, izena, puntuazioa VALUES ( '"+ data +"','"+ izena +"','"+ puntuazioa+"' );");
 	}
 }
