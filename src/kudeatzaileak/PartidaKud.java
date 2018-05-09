@@ -20,22 +20,21 @@ public class PartidaKud {
 	}
 
 	public List<String[]> getGaurkoPartidak(){
+		java.util.Date fecha = new Date();
+		String data = fecha.toString();
 
 		DBKudeatzaile dbkud = DBKudeatzaile.getInstantzia();
-		ResultSet rs = dbkud.execSQL("SELECT data, izena, puntuazioa FROM Partida WHERE data = today() ORDER BY puntuazioa;");
+		ResultSet rs = dbkud.execSQL("SELECT data, izena, puntuazioa FROM Partida WHERE data = '"+data+"' ORDER BY puntuazioa;");
 
 		List<String[]> partidak = new ArrayList<String[]>();
 
 		try {
 			while(rs.next()){
-				String[] res = new String[4];
+				String[] res = new String[3];
 				res[0] = rs.getString("izena");
 				res[1] = rs.getString("puntuazioa");
 				res[2] = rs.getString("data");
-
 				partidak.add(res);
-				System.out.println(res[2]);
-				//					System.out.println(res[1]);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -44,6 +43,7 @@ public class PartidaKud {
 
 		return partidak;
 	}
+	
 	public List<String[]> getPartidaHistorikoak(){
 
 		DBKudeatzaile dbkud = DBKudeatzaile.getInstantzia();
@@ -53,14 +53,11 @@ public class PartidaKud {
 
 		try {
 			while(rs.next()){
-				String[] res = new String[4];
+				String[] res = new String[3];
 				res[0] = rs.getString("izena");
 				res[1] = rs.getString("puntuazioa");
 				res[2] = rs.getString("data");
-
 				partidak.add(res);
-				System.out.println(res[2]);
-				//				System.out.println(res[1]);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -73,20 +70,18 @@ public class PartidaKud {
 	public List<String[]> getJokalariarenPartidak(String izena){
 
 		DBKudeatzaile dbkud = DBKudeatzaile.getInstantzia();
-		ResultSet rs = dbkud.execSQL("SELECT data, izena, puntuazioa FROM Partida WHERE Jokalaria.izena = izena ;");
+		ResultSet rs = dbkud.execSQL("SELECT data, izena, puntuazioa FROM Partida WHERE izena = '"+izena+"';");
 
 		List<String[]> partidak = new ArrayList<String[]>();
 
 		try {
 			while(rs.next()){
-				String[] res = new String[4];
+				String[] res = new String[3];
 				res[0] = rs.getString("izena");
 				res[1] = rs.getString("puntuazioa");
 				res[2] = rs.getString("data");
 
 				partidak.add(res);
-				System.out.println(res[2]);
-				//				System.out.println(res[1]);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -100,6 +95,6 @@ public class PartidaKud {
 		DBKudeatzaile dbkud = DBKudeatzaile.getInstantzia();
 		java.util.Date fecha = new Date();
 		String data = fecha.toString();
-		dbkud.execSQL("INSERT INTO  data, izena, puntuazioa VALUES ( '"+ data +"','"+ izena +"','"+ puntuazioa+"' );");
+		dbkud.execSQL("INSERT INTO Partida (data, izena, puntuazioa) VALUES ( '"+ data +"','"+ izena +"','"+ puntuazioa+"' );");
 	}
 }

@@ -20,10 +20,10 @@ private static final BazkideKud bazkideKud = new BazkideKud();
 		dbkud.execSQL("INSERT INTO Jokalari (izena, email, pasahitza) VALUES ( '"+ izena +"','"+ email +"','"+ pasahitza +"' );");
 	}
 	
-	public void bazkidearenPasahitzaLortu(String izena){
-		DBKudeatzaile dbkud = DBKudeatzaile.getInstantzia();
-		ResultSet rs = dbkud.execSQL("SELECT pasahitza FROM Jokalari WHERE Jokalari.izena = 'izena';");
-	}
+//	public void bazkidearenPasahitzaLortu(String izena){
+//		DBKudeatzaile dbkud = DBKudeatzaile.getInstantzia();
+//		ResultSet rs = dbkud.execSQL("SELECT pasahitza FROM Jokalari WHERE izena = 'izena';");
+//	}
 	
 	
 	
