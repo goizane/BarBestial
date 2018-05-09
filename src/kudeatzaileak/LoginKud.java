@@ -22,7 +22,7 @@ public class LoginKud {
 		System.out.println("Login zuzena den frogatzeko:");
 		System.out.println("          Izena: " + izena);
 		System.out.println("          Pasahitza: " + pasahitza);
-		boolean loginZuzena;
+		boolean loginZuzena = false;
 		DBKudeatzaile dbkud = DBKudeatzaile.getInstantzia();
 		ResultSet rs = dbkud.execSQL("SELECT izena FROM Jokalari;");
 		System.out.println("SELECT kontsulta: ");
@@ -33,15 +33,16 @@ public class LoginKud {
 				res[0] = rs.getString("izena");
 				System.out.println("RES: " + res[0]);
 				izenak.add(res);
+				if (res[0].equals(izena)) {
+					loginZuzena = true;
+				}
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		System.out.println("Izenak: " + izenak.get(0));
-		
-		if (izenak.contains(izena)) {
+
+		if (loginZuzena==true) {
 			DBKudeatzaile dbkud2 = DBKudeatzaile.getInstantzia();
 			ResultSet rs2 = dbkud2.execSQL("SELECT pasahitza FROM Jokalari WHERE izena = '"+izena+"';");
 			List<String[]> pasahitzak = new ArrayList<String[]>();
@@ -50,23 +51,15 @@ public class LoginKud {
 					String[] res2 = new String[1];
 					res2[0] = rs2.getString("pasahitza");
 					pasahitzak.add(res2);
+					if (!res2[0].equals(pasahitza)) {
+						loginZuzena = false;
+					}
 				}
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
-			if (pasahitzak.isEmpty()) {
-				loginZuzena = false;
-			}
-			else {
-				loginZuzena = true;
-			}
-		}
-		else {
-			loginZuzena = false;
-		}
-		
+		}		
 		return loginZuzena;
 	}
 }

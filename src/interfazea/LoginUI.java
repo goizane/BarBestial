@@ -54,6 +54,7 @@ public class LoginUI extends JFrame {
 		
 		add(datuak, BorderLayout.NORTH);
 		add(botoiak, BorderLayout.SOUTH);
+		setSize(500,500);
 		pack();
 		setVisible(true);
 		
@@ -81,13 +82,13 @@ public class LoginUI extends JFrame {
 					
 					public void actionPerformed(ActionEvent e) {
 						boolean zuzena = LoginKud.getInstantzia().frogatuLogin(izena.getText(), pasahitza.getText());
-//						String izena = TaulaKudeatzailea.getTaulaKudeatzailea().getIzena();
 						if (zuzena==true) {
 							TaulaKudeatzailea.getTaulaKudeatzailea().hasieratu(izena.getText());
 							setVisible(false);
 						}
 						else {
-							new LoginErroreUI();
+							LoginErroreUI error = new LoginErroreUI();
+							error.bistaratu();
 							setVisible(false);
 						}
 					}

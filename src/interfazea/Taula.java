@@ -14,8 +14,10 @@ import javax.swing.JPanel;
 
 import kudeatzaileak.PartidaKud;
 import kudeatzaileak.TaulaKudeatzailea;
+import logika.Jokalari;
 import logika.Karta;
 import logika.KartaZerrenda;
+import logika.Tableroa;
 
 public class Taula extends JFrame {
 	
@@ -24,6 +26,7 @@ public class Taula extends JFrame {
 	JButton egunekoPartidak = new JButton();
 	JButton historikoa = new JButton();
 	JButton jokalariPartidak = new JButton();
+	JLabel zureIzenaGoian = new JLabel();
 	
 	//KARTAK
 	
@@ -105,9 +108,11 @@ public class Taula extends JFrame {
 		egunekoPartidak.setText("	Ranking: Eguneko partidak!	");
 		jokalariPartidak.setText("	Ranking: Zure partida onenak!	");
 		historikoa.setText("	Ranking: Historikoki partida onenak!	");
+		zureIzenaGoian.setText("	ZURE IZENA:  " + TaulaKudeatzailea.getTaulaKudeatzailea().getIzena() + "	");
 		menuBarra.add(egunekoPartidak);
 		menuBarra.add(jokalariPartidak);
 		menuBarra.add(historikoa);
+		menuBarra.add(zureIzenaGoian);
 		setJMenuBar(menuBarra);
 		
 		// ordenagailuko kartak ordenagailuKartak panelean sartu

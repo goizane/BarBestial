@@ -63,9 +63,6 @@ public class BazkideEginUI extends JFrame {
 	}
 	
 	public void hegoaldea() {
-		String izena = setUser();
-		String email = setEmail();
-		String pasahitza = setPassword();
 		JButton atzera = new JButton("Atzera");
 		atzera.addActionListener(new ActionListener() {
 			@Override
@@ -84,8 +81,8 @@ public class BazkideEginUI extends JFrame {
 		bazkideBotoia.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				BazkideKud.getInstantzia().bazkideaSartu(izena, email, pasahitza);
-				TaulaKudeatzailea.getTaulaKudeatzailea().hasieratu(izena);
+				BazkideKud.getInstantzia().bazkideaSartu(erabiltzaileArea.getText(), emailArea.getText(), pasahitzaArea.getText());
+				TaulaKudeatzailea.getTaulaKudeatzailea().hasieratu(erabiltzaileArea.getText());
 				nagusia.dispose();
 			}
 		});
@@ -96,22 +93,16 @@ public class BazkideEginUI extends JFrame {
 		panelNagusia.add(behekoPanela, BorderLayout.SOUTH);
 	}
 	
-	public String setUser() {
-		return this.erabiltzaileArea.getText();
-	}
-	
-	public String setEmail() {
-		return this.emailArea.getText();
-	}
-	
-	public String setPassword() {
-		return this.pasahitzaArea.getText();
-	}
 	
 	public void bistaratu() {
-		nagusia.setSize(275, 125);
+		nagusia.setSize(600, 600);
+		pack();
 		nagusia.setVisible(true);
 		nagusia.setDefaultCloseOperation(EXIT_ON_CLOSE);
+//		pack();
+//		setSize(1200, 700);
+//		setMaximumSize(new Dimension(1000, 700));
+//		setPreferredSize(new Dimension(1000, 700));
 	}
 
 	public static void main(String[] args) {

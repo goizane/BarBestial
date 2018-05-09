@@ -30,8 +30,9 @@ public class TaulaKudeatzailea {
 	}
 	
 	public void hasieratu(String izena){
-		Taula t = new Taula();
 		Tableroa.getTableroa().tableroaHasieratu(izena);
+		Taula t = new Taula();
+//		Tableroa.getTableroa().tableroaHasieratu(izena);
 		t.pantailaratuOrdenagailuKartak();
 		t.pantailaratuJokokoKartak();
 		t.pantailaratuJokalariKartak();

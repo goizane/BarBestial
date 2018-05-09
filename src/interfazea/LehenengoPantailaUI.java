@@ -21,7 +21,9 @@ public class LehenengoPantailaUI extends JFrame{
 		
 		add(login, BorderLayout.EAST);
 		add(bazkide, BorderLayout.WEST);
+//		setSize(300,300);
 		setVisible(true);
+		
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		pack();
 		
