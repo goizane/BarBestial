@@ -455,14 +455,16 @@ public class Taula extends JFrame {
 		}
 		else{
 			TaulaKudeatzailea.getTaulaKudeatzailea().animaladaEgin(jkarta);
-//			TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
+			TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
 	
 			TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
 			TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
-			TimeUnit.SECONDS.sleep(3);
+//			grafikaEguneratu();
+//			TimeUnit.SECONDS.sleep(3);
 			TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakHustu();
+//			grafikaEguneratu();
 			TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
-			TimeUnit.SECONDS.sleep(3);
+//			TimeUnit.SECONDS.sleep(3);
 			if(TaulaKudeatzailea.getTaulaKudeatzailea().amaitu()){
 				System.out.println("____________________________________________________AMAITU IF-EAN SARTU DA");
 				if(TaulaKudeatzailea.getTaulaKudeatzailea().pertsonaIrabazi()){
@@ -489,6 +491,7 @@ public class Taula extends JFrame {
 							System.out.println("_________________________________________________ORDENAGAILUAK JOKATU:");
 							TaulaKudeatzailea.getTaulaKudeatzailea().ordenagailuarenTxanda();
 							TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
+//							grafikaEguneratu();
 							if(TaulaKudeatzailea.getTaulaKudeatzailea().amaitu()){
 								System.out.println("____________________________________________________AMAITU IF-EAN SARTU DA");
 								if(TaulaKudeatzailea.getTaulaKudeatzailea().pertsonaIrabazi()){
@@ -519,18 +522,22 @@ public class Taula extends JFrame {
 		
 			
 
+//	public void grafikaEguneratu( ){
+
+//		pantailaratuOrdenagailuKartak();
+//		pantailaratuJokokoKartak();
+//		pantailaratuJokalariKartak();
+//	}
 	
-	public void ezabatuPanelak() {
-		// TODO Auto-generated method stub
-		panelNagusia.remove(jokalariKartak);
-		panelNagusia.remove(jokokoKartak);
-//		userPanel =new JPanel(new GridBagLayout());
-//		gamePanel = new JPanel(new GridBagLayout());
-	}
+	
+	
+	
+	
+	
 	
 	public static void main(String[] args) {
 		
-//		TaulaKudeatzailea.getTaulaKudeatzailea().hasieratu("ane");
+		TaulaKudeatzailea.getTaulaKudeatzailea().hasieratu("ane");
 		//taula kudeatzailean hasieratu
 //		Taula t =new Taula();
 		
