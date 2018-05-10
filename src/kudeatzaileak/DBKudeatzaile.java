@@ -15,9 +15,9 @@ public class DBKudeatzaile {
 	private void conOpen() {
 		try {
 
-			String path=this.getClass().getResource("barBestial.db").getPath();
-			System.out.println("Path:"+ path);
-			String url = "jdbc:sqlite:"+ path;
+//			String path=this.getClass().getResource("barBestial.db").getPath();
+//			System.out.println("Path:"+ path);
+			String url = "jdbc:sqlite:src/kudeatzaileak/barBestial.db";
 			Class.forName("org.sqlite.JDBC").newInstance();
 			
 			conn = (Connection) DriverManager.getConnection(url);

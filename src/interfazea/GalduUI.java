@@ -16,7 +16,7 @@ import kudeatzaileak.TaulaKudeatzailea;
 
 public class GalduUI extends JFrame {
 	JLabel label1 = new JLabel();
-	ImageIcon galdu = new ImageIcon("src/fitxategiak/galdu.jpg");
+	ImageIcon galdu = new ImageIcon("src/fitxategiak/sad.png");
 	JButton irtenBotoia = new JButton();
 	JButton berriroHasiBotoia = new JButton();
 	JButton gaurkoPartidakIkusi = new JButton();
@@ -35,9 +35,8 @@ public class GalduUI extends JFrame {
 		gaurkoPartidakIkusi.setText("Gaurko partidak ikusi");
 		zurePartidakIkusi.setText("Zure partidak ikusi");
 		partidaOnenakIkusi.setText("Partida onenak ikusi");
-		
 		irudia.setIcon(galdu);
-		
+
 		botoiak.add(berriroHasiBotoia);
 		botoiak.add(gaurkoPartidakIkusi);
 		botoiak.add(zurePartidakIkusi);
@@ -53,7 +52,6 @@ public class GalduUI extends JFrame {
 		add(botoiDanak,BorderLayout.SOUTH );
 		pack();
 		setVisible(true);
-		setSize(1200, 700);
 		setMaximumSize(new Dimension(700, 700));
 		setPreferredSize(new Dimension(700, 700));
 		

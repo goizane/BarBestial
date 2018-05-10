@@ -33,6 +33,7 @@ public class LehoiKarta extends Karta {
 		}
 	}
 	else{
+		Tableroa.getTableroa().azkenaKanporatu();
 		Tableroa.getTableroa().getJokokoKartak().kartaPosizioBateanSartu(lehoia, 0);
 		}
 	}

@@ -9,16 +9,16 @@ import javax.swing.table.AbstractTableModel;
 import kudeatzaileak.PartidaKud;
 
 
-public class TableModelHistorikoak extends AbstractTableModel{
+public class TableModelHistorikoa extends AbstractTableModel{
 	
 	private Vector<Lag> datuak = new Vector<Lag>();
 	private Vector<String> columnNames = new Vector<String>();
 	
-	public TableModelHistorikoak(){
+	public TableModelHistorikoa(){
 		kargatu();
 	}
 	public static void main(String[] args) {
-		TableModelHistorikoak taula= new TableModelHistorikoak();
+		TableModelHistorikoa taula= new TableModelHistorikoa();
 		System.out.println("Lerroak:" + taula.getRowCount());
 		System.out.println("Zutabeak:" + taula.getColumnCount());
 		//System.out.println("(2,2) elementuaren balioa:" + taula.getValueAt(2, 2));

@@ -1,8 +1,6 @@
 package taulaJokalaria;
 
-import java.sql.Date;
 import java.util.Vector;
-
 import kudeatzaileak.DBKudeatzaile;
 
 class Lag {

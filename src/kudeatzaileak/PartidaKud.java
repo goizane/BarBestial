@@ -2,9 +2,13 @@ package kudeatzaileak;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+
+import com.sun.xml.internal.messaging.saaj.packaging.mime.internet.ParseException;
 
 import kudeatzaileak.DBKudeatzaile;
 import logika.Tableroa;
@@ -22,10 +26,10 @@ public class PartidaKud {
 
 	public List<String[]> getGaurkoPartidak(){
 		java.util.Date fecha = new Date();
+		
 		String data = fecha.toString();
-
 		DBKudeatzaile dbkud = DBKudeatzaile.getInstantzia();
-		ResultSet rs = dbkud.execSQL("SELECT data, izena, puntuazioa FROM Partida WHERE data = '"+data+"' ORDER BY puntuazioa;");
+		ResultSet rs = dbkud.execSQL("SELECT data, izena, puntuazioa FROM Partida WHERE data =date() ORDER BY puntuazioa DESC;");
 
 		List<String[]> partidak = new ArrayList<String[]>();
 
@@ -51,7 +55,7 @@ public class PartidaKud {
 	public List<String[]> getPartidaHistorikoak(){
 
 		DBKudeatzaile dbkud = DBKudeatzaile.getInstantzia();
-		ResultSet rs = dbkud.execSQL("SELECT data, izena, puntuazioa FROM Partida ORDER BY puntuazioa;");
+		ResultSet rs = dbkud.execSQL("SELECT data, izena, puntuazioa FROM Partida ORDER BY puntuazioa DESC;");
 
 		List<String[]> partidak = new ArrayList<String[]>();
 
@@ -76,7 +80,7 @@ public class PartidaKud {
 		String izena = Tableroa.getTableroa().getPertsona().getIzena();
 		System.out.println("Izena: "+izena);
 		DBKudeatzaile dbkud = DBKudeatzaile.getInstantzia();
-		ResultSet rs = dbkud.execSQL("SELECT data, izena, puntuazioa FROM Partida WHERE izena = '"+izena+"';");
+		ResultSet rs = dbkud.execSQL("SELECT data, izena, puntuazioa FROM Partida WHERE izena = '"+izena+"' ORDER BY puntuazioa DESC;");
 
 		List<String[]> partidak = new ArrayList<String[]>();
 
@@ -99,10 +103,8 @@ public class PartidaKud {
 
 	public void partidaGehitu(String izena, int puntuazioa){
 		DBKudeatzaile dbkud = DBKudeatzaile.getInstantzia();
-		java.util.Date fecha = new Date();
-		String data = fecha.toString();
-		System.out.println(data);
 		
-		dbkud.execSQL("INSERT INTO Partida (data, izena, puntuazioa) VALUES ( '"+ data +"','"+ izena +"','"+ puntuazioa+"' );");
+//		dbkud.execSQL("INSERT INTO Partida (data, izena, puntuazioa) VALUES ( '"+ inActiveDate +"','"+ izena +"','"+ puntuazioa+"' );");
+		dbkud.execSQL("INSERT INTO Partida (data, izena, puntuazioa) VALUES (date(),'"+ izena +"','"+ puntuazioa+"' );");
 	}
 }

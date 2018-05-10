@@ -17,7 +17,7 @@ import kudeatzaileak.TaulaKudeatzailea;
 
 public class BerdinketaUI extends JFrame{
 	JLabel label1 = new JLabel();
-	ImageIcon berdindu = new ImageIcon("src/fitxategiak/berdinketa.jpg");
+	ImageIcon berdindu = new ImageIcon("src/fitxategiak/bored.png");
 	JButton irtenBotoia = new JButton();
 	JButton berriroHasiBotoia = new JButton();
 	JButton gaurkoPartidakIkusi = new JButton();
@@ -55,7 +55,6 @@ public class BerdinketaUI extends JFrame{
 		add(botoiDanak,BorderLayout.SOUTH );
 		pack();
 		setVisible(true);
-		setSize(1200, 700);
 		setMaximumSize(new Dimension(700, 700));
 		setPreferredSize(new Dimension(700, 700));
 		

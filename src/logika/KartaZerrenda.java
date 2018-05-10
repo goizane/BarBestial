@@ -19,6 +19,15 @@ public class KartaZerrenda {
 		lista.add(karta);
 	}
 	
+	public int kolorekoKartakKontatu(String kolorea){
+		int kop=0;
+		for (Karta k : this.lista) {
+			if (k.getKolorea()==kolorea) {
+				kop++;
+			}
+		}
+		return kop;
+	}
 	public int tamaina(){
 		return lista.size();
 	}

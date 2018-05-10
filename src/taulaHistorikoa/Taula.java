@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -18,18 +19,18 @@ public class Taula extends JFrame{
 	JButton irten = new JButton();
 	JButton berriroHasi = new JButton();
 	JButton zurePartidak = new JButton();
-	JButton egunekoPartidak = new JButton();
+	JButton partidaOnenak = new JButton();
 	
 	JPanel botoiak = new JPanel();
 	
 	public Taula(){
-		super("PARTIDA HISTORIKOAK");
+		super("GAURKO PARTIDAK");
 		irten.setText("Irten");
 		berriroHasi.setText("Berriro hasi");
 		zurePartidak.setText("Zure partidak ikusi");
-		egunekoPartidak.setText("Eguneko partidak ikusi");
+		partidaOnenak.setText("Partida onenak ikusi");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		TableModelHistorikoak TableModel = new TableModelHistorikoak();
+		TableModelHistorikoa TableModel = new TableModelHistorikoa();
 		JTable table = new JTable(TableModel);
 		JScrollPane scrollPane = new JScrollPane(table);
 		
@@ -56,12 +57,12 @@ irten.addActionListener(new ActionListener() {
 		}
 });
 	;
-	egunekoPartidak.addActionListener(new ActionListener() {
+	partidaOnenak.addActionListener(new ActionListener() {
 			
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new taulaEgunekoPartidak.Taula();
+				new taulaHistorikoa.Taula();
 				setVisible(false);
 			}
 	});
@@ -77,5 +78,8 @@ irten.addActionListener(new ActionListener() {
 });
 		pack();
 		setVisible(true);
+	}
+	public static void main(String[] args)  {
+		new Taula();
 	}
 }

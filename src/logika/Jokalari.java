@@ -61,16 +61,24 @@ public abstract class Jokalari {
 
 	
 	public static boolean pertsonaIrabazi(){
-		boolean pertsonaI= false;
-		int pertsonaPuntuak = Pertsona.getPuntuazioa();
-		int ordenagailuPuntuak = Ordenagailua.getPuntuazioa();
-		if(pertsonaPuntuak> ordenagailuPuntuak){
-		
-			pertsonaI = true;
+		boolean pertsonaIrabazi= false;
+		if (Tableroa.getTableroa().getTabernakoKartak().kolorekoKartakKontatu("Berdea")!=Tableroa.getTableroa().getTabernakoKartak().kolorekoKartakKontatu("Urdina")) {
+			if (Tableroa.getTableroa().getTabernakoKartak().kolorekoKartakKontatu("Berdea")<Tableroa.getTableroa().getTabernakoKartak().kolorekoKartakKontatu("Urdina")) {
+				pertsonaIrabazi=true;
+			}
 		}
-		System.out.println("pertsona puntuak: " + pertsonaPuntuak);
-		System.out.println("Ordenagauilu puntuak:" + ordenagailuPuntuak);
-		return pertsonaI;
+		else {
+			int pertsonaPuntuak = Pertsona.getPuntuazioa();
+			int ordenagailuPuntuak = Ordenagailua.getPuntuazioa();
+			if(pertsonaPuntuak< ordenagailuPuntuak){
+			
+				pertsonaIrabazi = true;
+			}
+			System.out.println("pertsona puntuak: " + pertsonaPuntuak);
+			System.out.println("Ordenagauilu puntuak:" + ordenagailuPuntuak);
+		}
+		
+		return pertsonaIrabazi;
 	}
 	
 	public static boolean berdinketa(){

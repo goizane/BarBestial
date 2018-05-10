@@ -60,6 +60,10 @@ public class Tableroa {
 		return j1.getEskukoKartakPer();
 	}
 	
+	public KartaZerrenda getTabernakoKartak() {
+		return tabernakoKartak;
+	}
+	
 	public void tabernakoKartakHasieratu(){
 		KartaZerrenda z = new KartaZerrenda();
 		for(int i =0; i<24; i++){

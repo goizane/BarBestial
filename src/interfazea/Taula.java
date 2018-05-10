@@ -23,7 +23,7 @@ import logika.Karta;
 import logika.KartaZerrenda;
 import logika.Tableroa;
 
-public class Taula extends JFrame implements Observer{
+public class Taula extends JFrame {
 	
 	// MENU AUKERAK
 	JMenuBar menuBarra = new JMenuBar();
@@ -433,24 +433,25 @@ public class Taula extends JFrame implements Observer{
 		for(int i = 0; i<jKartak.tamaina(); i++){
 			System.out.println(" ----------------------> GRAFIKAN: " + jKartak.get(i).getIzena()+ "   " + jKartak.get(i).kolorea);
 		}
-		
-		
+
+
 		Karta jkarta = jKartak.get(botoia);
 
 		System.out.println("_________________________________________________JOKALARIAK JOKATU:");
 		TaulaKudeatzailea.getTaulaKudeatzailea().jokatu(jkarta);
-	
-//		pantailaratuOrdenagailuKartak();
-		
+
 		if(jkarta.getZenb()==2 ){ //loro kartak aukeratu behar du 
-			if(TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartenTam()>=1){
+			if(TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartenTam()>1){
 				new LoroUI();
+			} else {
+				TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
 			}
+//			ordenagailuarenTxanda();
 		}
 		else if(jkarta.getZenb()==3 ){
 			if(TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartenTam()>=1){ //kanguroak zenbat salto egin nahi dituen aukeratu behar du(1 edo 2)
 
-			new KanguroUI();
+				new KanguroUI();
 
 			}
 		}
@@ -462,28 +463,26 @@ public class Taula extends JFrame implements Observer{
 
 			TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
 
-			
+
 			pantailaratuJokalariKartak();
 			pantailaratuJokokoKartak();
-			
+
 			TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
 			TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
-//			grafikaEguneratu();
-//			TimeUnit.SECONDS.sleep(3);
+			//			grafikaEguneratu();
 
 			pantailaratuJokokoKartak();
 
 			TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakHustu();
-//			grafikaEguneratu();
+			//			grafikaEguneratu();
 			TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
-//			TimeUnit.SECONDS.sleep(3);
 			pantailaratuJokokoKartak();
 
 			if(TaulaKudeatzailea.getTaulaKudeatzailea().amaitu()){
 				System.out.println("____________________________________________________AMAITU IF-EAN SARTU DA");
 				if(TaulaKudeatzailea.getTaulaKudeatzailea().pertsonaIrabazi()){
 					new IrabaziUI();
-					
+
 					String izena = TaulaKudeatzailea.getTaulaKudeatzailea().getIzena();
 					int puntuazioa = TaulaKudeatzailea.getTaulaKudeatzailea().getPuntuazioa();
 					PartidaKud.getInstantzia().partidaGehitu(izena, puntuazioa);
@@ -501,51 +500,60 @@ public class Taula extends JFrame implements Observer{
 					PartidaKud.getInstantzia().partidaGehitu(izena, puntuazioa);
 				}
 
-					}else{ 
-							TimeUnit.SECONDS.sleep(1);
-							System.out.println("_________________________________________________ORDENAGAILUAK JOKATU:");
-							TaulaKudeatzailea.getTaulaKudeatzailea().ordenagailuarenTxanda();
-							TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
-//							grafikaEguneratu();
-//							TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
-							TimeUnit.SECONDS.sleep(1);
-							pantailaratuJokokoKartak();
-							if(TaulaKudeatzailea.getTaulaKudeatzailea().amaitu()){
-								System.out.println("____________________________________________________AMAITU IF-EAN SARTU DA");
-								if(TaulaKudeatzailea.getTaulaKudeatzailea().pertsonaIrabazi()){
-									new IrabaziUI();
-								String izena = TaulaKudeatzailea.getTaulaKudeatzailea().getIzena();
-								int puntuazioa = TaulaKudeatzailea.getTaulaKudeatzailea().getPuntuazioa();
-								PartidaKud.getInstantzia().partidaGehitu(izena, puntuazioa);
-							}else if(TaulaKudeatzailea.getTaulaKudeatzailea().berdinketa()){
-									new BerdinketaUI();
-									System.out.println("_________________________________________________BERDINKETA");
-									String izena = TaulaKudeatzailea.getTaulaKudeatzailea().getIzena();
-									int puntuazioa = TaulaKudeatzailea.getTaulaKudeatzailea().getPuntuazioa();
-									PartidaKud.getInstantzia().partidaGehitu(izena, puntuazioa);
-				
-								}else{
-									new GalduUI();
-									String izena = TaulaKudeatzailea.getTaulaKudeatzailea().getIzena();
-									int puntuazioa = TaulaKudeatzailea.getTaulaKudeatzailea().getPuntuazioa();
-									PartidaKud.getInstantzia().partidaGehitu(izena, puntuazioa);
-								}
-						}
+			}else{ 
+				ordenagailuarenTxanda();
 			}
 		}
 	}
-				
-			
-				
-		
-			
 
-//	public void grafikaEguneratu( ){
 
-//		pantailaratuOrdenagailuKartak();
-//		pantailaratuJokokoKartak();
-//		pantailaratuJokalariKartak();
-//	}
+	public void ordenagailuarenTxanda() {
+		System.out.println("_________________________________________________ORDENAGAILUAK JOKATU:");
+		TaulaKudeatzailea.getTaulaKudeatzailea().ordenagailuarenTxanda();
+		TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
+		//							grafikaEguneratu();
+		//							TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
+		pantailaratuJokokoKartak();
+		amaitu();
+	}
+	
+	public void amaitu() {
+		if(TaulaKudeatzailea.getTaulaKudeatzailea().amaitu()){
+			TaulaKudeatzailea.getTaulaKudeatzailea().ordenagailuarenTxanda();
+			System.out.println("____________________________________________________AMAITU IF-EAN SARTU DA");
+			if(TaulaKudeatzailea.getTaulaKudeatzailea().pertsonaIrabazi()){
+				String izena = TaulaKudeatzailea.getTaulaKudeatzailea().getIzena();
+				int puntuazioa = TaulaKudeatzailea.getTaulaKudeatzailea().getPuntuazioa();
+				PartidaKud.getInstantzia().partidaGehitu(izena, puntuazioa);
+				new IrabaziUI();
+
+			}else if(TaulaKudeatzailea.getTaulaKudeatzailea().berdinketa()){
+				String izena = TaulaKudeatzailea.getTaulaKudeatzailea().getIzena();
+				int puntuazioa = TaulaKudeatzailea.getTaulaKudeatzailea().getPuntuazioa();
+				PartidaKud.getInstantzia().partidaGehitu(izena, puntuazioa);
+				new BerdinketaUI();
+				System.out.println("_________________________________________________BERDINKETA");
+
+
+			}else{
+				String izena = TaulaKudeatzailea.getTaulaKudeatzailea().getIzena();
+				int puntuazioa = TaulaKudeatzailea.getTaulaKudeatzailea().getPuntuazioa();
+				PartidaKud.getInstantzia().partidaGehitu(izena, puntuazioa);
+				new GalduUI();
+
+			}
+		}
+	}
+
+
+
+
+	//	public void grafikaEguneratu( ){
+
+	//		pantailaratuOrdenagailuKartak();
+	//		pantailaratuJokokoKartak();
+	//		pantailaratuJokalariKartak();
+	//	}
 	
 	
 	
@@ -559,13 +567,6 @@ public class Taula extends JFrame implements Observer{
 		//taula kudeatzailean hasieratu
 //		Taula t =new Taula();
 		
-		
-	}
-
-
-	@Override
-	public void update(Observable o, Object arg) {
-		// TODO Auto-generated method stub
 		
 	}
 	

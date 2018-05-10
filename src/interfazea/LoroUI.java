@@ -129,6 +129,20 @@ public class LoroUI extends JFrame {
 							new GalduUI();
 						}
 					}
+					else {
+						TaulaKudeatzailea.getTaulaKudeatzailea().ordenagailuarenTxanda();
+						TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
+						if(TaulaKudeatzailea.getTaulaKudeatzailea().amaitu()){
+							if(TaulaKudeatzailea.getTaulaKudeatzailea().pertsonaIrabazi()){
+								new IrabaziUI();
+							}	
+							else if(TaulaKudeatzailea.getTaulaKudeatzailea().berdinketa()){
+								new BerdinketaUI();
+							}else{
+								new GalduUI();
+							}
+						}
+					}
 					setVisible(false);
 				}
 	});
@@ -152,6 +166,20 @@ public class LoroUI extends JFrame {
 
 						}else{
 							new GalduUI();
+						}
+					}
+					else {
+						TaulaKudeatzailea.getTaulaKudeatzailea().ordenagailuarenTxanda();
+						TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
+						if(TaulaKudeatzailea.getTaulaKudeatzailea().amaitu()){
+							if(TaulaKudeatzailea.getTaulaKudeatzailea().pertsonaIrabazi()){
+								new IrabaziUI();
+							}	
+							else if(TaulaKudeatzailea.getTaulaKudeatzailea().berdinketa()){
+								new BerdinketaUI();
+							}else{
+								new GalduUI();
+							}
 						}
 					}
 					setVisible(false);
@@ -180,6 +208,20 @@ public class LoroUI extends JFrame {
 							new GalduUI();
 						}
 					}
+					else {
+						TaulaKudeatzailea.getTaulaKudeatzailea().ordenagailuarenTxanda();
+						TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
+						if(TaulaKudeatzailea.getTaulaKudeatzailea().amaitu()){
+							if(TaulaKudeatzailea.getTaulaKudeatzailea().pertsonaIrabazi()){
+								new IrabaziUI();
+							}	
+							else if(TaulaKudeatzailea.getTaulaKudeatzailea().berdinketa()){
+								new BerdinketaUI();
+							}else{
+								new GalduUI();
+							}
+						}
+					}
 					setVisible(false);
 				}
 	});
@@ -203,6 +245,20 @@ public class LoroUI extends JFrame {
 
 						}else{
 							new GalduUI();
+						}
+					}
+					else {
+						TaulaKudeatzailea.getTaulaKudeatzailea().ordenagailuarenTxanda();
+						TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
+						if(TaulaKudeatzailea.getTaulaKudeatzailea().amaitu()){
+							if(TaulaKudeatzailea.getTaulaKudeatzailea().pertsonaIrabazi()){
+								new IrabaziUI();
+							}	
+							else if(TaulaKudeatzailea.getTaulaKudeatzailea().berdinketa()){
+								new BerdinketaUI();
+							}else{
+								new GalduUI();
+							}
 						}
 					}
 					setVisible(false);

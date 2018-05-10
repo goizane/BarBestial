@@ -14,7 +14,7 @@ import logika.Ordenagailua;
 import logika.Pertsona;
 import logika.Tableroa;
 
-public class TaulaKudeatzailea extends Observable{
+public class TaulaKudeatzailea {
 	private static TaulaKudeatzailea taula = new TaulaKudeatzailea();
 	private JokalariZerrenda jokalariak;
 	private KartaZerrenda jokalariKartak=new KartaZerrenda();
@@ -126,7 +126,7 @@ public class TaulaKudeatzailea extends Observable{
 	
 	public boolean amaitu(){
 		boolean amaitu =false;
-		if(Pertsona.jokoaAmaituDaPer()||Ordenagailua.jokoaAmaituDaOrd()){
+		if(Pertsona.jokoaAmaituDaPer()){
 			amaitu = true;
 			System.out.println("jokoa amaitu da!");
 		}
