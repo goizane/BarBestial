@@ -57,5 +57,7 @@ public class PasahitzOkerra extends JFrame{
 		
 		
 	}
-
+public static void main(String[] args) {
+	new PasahitzOkerra();
+}
 }

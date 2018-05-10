@@ -232,14 +232,31 @@ public class Jokalari {
 		
 	}
 
-	public static void pertsonaPuntuakEguneratu() {
-		pertsonaPuntuak++;
+	public static void pertsonaPuntuakEguneratu(Karta k) {
+		int puntuak;
+		if(k.getZenb()==6 || k.getZenb()==9 || k.getZenb()==11 || k.getZenb()==12){
+			puntuak = 2;
+		}
+		else if(k.getZenb()==4 || k.getZenb()==5 || k.getZenb()== 8 || k.getZenb()==10){
+			puntuak = 3;
+		}else{
+			puntuak = 4;
+		}
+		pertsonaPuntuak = pertsonaPuntuak + puntuak;
 		
 	}
 
-	public static void OrdenagailuPuntuakEguneratu() {
-		ordenagailuPuntuak++;
-		
+	public static void OrdenagailuPuntuakEguneratu(Karta k) {
+		int puntuak;
+		if(k.getZenb()==6 || k.getZenb()==9 || k.getZenb()==11 || k.getZenb()==12){
+			puntuak = 2;
+		}
+		else if(k.getZenb()==4 || k.getZenb()==5 || k.getZenb()== 8 || k.getZenb()==10){
+			puntuak = 3;
+		}else{
+			puntuak = 4;
+		}
+		ordenagailuPuntuak = ordenagailuPuntuak + puntuak;
 	}
 	
 	public static boolean pertsonaIrabazi(){

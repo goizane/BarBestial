@@ -29,23 +29,18 @@ public class Tableroa {
 	}
 	
 	public  void tableroaHasieratu(String izena){
-//		System.out.println("TABLEROA HASIERATU");
+
 		JokalariZerrenda jokZer = new JokalariZerrenda();
 	
-//		Jokalari j1= new Jokalari("Urdina"); //pertsona
+
 		j1.jokalariarenKoloreaHasieratu("Urdina");
 		j1.izenaHasieratu(izena);
 //		System.out.println("jokalari urdina sortu da!");
 //		Jokalari j2 = new Jokalari("Berdea"); //ordenagailua
 		j1.jokalariarenKoloreaHasieratu("Berdea");
-//		System.out.println("jokalari urdina sortu da!");
-//		System.out.println("JOKALARI BERDEA");
+
 		j1.jokalariaHasieratuPer("Urdina");
-//		System.out.println("JOKALARIA HASIERATU ETA GERO ESKUKO KARTAK:");
-//		KartaZerrenda z = j1.getEskukoKartak();
-//		for(int i =0; i<z.tamaina(); i++){
-//			System.out.println(z.get(i).izena+ "-------->"+ z.get(i).kolorea);
-//		}
+
 		System.out.println("JOKALARI URDINA");
 		j2.jokalariaHasieratuOrd("Berdea");
 		tabernakoKartakHasieratu();
@@ -264,10 +259,10 @@ public class Tableroa {
 			this.tabernakoKartak.gehituKarta(k);
 			System.out.println("TABERNARA SARTU -------------->" + k.getIzena());
 			if(k.getKolorea()=="Urdina"){
-				Jokalari.pertsonaPuntuakEguneratu();
+				Jokalari.pertsonaPuntuakEguneratu(k);
 			}
 			else{
-				Jokalari.OrdenagailuPuntuakEguneratu();
+				Jokalari.OrdenagailuPuntuakEguneratu(k);
 			}
 			this.jokokoKartak.kenduKarta(k);
 			

@@ -16,8 +16,8 @@ public class TaulaKudeatzailea {
 	private KartaZerrenda jokalariKartak=new KartaZerrenda();
 	private KartaZerrenda ordenagailuKartak=new KartaZerrenda();
 	private KartaZerrenda jokokoKartak=new KartaZerrenda();
-	private Taula t;
 	private Jokalari jokalari;
+	private Taula t;
 	
 	private TaulaKudeatzailea() {
 	}
@@ -31,7 +31,7 @@ public class TaulaKudeatzailea {
 	
 	public void hasieratu(String izena){
 		Tableroa.getTableroa().tableroaHasieratu(izena);
-		Taula t = new Taula();
+		t = new Taula();
 //		Tableroa.getTableroa().tableroaHasieratu(izena);
 		t.pantailaratuOrdenagailuKartak();
 		t.pantailaratuJokokoKartak();
@@ -47,6 +47,7 @@ public class TaulaKudeatzailea {
 	public void grafikaEguneratu( ){
 //		t.setVisible(false);
 		t = new Taula();
+		
 		t.pantailaratuOrdenagailuKartak();
 		t.pantailaratuJokokoKartak();
 		t.pantailaratuJokalariKartak();

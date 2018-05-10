@@ -5,6 +5,8 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.concurrent.TimeUnit;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -437,8 +439,10 @@ public class Taula extends JFrame {
 		TaulaKudeatzailea.getTaulaKudeatzailea().jokatu(jkarta, 0);
 		
 		if(jkarta.getZenb()==2 ){ //loro kartak aukeratu behar du 
-			if(TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartenTam()!=1){
+			if(TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartenTam()>=1){
 				new LoroUI();
+			}else{
+				
 			}
 		}
 		else if(jkarta.getZenb()==3){ //kanguroak zenbat salto egin nahi dituen aukeratu behar du(1 edo 2)
@@ -451,14 +455,14 @@ public class Taula extends JFrame {
 		}
 		else{
 			TaulaKudeatzailea.getTaulaKudeatzailea().animaladaEgin(jkarta);
-			TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
-		
+//			TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
+	
 			TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
 			TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
-		
+			TimeUnit.SECONDS.sleep(3);
 			TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakHustu();
 			TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
-	
+			TimeUnit.SECONDS.sleep(3);
 			if(TaulaKudeatzailea.getTaulaKudeatzailea().amaitu()){
 				System.out.println("____________________________________________________AMAITU IF-EAN SARTU DA");
 				if(TaulaKudeatzailea.getTaulaKudeatzailea().pertsonaIrabazi()){
@@ -526,7 +530,7 @@ public class Taula extends JFrame {
 	
 	public static void main(String[] args) {
 		
-		TaulaKudeatzailea.getTaulaKudeatzailea().hasieratu("ane");
+//		TaulaKudeatzailea.getTaulaKudeatzailea().hasieratu("ane");
 		//taula kudeatzailean hasieratu
 //		Taula t =new Taula();
 		

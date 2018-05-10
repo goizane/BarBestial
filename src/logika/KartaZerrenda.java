@@ -214,7 +214,7 @@ public class KartaZerrenda {
 	
 	public boolean dauka(int i){
 		boolean dauka = false;
-		if(this.lista.contains(this.get(i))){
+		if(this.lista.contains(kartaLortuZenbakiarekin(i))){
 			dauka = true;
 		}
 		return dauka;
