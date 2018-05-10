@@ -9,12 +9,13 @@ class Lag {
 	
 	String izena;
 	String puntuazioa;
-	Date data;
+	String data;
 	
-	public Lag(String izena, String puntuazioa){
+	public Lag(String izena, String puntuazioa, String data){
 		super();
 		this.izena= izena;
 		this.puntuazioa=puntuazioa;
+		this.data = data;
 
 		
 	}
@@ -28,12 +29,12 @@ class Lag {
 	}
 
 	public String toQuery() {
-		return "'" + izena + "', '" + puntuazioa + "'"; 
+		return "'" + izena + "', '" + puntuazioa + "', '" + data + "'"; 
 	}
 
 	@Override
 	public String toString() {
-		return "Lag [izena=" + izena + ", puntuazioa=" + puntuazioa + "]";
+		return "Lag [izena=" + izena + ", puntuazioa=" + puntuazioa + ", data=" + data + "]";
 	}
 
 
@@ -46,7 +47,9 @@ class Lag {
 		case 1:
 			emaitza = puntuazioa;
 			break;
-			
+		case 2:
+			emaitza = data;
+			break;
 		default:
 			break;
 		}

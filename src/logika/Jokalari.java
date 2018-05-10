@@ -5,28 +5,16 @@ import java.util.List;
 import java.util.Random;
 import java.util.Stack;
 
-public class Jokalari {
+public abstract class Jokalari {
 
 	//ATRIBUTUAK
-	private static String izena;
 	
-	private static KartaZerrenda eskukoKartakPer;
-	private static KartaZerrenda eskukoKartakOrd;
-	private Stack<Karta> mazoaPer;
-	private Stack<Karta> mazoaOrd;
 
-	private static int pertsonaPuntuak=0;
-	private static int ordenagailuPuntuak=0;
-	private String kolorea;
+	protected String kolorea;
 	
 	//ERAIKITZAILEA
-	public Jokalari(String kolorea){
-		this.izena= new String();
-		this.eskukoKartakPer = new KartaZerrenda();
-		this.eskukoKartakOrd = new KartaZerrenda();
-		this.mazoaPer = new Stack<Karta>();
-		this.mazoaOrd = new Stack<Karta>();
-		this.kolorea = kolorea;
+	public Jokalari(){
+		
 		
 	}
 	
@@ -35,25 +23,12 @@ public class Jokalari {
 		
 	}
 	
-	public Stack<Karta> getMazoaPer(){
-		return mazoaPer;
-	}
-	
-	public Stack<Karta> getMazoaOrd(){
-		return mazoaOrd;
-	}
-	
-	public static String getIzena(){
-		return izena;
-	}
 	
 	public String getKolorea(){
 		return kolorea;
 	}
 	
-	public static int getPuntuazioa(){
-		return pertsonaPuntuak;
-	}
+	
 	
 	public List<Integer> kartakNahastu(){
 		
@@ -73,194 +48,22 @@ public class Jokalari {
 		return kartaZerrenda;
 			
 	}
-	public void kartakKargatuPer(List<Integer> lista, String kolorea){
-		List<Integer> zerr = lista;
-		int kont =1;
-		int i =0;
-		Karta k = null;
-		System.out.println("ESKUKO KARTAK");
-		while(kont<=4){
-			k = KartaSortzailea.getKartaSortzailea().sortuKarta(lista.get(i), kolorea);
-			this.eskukoKartakPer.gehituKarta(k);
-			k.koloreaEguneratu(kolorea);
-			System.out.println(k.getIzena() +"KOLOREA: "+ k.getKolorea());
-			kont ++;
-			i++;
-		}
-		System.out.println("MAZOKO KARTAK");
-		while(4<=kont&& kont<=12){
-			k = KartaSortzailea.getKartaSortzailea().sortuKarta(lista.get(i), kolorea);
-			this.mazoaPer.push(k);
-			k.koloreaEguneratu(kolorea);
-			System.out.println(k.getIzena() +"KOLOREA: "+ k.getKolorea());
-			kont++;
-			i++;
-		}
-
-	}
 	
 	
-	public void kartakKargatuOrd(List<Integer> lista, String kolorea){
-		List<Integer> zerr = lista;
-		int kont =1;
-		int i =0;
-		Karta k = null;
-		System.out.println("ESKUKO KARTAK");
-		while(kont<=4){
-			k = KartaSortzailea.getKartaSortzailea().sortuKarta(lista.get(i), kolorea);
-			this.eskukoKartakOrd.gehituKarta(k);
-			k.koloreaEguneratu(kolorea);
-			System.out.println(k.getIzena() +"KOLOREA: "+ k.getKolorea());
-			kont ++;
-			i++;
-		}
-		System.out.println("MAZOKO KARTAK");
-		while(4<=kont&& kont<=12){
-			k = KartaSortzailea.getKartaSortzailea().sortuKarta(lista.get(i), kolorea);
-			this.mazoaOrd.push(k);
-			k.koloreaEguneratu(kolorea);
-			System.out.println(k.getIzena() +"KOLOREA: "+ k.getKolorea());
-			kont++;
-			i++;
-		}
-
-	}
+	
+	
 	
 	
 	public void jokalariarenKoloreaHasieratu(String kol){
 		this.kolorea = kol;
 	}
 	
-	public void izenaHasieratu(String izena){
-		this.izena= izena;
-	}
-	public void jokatuPer(Karta k){
-			KartaZerrenda eskKartak = new KartaZerrenda();
-			Tableroa.getTableroa().ilaranKartaSartu(k);
-			System.out.println("jokatutako Karta :" + k.getIzena());
-			eskukoKartakPer.kenduKarta(k);
-			if (eskukoKartakPer.tamainaKartaHutsBarik()<5) {
-				System.out.println(" ESKUKO KARTAK < 5");
-				eskukoKartakPer.gehituKarta(new KartaHutsa());
-			}
-			for(int i = 0; i<3; i++){
-				eskKartak.gehituKarta(eskukoKartakPer.get(i));
-			}
-			if(!mazoaPer.isEmpty()){
-				Karta mazokoKarta = mazotikKartaHartuPer();
-				eskKartak.gehituKarta(mazokoKarta);
-			}
-			
-			eskukoKartakPer = eskKartak;
-		}
-		
-	public void jokatuOrd(Karta k){
-		KartaZerrenda eskKartak = new KartaZerrenda();
-		Tableroa.getTableroa().ilaranKartaSartu(k);
-		System.out.println("jokatutako Karta :" + k.getIzena());
-		eskukoKartakOrd.kenduKarta(k);
-		if (eskukoKartakOrd.tamaina()<5) {
-			eskukoKartakOrd.gehituKarta(new KartaHutsa());
-		}
-		for(int i = 0; i<3; i++){
-			eskKartak.gehituKarta(eskukoKartakOrd.get(i));
-		}
-		if(!mazoaOrd.isEmpty()){
-			Karta mazokoKarta = mazotikKartaHartuOrd();
-			eskKartak.gehituKarta(mazokoKarta);
-		}
-		
-		eskukoKartakOrd = eskKartak;
-	}
-	
-	public Karta mazotikKartaHartuPer(){
-		 return this.mazoaPer.pop();
-		
-	}
-	public Karta mazotikKartaHartuOrd(){
-		 return this.mazoaOrd.pop();
-		
-	}
-	
-	public static boolean jokoaAmaituDaPer(){
-		boolean amaitu = false;
-		if(getEskukoKartakPer().hutsik()){
-			System.out.println("JOKOA AMAITU DA");
-			amaitu = true;
-		}
-		else{
-			amaitu = false;
-		}
-		return amaitu;
-	}
-	
-	
-	
-	public static boolean jokoaAmaituDaOrd(){
-		boolean amaitu = false;
-		if(getEskukoKartakPer().hutsik()){
-			System.out.println("JOKOA AMAITU DA");
-			amaitu = true;
-		}
-		else{
-			amaitu = false;
-		}
-		return amaitu;
-	}
-	
-	public void mazokoKartaEskukoKartetaraPer(Karta k){
-		this.eskukoKartakPer.gehituKarta(k);
-	}
-	public void mazokoKartaEskukoKartetaraOrd(Karta k){
-		this.eskukoKartakOrd.gehituKarta(k);
-	}
-	public static KartaZerrenda getEskukoKartakPer(){
-		return eskukoKartakPer;
-	}
-	public static KartaZerrenda getEskukoKartakOrd(){
-		return eskukoKartakOrd;
-	}
 
-	public void jokalariaHasieratuPer( String kolorea) {
-		List<Integer> lista = kartakNahastu();
-		kartakKargatuPer(lista, kolorea);
-		
-	}
-	public void jokalariaHasieratuOrd( String kolorea) {
-		List<Integer> lista = kartakNahastu();
-		kartakKargatuOrd(lista, kolorea);
-		
-	}
-
-	public static void pertsonaPuntuakEguneratu(Karta k) {
-		int puntuak;
-		if(k.getZenb()==6 || k.getZenb()==9 || k.getZenb()==11 || k.getZenb()==12){
-			puntuak = 2;
-		}
-		else if(k.getZenb()==4 || k.getZenb()==5 || k.getZenb()== 8 || k.getZenb()==10){
-			puntuak = 3;
-		}else{
-			puntuak = 4;
-		}
-		pertsonaPuntuak = pertsonaPuntuak + puntuak;
-		
-	}
-
-	public static void OrdenagailuPuntuakEguneratu(Karta k) {
-		int puntuak;
-		if(k.getZenb()==6 || k.getZenb()==9 || k.getZenb()==11 || k.getZenb()==12){
-			puntuak = 2;
-		}
-		else if(k.getZenb()==4 || k.getZenb()==5 || k.getZenb()== 8 || k.getZenb()==10){
-			puntuak = 3;
-		}else{
-			puntuak = 4;
-		}
-		ordenagailuPuntuak = ordenagailuPuntuak + puntuak;
-	}
 	
 	public static boolean pertsonaIrabazi(){
 		boolean pertsonaI= false;
+		int pertsonaPuntuak = Pertsona.getPuntuazioa();
+		int ordenagailuPuntuak = Ordenagailua.getPuntuazioa();
 		if(pertsonaPuntuak> ordenagailuPuntuak){
 		
 			pertsonaI = true;
@@ -272,6 +75,8 @@ public class Jokalari {
 	
 	public static boolean berdinketa(){
 		boolean berdinketa = false;
+		int pertsonaPuntuak = Pertsona.getPuntuazioa();
+		int ordenagailuPuntuak = Ordenagailua.getPuntuazioa();
 		if(pertsonaPuntuak == ordenagailuPuntuak){
 			berdinketa = true;
 		}

@@ -5,6 +5,8 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Observable;
+import java.util.Observer;
 import java.util.concurrent.TimeUnit;
 
 import javax.swing.ImageIcon;
@@ -21,7 +23,7 @@ import logika.Karta;
 import logika.KartaZerrenda;
 import logika.Tableroa;
 
-public class Taula extends JFrame {
+public class Taula extends JFrame implements Observer{
 	
 	// MENU AUKERAK
 	JMenuBar menuBarra = new JMenuBar();
@@ -436,33 +438,37 @@ public class Taula extends JFrame {
 		Karta jkarta = jKartak.get(botoia);
 
 		System.out.println("_________________________________________________JOKALARIAK JOKATU:");
-		TaulaKudeatzailea.getTaulaKudeatzailea().jokatu(jkarta, 0);
+		TaulaKudeatzailea.getTaulaKudeatzailea().jokatu(jkarta);
+	
+//		pantailaratuOrdenagailuKartak();
 		
 		if(jkarta.getZenb()==2 ){ //loro kartak aukeratu behar du 
 			if(TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartenTam()>=1){
 				new LoroUI();
-			}else{
-				
 			}
 		}
-		else if(jkarta.getZenb()==3){ //kanguroak zenbat salto egin nahi dituen aukeratu behar du(1 edo 2)
+		else if(jkarta.getZenb()==3 ){
+			if(TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartenTam()>=1){ //kanguroak zenbat salto egin nahi dituen aukeratu behar du(1 edo 2)
 
 			new KanguroUI();
 
+			}
 		}
 		else if(jkarta.getZenb()==5){
 			new KamaleoiUI();
 		}
 		else{
 			TaulaKudeatzailea.getTaulaKudeatzailea().animaladaEgin(jkarta);
-//			TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
-	
+			
+			pantailaratuJokalariKartak();
+			pantailaratuJokokoKartak();
+			
 			TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
-			TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
-			TimeUnit.SECONDS.sleep(3);
+			pantailaratuJokokoKartak();
+
 			TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakHustu();
-			TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
-			TimeUnit.SECONDS.sleep(3);
+			pantailaratuJokokoKartak();
+
 			if(TaulaKudeatzailea.getTaulaKudeatzailea().amaitu()){
 				System.out.println("____________________________________________________AMAITU IF-EAN SARTU DA");
 				if(TaulaKudeatzailea.getTaulaKudeatzailea().pertsonaIrabazi()){
@@ -486,9 +492,12 @@ public class Taula extends JFrame {
 				}
 
 					}else{ 
+							TimeUnit.SECONDS.sleep(1);
 							System.out.println("_________________________________________________ORDENAGAILUAK JOKATU:");
 							TaulaKudeatzailea.getTaulaKudeatzailea().ordenagailuarenTxanda();
-							TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
+//							TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
+							TimeUnit.SECONDS.sleep(1);
+							pantailaratuJokokoKartak();
 							if(TaulaKudeatzailea.getTaulaKudeatzailea().amaitu()){
 								System.out.println("____________________________________________________AMAITU IF-EAN SARTU DA");
 								if(TaulaKudeatzailea.getTaulaKudeatzailea().pertsonaIrabazi()){
@@ -534,6 +543,13 @@ public class Taula extends JFrame {
 		//taula kudeatzailean hasieratu
 //		Taula t =new Taula();
 		
+		
+	}
+
+
+	@Override
+	public void update(Observable o, Object arg) {
+		// TODO Auto-generated method stub
 		
 	}
 	

@@ -12,7 +12,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 import kudeatzaileak.TaulaKudeatzailea;
-import taulaHistorikoa.TableModelHistorikoa;
+
 
 
 public class Taula extends JFrame{
@@ -30,7 +30,7 @@ public class Taula extends JFrame{
 		egunekoPartidak.setText("Eguneko partidak ikusi");
 		partidaOnenak.setText("Partida onenak ikusi");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		TableModelHistorikoa TableModel = new TableModelHistorikoa();
+		TableModelJokalaria TableModel = new TableModelJokalaria();
 		JTable table = new JTable(TableModel);
 		JScrollPane scrollPane = new JScrollPane(table);
 		
@@ -78,5 +78,8 @@ public class Taula extends JFrame{
 	});
 		pack();
 		setVisible(true);
+	}
+	public static void main(String[] args) {
+		new Taula();
 	}
 }

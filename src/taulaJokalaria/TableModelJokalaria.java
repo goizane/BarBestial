@@ -5,9 +5,9 @@ import java.util.Vector;
 
 import javax.swing.table.AbstractTableModel;
 
+
 import kudeatzaileak.PartidaKud;
-import logika.Jokalari;
-import taulaHistorikoa.TableModelHistorikoa;
+
 
 public class TableModelJokalaria extends AbstractTableModel{
 	
@@ -49,18 +49,18 @@ public class TableModelJokalaria extends AbstractTableModel{
 	
 	public void kargatu(){
 		hasieratuZutabeIzenak();
-		String izena = Jokalari.getIzena();
-		List<String[]> partidaH = PartidaKud.getInstantzia().getJokalariarenPartidak(izena);
+		List<String[]> partidaH = PartidaKud.getInstantzia().getJokalariarenPartidak();
 		for(String[] p : partidaH ){
 			System.out.println(p[0]);
-			datuak.add(new Lag(p[0]));
+			datuak.add(new Lag(p[0],p[1],p[2]));
 		}
 	}
 
 	private void hasieratuZutabeIzenak() {
-
+		columnNames.add("Izena");
 		columnNames.add("Puntuazioa");
-		columnNames.add("Data");
+		columnNames.addElement("Data");
+		
 		
 		
 		
@@ -75,7 +75,10 @@ public class TableModelJokalaria extends AbstractTableModel{
 		case 1:
 			emaitza =  String.class;
 			break;
-	
+		case 2:
+			emaitza =  String.class;
+			break;
+		
 		
 		default:
 			break;
@@ -85,6 +88,3 @@ public class TableModelJokalaria extends AbstractTableModel{
 	
 	
 }
- 
-
-

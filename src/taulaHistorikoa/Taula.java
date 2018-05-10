@@ -29,7 +29,7 @@ public class Taula extends JFrame{
 		zurePartidak.setText("Zure partidak ikusi");
 		egunekoPartidak.setText("Eguneko partidak ikusi");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		TableModelHistorikoa TableModel = new TableModelHistorikoa();
+		TableModelHistorikoak TableModel = new TableModelHistorikoak();
 		JTable table = new JTable(TableModel);
 		JScrollPane scrollPane = new JScrollPane(table);
 		

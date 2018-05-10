@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 import kudeatzaileak.DBKudeatzaile;
+import logika.Tableroa;
 
 public class PartidaKud {
 	private static final PartidaKud partidaKud = new PartidaKud();
@@ -32,8 +33,11 @@ public class PartidaKud {
 			while(rs.next()){
 				String[] res = new String[3];
 				res[0] = rs.getString("izena");
+				System.out.println("izena: "+ res[0]);
 				res[1] = rs.getString("puntuazioa");
+				System.out.println("puntuazioa: "+ res[1]);
 				res[2] = rs.getString("data");
+				System.out.println("data: "+ res[2]);
 				partidak.add(res);
 			}
 		} catch (SQLException e) {
@@ -57,6 +61,7 @@ public class PartidaKud {
 				res[0] = rs.getString("izena");
 				res[1] = rs.getString("puntuazioa");
 				res[2] = rs.getString("data");
+				System.out.println("DATA: " +res[2]);
 				partidak.add(res);
 			}
 		} catch (SQLException e) {
@@ -67,8 +72,9 @@ public class PartidaKud {
 		return partidak;
 	}
 
-	public List<String[]> getJokalariarenPartidak(String izena){
-
+	public List<String[]> getJokalariarenPartidak(){
+		String izena = Tableroa.getTableroa().getPertsona().getIzena();
+		System.out.println("Izena: "+izena);
 		DBKudeatzaile dbkud = DBKudeatzaile.getInstantzia();
 		ResultSet rs = dbkud.execSQL("SELECT data, izena, puntuazioa FROM Partida WHERE izena = '"+izena+"';");
 
@@ -95,6 +101,8 @@ public class PartidaKud {
 		DBKudeatzaile dbkud = DBKudeatzaile.getInstantzia();
 		java.util.Date fecha = new Date();
 		String data = fecha.toString();
+		System.out.println(data);
+		
 		dbkud.execSQL("INSERT INTO Partida (data, izena, puntuazioa) VALUES ( '"+ data +"','"+ izena +"','"+ puntuazioa+"' );");
 	}
 }

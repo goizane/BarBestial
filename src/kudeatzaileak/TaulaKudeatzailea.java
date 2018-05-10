@@ -1,5 +1,7 @@
 package kudeatzaileak;
 
+import java.util.Observable;
+
 import interfazea.Taula;
 import logika.Jokalari;
 import logika.JokalariZerrenda;
@@ -8,9 +10,11 @@ import logika.KanguroKarta;
 import logika.Karta;
 import logika.KartaZerrenda;
 import logika.LoroKarta;
+import logika.Ordenagailua;
+import logika.Pertsona;
 import logika.Tableroa;
 
-public class TaulaKudeatzailea {
+public class TaulaKudeatzailea extends Observable{
 	private static TaulaKudeatzailea taula = new TaulaKudeatzailea();
 	private JokalariZerrenda jokalariak;
 	private KartaZerrenda jokalariKartak=new KartaZerrenda();
@@ -18,6 +22,7 @@ public class TaulaKudeatzailea {
 	private KartaZerrenda jokokoKartak=new KartaZerrenda();
 	private Jokalari jokalari;
 	private Taula t;
+	
 	
 	private TaulaKudeatzailea() {
 	}
@@ -61,13 +66,13 @@ public class TaulaKudeatzailea {
 	
 	
 	public Karta mazotikKartaHartuPer(){
-		Karta k= jokalari.mazotikKartaHartuPer();
-		jokalari.mazokoKartaEskukoKartetaraPer(k);
+		Karta k= Tableroa.getTableroa().getPertsona().mazotikKartaHartuPer();
+		Tableroa.getTableroa().getPertsona().mazokoKartaEskukoKartetaraPer(k);
 		return k;
 	}
 	public Karta mazotikKartaHartuOrd(){
-		Karta k= jokalari.mazotikKartaHartuOrd();
-		jokalari.mazokoKartaEskukoKartetaraOrd(k);
+		Karta k= Tableroa.getTableroa().getOrdenagailua().mazotikKartaHartuOrd();
+		Tableroa.getTableroa().getOrdenagailua().mazokoKartaEskukoKartetaraOrd(k);
 		return k;
 	}
 	
@@ -115,13 +120,13 @@ public class TaulaKudeatzailea {
 		k.animaladaEgin();
 	}
 	
-	public void jokatu(Karta k, int jok){
-		Tableroa.getTableroa().jokatuPer(k, jok);
+	public void jokatu(Karta k){
+		Tableroa.getTableroa().jokatuPer(k);
 	}
 	
 	public boolean amaitu(){
 		boolean amaitu =false;
-		if(Jokalari.jokoaAmaituDaPer()||Jokalari.jokoaAmaituDaOrd()){
+		if(Pertsona.jokoaAmaituDaPer()||Ordenagailua.jokoaAmaituDaOrd()){
 			amaitu = true;
 			System.out.println("jokoa amaitu da!");
 		}
@@ -146,14 +151,14 @@ public class TaulaKudeatzailea {
 	}
 	
 	public KartaZerrenda OrdenagailuarenEskukoKartakLortu(){
-		return Tableroa.getTableroa().getJokalariak().getJok(1).getEskukoKartakOrd();
+		return Tableroa.getTableroa().getOrdenagailua().getEskukoKartakOrd();
 	}
 
 	public String getIzena() {
-		return Jokalari.getIzena();
+		return Pertsona.getIzena();
 	}
 	
 	public int getPuntuazioa(){
-		return Jokalari.getPuntuazioa();
+		return Pertsona.getPuntuazioa();
 	}
 }
