@@ -5,19 +5,20 @@ import java.util.Vector;
 
 import javax.swing.table.AbstractTableModel;
 
-import kudeatzaileak.PartidaKud;
-import taulaHistorikoa.Lag;
 
-public class TableModelHistorikoa extends AbstractTableModel{
+import kudeatzaileak.PartidaKud;
+
+
+public class TableModelHistorikoak extends AbstractTableModel{
 	
 	private Vector<Lag> datuak = new Vector<Lag>();
 	private Vector<String> columnNames = new Vector<String>();
 	
-	public TableModelHistorikoa(){
+	public TableModelHistorikoak(){
 		kargatu();
 	}
 	public static void main(String[] args) {
-		TableModelHistorikoa taula= new TableModelHistorikoa();
+		TableModelHistorikoak taula= new TableModelHistorikoak();
 		System.out.println("Lerroak:" + taula.getRowCount());
 		System.out.println("Zutabeak:" + taula.getColumnCount());
 		//System.out.println("(2,2) elementuaren balioa:" + taula.getValueAt(2, 2));
@@ -51,14 +52,15 @@ public class TableModelHistorikoa extends AbstractTableModel{
 		List<String[]> partidaH = PartidaKud.getInstantzia().getPartidaHistorikoak();
 		for(String[] p : partidaH ){
 			System.out.println(p[0]);
-			datuak.add(new Lag(p[0],p[1]));
+			datuak.add(new Lag(p[0],p[1],p[2]));
 		}
 	}
 
 	private void hasieratuZutabeIzenak() {
 		columnNames.add("Izena");
 		columnNames.add("Puntuazioa");
-		columnNames.add("Data");
+		columnNames.addElement("Data");
+		
 		
 		
 		
@@ -73,9 +75,10 @@ public class TableModelHistorikoa extends AbstractTableModel{
 		case 1:
 			emaitza =  String.class;
 			break;
-		case 2: 
-			emaitza = String.class;
+		case 2:
+			emaitza =  String.class;
 			break;
+		
 		
 		default:
 			break;

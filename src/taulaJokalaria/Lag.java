@@ -5,17 +5,17 @@ import java.util.Vector;
 
 import kudeatzaileak.DBKudeatzaile;
 
-
 class Lag {
 	
-	
+	String izena;
 	String puntuazioa;
-	Date data;
+	String data;
 	
-	public Lag( String puntuazioa){
+	public Lag(String izena, String puntuazioa, String data){
 		super();
-		
+		this.izena= izena;
 		this.puntuazioa=puntuazioa;
+		this.data = data;
 
 		
 	}
@@ -29,23 +29,27 @@ class Lag {
 	}
 
 	public String toQuery() {
-		return " '" + puntuazioa + "'"; 
+		return "'" + izena + "', '" + puntuazioa + "', '" + data + "'"; 
 	}
 
 	@Override
 	public String toString() {
-		return "Lag [ puntuazioa=" + puntuazioa + "]";
+		return "Lag [izena=" + izena + ", puntuazioa=" + puntuazioa + ", data=" + data + "]";
 	}
 
 
 	public Object getBalioa(int columnIndex) {
 		Object emaitza=null;
 		switch (columnIndex) {
-		
 		case 0:
+			emaitza = izena;
+			break;
+		case 1:
 			emaitza = puntuazioa;
 			break;
-			
+		case 2:
+			emaitza = data;
+			break;
 		default:
 			break;
 		}

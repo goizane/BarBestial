@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -12,7 +13,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 import kudeatzaileak.TaulaKudeatzailea;
-import taulaHistorikoa.TableModelHistorikoa;
+
 
 public class Taula extends JFrame{
 	JButton irten = new JButton();
@@ -29,7 +30,7 @@ public class Taula extends JFrame{
 		zurePartidak.setText("Zure partidak ikusi");
 		partidaOnenak.setText("Partida onenak ikusi");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		TableModelHistorikoa TableModel = new TableModelHistorikoa();
+		TableModelEgunekoPartidak TableModel = new TableModelEgunekoPartidak();
 		JTable table = new JTable(TableModel);
 		JScrollPane scrollPane = new JScrollPane(table);
 		
@@ -77,5 +78,8 @@ irten.addActionListener(new ActionListener() {
 });
 		pack();
 		setVisible(true);
+	}
+	public static void main(String[] args)  {
+		new Taula();
 	}
 }

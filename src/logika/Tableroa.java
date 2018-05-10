@@ -11,11 +11,10 @@ import kudeatzaileak.TaulaKudeatzailea;
 public class Tableroa {
 	private static Tableroa nTableroa;
 	private KartaZerrenda jokokoKartak= new KartaZerrenda();
-	private JokalariZerrenda jokalariak;
 	private KartaZerrenda tabernakoKartak;
 	private KartaZerrenda kalekoKartak;
-	private Jokalari j1 = new Jokalari("Urdina");
-	private Jokalari j2 = new Jokalari("Berdea");
+	private Pertsona j1 = new Pertsona();
+	private Ordenagailua j2 = new Ordenagailua();
 	
 	private Tableroa(){
 		
@@ -35,21 +34,26 @@ public class Tableroa {
 
 		j1.jokalariarenKoloreaHasieratu("Urdina");
 		j1.izenaHasieratu(izena);
+		j1.jokalariaHasieratuPer();
 //		System.out.println("jokalari urdina sortu da!");
 //		Jokalari j2 = new Jokalari("Berdea"); //ordenagailua
-		j1.jokalariarenKoloreaHasieratu("Berdea");
-
-		j1.jokalariaHasieratuPer("Urdina");
-
-		System.out.println("JOKALARI URDINA");
-		j2.jokalariaHasieratuOrd("Berdea");
+		
+		j2.jokalariarenKoloreaHasieratu("Berdea");
+		
+		j2.jokalariaHasieratuOrd();
 		tabernakoKartakHasieratu();
 		kalekoKartakHasieratu();
-		jokZer.gehituJokalaria(j1);
-		jokZer.gehituJokalaria(j2);
 		jokokoKartakHasieratu();
-		this.jokalariak = jokZer;
+		
 	
+	}
+	
+	public Ordenagailua getOrdenagailua(){
+		return j2;
+	}
+	
+	public Pertsona getPertsona(){
+		return j1;
 	}
 	
 	public KartaZerrenda getPerKartak(){
@@ -75,12 +79,12 @@ public class Tableroa {
 	
 	}
 	
-	public void jokatuPer(Karta k, int jok){
-		this.jokalariak.getJok(jok).jokatuPer(k);
+	public void jokatuPer(Karta k){
+		j1.jokatuPer(k);
 		
 	}
-	public void jokatuOrd(Karta k, int jok){
-		this.jokalariak.getJok(jok).jokatuOrd(k);
+	public void jokatuOrd(Karta k){
+		j2.jokatuOrd(k);
 		
 	}
 	
@@ -171,20 +175,8 @@ public class Tableroa {
 		this.jokokoKartak = jokokoKartak;
 	}
 
-	public JokalariZerrenda getJokalariak() {
-		return jokalariak;
-	}
 
-	public void setJokalariak(JokalariZerrenda jokalariak) {
-		this.jokalariak = jokalariak;
-	}
-	
 
-//	public void jolastuKarta(Karta karta){
-//		Karta aukeratutakoKarta=bilatuKarta();
-//		aukeratutakoKarta.setZenb(karta.getZenb());
-//		aukeratutakoKarta.setIrudia(karta.getIrudia());
-//	}
 	
 	public void jokokoKartakHasieratu(){
 		KartaZerrenda jokokoKart = new KartaZerrenda();
@@ -209,11 +201,11 @@ public class Tableroa {
 	}
 	
 	public void ordenagailuarenTxanda(){
-		Jokalari ordenagailua = jokalariak.getJokalari("Berdea");
+		Jokalari ordenagailua = getOrdenagailua();
 		System.out.println(ordenagailua);
 		System.out.println("JOKLALARIAREN KOLOREA: "+ ordenagailua.getKolorea());
 		
-		KartaZerrenda kz =ordenagailua.getEskukoKartakOrd();
+		KartaZerrenda kz =j2.getEskukoKartakOrd();
 		for(int i  =0; i<kz.tamaina(); i++){
 			System.out.println("karta: " + kz.get(i).getIzena()+" Kolorea: "+ kz.get(i).getKolorea());
 		}
@@ -221,7 +213,7 @@ public class Tableroa {
 		System.out.println("ordenagailuak aukeratutako karta: " + k.getIzena()+ "kolorea: " + k.getKolorea());
 		System.out.println("__________________________________________________________ "+k.getIzena());
 		System.out.println("ORDENAGAILUAREN KARTA: " + k.getIzena()+"KOLOREA: "+ k.getKolorea());
-		jokatuOrd(k,1);
+		jokatuOrd(k);
 		if(k.getZenb()==2){
 			LoroKarta.kenduKarEguneratu(jokokoKartak.get(0)); //loroak beti lehenengo karta kentzen du
 		}
@@ -259,10 +251,10 @@ public class Tableroa {
 			this.tabernakoKartak.gehituKarta(k);
 			System.out.println("TABERNARA SARTU -------------->" + k.getIzena());
 			if(k.getKolorea()=="Urdina"){
-				Jokalari.pertsonaPuntuakEguneratu(k);
+				Pertsona.pertsonaPuntuakEguneratu(k);
 			}
 			else{
-				Jokalari.OrdenagailuPuntuakEguneratu(k);
+				Ordenagailua.OrdenagailuPuntuakEguneratu(k);
 			}
 			this.jokokoKartak.kenduKarta(k);
 			
@@ -336,7 +328,7 @@ public class Tableroa {
 			}
 			if (zer.tamaina()<5) {
 				for (int j=zer.tamaina(); j<=5; j++) {
-					zer.set(new KartaHutsa(), j);
+					zer.gehituKarta(new KartaHutsa());
 				}
 			}
 			jokokoKartak = zer;

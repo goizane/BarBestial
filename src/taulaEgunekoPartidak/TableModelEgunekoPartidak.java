@@ -7,7 +7,7 @@ import javax.swing.table.AbstractTableModel;
 
 
 import kudeatzaileak.PartidaKud;
-import taulaHistorikoa.TableModelHistorikoa;
+
 
 public class TableModelEgunekoPartidak extends AbstractTableModel{
 	
@@ -52,13 +52,14 @@ public class TableModelEgunekoPartidak extends AbstractTableModel{
 		List<String[]> partidaH = PartidaKud.getInstantzia().getGaurkoPartidak();
 		for(String[] p : partidaH ){
 			System.out.println(p[0]);
-			datuak.add(new Lag(p[0],p[1]));
+			datuak.add(new Lag(p[0],p[1],p[2]));
 		}
 	}
 
 	private void hasieratuZutabeIzenak() {
 		columnNames.add("Izena");
 		columnNames.add("Puntuazioa");
+		columnNames.addElement("Data");
 		
 		
 		
@@ -72,6 +73,9 @@ public class TableModelEgunekoPartidak extends AbstractTableModel{
 			emaitza = String.class;
 			break;
 		case 1:
+			emaitza =  String.class;
+			break;
+		case 2:
 			emaitza =  String.class;
 			break;
 		
