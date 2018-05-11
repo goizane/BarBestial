@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
+import kudeatzaileak.PartidaKud;
 import kudeatzaileak.TaulaKudeatzailea;
 import logika.KanguroKarta;
 import logika.Karta;
@@ -58,12 +59,44 @@ public class KanguroUI extends JFrame {
 				if(TaulaKudeatzailea.getTaulaKudeatzailea().amaitu()){
 					if(TaulaKudeatzailea.getTaulaKudeatzailea().pertsonaIrabazi()){
 						new IrabaziUI();
+						String izena = TaulaKudeatzailea.getTaulaKudeatzailea().getIzena();
+						int puntuazioa = TaulaKudeatzailea.getTaulaKudeatzailea().getPuntuazioa();
+						PartidaKud.getInstantzia().partidaGehitu(izena, puntuazioa);
 					}	
 					else if(TaulaKudeatzailea.getTaulaKudeatzailea().berdinketa()){
 						new BerdinketaUI();
+						String izena = TaulaKudeatzailea.getTaulaKudeatzailea().getIzena();
+						int puntuazioa = TaulaKudeatzailea.getTaulaKudeatzailea().getPuntuazioa();
+						PartidaKud.getInstantzia().partidaGehitu(izena, puntuazioa);
 
 					}else{
 						new GalduUI();
+						String izena = TaulaKudeatzailea.getTaulaKudeatzailea().getIzena();
+						int puntuazioa = TaulaKudeatzailea.getTaulaKudeatzailea().getPuntuazioa();
+						PartidaKud.getInstantzia().partidaGehitu(izena, puntuazioa);
+					}
+				}
+				else {
+					TaulaKudeatzailea.getTaulaKudeatzailea().ordenagailuarenTxanda();
+					TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
+					if(TaulaKudeatzailea.getTaulaKudeatzailea().amaitu()){
+						if(TaulaKudeatzailea.getTaulaKudeatzailea().pertsonaIrabazi()){
+							String izena = TaulaKudeatzailea.getTaulaKudeatzailea().getIzena();
+							int puntuazioa = TaulaKudeatzailea.getTaulaKudeatzailea().getPuntuazioa();
+							PartidaKud.getInstantzia().partidaGehitu(izena, puntuazioa);
+							new IrabaziUI();
+						}	
+						else if(TaulaKudeatzailea.getTaulaKudeatzailea().berdinketa()){
+							new BerdinketaUI();
+							String izena = TaulaKudeatzailea.getTaulaKudeatzailea().getIzena();
+							int puntuazioa = TaulaKudeatzailea.getTaulaKudeatzailea().getPuntuazioa();
+							PartidaKud.getInstantzia().partidaGehitu(izena, puntuazioa);
+						}else{
+							new GalduUI();
+							String izena = TaulaKudeatzailea.getTaulaKudeatzailea().getIzena();
+							int puntuazioa = TaulaKudeatzailea.getTaulaKudeatzailea().getPuntuazioa();
+							PartidaKud.getInstantzia().partidaGehitu(izena, puntuazioa);
+						}
 					}
 				}
 				setVisible(false);
@@ -85,12 +118,44 @@ public class KanguroUI extends JFrame {
 				if(TaulaKudeatzailea.getTaulaKudeatzailea().amaitu()){
 					if(TaulaKudeatzailea.getTaulaKudeatzailea().pertsonaIrabazi()){
 						new IrabaziUI();
+						String izena = TaulaKudeatzailea.getTaulaKudeatzailea().getIzena();
+						int puntuazioa = TaulaKudeatzailea.getTaulaKudeatzailea().getPuntuazioa();
+						PartidaKud.getInstantzia().partidaGehitu(izena, puntuazioa);
 					}	
 					else if(TaulaKudeatzailea.getTaulaKudeatzailea().berdinketa()){
 						new BerdinketaUI();
+						String izena = TaulaKudeatzailea.getTaulaKudeatzailea().getIzena();
+						int puntuazioa = TaulaKudeatzailea.getTaulaKudeatzailea().getPuntuazioa();
+						PartidaKud.getInstantzia().partidaGehitu(izena, puntuazioa);
 
 					}else{
 						new GalduUI();
+						String izena = TaulaKudeatzailea.getTaulaKudeatzailea().getIzena();
+						int puntuazioa = TaulaKudeatzailea.getTaulaKudeatzailea().getPuntuazioa();
+						PartidaKud.getInstantzia().partidaGehitu(izena, puntuazioa);
+					}
+				}
+				else {
+					TaulaKudeatzailea.getTaulaKudeatzailea().ordenagailuarenTxanda();
+					TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
+					if(TaulaKudeatzailea.getTaulaKudeatzailea().amaitu()){
+						if(TaulaKudeatzailea.getTaulaKudeatzailea().pertsonaIrabazi()){
+							String izena = TaulaKudeatzailea.getTaulaKudeatzailea().getIzena();
+							int puntuazioa = TaulaKudeatzailea.getTaulaKudeatzailea().getPuntuazioa();
+							PartidaKud.getInstantzia().partidaGehitu(izena, puntuazioa);
+							new IrabaziUI();
+						}	
+						else if(TaulaKudeatzailea.getTaulaKudeatzailea().berdinketa()){
+							new BerdinketaUI();
+							String izena = TaulaKudeatzailea.getTaulaKudeatzailea().getIzena();
+							int puntuazioa = TaulaKudeatzailea.getTaulaKudeatzailea().getPuntuazioa();
+							PartidaKud.getInstantzia().partidaGehitu(izena, puntuazioa);
+						}else{
+							new GalduUI();
+							String izena = TaulaKudeatzailea.getTaulaKudeatzailea().getIzena();
+							int puntuazioa = TaulaKudeatzailea.getTaulaKudeatzailea().getPuntuazioa();
+							PartidaKud.getInstantzia().partidaGehitu(izena, puntuazioa);
+						}
 					}
 				}
 				setVisible(false);
