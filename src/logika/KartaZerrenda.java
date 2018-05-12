@@ -8,17 +8,17 @@ public class KartaZerrenda {
 
 	//ATRIBUTUAK
 	private ArrayList<Karta> lista;
-	
+
 	//ERAIKITZAILEA
-	
+
 	public KartaZerrenda(){
 		this.lista = new ArrayList<Karta>();
 	}
-	
+
 	public void gehituKarta(Karta karta){
 		lista.add(karta);
 	}
-	
+
 	public int kolorekoKartakKontatu(String kolorea){
 		int kop=0;
 		for (Karta k : this.lista) {
@@ -31,15 +31,15 @@ public class KartaZerrenda {
 	public int tamaina(){
 		return lista.size();
 	}
-	
+
 	public Karta get(int i){
 		return lista.get(i);
 	}
-	
+
 	public boolean dauka (Karta k){
 		return this.lista.contains(k);
 	}
-	
+
 	public void hasieratu(){
 		lista=new ArrayList<Karta>();
 	}
@@ -53,7 +53,7 @@ public class KartaZerrenda {
 		}
 		System.out.println("kendutako karta: " + k.getIzena());
 	}
-	
+
 	public int puntuakKontatu(int i){
 		int puntuak =0;
 		for(Karta k : this.lista){
@@ -66,8 +66,8 @@ public class KartaZerrenda {
 		}
 		return puntuak;
 	}
-	
-	
+
+
 	public Karta kartaAltuenaBilatu(){
 		Karta altuena = null;
 		int balioa = 0;
@@ -79,13 +79,13 @@ public class KartaZerrenda {
 		}
 		return altuena;
 	}
-	
 
-	
+
+
 	public boolean hutsikDago(){
-		 return this.lista.isEmpty();
+		return this.lista.isEmpty();
 	}
-	
+
 	public boolean hutsik(){ //zerrenda karta hutsez beteta badago TRUE bueltatzen du
 		boolean hutsik = false;
 		int kop =0;
@@ -100,7 +100,7 @@ public class KartaZerrenda {
 		System.out.println("karta huts kopurua ---------------->" + kop);
 		return hutsik;
 	}
-	
+
 	public boolean errepikatutaDago(int zenb){
 		int zenbat =0;
 		boolean errepikatuta = false;
@@ -110,27 +110,27 @@ public class KartaZerrenda {
 			}
 		}
 		if(zenbat >=2){
-		   errepikatuta = true;
+			errepikatuta = true;
 		}
 		return errepikatuta;
 	}
-	
+
 	public int tamainaKartaHutsBarik(){
 		int kont =0;
-		
-		
-			for(Karta k : this.lista){
-				if(k.zenb!=0){
-				
+
+
+		for(Karta k : this.lista){
+			if(k.zenb!=0){
+
 				kont ++;
-				}
 			}
-			return kont;
 		}
-		
-	
-	
-	
+		return kont;
+	}
+
+
+
+
 	public Karta azkenKartaBilatu(int zenb){
 		Karta azkena = null;
 		for(Karta k : this.lista){
@@ -140,52 +140,52 @@ public class KartaZerrenda {
 		}
 		return azkena;
 	}
-	
+
 	public void kartaPosizioBateanSartu(Karta k, int pos){
 		ArrayList<Karta> zerrendaBerria = new ArrayList<Karta>();
-		
+
 		System.out.println("karta posizio batean sartu");
 		for (int i = 0; i<this.lista.size();i++){
-			
+
 			if(i == pos){
 				zerrendaBerria.add(k);
 				zerrendaBerria.add(this.lista.get(i));
-				
+
 			}else{
 				zerrendaBerria.add(this.lista.get(i));
-//				System.out.println(this.lista.get(i).getIzena());
+				//				System.out.println(this.lista.get(i).getIzena());
 			}
-		
+
 		}
 		this.lista = zerrendaBerria;
 		System.out.println("jokoko kartak aukeratutako karta sartuta");
 		for(Karta ka : this.lista){
 			System.out.println(ka.getIzena());
-			
+
 		}
 	}
-	
-	
-	
+
+
+
 	public void ordenardenaAldatu(){
 		ArrayList<Karta> zerrendaBerria = new ArrayList<Karta>();
-		
-			for(int i = this.lista.size()-1; i>=0; i--){
-				Karta k = this.lista.get(i);
-				zerrendaBerria.add(k);
+
+		for(int i = this.lista.size()-1; i>=0; i--){
+			Karta k = this.lista.get(i);
+			zerrendaBerria.add(k);
+		}
+		if(zerrendaBerria.size()<5){
+			for(int j = zerrendaBerria.size(); j<=5; j++){
+				Karta h = new KartaHutsa();
+				zerrendaBerria.add(h);
 			}
-			if(zerrendaBerria.size()<5){
-				for(int j = zerrendaBerria.size(); j<=5; j++){
-					Karta h = new KartaHutsa();
-					zerrendaBerria.add(h);
-				}
-			}
-		
+		}
+
 
 		this.lista= zerrendaBerria;
-		
+
 	}
-	
+
 	public void set(Karta k, int pos){
 		lista.set(pos, k);
 	}
@@ -200,7 +200,7 @@ public class KartaZerrenda {
 		}
 		if(tamaina ==1){
 			zb = this.lista;
-			
+
 		}
 		else if(tamaina ==2){
 			zb.add(this.lista.get(1));
@@ -212,15 +212,15 @@ public class KartaZerrenda {
 			System.out.println(zb.size());
 			Karta h = new KartaHutsa();
 			zb.add(h);
-			
-			
+
+
 		}
 		this.lista= zb;
 		for(Karta kar : this.lista){
 			System.out.println(kar.getIzena());
 		}
 	}
-	
+
 	public boolean dauka(int i){
 		boolean dauka = false;
 		if(this.lista.contains(kartaLortuZenbakiarekin(i))){
@@ -228,58 +228,58 @@ public class KartaZerrenda {
 		}
 		return dauka;
 	}
-	
+
 	public void txikiagoakEzabatuZebraBarik( int zenb){
-			ArrayList<Karta> kz = new ArrayList<Karta>();
-			
-			System.out.println(zenb +" baino txikiagoak diren kartak ezabatu");
-			System.out.println("zebrak barrera modukoa da");
-			System.out.println("Ez dago zebrarik");
-			for( int i =0 ; i<this.lista.size(); i++){
-				if(this.lista.get(i).getZenb()>=zenb|| this.lista.get(i).getZenb()==0){
-					kz.add(this.lista.get(i));
-					System.out.println(this.lista.get(i).getIzena());
-				}
+		ArrayList<Karta> kz = new ArrayList<Karta>();
+
+		System.out.println(zenb +" baino txikiagoak diren kartak ezabatu");
+		System.out.println("zebrak barrera modukoa da");
+		System.out.println("Ez dago zebrarik");
+		for( int i =0 ; i<this.lista.size(); i++){
+			if(this.lista.get(i).getZenb()>=zenb|| this.lista.get(i).getZenb()==0){
+				kz.add(this.lista.get(i));
+				System.out.println(this.lista.get(i).getIzena());
 			}
-			if(kz.size()<5){
-				for(int j = kz.size(); j<=5; j++){
-					Karta h = new KartaHutsa();
-					kz.add(h);
-				}
-			}
-			this.lista = kz;
-			
 		}
-		public void txikiagoakDirenKartakEzabatu(int zenb ){
-			ArrayList<Karta> kz = new ArrayList<Karta>();
-			System.out.println(zenb +" baino txikiagoak diren kartak ezabatu");
-			System.out.println("zebrak barrera modukoa da");
-			System.out.println("Zebra dago!");
-			
-				for( int i =0 ; i<this.lista.size(); i++){
-					if(this.lista.get(i).getZenb()==7){
-						System.out.println("Zebra aurkitu dugu --> ezin du jarraitu");
-						kz.add(this.lista.get(i));
-						System.out.println(this.lista.get(i).getIzena());
-						}
-					else if(this.lista.get(i).getZenb()>=zenb){
-						kz.add(this.lista.get(i));
-						System.out.println(this.lista.get(i).getIzena());
-					}
-				}
-			
-			if(kz.size()<5){
-				for(int j = kz.size()-1; j<=5; j++){
-					Karta h = new KartaHutsa();
-					kz.add(h);
-					System.out.println(h.getIzena());
-				}
-				
+		if(kz.size()<5){
+			for(int j = kz.size(); j<=5; j++){
+				Karta h = new KartaHutsa();
+				kz.add(h);
 			}
-			this.lista = kz;
 		}
-		
-		
+		this.lista = kz;
+
+	}
+	public void txikiagoakDirenKartakEzabatu(int zenb ){
+		ArrayList<Karta> kz = new ArrayList<Karta>();
+		System.out.println(zenb +" baino txikiagoak diren kartak ezabatu");
+		System.out.println("zebrak barrera modukoa da");
+		System.out.println("Zebra dago!");
+
+		for( int i =0 ; i<this.lista.size(); i++){
+			if(this.lista.get(i).getZenb()==7){
+				System.out.println("Zebra aurkitu dugu --> ezin du jarraitu");
+				kz.add(this.lista.get(i));
+				System.out.println(this.lista.get(i).getIzena());
+			}
+			else if(this.lista.get(i).getZenb()>=zenb){
+				kz.add(this.lista.get(i));
+				System.out.println(this.lista.get(i).getIzena());
+			}
+		}
+
+		if(kz.size()<5){
+			for(int j = kz.size()-1; j<=5; j++){
+				Karta h = new KartaHutsa();
+				kz.add(h);
+				System.out.println(h.getIzena());
+			}
+
+		}
+		this.lista = kz;
+	}
+
+
 	public Karta kartaLortuZenbakiarekin(int zenb) {
 		Karta k = null;
 		for (int i=0; i<this.lista.size(); i++) {
@@ -289,15 +289,15 @@ public class KartaZerrenda {
 		}
 		return k;
 	}
-	
+
 	public void tximinoakKanporatu() {
-		 ArrayList<Karta> zer = new ArrayList<Karta>();
-		
+		ArrayList<Karta> zer = new ArrayList<Karta>();
+
 		if(!this.lista.contains(new TximinoKarta(""))){
 			zer = this.lista;
 			System.out.println("Ez dago tximinorik!");
 		}
-		 
+
 		else{
 			System.out.println("TXIMINO GABEKO LISTA");
 			for(int i = 0; i< this.lista.size(); i++){
@@ -313,13 +313,13 @@ public class KartaZerrenda {
 				zer.add(h);
 				System.out.println(h.getIzena());
 			}
-			
+
 		}
 		this.lista = zer;
-		
-		
+
+
 	}
-	
+
 	// quickSort zerrenda ordenatzeko
 	public void zerrendaOrdenatu(int hasiera, int bukaera) {
 		if (bukaera - hasiera >= 0) {
@@ -349,5 +349,5 @@ public class KartaZerrenda {
 
 		return eskuin;
 	}
-	
+
 }

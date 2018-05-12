@@ -13,15 +13,9 @@ public class HipopotamoKarta extends Karta {
 
 
 	public void animaladaEgin() {
-		// TODO Auto-generated method stub
+		// Bera baino txikiagoak diren kartak bultzatzen ditu
+		// Lehoia eta zebra ez ditu bultzatzen
 		System.out.println("HIPOPOTAMOAREN ANIMALADA");
-		Karta zebra = new ZebraKarta("");
-		if(Tableroa.getTableroa().getJokokoKartak().dauka(zebra)){
-			Tableroa.getTableroa().getJokokoKartak().txikiagoakDirenKartakEzabatu(11);
-		}
-		else{
-			Tableroa.getTableroa().getJokokoKartak().txikiagoakEzabatuZebraBarik(11);
-		}
+		Tableroa.getTableroa().hipopotamoakKartaTxikiagoakBultzatu();
 	}
-
 }
