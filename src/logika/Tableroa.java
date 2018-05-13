@@ -124,61 +124,87 @@ public class Tableroa {
 	}
 	
 	public void hipopotamoakKartaTxikiagoakBultzatu() {
-		KartaZerrenda lag = new KartaZerrenda();
-		Karta zebra = new ZebraKarta("");
-		Karta lehoia = new LehoiKarta("");
-		Karta hipopotamo = new HipopotamoKarta("");
-		if (jokokoKartak.dauka(zebra) && jokokoKartak.dauka(lehoia)) {
-			int pos = 0;
-			while (jokokoKartak.get(pos) != zebra) {
-				lag.gehituKarta(jokokoKartak.get(pos));
-				pos++;
+		Karta hipopotamo = azkenKartaLortu();
+		if (jokokoKartak.dauka(12)) {
+			if (jokokoKartak.errepikatutaDago(12)) {
+				azkenaKanporatu();
+				jokokoKartak.kartaPosizioBateanSartu(hipopotamo, 2);
 			}
-			lag.gehituKarta(hipopotamo);
-			
-			while (jokokoKartak.get(pos) != hipopotamo) {
-				lag.gehituKarta(jokokoKartak.get(pos));
-				pos++;
+			else {
+				azkenaKanporatu();
+				jokokoKartak.kartaPosizioBateanSartu(hipopotamo, 1);
 			}
-			jokokoKartak = lag;
-		}
-		else if (jokokoKartak.dauka(zebra) && (!jokokoKartak.dauka(lehoia))) {
-			int pos = 0;
-			while (jokokoKartak.get(pos) != zebra) {
-				lag.gehituKarta(jokokoKartak.get(pos));
-				pos++;
-			}
-			lag.gehituKarta(hipopotamo);
-			
-			while (jokokoKartak.get(pos) != hipopotamo) {
-				lag.gehituKarta(jokokoKartak.get(pos));
-				pos++;
-			}
-			jokokoKartak = lag;
-		}
-		else if (jokokoKartak.dauka(lehoia) && (!jokokoKartak.dauka(zebra))) {
-			int pos = 0;
-			while (jokokoKartak.get(pos) != lehoia) {
-				lag.gehituKarta(jokokoKartak.get(pos));
-				pos++;
-			}
-			lag.gehituKarta(hipopotamo);
-			
-			while (jokokoKartak.get(pos) != hipopotamo) {
-				lag.gehituKarta(jokokoKartak.get(pos));
-				pos++;
-			}
-			jokokoKartak = lag;
 		}
 		else {
-			lag.gehituKarta(hipopotamo);
-			int pos = 0;
-			while (jokokoKartak.get(pos) != hipopotamo) {
-				lag.gehituKarta(jokokoKartak.get(pos));
-				pos++;
-			}
-			jokokoKartak = lag;
+			azkenaKanporatu();
+			jokokoKartak.kartaPosizioBateanSartu(hipopotamo, 0);
 		}
+		
+		
+		
+
+		
+//		for (int i=0; i<jokokoKartak.tamaina(); i++) {
+//			this.saltatu(1);
+//		}
+			
+		
+		
+//		KartaZerrenda lag = null;
+//		Karta zebra = new ZebraKarta("");
+//		Karta lehoia = new LehoiKarta("");
+//		Karta hipopotamo = new HipopotamoKarta("");
+//		if (jokokoKartak.dauka(zebra) && jokokoKartak.dauka(lehoia)) {
+//			int pos = 0;
+//			while (jokokoKartak.get(pos) != zebra) {
+//				lag.gehituKarta(jokokoKartak.get(pos));
+//				pos++;
+//			}
+//			lag.gehituKarta(hipopotamo);
+//			
+//			while (jokokoKartak.get(pos) != hipopotamo) {
+//				lag.gehituKarta(jokokoKartak.get(pos));
+//				pos++;
+//			}
+//			jokokoKartak = lag;
+//		}
+//		else if (jokokoKartak.dauka(zebra) && (!jokokoKartak.dauka(lehoia))) {
+//			int pos = 0;
+//			while (jokokoKartak.get(pos) != zebra) {
+//				lag.gehituKarta(jokokoKartak.get(pos));
+//				pos++;
+//			}
+//			lag.gehituKarta(hipopotamo);
+//			
+//			while (jokokoKartak.get(pos) != hipopotamo) {
+//				lag.gehituKarta(jokokoKartak.get(pos));
+//				pos++;
+//			}
+//			jokokoKartak = lag;
+//		}
+//		else if (jokokoKartak.dauka(lehoia) && (!jokokoKartak.dauka(zebra))) {
+//			int pos = 0;
+//			while (jokokoKartak.get(pos) != lehoia) {
+//				lag.gehituKarta(jokokoKartak.get(pos));
+//				pos++;
+//			}
+//			lag.gehituKarta(hipopotamo);
+//			
+//			while (jokokoKartak.get(pos) != hipopotamo) {
+//				lag.gehituKarta(jokokoKartak.get(pos));
+//				pos++;
+//			}
+//			jokokoKartak = lag;
+//		}
+//		else {
+//			lag.gehituKarta(jokokoKartak.get(jokokoKartak.tamaina()));
+//			int pos = 0;
+//			while (jokokoKartak.get(pos) != hipopotamo) {
+//				lag.gehituKarta(jokokoKartak.get(pos));
+//				pos++;
+//			}
+//			jokokoKartak = lag;
+//		}
 	}
 	
 	
