@@ -123,6 +123,7 @@ public class Tableroa {
 		}
 	}
 	
+	
 	public void hipopotamoakKartaTxikiagoakBultzatu() {
 		Karta hipopotamo = azkenKartaLortu();
 		if (jokokoKartak.dauka(12)) {
