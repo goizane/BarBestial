@@ -196,6 +196,7 @@ public class Tableroa {
 //				pos++;
 //			}
 //			jokokoKartak = lag;
+		
 //		}
 //		else {
 //			lag.gehituKarta(jokokoKartak.get(jokokoKartak.tamaina()));
