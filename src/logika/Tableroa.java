@@ -122,7 +122,7 @@ public class Tableroa {
 			}
 		}
 	}
-	
+
 	
 	public void hipopotamoakKartaTxikiagoakBultzatu() {
 		Karta hipopotamo = azkenKartaLortu();
