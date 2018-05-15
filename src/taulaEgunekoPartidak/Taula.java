@@ -12,21 +12,23 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
+import interfazea.JokalariPantailaUI;
 import kudeatzaileak.TaulaKudeatzailea;
 
 
 public class Taula extends JFrame{
-	JButton irten = new JButton();
+	JButton atzera = new JButton();
 	JButton berriroHasi = new JButton();
 	JButton zurePartidak = new JButton();
 	JButton partidaOnenak = new JButton();
+	
 	
 	JPanel botoiak = new JPanel();
 	
 	public Taula(){
 		super("GAURKO PARTIDAK");
-		irten.setText("Irten");
-		berriroHasi.setText("Berriro hasi");
+		atzera.setText("Bueltatu");
+		berriroHasi.setText("Jokoa hasi");
 		zurePartidak.setText("Zure partidak ikusi");
 		partidaOnenak.setText("Partida onenak ikusi");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -34,15 +36,21 @@ public class Taula extends JFrame{
 		JTable table = new JTable(TableModel);
 		JScrollPane scrollPane = new JScrollPane(table);
 		
+		
+		botoiak.add(berriroHasi);
+		botoiak.add(partidaOnenak);
+		botoiak.add(zurePartidak);
+		botoiak.add(atzera);
 		botoiak.setLayout(new GridLayout(2, 2));
 		
 		add(scrollPane,BorderLayout.NORTH );
 		add(botoiak,BorderLayout.SOUTH);
-irten.addActionListener(new ActionListener() {
+		atzera.addActionListener(new ActionListener() {
 			
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				new JokalariPantailaUI(TaulaKudeatzailea.getTaulaKudeatzailea().getIzena());
 				setVisible(false);
 			}
 });

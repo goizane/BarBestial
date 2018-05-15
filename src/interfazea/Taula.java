@@ -1,6 +1,7 @@
 package interfazea;
 
 import java.awt.BorderLayout;
+import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -13,7 +14,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
 import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 import kudeatzaileak.PartidaKud;
@@ -27,10 +30,15 @@ public class Taula extends JFrame {
 	
 	// MENU AUKERAK
 	JMenuBar menuBarra = new JMenuBar();
+	JMenuItem laguntza = new JMenuItem();
+	JMenu animaladak = new JMenu();
+	JMenuItem mofeta = new JMenuItem();
 	JButton egunekoPartidak = new JButton();
 	JButton historikoa = new JButton();
 	JButton jokalariPartidak = new JButton();
 	JLabel zureIzenaGoian = new JLabel();
+	JLabel ordenagailua = new JLabel();
+	JLabel ordenagailuaKarta = new JLabel();
 	
 	//KARTAK
 	
@@ -74,6 +82,9 @@ public class Taula extends JFrame {
 	JPanel ordenagailuKartak = new JPanel();
 	JPanel jokokoKartak = new JPanel();
 	JPanel jokalariKartak = new JPanel();
+	JPanel ordenagailuaPanela = new JPanel();
+	JPanel eskuinPanela = new JPanel();
+	
 	
 	//ORDENAGAILUAREN KARTAK
 	
@@ -113,11 +124,25 @@ public class Taula extends JFrame {
 		jokalariPartidak.setText("	Ranking: Zure partida onenak!	");
 		historikoa.setText("	Ranking: Historikoki partida onenak!	");
 		zureIzenaGoian.setText("	ZURE IZENA:  " + TaulaKudeatzailea.getTaulaKudeatzailea().getIzena() + "	");
-		menuBarra.add(egunekoPartidak);
-		menuBarra.add(jokalariPartidak);
-		menuBarra.add(historikoa);
-		menuBarra.add(zureIzenaGoian);
+		ordenagailua.setText("Ordenagailuaren azken karta");
+//		menuBarra.add(egunekoPartidak);
+//		menuBarra.add(jokalariPartidak);
+//		menuBarra.add(historikoa);
+//		menuBarra.add(zureIzenaGoian);
+		
 		setJMenuBar(menuBarra);
+		laguntza.setText("Laguntza");
+		animaladak.setText("Animaladak");
+		mofeta.setText("Mofeta");
+		menuBarra.add(laguntza);
+		menuBarra.add(animaladak);
+		animaladak.add(mofeta);
+		
+		
+		ordenagailuaPanela.add(ordenagailua);
+		ordenagailuaPanela.add(ordenagailuaKarta);
+		
+		ordenagailuaPanela.setLayout(new GridLayout(1, 2));
 		
 		// ordenagailuko kartak ordenagailuKartak panelean sartu
 		ordenagailuKartak.add(ordenagailuKarta1);
@@ -125,8 +150,11 @@ public class Taula extends JFrame {
 		ordenagailuKartak.add(ordenagailuKarta3);
 		ordenagailuKartak.add(ordenagailuKarta4);
 		ordenagailuKartak.add(ordenagailuMazoa);
+		ordenagailuKartak.add(ordenagailuaKarta);
 		
 		ordenagailuKartak.setLayout(new GridLayout(1,5));
+		
+
 		
 		//jokoko kartak jokokoKartak panelean sartu
 		jokokoKartak.add(taberna);
@@ -151,16 +179,21 @@ public class Taula extends JFrame {
 		
 		//panel nagusian sartu
 		getContentPane();
-				
-		add(ordenagailuKartak, BorderLayout.NORTH);
-		add(jokokoKartak, BorderLayout.CENTER);
-		add(jokalariKartak, BorderLayout.SOUTH);
+		eskuinPanela.add(ordenagailuKartak, BorderLayout.NORTH);
+		eskuinPanela.add(jokokoKartak, BorderLayout.CENTER);
+		eskuinPanela.add(jokalariKartak, BorderLayout.SOUTH);
+		add(eskuinPanela);
+//		panelNagusia.add(ordenagailuaPanela, BorderLayout.EAST);
+//		panelNagusia.setLayout(new GridLayout(1, 2));
+//		add(panelNagusia);
+//		add(ordenagailuaPanela, BorderLayout.WEST);
+//		add(ordenagailuaPanela, BorderLayout.WEST);
 		setVisible(true);
 		setTitle("BAR BESTIAL");
-		setSize(1200, 700);
-		setMaximumSize(new Dimension(1000, 700));
-		setPreferredSize(new Dimension(1000, 700));
-		
+		setSize(1000, 500);
+		setMaximumSize(new Dimension(800, 600));
+		setPreferredSize(new Dimension(800, 600));
+//		
 		pack();
 		
 		
@@ -168,11 +201,47 @@ public class Taula extends JFrame {
 
 	
 	public void pantailaratuOrdenagailuKartak(){
-		ordenagailuKarta1.setIcon(karta);
-		ordenagailuKarta2.setIcon(karta);
-		ordenagailuKarta3.setIcon(karta);
-		ordenagailuKarta4.setIcon(karta);
+		KartaZerrenda z = new KartaZerrenda();
+		z= TaulaKudeatzailea.getTaulaKudeatzailea().OrdenagailuarenEskukoKartakLortu();
+		
+		if(z.get(0).getZenb()==0){
+			jokokoKarta1.setIcon(kartaHutsa);
+		}
+		else{
+			
+			ordenagailuKarta1.setIcon(karta);
+		}
+		if(z.get(1).getZenb()==0){
+			jokokoKarta2.setIcon(kartaHutsa);
+		}
+		else{
+			ordenagailuKarta2.setIcon(karta);
+		}
+		if(z.get(2).getZenb()==0){
+			jokokoKarta3.setIcon(kartaHutsa);
+		}
+		else{
+			ordenagailuKarta3.setIcon(karta);
+		}
+		if( z.tamaina()<4){
+			jokokoKarta4.setIcon(kartaHutsa);
+		}
+		else{
+			ordenagailuKarta4.setIcon(karta);
+		}
+		
 		ordenagailuMazoa.setIcon(karta);
+	}
+	
+	public void pantailaratuOrdenagailuakJokatuKarta(){
+		Karta k = TaulaKudeatzailea.getTaulaKudeatzailea().getOrdenagailuaJokKarta();
+		if(k.getZenb()==0){
+			jokokoKarta1.setIcon(kartaHutsa);
+		}
+		else{
+			ImageIcon ordIrudia = irudiaEsleituJokokoKartei(k);
+			ordenagailuaKarta.setIcon(ordIrudia);
+		}
 	}
 	
 	public void pantailaratuJokokoKartak(){
@@ -422,6 +491,14 @@ public class Taula extends JFrame {
 				public void actionPerformed(ActionEvent e) {
 
 					new taulaHistorikoa.Taula();
+				}
+			});
+			laguntza.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+
+					new LaguntzaUI();
 				}
 			});
 			

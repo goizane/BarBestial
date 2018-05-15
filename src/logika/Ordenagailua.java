@@ -8,6 +8,7 @@ public class Ordenagailua extends Jokalari {
 	private static KartaZerrenda eskukoKartakOrd;
 	private static Stack<Karta> mazoaOrd;
 	private static int ordenagailuPuntuak=0;
+	private static Karta jokatutakoAzkenKarta = new KartaHutsa();
 	
 	public Ordenagailua(){
 		this.kolorea = kolorea;
@@ -20,6 +21,10 @@ public class Ordenagailua extends Jokalari {
 	public static Karta mazotikKartaHartuOrd(){
 		 return mazoaOrd.pop();
 		
+	}
+	
+	public static Karta getJokatutakoAzkenKarta(){
+		return jokatutakoAzkenKarta;
 	}
 	
 	public static int getPuntuazioa(){
@@ -67,6 +72,7 @@ public class Ordenagailua extends Jokalari {
 		}
 	}
 		public void jokatuOrd(Karta k){
+			this.jokatutakoAzkenKarta=k;
 			KartaZerrenda eskKartak = new KartaZerrenda();
 			Tableroa.getTableroa().ilaranKartaSartu(k);
 			System.out.println("jokatutako Karta :" + k.getIzena());

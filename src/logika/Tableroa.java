@@ -123,7 +123,9 @@ public class Tableroa {
 		}
 	}
 
-	
+	public void jokokoKartakEguneratu(KartaZerrenda berria){
+		jokokoKartak = berria;
+	}
 	public void hipopotamoakKartaTxikiagoakBultzatu() {
 		Karta hipopotamo = azkenKartaLortu();
 		if (jokokoKartak.dauka(12)) {

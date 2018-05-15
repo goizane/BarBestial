@@ -83,7 +83,7 @@ public class LoginUI extends JFrame {
 					public void actionPerformed(ActionEvent e) {
 						boolean zuzena = LoginKud.getInstantzia().frogatuLogin(izena.getText(), pasahitza.getText());
 						if (zuzena==true) {
-							TaulaKudeatzailea.getTaulaKudeatzailea().hasieratu(izena.getText());
+							new JokalariPantailaUI(izena.getText());
 							setVisible(false);
 						}
 						else {
@@ -94,6 +94,8 @@ public class LoginUI extends JFrame {
 					}
 			});
 	}
+	
+
 	public static void main(String[] args) {
 		new LoginUI();
 	}

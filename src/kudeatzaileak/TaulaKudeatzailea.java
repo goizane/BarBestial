@@ -41,6 +41,7 @@ public class TaulaKudeatzailea {
 		t.pantailaratuOrdenagailuKartak();
 		t.pantailaratuJokokoKartak();
 		t.pantailaratuJokalariKartak();
+		t.pantailaratuOrdenagailuakJokatuKarta();
 	
 
 	}
@@ -56,6 +57,7 @@ public class TaulaKudeatzailea {
 		t.pantailaratuOrdenagailuKartak();
 		t.pantailaratuJokokoKartak();
 		t.pantailaratuJokalariKartak();
+		t.pantailaratuOrdenagailuakJokatuKarta();
 	
 	}
 
@@ -160,5 +162,9 @@ public class TaulaKudeatzailea {
 	
 	public int getPuntuazioa(){
 		return Pertsona.getPuntuazioa();
+	}
+
+	public Karta getOrdenagailuaJokKarta() {
+		return Tableroa.getTableroa().getOrdenagailua().getJokatutakoAzkenKarta();
 	}
 }

@@ -279,6 +279,7 @@ public class KartaZerrenda {
 		this.lista = kz;
 	}
 
+	
 
 	public Karta kartaLortuZenbakiarekin(int zenb) {
 		Karta k = null;

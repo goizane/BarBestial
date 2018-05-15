@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 
-public class LoginErroreUI extends JFrame {
+public class LoginErroreUI extends JDialog {
 	
 	private static final long serialVersionUID = 1L;
 	

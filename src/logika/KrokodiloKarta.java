@@ -16,7 +16,8 @@ public class KrokodiloKarta extends Karta {
 		// TODO Auto-generated method stub
 		System.out.println("KROKODILOAREN ANIMALADA");
 		Karta zebra = new ZebraKarta("");
-		if(Tableroa.getTableroa().getJokokoKartak().dauka(zebra)){
+		if(Tableroa.getTableroa().getJokokoKartak().dauka(7)){
+			
 			Tableroa.getTableroa().getJokokoKartak().txikiagoakDirenKartakEzabatu(10);
 		}
 		else{
