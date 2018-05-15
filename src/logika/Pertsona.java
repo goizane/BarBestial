@@ -52,7 +52,7 @@ public class Pertsona extends Jokalari{
 		Karta k = null;
 		System.out.println("ESKUKO KARTAK");
 		while(kont<=4){
-			k = KartaSortzailea.getKartaSortzailea().sortuKarta(lista.get(i), kolorea);
+			k = KartaSortzailea.kartaSortu(lista.get(i), kolorea);
 			this.eskukoKartakPer.gehituKarta(k);
 			k.koloreaEguneratu(kolorea);
 			System.out.println(k.getIzena() +"KOLOREA: "+ k.getKolorea());
@@ -61,7 +61,7 @@ public class Pertsona extends Jokalari{
 		}
 		System.out.println("MAZOKO KARTAK");
 		while(4<=kont&& kont<=12){
-			k = KartaSortzailea.getKartaSortzailea().sortuKarta(lista.get(i), kolorea);
+			k = KartaSortzailea.kartaSortu(lista.get(i), kolorea);
 			this.mazoaPer.push(k);
 			k.koloreaEguneratu(kolorea);
 			System.out.println(k.getIzena() +"KOLOREA: "+ k.getKolorea());
