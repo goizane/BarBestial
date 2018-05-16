@@ -30,7 +30,7 @@ public class Taula extends JFrame{
 		berriroHasi.setText("Jokoa hasi");
 		zurePartidak.setText("Zure partidak ikusi");
 		gaurkoPartidak.setText("Gaurko partidak ikusi");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		TableModelHistorikoa TableModel = new TableModelHistorikoa();
 		JTable table = new JTable(TableModel);
 		JScrollPane scrollPane = new JScrollPane(table);
@@ -38,7 +38,7 @@ public class Taula extends JFrame{
 		botoiak.add(berriroHasi);
 		botoiak.add(gaurkoPartidak);
 		botoiak.add(zurePartidak);
-		botoiak.add(atzera);
+//		botoiak.add(atzera);
 		
 		botoiak.setLayout(new GridLayout(2, 2));
 		

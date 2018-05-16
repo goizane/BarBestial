@@ -30,7 +30,7 @@ public class Tableroa {
 	public  void tableroaHasieratu(String izena){
 
 		JokalariZerrenda jokZer = new JokalariZerrenda();
-	
+		
 
 		j1.jokalariarenKoloreaHasieratu("Urdina");
 		j1.izenaHasieratu(izena);
@@ -126,23 +126,23 @@ public class Tableroa {
 	public void jokokoKartakEguneratu(KartaZerrenda berria){
 		jokokoKartak = berria;
 	}
-	public void hipopotamoakKartaTxikiagoakBultzatu() {
-		Karta hipopotamo = azkenKartaLortu();
-		if (jokokoKartak.dauka(12)) {
-			if (jokokoKartak.errepikatutaDago(12)) {
-				azkenaKanporatu();
-				jokokoKartak.kartaPosizioBateanSartu(hipopotamo, 2);
-			}
-			else {
-				azkenaKanporatu();
-				jokokoKartak.kartaPosizioBateanSartu(hipopotamo, 1);
-			}
-		}
-		else {
-			azkenaKanporatu();
-			jokokoKartak.kartaPosizioBateanSartu(hipopotamo, 0);
-		}
-		
+//	public void hipopotamoakKartaTxikiagoakBultzatu() {
+//		Karta hipopotamo = azkenKartaLortu();
+//		if (jokokoKartak.dauka(12)) {
+//			if (jokokoKartak.errepikatutaDago(12)) {
+//				azkenaKanporatu();
+//				jokokoKartak.kartaPosizioBateanSartu(hipopotamo, 2);
+//			}
+//			else {
+//				azkenaKanporatu();
+//				jokokoKartak.kartaPosizioBateanSartu(hipopotamo, 1);
+//			}
+//		}
+//		else {
+//			azkenaKanporatu();
+//			jokokoKartak.kartaPosizioBateanSartu(hipopotamo, 0);
+//		}
+//		
 		
 		
 
@@ -209,7 +209,7 @@ public class Tableroa {
 //			}
 //			jokokoKartak = lag;
 //		}
-	}
+//	}
 	
 	
 	public int irabazlea(){
@@ -389,45 +389,45 @@ public class Tableroa {
 	}
 	
 	
-	public void tximinoAnimalada() {
-		if (!jokokoKartak.errepikatutaDago(4)) {
-			System.out.println("Tximino bakarra dago!");
-		}
-		else {
-			
-			if (jokokoKartak.dauka(11)) {
-				Karta k = jokokoKartak.kartaLortuZenbakiarekin(11);
-				jokokoKartak.kenduKarta(k);
-			} else if (jokokoKartak.dauka(10)) {
-				Karta k = jokokoKartak.kartaLortuZenbakiarekin(10);
-				jokokoKartak.kenduKarta(k);
-			} else {
-				System.out.println("Ez dago krokodilo edo hipopotamorik!");
-			}
-		
-		
-			int tximinoPos = jokokoKartak.tamainaKartaHutsBarik()-1;
-			KartaZerrenda zer = new KartaZerrenda();
-			Karta tximinoKarta = jokokoKartak.get(tximinoPos);
-			jokokoKartak.kenduKarta(tximinoKarta);
-			zer.gehituKarta(tximinoKarta);
-			tximinoKarta = jokokoKartak.kartaLortuZenbakiarekin(4);
-			jokokoKartak.kenduKarta(tximinoKarta);
-			zer.gehituKarta(tximinoKarta);
-			
-			for (int i=0; i<jokokoKartak.tamainaKartaHutsBarik(); i++) {
-				zer.gehituKarta(jokokoKartak.get(i));
-			}
-			if (zer.tamaina()<5) {
-				for (int j=zer.tamaina(); j<=5; j++) {
-					zer.gehituKarta(new KartaHutsa());
-				}
-			}
-			jokokoKartak = zer;
-		}
-		
-		
-	}
+//	public void tximinoAnimalada() {
+//		if (!jokokoKartak.errepikatutaDago(4)) {
+//			System.out.println("Tximino bakarra dago!");
+//		}
+//		else {
+//			
+//			if (jokokoKartak.dauka(11)) {
+//				Karta k = jokokoKartak.kartaLortuZenbakiarekin(11);
+//				jokokoKartak.kenduKarta(k);
+//			} else if (jokokoKartak.dauka(10)) {
+//				Karta k = jokokoKartak.kartaLortuZenbakiarekin(10);
+//				jokokoKartak.kenduKarta(k);
+//			} else {
+//				System.out.println("Ez dago krokodilo edo hipopotamorik!");
+//			}
+//		
+//		
+//			int tximinoPos = jokokoKartak.tamainaKartaHutsBarik()-1;
+//			KartaZerrenda zer = new KartaZerrenda();
+//			Karta tximinoKarta = jokokoKartak.get(tximinoPos);
+//			jokokoKartak.kenduKarta(tximinoKarta);
+//			zer.gehituKarta(tximinoKarta);
+//			tximinoKarta = jokokoKartak.kartaLortuZenbakiarekin(4);
+//			jokokoKartak.kenduKarta(tximinoKarta);
+//			zer.gehituKarta(tximinoKarta);
+//			
+//			for (int i=0; i<jokokoKartak.tamainaKartaHutsBarik(); i++) {
+//				zer.gehituKarta(jokokoKartak.get(i));
+//			}
+//			if (zer.tamaina()<5) {
+//				for (int j=zer.tamaina(); j<=5; j++) {
+//					zer.gehituKarta(new KartaHutsa());
+//				}
+//			}
+//			jokokoKartak = zer;
+//		}
+//		
+//		
+//	}
 	
 	public void jokokoKartakOrdenatu() {
 		jokokoKartak.zerrendaOrdenatu(0, jokokoKartak.tamainaKartaHutsBarik()-1);

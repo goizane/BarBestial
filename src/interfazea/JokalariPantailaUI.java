@@ -39,7 +39,7 @@ public class JokalariPantailaUI extends JFrame{
 		botoiak.add(gaurkoPartidakIkusi);
 		botoiak.add(irten);
 		
-		botoiak.setLayout(new GridLayout(1, 2));
+		botoiak.setLayout(new GridLayout(2, 2));
 		
 		
 		add(botoiak, BorderLayout.NORTH);

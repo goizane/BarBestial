@@ -140,6 +140,8 @@ public class KartaZerrenda {
 		}
 		return azkena;
 	}
+	
+	
 
 	public void kartaPosizioBateanSartu(Karta k, int pos){
 		ArrayList<Karta> zerrendaBerria = new ArrayList<Karta>();
@@ -250,24 +252,58 @@ public class KartaZerrenda {
 		this.lista = kz;
 
 	}
-	public void txikiagoakDirenKartakEzabatu(int zenb ){
+	public void txikiagoakDirenKartakEzabatu(int zenb, int pos ){
 		ArrayList<Karta> kz = new ArrayList<Karta>();
 		System.out.println(zenb +" baino txikiagoak diren kartak ezabatu");
-		System.out.println("zebrak barrera modukoa da");
-		System.out.println("Zebra dago!");
-
-		for( int i =0 ; i<this.lista.size(); i++){
-			if(this.lista.get(i).getZenb()==7){
-				System.out.println("Zebra aurkitu dugu --> ezin du jarraitu");
+		
+		for(int i = 0; i<=pos; i++){
+			if(this.lista.get(i).getZenb()>= zenb){
 				kz.add(this.lista.get(i));
-				System.out.println(this.lista.get(i).getIzena());
+				System.out.println("kokodrilo baino handiago ----->" + this.lista.get(i).getIzena());
 			}
-			else if(this.lista.get(i).getZenb()>=zenb){
-				kz.add(this.lista.get(i));
-				System.out.println(this.lista.get(i).getIzena());
+			else{
+				System.out.println("kokodrilo baino txikiago ------->" + this.lista.get(i).getIzena());
 			}
 		}
+		if(pos!= kz.size()-1){
+			for(int j = pos; j< this.lista.size(); j++){
+				kz.add(this.lista.get(j));
+				System.out.println("j: " + j);
+			}
+		}
+		
+		
+		if(kz.size()<5){
+				for(int l = kz.size()-1; l<=5; l++){
+					Karta h = new KartaHutsa();
+					kz.add(h);
+					System.out.println(h.getIzena());
+				}
+	
+		}
+		this.lista = kz;
+		
+	}
 
+	public void tarteBateanTxikiagoakDirenKartakKendu(int zenb, int esk, int ezk){
+		ArrayList<Karta> kz = new ArrayList<Karta>();
+		for(int j = 0; j<=ezk; j++){
+			System.out.println("Zebraren aurretik:");
+			kz.add(this.lista.get(j));
+			System.out.println(this.lista.get(j).getIzena());
+		}
+		for(int i = ezk; i<esk; i++){
+			System.out.println("zebra eta kokodrilo artean:");
+			System.out.println(this.lista.get(i));
+			if(this.lista.get(i).getZenb()>=zenb){
+				kz.add(this.lista.get(i));
+				System.out.println("ez dira kentzen: " + this.lista.get(i).getIzena());
+			}
+		}
+		for(int s = esk; s< this.lista.size(); s++){
+			kz.add(this.lista.get(s));
+			System.out.println("kokodriloaren atzetik: " + this.lista.get(s).getIzena());
+		}
 		if(kz.size()<5){
 			for(int j = kz.size()-1; j<=5; j++){
 				Karta h = new KartaHutsa();
@@ -275,11 +311,10 @@ public class KartaZerrenda {
 				System.out.println(h.getIzena());
 			}
 
-		}
-		this.lista = kz;
 	}
-
+	this.lista = kz;
 	
+	}
 
 	public Karta kartaLortuZenbakiarekin(int zenb) {
 		Karta k = null;
@@ -319,6 +354,22 @@ public class KartaZerrenda {
 		this.lista = zer;
 
 
+	}
+	
+	public int kartaBatenPosizioaLortu(int zenb){
+		boolean aurkitu = false;
+		int posizioa = 0;
+		for(Karta k : this.lista){
+			if(!aurkitu){
+				if(k.getZenb()==zenb){
+					aurkitu = true;
+				}else{
+					posizioa ++;
+				}
+			}
+		
+		}
+		return posizioa;
 	}
 
 	// quickSort zerrenda ordenatzeko

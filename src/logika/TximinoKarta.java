@@ -16,27 +16,47 @@ public class TximinoKarta extends Karta {
 								  // bi baldin badaude: krokodiloak eta hipopotamoak ilaratik kanporatu
 											  		  //tximinoa lehenengo jarriko da eta beste tximinoak bere atzetik jarriko ditu
 		
-		Tableroa.getTableroa().tximinoAnimalada();
+		
+		KartaZerrenda jokokoKartak = Tableroa.getTableroa().getJokokoKartak();
+		if (!jokokoKartak.errepikatutaDago(4)) {
+			System.out.println("Tximino bakarra dago!");
+		}
+		else {
+			
+			if (jokokoKartak.dauka(11)) {
+				Karta k = jokokoKartak.kartaLortuZenbakiarekin(11);
+				jokokoKartak.kenduKarta(k);
+			} else if (jokokoKartak.dauka(10)) {
+				Karta k = jokokoKartak.kartaLortuZenbakiarekin(10);
+				jokokoKartak.kenduKarta(k);
+			} else {
+				System.out.println("Ez dago krokodilo edo hipopotamorik!");
+			}
+		
+		
+			int tximinoPos = jokokoKartak.tamainaKartaHutsBarik()-1;
+			KartaZerrenda zer = new KartaZerrenda();
+			Karta tximinoKarta = jokokoKartak.get(tximinoPos);
+			jokokoKartak.kenduKarta(tximinoKarta);
+			zer.gehituKarta(tximinoKarta);
+			tximinoKarta = jokokoKartak.kartaLortuZenbakiarekin(4);
+			jokokoKartak.kenduKarta(tximinoKarta);
+			zer.gehituKarta(tximinoKarta);
+			
+			for (int i=0; i<jokokoKartak.tamainaKartaHutsBarik(); i++) {
+				zer.gehituKarta(jokokoKartak.get(i));
+			}
+			if (zer.tamaina()<5) {
+				for (int j=zer.tamaina(); j<=5; j++) {
+					zer.gehituKarta(new KartaHutsa());
+				}
+			}
+			Tableroa.getTableroa().jokokoKartakEguneratu(zer);
+		}
 		
 		
 		
-		
-		
-//		KartaZerrenda jokokoKartak = Tableroa.getTableroa().getJokokoKartak();
-//		System.out.println("TXIMINOAREN ANIMALADA");
-//		if(jokokoKartak.errepikatutaDago(4)){
-//			for(int i=0; i<jokokoKartak.tamaina();i++){
-//				if(jokokoKartak.get(i).zenb==10|| jokokoKartak.get(i).zenb==11){
-//					jokokoKartak.kenduKarta(jokokoKartak.get(i));
-//				}
-//			}
-//			for(int pos=0; pos<2; pos++){
-//				Karta azkena =jokokoKartak.azkenKartaBilatu(4);
-//				jokokoKartak.kartaPosizioBateanSartu(azkena, pos);
-//			}
-//		}
-//		// TODO Auto-generated method stub
-		
+
 	}
 
 }

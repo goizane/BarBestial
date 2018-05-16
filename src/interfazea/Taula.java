@@ -31,11 +31,13 @@ public class Taula extends JFrame {
 	// MENU AUKERAK
 	JMenuBar menuBarra = new JMenuBar();
 	JMenuItem laguntza = new JMenuItem();
+	JMenuItem berriroHasi = new JMenuItem();
 	JMenu animaladak = new JMenu();
+	JMenu rankingak = new JMenu();
 	JMenuItem mofeta = new JMenuItem();
-	JButton egunekoPartidak = new JButton();
-	JButton historikoa = new JButton();
-	JButton jokalariPartidak = new JButton();
+	JMenuItem egunekoPartidak = new JMenuItem();
+	JMenuItem historikoa = new JMenuItem();
+	JMenuItem jokalariPartidak = new JMenuItem();
 	JLabel zureIzenaGoian = new JLabel();
 	JLabel ordenagailua = new JLabel();
 	JLabel ordenagailuaKarta = new JLabel();
@@ -120,9 +122,9 @@ public class Taula extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		// Menu barra panelan sartu
-		egunekoPartidak.setText("	Ranking: Eguneko partidak!	");
-		jokalariPartidak.setText("	Ranking: Zure partida onenak!	");
-		historikoa.setText("	Ranking: Historikoki partida onenak!	");
+//		egunekoPartidak.setText("	Ranking: Eguneko partidak!	");
+//		jokalariPartidak.setText("	Ranking: Zure partida onenak!	");
+//		historikoa.setText("	Ranking: Historikoki partida onenak!	");
 		zureIzenaGoian.setText("	ZURE IZENA:  " + TaulaKudeatzailea.getTaulaKudeatzailea().getIzena() + "	");
 		ordenagailua.setText("Ordenagailuaren azken karta");
 //		menuBarra.add(egunekoPartidak);
@@ -133,9 +135,20 @@ public class Taula extends JFrame {
 		setJMenuBar(menuBarra);
 		laguntza.setText("Laguntza");
 		animaladak.setText("Animaladak");
+		berriroHasi.setText("Jokoa berriro hasi");
+		rankingak.setText("Ranking-ak ikusi");
+		egunekoPartidak.setText("Eguneko partidak");
+		historikoa.setText("Partidarik onenak");
+		jokalariPartidak.setText("Zure partidak");
 		mofeta.setText("Mofeta");
 		menuBarra.add(laguntza);
 		menuBarra.add(animaladak);
+		menuBarra.add(berriroHasi);
+		menuBarra.add(rankingak);
+		menuBarra.add(zureIzenaGoian);
+		rankingak.add(egunekoPartidak);
+		rankingak.add(historikoa);
+		rankingak.add(jokalariPartidak);
 		animaladak.add(mofeta);
 		
 		
@@ -476,6 +489,15 @@ public class Taula extends JFrame {
 				}
 			});
 			
+			historikoa.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+
+					new taulaHistorikoa.Taula();
+				}
+			});
+			
 			jokalariPartidak.addActionListener(new ActionListener() {
 
 				@Override
@@ -485,12 +507,12 @@ public class Taula extends JFrame {
 				}
 			});
 			
-			historikoa.addActionListener(new ActionListener() {
+			berriroHasi.addActionListener(new ActionListener() {
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
 
-					new taulaHistorikoa.Taula();
+					TaulaKudeatzailea.getTaulaKudeatzailea().hasieratu(TaulaKudeatzailea.getTaulaKudeatzailea().getIzena());
 				}
 			});
 			laguntza.addActionListener(new ActionListener() {
