@@ -1,6 +1,7 @@
 package taulaEgunekoPartidak;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -40,11 +41,12 @@ public class Taula extends JFrame{
 		botoiak.add(berriroHasi);
 		botoiak.add(partidaOnenak);
 		botoiak.add(zurePartidak);
-//		botoiak.add(atzera);
-		botoiak.setLayout(new GridLayout(2, 2));
+
+		botoiak.setLayout(new GridLayout(1, 3));
 		
 		add(scrollPane,BorderLayout.NORTH );
 		add(botoiak,BorderLayout.SOUTH);
+	
 		atzera.addActionListener(new ActionListener() {
 			
 			

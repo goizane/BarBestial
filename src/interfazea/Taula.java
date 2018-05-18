@@ -239,11 +239,7 @@ public class Taula extends JFrame {
 		eskuinPanela.add(jokokoKartak, BorderLayout.CENTER);
 		eskuinPanela.add(jokalariKartak, BorderLayout.SOUTH);
 		add(eskuinPanela);
-//		panelNagusia.add(ordenagailuaPanela, BorderLayout.EAST);
-//		panelNagusia.setLayout(new GridLayout(1, 2));
-//		add(panelNagusia);
-//		add(ordenagailuaPanela, BorderLayout.WEST);
-//		add(ordenagailuaPanela, BorderLayout.WEST);
+
 		setVisible(true);
 		setTitle("BAR BESTIAL");
 		setSize(1000, 500);
@@ -570,6 +566,7 @@ public class Taula extends JFrame {
 					JLabel l = new JLabel();
 					l.setText("Animali ahulena da, mahaian jartzen den bakoitzean ilaran dauden eta zenbaki altuena daukaten bi animali espezieak kalera botako ditu.");
 					JDialog d = new JDialog();
+					d.setTitle("Mofeta animalada");
 					d.add(l);
 					d.setVisible(true);
 					d.pack();
@@ -583,6 +580,7 @@ public class Taula extends JFrame {
 					JLabel l = new JLabel();
 					l.setText("Ilaran dagoen eta guk aukeratutako animalia kanpora botako du.");
 					JDialog d = new JDialog();
+					d.setTitle("Loro animalada");
 					d.add(l);
 					d.setVisible(true);
 					d.pack();
@@ -598,6 +596,7 @@ public class Taula extends JFrame {
 					JLabel l1 = new JLabel();
 					l1.setText("Saltatuko dituen animali kopurua guk aukeratuko dugu.");
 					JDialog d = new JDialog();
+					d.setTitle("Kanguro animalada");
 					JPanel j = new JPanel();
 					j.setLayout(new GridLayout(2, 1));
 					j.add(l);
@@ -620,6 +619,7 @@ public class Taula extends JFrame {
 					l2.setText("Bera lehenengo posizioan jarriko da eta ilaran zeuden beste tximinoak bere atzetik jarriko ditu alderantzizko ordenan.");
 					
 					JDialog d = new JDialog();
+					d.setTitle("Tximino animalada");
 					JPanel j = new JPanel();
 					j.setLayout(new GridLayout(2, 1));
 					j.add(l);
@@ -640,6 +640,7 @@ public class Taula extends JFrame {
 					JLabel l1 = new JLabel();
 					l1.setText("Animalada egikaritu eta gero kamaleoi izatera bueltatzen da.");
 					JDialog d = new JDialog();
+					d.setTitle("Kamaleoi animalada");
 					JPanel j = new JPanel();
 					j.setLayout(new GridLayout(2, 1));
 					j.add(l);
@@ -657,6 +658,7 @@ public class Taula extends JFrame {
 					JLabel l = new JLabel();
 					l.setText("Animali hau ilaran sartzean ilaran dauden animalien ordena atzetik aurrera aldatzen da");
 					JDialog d = new JDialog();
+					d.setTitle("Foka animalada");
 					d.add(l);
 					d.setVisible(true);
 					d.pack();
@@ -672,6 +674,7 @@ public class Taula extends JFrame {
 					JLabel l1 = new JLabel();
 					l1.setText("Krokodiloak edo hipopotamoak beren animalada egiterakoan ez ditu bere posiziotik pasatzen utziko.");
 					JDialog d = new JDialog();
+					d.setTitle("Zebra animalada");
 					JPanel j = new JPanel();
 					j.setLayout(new GridLayout(2, 1));
 					j.add(l);
@@ -691,6 +694,7 @@ public class Taula extends JFrame {
 					JLabel l1 = new JLabel();
 					l1.setText("Jirafaren animalara errekurrentea da.");
 					JDialog d = new JDialog();
+					d.setTitle("Jirafa animalada");
 					JPanel j = new JPanel();
 					j.setLayout(new GridLayout(2, 1));
 					j.add(l);
@@ -708,10 +712,10 @@ public class Taula extends JFrame {
 					JLabel l = new JLabel();
 					l.setText("Sugeak ilaran dauden kartak txikienetik handienera ordenatuko ditu.");
 					JDialog d = new JDialog();
+					d.setTitle("Suge animalada");
 					d.add(l);
 					d.setVisible(true);
 					d.pack();
-					//new LaguntzaUI();
 				}
 			});
 			kokodrilo.addActionListener(new ActionListener() {
@@ -726,6 +730,7 @@ public class Taula extends JFrame {
 					l2.setText("Zebra batekin aurkitzekotan zebra barrera izango da eta kokodriloa ezingo ditu animalia gehiago jan.");
 					
 					JDialog d = new JDialog();
+					d.setTitle("Kokodrilo animalada");
 					JPanel j = new JPanel();
 					j.setLayout(new GridLayout(2, 1));
 					j.add(l);
@@ -734,7 +739,6 @@ public class Taula extends JFrame {
 					d.add(j);
 					d.setVisible(true);
 					d.pack();
-					//new LaguntzaUI();
 				}
 			});
 			hipopotamo.addActionListener(new ActionListener() {
@@ -747,6 +751,7 @@ public class Taula extends JFrame {
 					l1.setText("Zebra batekin topo egiten badu ezingo ditu animalia gehiago zanpatu");
 					
 					JDialog d = new JDialog();
+					d.setTitle("Hipopotamo animalada");
 					JPanel j = new JPanel();
 					j.setLayout(new GridLayout(2, 1));
 					j.add(l);
@@ -754,7 +759,6 @@ public class Taula extends JFrame {
 					d.add(j);
 					d.setVisible(true);
 					d.pack();
-					//new LaguntzaUI();
 				}
 			});
 			lehoi.addActionListener(new ActionListener() {
@@ -769,6 +773,7 @@ public class Taula extends JFrame {
 					l2.setText("Dagoeneko ilaran beste lehoi bat badago, orduan, lehoia ez da ilaran jarriko eta zuzenean kalera joango da.");
 					
 					JDialog d = new JDialog();
+					d.setTitle("Lehoi animalada");
 					JPanel j = new JPanel();
 					j.setLayout(new GridLayout(2, 1));
 					j.add(l);
@@ -777,7 +782,6 @@ public class Taula extends JFrame {
 					d.add(j);
 					d.setVisible(true);
 					d.pack();
-					//new LaguntzaUI();
 				}
 			});
 			
