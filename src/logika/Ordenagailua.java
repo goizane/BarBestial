@@ -33,7 +33,6 @@ public class Ordenagailua extends Jokalari {
 	public static boolean jokoaAmaituDaOrd(){
 		boolean amaitu = false;
 		if(getEskukoKartakOrd().hutsik()){
-			System.out.println("JOKOA AMAITU DA");
 			amaitu = true;
 		}
 		else{
@@ -52,30 +51,27 @@ public class Ordenagailua extends Jokalari {
 		int kont =1;
 		int i =0;
 		Karta k = null;
-		System.out.println("ESKUKO KARTAK");
+		//ESKUKO KARTAK
 		while(kont<=4){
 			k =  KartaSortzailea.kartaSortu(lista.get(i), kolorea);
 			this.eskukoKartakOrd.gehituKarta(k);
 			k.koloreaEguneratu(kolorea);
-			System.out.println(k.getIzena() +"KOLOREA: "+ k.getKolorea());
 			kont ++;
 			i++;
 		}
-		System.out.println("MAZOKO KARTAK");
+		//MAZOKO KARTAK
 		while(4<=kont&& kont<=12){
 			k =  KartaSortzailea.kartaSortu(lista.get(i), kolorea);
 			this.mazoaOrd.push(k);
 			k.koloreaEguneratu(kolorea);
-			System.out.println(k.getIzena() +"KOLOREA: "+ k.getKolorea());
 			kont++;
 			i++;
 		}
 	}
-		public void jokatuOrd(Karta k){
+		public void jokatuOrd(Karta k){ //ER
 			this.jokatutakoAzkenKarta=k;
 			KartaZerrenda eskKartak = new KartaZerrenda();
 			Tableroa.getTableroa().ilaranKartaSartu(k);
-			System.out.println("jokatutako Karta :" + k.getIzena());
 			eskukoKartakOrd.kenduKarta(k);
 			if (eskukoKartakOrd.tamaina()<5) {
 				eskukoKartakOrd.gehituKarta(new KartaHutsa());
@@ -90,12 +86,29 @@ public class Ordenagailua extends Jokalari {
 			
 			eskukoKartakOrd = eskKartak;
 		}
+		
+		public void ordenagailuarenTxanda(){ //ER
+		
+			Karta k = eskukoKartakOrd.get(1);
+			jokatuOrd(k);
+			if(k.getZenb()==2){
+				LoroKarta.kenduKarEguneratu(Tableroa.getTableroa().getJokokoKartak().get(0)); //loroak beti lehenengo karta kentzen du
+			}
+			else if(k.getZenb()==5){ //KAMALEOIAK MOFETA AUKERATUKO DU BETI
+				Karta mofeta = KartaSortzailea.kartaSortu(1, "Berdea");
+				KamaleoiKarta.kopiatzekoKartaEguneratu(mofeta);
+			}
+			k.animaladaEgin();
+			Tableroa.getTableroa().animaladaErrekurtsiboakEgin();
+			Tableroa.getTableroa().jokokoKartakHustu();
+		}
+		
 		public void jokalariaHasieratuOrd() {
 			List<Integer> lista = kartakNahastu();
 			kartakKargatuOrd(lista);
 			
 		}
-		public static void OrdenagailuPuntuakEguneratu(Karta k) {
+		public static void OrdenagailuPuntuakEguneratu(Karta k) { //ER
 			int puntuak;
 			if(k.getZenb()==6 || k.getZenb()==9 || k.getZenb()==11 || k.getZenb()==12){
 				puntuak = 2;

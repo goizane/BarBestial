@@ -26,7 +26,6 @@ public class PartidaKud {
 
 	public List<String[]> getGaurkoPartidak(){
 		java.util.Date fecha = new Date();
-		
 		String data = fecha.toString();
 		DBKudeatzaile dbkud = DBKudeatzaile.getInstantzia();
 		ResultSet rs = dbkud.execSQL("SELECT data, izena, puntuazioa FROM Partida WHERE data =date() ORDER BY puntuazioa DESC;");

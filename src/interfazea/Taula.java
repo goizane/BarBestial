@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -30,17 +31,32 @@ public class Taula extends JFrame {
 	
 	// MENU AUKERAK
 	JMenuBar menuBarra = new JMenuBar();
-	JMenuItem laguntza = new JMenuItem();
+	JMenu laguntza = new JMenu();
 	JMenuItem berriroHasi = new JMenuItem();
-	JMenu animaladak = new JMenu();
+	
 	JMenu rankingak = new JMenu();
-	JMenuItem mofeta = new JMenuItem();
 	JMenuItem egunekoPartidak = new JMenuItem();
 	JMenuItem historikoa = new JMenuItem();
 	JMenuItem jokalariPartidak = new JMenuItem();
 	JLabel zureIzenaGoian = new JLabel();
 	JLabel ordenagailua = new JLabel();
 	JLabel ordenagailuaKarta = new JLabel();
+	
+	//animaladak
+	JMenuItem jokoa = new JMenuItem();
+	JMenuItem mofeta = new JMenuItem();
+	JMenuItem loro = new JMenuItem();
+	JMenuItem foka = new JMenuItem();
+	JMenuItem suge = new JMenuItem();
+	JMenuItem zebra = new JMenuItem();
+	JMenuItem lehoi = new JMenuItem();
+	JMenuItem kanguro = new JMenuItem();
+	JMenuItem jirafa = new JMenuItem();
+	JMenuItem hipopotamo = new JMenuItem();
+	JMenuItem tximino = new JMenuItem();
+	JMenuItem kokodrilo = new JMenuItem();
+	JMenuItem kamaleoi = new JMenuItem();
+	JMenu animaladak = new JMenu();
 	
 	//KARTAK
 	
@@ -134,7 +150,21 @@ public class Taula extends JFrame {
 		
 		setJMenuBar(menuBarra);
 		laguntza.setText("Laguntza");
-		animaladak.setText("Animaladak");
+		jokoa.setText("Jokoari buruz");
+		mofeta.setText("Mofeta");
+		loro.setText("Loro");
+		kanguro.setText("Kanguro");
+		tximino.setText("Tximino");
+		kamaleoi.setText("Kamaleoi");
+		foka.setText("Foka");
+		zebra.setText("Zebra");
+		jirafa.setText("Jirafa");
+		suge.setText("Sugea");
+		kokodrilo.setText("Kokodrilo");
+		hipopotamo.setText("Hipopotamo");
+		lehoi.setText("Lehoia");
+		
+		animaladak.setText("Animaladei buruz");
 		berriroHasi.setText("Jokoa berriro hasi");
 		rankingak.setText("Ranking-ak ikusi");
 		egunekoPartidak.setText("Eguneko partidak");
@@ -142,14 +172,27 @@ public class Taula extends JFrame {
 		jokalariPartidak.setText("Zure partidak");
 		mofeta.setText("Mofeta");
 		menuBarra.add(laguntza);
-		menuBarra.add(animaladak);
-		menuBarra.add(berriroHasi);
+		
 		menuBarra.add(rankingak);
 		menuBarra.add(zureIzenaGoian);
+		menuBarra.add(berriroHasi);
 		rankingak.add(egunekoPartidak);
 		rankingak.add(historikoa);
 		rankingak.add(jokalariPartidak);
+		laguntza.add(jokoa);
+		laguntza.add(animaladak);
 		animaladak.add(mofeta);
+		animaladak.add(loro);
+		animaladak.add(kanguro);
+		animaladak.add(tximino);
+		animaladak.add(kamaleoi);
+		animaladak.add(foka);
+		animaladak.add(zebra);
+		animaladak.add(jirafa);
+		animaladak.add(suge);
+		animaladak.add(kokodrilo);
+		animaladak.add(hipopotamo);
+		animaladak.add(lehoi);
 		
 		
 		ordenagailuaPanela.add(ordenagailua);
@@ -428,7 +471,7 @@ public class Taula extends JFrame {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-				System.out.println("posizioa: 2");
+	
 			}
 });
 		
@@ -443,7 +486,6 @@ public class Taula extends JFrame {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
-					System.out.println("posizioa: 2");
 				}
 	});
 			
@@ -458,7 +500,6 @@ public class Taula extends JFrame {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
-					System.out.println("posizioa: 2");
 				}
 	});
 			
@@ -473,7 +514,6 @@ public class Taula extends JFrame {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
-					System.out.println("posizioa: 2");
 				}
 	});
 			
@@ -515,28 +555,239 @@ public class Taula extends JFrame {
 					TaulaKudeatzailea.getTaulaKudeatzailea().hasieratu(TaulaKudeatzailea.getTaulaKudeatzailea().getIzena());
 				}
 			});
-			laguntza.addActionListener(new ActionListener() {
+			jokoa.addActionListener(new ActionListener() {
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
-
+					
 					new LaguntzaUI();
 				}
 			});
+			mofeta.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					JLabel l = new JLabel();
+					l.setText("Animali ahulena da, mahaian jartzen den bakoitzean ilaran dauden eta zenbaki altuena daukaten bi animali espezieak kalera botako ditu.");
+					JDialog d = new JDialog();
+					d.add(l);
+					d.setVisible(true);
+					d.pack();
+					//new LaguntzaUI();
+				}
+			});
+			loro.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					JLabel l = new JLabel();
+					l.setText("Ilaran dagoen eta guk aukeratutako animalia kanpora botako du.");
+					JDialog d = new JDialog();
+					d.add(l);
+					d.setVisible(true);
+					d.pack();
+					//new LaguntzaUI();
+				}
+			});
+			kanguro.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					JLabel l = new JLabel();
+					l.setText("Animali hau ilaran sartzean, ilaran bere aurrean dagoen animali bat edo bi saltatuko ditu.");
+					JLabel l1 = new JLabel();
+					l1.setText("Saltatuko dituen animali kopurua guk aukeratuko dugu.");
+					JDialog d = new JDialog();
+					JPanel j = new JPanel();
+					j.setLayout(new GridLayout(2, 1));
+					j.add(l);
+					j.add(l1);
+					d.add(j);
+					d.setVisible(true);
+					d.pack();
+					//new LaguntzaUI();
+				}
+			});
+			tximino.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					JLabel l = new JLabel();
+					l.setText("Ilaran dagoeneko tximinorik ez badago ez da ezer gertatzen, hau da, tximinoa ilararen azkeneko posizioan sartuko da.");
+					JLabel l1 = new JLabel();
+					l1.setText("Tximino bat, edo gehiago ba daude hipopotamoak eta kokodriloak ilaratik botako ditu.");
+					JLabel l2 = new JLabel();
+					l2.setText("Bera lehenengo posizioan jarriko da eta ilaran zeuden beste tximinoak bere atzetik jarriko ditu alderantzizko ordenan.");
+					
+					JDialog d = new JDialog();
+					JPanel j = new JPanel();
+					j.setLayout(new GridLayout(2, 1));
+					j.add(l);
+					j.add(l1);
+					j.add(l2);
+					d.add(j);
+					d.setVisible(true);
+					d.pack();
+					//new LaguntzaUI();
+				}
+			});
+			kamaleoi.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					JLabel l = new JLabel();
+					l.setText("Jokalariak aukeratzen duen animalian bilakatzen da, eta jokalariak aukeratutako animaliaren animalada egingo du.");
+					JLabel l1 = new JLabel();
+					l1.setText("Animalada egikaritu eta gero kamaleoi izatera bueltatzen da.");
+					JDialog d = new JDialog();
+					JPanel j = new JPanel();
+					j.setLayout(new GridLayout(2, 1));
+					j.add(l);
+					j.add(l1);
+					d.add(j);
+					d.setVisible(true);
+					d.pack();
+					//new LaguntzaUI();
+				}
+			});
+			foka.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					JLabel l = new JLabel();
+					l.setText("Animali hau ilaran sartzean ilaran dauden animalien ordena atzetik aurrera aldatzen da");
+					JDialog d = new JDialog();
+					d.add(l);
+					d.setVisible(true);
+					d.pack();
+					//new LaguntzaUI();
+				}
+			});
+			zebra.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					JLabel l = new JLabel();
+					l.setText("Mahaira botatzean ez du ezer egingo, ilaran azken posizioan kokatuko da, baina behin ilaran egonda barrera baten moduan jokatuko du.");
+					JLabel l1 = new JLabel();
+					l1.setText("Krokodiloak edo hipopotamoak beren animalada egiterakoan ez ditu bere posiziotik pasatzen utziko.");
+					JDialog d = new JDialog();
+					JPanel j = new JPanel();
+					j.setLayout(new GridLayout(2, 1));
+					j.add(l);
+					j.add(l1);
+					d.add(j);
+					d.setVisible(true);
+					d.pack();
+					//new LaguntzaUI();
+				}
+			});
+			jirafa.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					JLabel l = new JLabel();
+					l.setText("Animali honen animalada ilaran bere aurrean kokatuta dagoen animalia saltatzea bere balioa baino gutxiagokoa bada (zortzi baino txikiagoa)");
+					JLabel l1 = new JLabel();
+					l1.setText("Jirafaren animalara errekurrentea da.");
+					JDialog d = new JDialog();
+					JPanel j = new JPanel();
+					j.setLayout(new GridLayout(2, 1));
+					j.add(l);
+					j.add(l1);
+					d.add(j);
+					d.setVisible(true);
+					d.pack();
+					//new LaguntzaUI();
+				}
+			});
+			suge.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					JLabel l = new JLabel();
+					l.setText("Sugeak ilaran dauden kartak txikienetik handienera ordenatuko ditu.");
+					JDialog d = new JDialog();
+					d.add(l);
+					d.setVisible(true);
+					d.pack();
+					//new LaguntzaUI();
+				}
+			});
+			kokodrilo.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					JLabel l = new JLabel();
+					l.setText("Bere aurretik dagoen edozein animalia jaten du, baldin eta bere zenbakia baino txikiagoak badira (hamar baino txikiagoa).");
+					JLabel l1 = new JLabel();
+					l1.setText("Beste kokodrilo bat topatzen badu, ez du kanporatuko.");
+					JLabel l2 = new JLabel();
+					l2.setText("Zebra batekin aurkitzekotan zebra barrera izango da eta kokodriloa ezingo ditu animalia gehiago jan.");
+					
+					JDialog d = new JDialog();
+					JPanel j = new JPanel();
+					j.setLayout(new GridLayout(2, 1));
+					j.add(l);
+					j.add(l1);
+					j.add(l2);
+					d.add(j);
+					d.setVisible(true);
+					d.pack();
+					//new LaguntzaUI();
+				}
+			});
+			hipopotamo.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					JLabel l = new JLabel();
+					l.setText("Bera baino ahulagoak diren animalia guztiak zapalduko ditu (hamaika baino txikiagoak).");
+					JLabel l1 = new JLabel();
+					l1.setText("Zebra batekin topo egiten badu ezingo ditu animalia gehiago zanpatu");
+					
+					JDialog d = new JDialog();
+					JPanel j = new JPanel();
+					j.setLayout(new GridLayout(2, 1));
+					j.add(l);
+					j.add(l1);
+					d.add(j);
+					d.setVisible(true);
+					d.pack();
+					//new LaguntzaUI();
+				}
+			});
+			lehoi.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					JLabel l = new JLabel();
+					l.setText("Ilaran lehoirik ez badago lehenengo posizioan kokatuko da, ilaran zeuden beste animalia guztian bere atzetik jarriz");
+					JLabel l1 = new JLabel();
+					l1.setText("ilaran dauden tximino guztiak kalera botako ditu.");
+					JLabel l2 = new JLabel();
+					l2.setText("Dagoeneko ilaran beste lehoi bat badago, orduan, lehoia ez da ilaran jarriko eta zuzenean kalera joango da.");
+					
+					JDialog d = new JDialog();
+					JPanel j = new JPanel();
+					j.setLayout(new GridLayout(2, 1));
+					j.add(l);
+					j.add(l1);
+					j.add(l2);
+					d.add(j);
+					d.setVisible(true);
+					d.pack();
+					//new LaguntzaUI();
+				}
+			});
+			
 			
 	}
 	
 	public void akzioa(int botoia) throws InterruptedException {
 		//JOKALARIAREN TXANDA
 		KartaZerrenda jKartak = TaulaKudeatzailea.getTaulaKudeatzailea().JokalariarenEskukoKartakLortu();
-		for(int i = 0; i<jKartak.tamaina(); i++){
-			System.out.println(" ----------------------> GRAFIKAN: " + jKartak.get(i).getIzena()+ "   " + jKartak.get(i).kolorea);
-		}
-
-
 		Karta jkarta = jKartak.get(botoia);
-
-		System.out.println("_________________________________________________JOKALARIAK JOKATU:");
 		TaulaKudeatzailea.getTaulaKudeatzailea().jokatu(jkarta);
 
 		if(jkarta.getZenb()==2 ){ //loro kartak aukeratu behar du 
@@ -545,7 +796,6 @@ public class Taula extends JFrame {
 			} else {
 				TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
 			}
-//			ordenagailuarenTxanda();
 		}
 		else if(jkarta.getZenb()==3 ){
 			if(TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartenTam()>=1){ //kanguroak zenbat salto egin nahi dituen aukeratu behar du(1 edo 2)
@@ -568,17 +818,13 @@ public class Taula extends JFrame {
 
 			TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
 			TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
-			//			grafikaEguneratu();
-
-			pantailaratuJokokoKartak();
-
+//			pantailaratuJokokoKartak();
 			TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakHustu();
-			//			grafikaEguneratu();
 			TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
-			pantailaratuJokokoKartak();
+//			pantailaratuJokokoKartak();
 
 			if(TaulaKudeatzailea.getTaulaKudeatzailea().amaitu()){
-				System.out.println("____________________________________________________AMAITU IF-EAN SARTU DA");
+				//JOKOA AMAITZEN BADA
 				if(TaulaKudeatzailea.getTaulaKudeatzailea().pertsonaIrabazi()){
 					new IrabaziUI();
 
@@ -591,7 +837,7 @@ public class Taula extends JFrame {
 					String izena = TaulaKudeatzailea.getTaulaKudeatzailea().getIzena();
 					int puntuazioa = TaulaKudeatzailea.getTaulaKudeatzailea().getPuntuazioa();
 					PartidaKud.getInstantzia().partidaGehitu(izena, puntuazioa);
-					System.out.println("_________________________________________________BERDINKETA");
+	
 				}else{
 					new GalduUI();
 					String izena = TaulaKudeatzailea.getTaulaKudeatzailea().getIzena();
@@ -607,7 +853,7 @@ public class Taula extends JFrame {
 
 
 	public void ordenagailuarenTxanda() {
-		System.out.println("_________________________________________________ORDENAGAILUAK JOKATU:");
+		
 		TaulaKudeatzailea.getTaulaKudeatzailea().ordenagailuarenTxanda();
 		TaulaKudeatzailea.getTaulaKudeatzailea().grafikaEguneratu();
 		//							grafikaEguneratu();
@@ -619,7 +865,7 @@ public class Taula extends JFrame {
 	public void amaitu() {
 		if(TaulaKudeatzailea.getTaulaKudeatzailea().amaitu()){
 			TaulaKudeatzailea.getTaulaKudeatzailea().ordenagailuarenTxanda();
-			System.out.println("____________________________________________________AMAITU IF-EAN SARTU DA");
+			
 			if(TaulaKudeatzailea.getTaulaKudeatzailea().pertsonaIrabazi()){
 				String izena = TaulaKudeatzailea.getTaulaKudeatzailea().getIzena();
 				int puntuazioa = TaulaKudeatzailea.getTaulaKudeatzailea().getPuntuazioa();
@@ -631,7 +877,6 @@ public class Taula extends JFrame {
 				int puntuazioa = TaulaKudeatzailea.getTaulaKudeatzailea().getPuntuazioa();
 				PartidaKud.getInstantzia().partidaGehitu(izena, puntuazioa);
 				new BerdinketaUI();
-				System.out.println("_________________________________________________BERDINKETA");
 
 
 			}else{

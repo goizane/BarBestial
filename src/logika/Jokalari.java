@@ -22,15 +22,12 @@ public abstract class Jokalari {
 	private void jokatu(){
 		
 	}
-	
-	
-	public String getKolorea(){
-		return kolorea;
-	}
-	
-	
-	
-	public List<Integer> kartakNahastu(){
+
+//	public String getKolorea(){
+//		return kolorea;
+//	}
+
+	public List<Integer> kartakNahastu(){ //ER
 		
 		int kont =0;
 		List<Integer> kartaZerrenda = new ArrayList<Integer>();
@@ -48,48 +45,39 @@ public abstract class Jokalari {
 		return kartaZerrenda;
 			
 	}
-	
-	
-	
-	
-	
-	
-	public void jokalariarenKoloreaHasieratu(String kol){
+
+	public void jokalariarenKoloreaHasieratu(String kol){ //ER
 		this.kolorea = kol;
 	}
-	
 
-	
-	public static boolean pertsonaIrabazi(){
-		boolean pertsonaIrabazi= false;
-		if (Tableroa.getTableroa().getTabernakoKartak().kolorekoKartakKontatu("Berdea")!=Tableroa.getTableroa().getTabernakoKartak().kolorekoKartakKontatu("Urdina")) {
-			if (Tableroa.getTableroa().getTabernakoKartak().kolorekoKartakKontatu("Berdea")<Tableroa.getTableroa().getTabernakoKartak().kolorekoKartakKontatu("Urdina")) {
-				pertsonaIrabazi=true;
-			}
-		}
-		else {
-			int pertsonaPuntuak = Pertsona.getPuntuazioa();
-			int ordenagailuPuntuak = Ordenagailua.getPuntuazioa();
-			if(pertsonaPuntuak< ordenagailuPuntuak){
-			
-				pertsonaIrabazi = true;
-			}
-			System.out.println("pertsona puntuak: " + pertsonaPuntuak);
-			System.out.println("Ordenagauilu puntuak:" + ordenagailuPuntuak);
-		}
-		
-		return pertsonaIrabazi;
-	}
-	
-	public static boolean berdinketa(){
-		boolean berdinketa = false;
-		int pertsonaPuntuak = Pertsona.getPuntuazioa();
-		int ordenagailuPuntuak = Ordenagailua.getPuntuazioa();
-		if(pertsonaPuntuak == ordenagailuPuntuak){
-			berdinketa = true;
-		}
-		System.out.println("pertsona puntuak: " + pertsonaPuntuak);
-		System.out.println("Ordenagauilu puntuak:" + ordenagailuPuntuak);
-		return berdinketa;
-	}
+//	public static boolean pertsonaIrabazi(){ //ER
+//		boolean pertsonaIrabazi= false;
+//		if (Tableroa.getTableroa().getTabernakoKartak().kolorekoKartakKontatu("Berdea")!=Tableroa.getTableroa().getTabernakoKartak().kolorekoKartakKontatu("Urdina")) {
+//			if (Tableroa.getTableroa().getTabernakoKartak().kolorekoKartakKontatu("Berdea")<Tableroa.getTableroa().getTabernakoKartak().kolorekoKartakKontatu("Urdina")) {
+//				pertsonaIrabazi=true;
+//			}
+//		}
+//		else {
+//			int pertsonaPuntuak = Pertsona.getPuntuazioa();
+//			int ordenagailuPuntuak = Ordenagailua.getPuntuazioa();
+//			if(pertsonaPuntuak< ordenagailuPuntuak){
+//			
+//				pertsonaIrabazi = true;
+//			}
+//		}
+//		
+//		return pertsonaIrabazi;
+//	}
+//	
+//	public static boolean berdinketa(){ //ER
+//		boolean berdinketa = false;
+//		int pertsonaPuntuak = Pertsona.getPuntuazioa();
+//		int ordenagailuPuntuak = Ordenagailua.getPuntuazioa();
+//		if(pertsonaPuntuak == ordenagailuPuntuak){
+//			berdinketa = true;
+//		}
+//		System.out.println("pertsona puntuak: " + pertsonaPuntuak);
+//		System.out.println("Ordenagauilu puntuak:" + ordenagailuPuntuak);
+//		return berdinketa;
+//	}
 }

@@ -15,7 +15,7 @@ public class JirafaKarta extends Karta {
 	public void animaladaEgin() { // bere aurretik dagoen karta bera baino txikiagoa bada saltatzen du
 		System.out.println("JIRAFAREN ANIMALADA");
 		KartaZerrenda kz =Tableroa.getTableroa().getJokokoKartak();
-		if(kz.hutsik()){
+		if(!kz.hutsik()){
 			if(kz.get(kz.tamainaKartaHutsBarik()-2).getZenb()<8){
 				Tableroa.getTableroa().saltatu(1);
 			}

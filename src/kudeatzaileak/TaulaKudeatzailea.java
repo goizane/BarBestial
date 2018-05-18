@@ -4,7 +4,7 @@ import java.util.Observable;
 
 import interfazea.Taula;
 import logika.Jokalari;
-import logika.JokalariZerrenda;
+
 import logika.KamaleoiKarta;
 import logika.KanguroKarta;
 import logika.Karta;
@@ -16,7 +16,6 @@ import logika.Tableroa;
 
 public class TaulaKudeatzailea {
 	private static TaulaKudeatzailea taula = new TaulaKudeatzailea();
-	private JokalariZerrenda jokalariak;
 	private KartaZerrenda jokalariKartak=new KartaZerrenda();
 	private KartaZerrenda ordenagailuKartak=new KartaZerrenda();
 	private KartaZerrenda jokokoKartak=new KartaZerrenda();
@@ -50,7 +49,7 @@ public class TaulaKudeatzailea {
 		return Tableroa.getTableroa().getJokokoKartak();
 	}
 	
-	public void grafikaEguneratu( ){
+	public void grafikaEguneratu( ){ //ER
 //		t.setVisible(false);
 		t = new Taula();
 		
@@ -61,46 +60,30 @@ public class TaulaKudeatzailea {
 	
 	}
 
-	public void animaladaErrekurtsiboakEgin(){
+	public void animaladaErrekurtsiboakEgin(){ //ER
 		Tableroa.getTableroa().animaladaErrekurtsiboakEgin();
 	}
 	
-	
-	
-	public Karta mazotikKartaHartuPer(){
-		Karta k= Tableroa.getTableroa().getPertsona().mazotikKartaHartuPer();
-		Tableroa.getTableroa().getPertsona().mazokoKartaEskukoKartetaraPer(k);
-		return k;
-	}
-	public Karta mazotikKartaHartuOrd(){
-		Karta k= Tableroa.getTableroa().getOrdenagailua().mazotikKartaHartuOrd();
-		Tableroa.getTableroa().getOrdenagailua().mazokoKartaEskukoKartetaraOrd(k);
-		return k;
-	}
-	
-	public void jokokoKartakHustu(){
+	public void jokokoKartakHustu(){ //ER
 		Tableroa.getTableroa().jokokoKartakHustu();
 	}
 	
-	public int jokokoKartenTam(){
+	public int jokokoKartenTam(){ //ER
 		return Tableroa.getTableroa().getJokokoKartak().tamainaKartaHutsBarik();
 	}
 	
-	public void kartaKendu(Karta k){
-		jokokoKartak.kenduKarta(k);
-	}
-	
-//	public boolean jokoaAmaitu(int i){
-//		return Tableroa.getTableroa().getJokalariak().getJok(i).jokoaAmaituDa();
+//	public void kartaKendu(Karta k){
+//		jokokoKartak.kenduKarta(k);
 //	}
 	
-	public void loroariKartaEsleitu( Karta k){
+	
+	public void loroariKartaEsleitu( Karta k){ //ER
 		LoroKarta.kenduKarEguneratu(k);
 	}
 	
 	
 	
-	public String getKartaIzena(int i){
+	public String getKartaIzena(int i){ //ER
 		return Tableroa.getTableroa().getJokokoKartak().get(i).getIzena();
 	}
 	
@@ -110,61 +93,60 @@ public class TaulaKudeatzailea {
 	
 
 	
-	public Karta getKarta(int i){
+	public Karta getKarta(int i){ //ER
 		return jokalariKartak.get(i);
 	}
 	
-	public void kamaleoiarenKopiatuKartaEguneratu(Karta k){
+	public void kamaleoiarenKopiatuKartaEguneratu(Karta k){ //ER
 		KamaleoiKarta.kopiatzekoKartaEguneratu( k );
 	}
 	
-	public void animaladaEgin(Karta k ){
+	public void animaladaEgin(Karta k ){ //ER
 		k.animaladaEgin();
 	}
 	
-	public void jokatu(Karta k){
+	public void jokatu(Karta k){ //ER
 		Tableroa.getTableroa().jokatuPer(k);
 	}
 	
-	public boolean amaitu(){
+	public boolean amaitu(){ //ER
 		boolean amaitu =false;
 		if(Pertsona.jokoaAmaituDaPer()){
 			amaitu = true;
-			System.out.println("jokoa amaitu da!");
 		}
 		return amaitu;
 	}
 	
-	public boolean pertsonaIrabazi(){
-		return Jokalari.pertsonaIrabazi();
+	public boolean pertsonaIrabazi(){ //ER
+		return Tableroa.getTableroa().pertsonaIrabazi();
 	}
 	
-	public boolean berdinketa(){
-		return Jokalari.berdinketa();
+	public boolean berdinketa(){ //ER
+		return Tableroa.getTableroa().berdinketa();
 	}
 
 	
-	public void ordenagailuarenTxanda(){
-		Tableroa.getTableroa().ordenagailuarenTxanda();
+	public void ordenagailuarenTxanda(){ //ER
+		Tableroa.getTableroa().getOrdenagailua().ordenagailuarenTxanda();
 	}
 	
-	public KartaZerrenda JokalariarenEskukoKartakLortu(){
+	public KartaZerrenda JokalariarenEskukoKartakLortu(){ //ER
 		return Tableroa.getTableroa().getPerKartak();
 	}
 	
-	public KartaZerrenda OrdenagailuarenEskukoKartakLortu(){
+	public KartaZerrenda OrdenagailuarenEskukoKartakLortu(){ //ER
 		return Tableroa.getTableroa().getOrdenagailua().getEskukoKartakOrd();
 	}
 
-	public String getIzena() {
+	public String getIzena() { //ER
 		return Pertsona.getIzena();
 	}
 	
-	public int getPuntuazioa(){
+	public int getPuntuazioa(){ //ER
 		return Pertsona.getPuntuazioa();
 	}
 
-	public Karta getOrdenagailuaJokKarta() {
+	public Karta getOrdenagailuaJokKarta() { //er
 		return Tableroa.getTableroa().getOrdenagailua().getJokatutakoAzkenKarta();
 	}
 }

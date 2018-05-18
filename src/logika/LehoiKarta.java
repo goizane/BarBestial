@@ -24,6 +24,7 @@ public class LehoiKarta extends Karta {
 		if(Tableroa.getTableroa().getJokokoKartak().errepikatutaDago(12)){
 			Tableroa.getTableroa().azkenaKanporatu();
 			
+			
 		}
 		else{
 			

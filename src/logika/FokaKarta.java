@@ -13,9 +13,15 @@ public class FokaKarta extends Karta {
 
 
 	public void animaladaEgin() { //atearen eta patadaren posizioak aldatzen ditu
-		
-		Tableroa.getTableroa().zerrendarenOrdenaAldatu();
 		System.out.println("FOKAREN ANIMALADA");
+//		Tableroa.getTableroa().zerrendarenOrdenaAldatu();
+		KartaZerrenda jokokoKartak = Tableroa.getTableroa().getJokokoKartak();		
+		KartaZerrenda zer = new KartaZerrenda();
+		for(int i=jokokoKartak.tamainaKartaHutsBarik()-1; i>=0; i--) {
+			zer.gehituKarta(jokokoKartak.get(i));
+		}
+		zer.zerrendaBete();
+		Tableroa.getTableroa().jokokoKartakEguneratu(zer);
 	}
 
 }

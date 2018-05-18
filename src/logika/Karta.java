@@ -20,7 +20,7 @@ public abstract class Karta {
 	public String getKolorea(){
 		return this.kolorea;
 	}
-	public int getZenb(){
+	public int getZenb(){ //ER
 		return zenb;
 	}
 	public void setZenb(int pZenb){

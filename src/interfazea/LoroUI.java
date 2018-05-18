@@ -47,6 +47,7 @@ public class LoroUI extends JFrame {
 					botoia1.setText(testua1);
 					zenbakienPanela.setLayout(new GridLayout(1,0));
 					zenbakienPanela.add(botoia1);
+					
 				}
 				else if(tam ==3){
 					String testua1 = TaulaKudeatzailea.getTaulaKudeatzailea().getKartaIzena(0);

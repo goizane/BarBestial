@@ -16,22 +16,21 @@ public class Pertsona extends Jokalari{
 		this.mazoaPer = new Stack<Karta>();
 	}
 	
-	public Stack<Karta> getMazoaPer(){
-		return mazoaPer;
-	}
+//	public Stack<Karta> getMazoaPer(){
+//		return mazoaPer;
+//	}
 	
-	public static int getPuntuazioa(){
+	public static int getPuntuazioa(){ //ER
 		return pertsonaPuntuak;
 	}
 	
-	public static Karta mazotikKartaHartuPer(){
+	public static Karta mazotikKartaHartuPer(){ //ER
 		 return mazoaPer.pop();
 		
 	}
-	public static boolean jokoaAmaituDaPer(){
+	public static boolean jokoaAmaituDaPer(){ //ER
 		boolean amaitu = false;
-		if(getEskukoKartakPer().hutsik()){
-			System.out.println("JOKOA AMAITU DA");
+		if(eskukoKartakPer.hutsik()){
 			amaitu = true;
 		}
 		else{
@@ -39,9 +38,9 @@ public class Pertsona extends Jokalari{
 		}
 		return amaitu;
 	}
-	public static void mazokoKartaEskukoKartetaraPer(Karta k){
-		eskukoKartakPer.gehituKarta(k);
-	}
+//	public static void mazokoKartaEskukoKartetaraPer(Karta k){
+//		eskukoKartakPer.gehituKarta(k);
+//	}
 	public static KartaZerrenda getEskukoKartakPer(){
 		return eskukoKartakPer;
 	}
@@ -50,21 +49,19 @@ public class Pertsona extends Jokalari{
 		int kont =1;
 		int i =0;
 		Karta k = null;
-		System.out.println("ESKUKO KARTAK");
+		//ESKUKO KARTAK
 		while(kont<=4){
 			k = KartaSortzailea.kartaSortu(lista.get(i), kolorea);
 			this.eskukoKartakPer.gehituKarta(k);
 			k.koloreaEguneratu(kolorea);
-			System.out.println(k.getIzena() +"KOLOREA: "+ k.getKolorea());
 			kont ++;
 			i++;
 		}
-		System.out.println("MAZOKO KARTAK");
+		//MAZOKO KARTAK
 		while(4<=kont&& kont<=12){
 			k = KartaSortzailea.kartaSortu(lista.get(i), kolorea);
 			this.mazoaPer.push(k);
 			k.koloreaEguneratu(kolorea);
-			System.out.println(k.getIzena() +"KOLOREA: "+ k.getKolorea());
 			kont++;
 			i++;
 		}
@@ -72,13 +69,12 @@ public class Pertsona extends Jokalari{
 		
 		
 	}
-	public void jokatuPer(Karta k){
+	public void jokatuPer(Karta k){ //ER
 		KartaZerrenda eskKartak = new KartaZerrenda();
 		Tableroa.getTableroa().ilaranKartaSartu(k);
-		System.out.println("jokatutako Karta :" + k.getIzena());
+		
 		eskukoKartakPer.kenduKarta(k);
 		if (eskukoKartakPer.tamainaKartaHutsBarik()<5) {
-			System.out.println(" ESKUKO KARTAK < 5");
 			eskukoKartakPer.gehituKarta(new KartaHutsa());
 		}
 		for(int i = 0; i<3; i++){
@@ -91,19 +87,19 @@ public class Pertsona extends Jokalari{
 		
 		eskukoKartakPer = eskKartak;
 	}
-	public void jokalariaHasieratuPer() {
+	public void jokalariaHasieratuPer() { //er
 		List<Integer> lista = kartakNahastu();
 		kartakKargatuPer(lista);
 		
 	}
-	public void izenaHasieratu(String izena){
+	public void izenaHasieratu(String izena){ //ER
 		this.izena= izena;
 	}
 	
-	public static String getIzena(){
+	public static String getIzena(){ //ER
 		return izena;
 	}
-	public static void pertsonaPuntuakEguneratu(Karta k) {
+	public static void pertsonaPuntuakEguneratu(Karta k) { //ER
 		int puntuak;
 		if(k.getZenb()==6 || k.getZenb()==9 || k.getZenb()==11 || k.getZenb()==12){
 			puntuak = 2;

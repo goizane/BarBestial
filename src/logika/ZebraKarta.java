@@ -19,15 +19,7 @@ public class ZebraKarta extends Karta {
 	public void animaladaEgin() { // ez ditu kokrodiloak eta hipopotamoak pasatzen uzten
 		// TODO Auto-generated method stub
 		System.out.println("ZEBRAREN ANIMALADA");
-//		TaulaKudeatzailea.getTaulaKudeatzailea().animaladaErrekurtsiboakEgin();
-//		TaulaKudeatzailea.getTaulaKudeatzailea().jokokoKartakHustu();
-//		if(TaulaKudeatzailea.getTaulaKudeatzailea().irabazlea(0)){
-//			new IrabaziUI();
-//		}
-//		TaulaKudeatzailea.getTaulaKudeatzailea().ordenagailuarenTxanda();
-//		if(TaulaKudeatzailea.getTaulaKudeatzailea().irabazlea(1)){
-//			new GalduUI();
-//		}
+
 	}
 
 }

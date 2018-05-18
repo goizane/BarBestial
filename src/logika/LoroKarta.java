@@ -18,15 +18,12 @@ public class LoroKarta extends Karta {
 //		System.out.println(kenduKar.getIzena()+ " karta kendu");
 		Tableroa.getTableroa().getJokokoKartak().kenduKarta(kenduKar);
 		KartaZerrenda jj = Tableroa.getTableroa().getJokokoKartak();
-		for(int i =0; i< jj.tamaina(); i++){
-			System.out.println(jj.get(i).getIzena());
-		}
-		
+				
 	}
 	
-	public static void kenduKarEguneratu(Karta k){
+	public static void kenduKarEguneratu(Karta k){ //ER
 		kenduKar= k;
-		System.out.println(" loroaren kendukar: " + kenduKar);
+		
 	}
 	
 }

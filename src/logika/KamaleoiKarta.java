@@ -18,7 +18,7 @@ public class KamaleoiKarta extends Karta {
 		kopiatu.animaladaEgin();
 	}
 	
-	public static void kopiatzekoKartaEguneratu(Karta k ){
+	public static void kopiatzekoKartaEguneratu(Karta k ){ //ER
 		kopiatu = k;
 	}
 }

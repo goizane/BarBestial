@@ -20,20 +20,24 @@ public class KrokodiloKarta extends Karta {
 		KartaZerrenda kz = TaulaKudeatzailea.getTaulaKudeatzailea().getJokokoKartak();
 		if(kz.tamainaKartaHutsBarik()>1){
 			int pos = kz.kartaBatenPosizioaLortu(10);
-			System.out.println("kokodriloaren pozisioa: " + pos);
-			if(kz.dauka(7)){
-				System.out.println("zebra dago");
-				int zebraPos = kz.kartaBatenPosizioaLortu(7);
-				System.out.println("zebraren posizioa: " + zebraPos);
-				if(zebraPos<pos){
-					System.out.println("Zebra kokodriloaren aurretik dago");
-					kz.tarteBateanTxikiagoakDirenKartakKendu(10, pos, zebraPos);
+			if(pos>0){
+				if(kz.get(pos).getZenb()> kz.get(pos-1).getZenb()){
+					if(kz.get(pos-1).getZenb()!=7){
+						if(kz.dauka(7)){
+							int zebraPos = kz.kartaBatenPosizioaLortu(7);
+							if(zebraPos<pos){
+								kz.tarteBateanTxikiagoakDirenKartakKendu(10, pos, zebraPos);
+							}
+							
+						}else{
+							kz.txikiagoakDirenKartakEzabatu(10, pos);
+						}
+					}
+					
 				}
 				
-			}else{
-				System.out.println("ez dago zebrarik");
-				kz.txikiagoakDirenKartakEzabatu(10, pos);
 			}
+			
 		}
 		
 		Tableroa.getTableroa().jokokoKartakEguneratu(kz);

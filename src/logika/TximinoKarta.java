@@ -19,7 +19,6 @@ public class TximinoKarta extends Karta {
 		
 		KartaZerrenda jokokoKartak = Tableroa.getTableroa().getJokokoKartak();
 		if (!jokokoKartak.errepikatutaDago(4)) {
-			System.out.println("Tximino bakarra dago!");
 		}
 		else {
 			
