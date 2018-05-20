@@ -55,8 +55,5 @@ public class KartaFactory {
 			karta=new LehoiKarta(kolorea);
 		}
 		return karta;
-		
 	}
-	
-
 }

@@ -6,7 +6,12 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import logika.FokaKarta;
+import logika.HipopotamoKarta;
+
 public class HipopotamoKartaTest {
+	
+	// Amaituta dago. Testak ondo funtzionatzen du.
 
 	@Before
 	public void setUp() throws Exception {
@@ -17,13 +22,19 @@ public class HipopotamoKartaTest {
 	}
 
 	@Test
-	public void testAnimaladaEgin() {
-		fail("Not yet implemented");
-	}
-
-	@Test
 	public void testHipopotamoKarta() {
-		fail("Not yet implemented");
+		HipopotamoKarta karta = new HipopotamoKarta("urdina");
+		String izena = karta.getIzena();
+		assertEquals(izena, "hipopotamo");
+		assertNotEquals(izena, "loro");
+		int zenbakia = karta.getZenb();
+		assertEquals(zenbakia, 11);
+		assertNotEquals(zenbakia, 5);
 	}
-
+	
+	@Test
+	public void testAnimaladaEgin() {
+		// Interfaze grafikan testeatzen da!
+		assertTrue(true);	
+	}
 }

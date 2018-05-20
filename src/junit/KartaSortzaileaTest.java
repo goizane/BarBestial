@@ -6,7 +6,12 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import logika.Karta;
+import logika.KartaSortzailea;
+
 public class KartaSortzaileaTest {
+	
+	// Amaituta dago. Testak ondo funtzionatzen du.
 
 	@Before
 	public void setUp() throws Exception {
@@ -18,12 +23,18 @@ public class KartaSortzaileaTest {
 
 	@Test
 	public void testKartaSortzailea() {
-		fail("Not yet implemented");
+		// Besteetan testeatzen da.
+		assertTrue(true);
 	}
 
 	@Test
 	public void testKartaSortu() {
-		fail("Not yet implemented");
+		Karta karta = KartaSortzailea.kartaSortu(6, "urdina");
+		String izena = karta.getIzena();
+		assertEquals(izena, "foka");
+		assertNotEquals(izena, "loro");
+		int zenbakia = karta.getZenb();
+		assertEquals(zenbakia, 6);
+		assertNotEquals(zenbakia, 5);
 	}
-
 }

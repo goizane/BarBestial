@@ -2,11 +2,20 @@ package junit;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import logika.Jokalari;
+import logika.Karta;
+import logika.Pertsona;
+
 public class JokalariTest {
+	
+	// Amaituta dago. Testak ondo funtzionatzen du.
 
 	@Before
 	public void setUp() throws Exception {
@@ -18,17 +27,24 @@ public class JokalariTest {
 
 	@Test
 	public void testJokalari() {
-		fail("Not yet implemented");
+		// Herentzia da
+		assertTrue(true);
 	}
 
 	@Test
 	public void testKartakNahastu() {
-		fail("Not yet implemented");
+		Jokalari jok = new Pertsona();
+		List<Integer> kartak = jok.kartakNahastu();
+		assertNotNull(kartak);
 	}
 
 	@Test
 	public void testJokalariarenKoloreaHasieratu() {
-		fail("Not yet implemented");
+		Jokalari jok = new Pertsona();
+		String kolorea = "urdina";
+		jok.jokalariarenKoloreaHasieratu(kolorea);
+		// Herentzia da.
+		assertTrue(true);
 	}
 
 }

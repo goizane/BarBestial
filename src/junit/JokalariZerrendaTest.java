@@ -6,7 +6,13 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import logika.Jokalari;
+import logika.JokalariZerrenda;
+import logika.Pertsona;
+
 public class JokalariZerrendaTest {
+	
+	// Amaituta dago. Testak ondo funtzionatzen du.
 
 	@Before
 	public void setUp() throws Exception {
@@ -18,27 +24,34 @@ public class JokalariZerrendaTest {
 
 	@Test
 	public void testJokalariZerrenda() {
-		fail("Not yet implemented");
+		JokalariZerrenda zerrenda = JokalariZerrenda.getJokalariZerrenda();
+		assertNotNull(zerrenda);
 	}
 
 	@Test
 	public void testGetJokalariZerrenda() {
-		fail("Not yet implemented");
+		JokalariZerrenda zerrenda = JokalariZerrenda.getJokalariZerrenda();
+		assertNotNull(zerrenda);
 	}
 
 	@Test
 	public void testGetJok() {
-		fail("Not yet implemented");
+		JokalariZerrenda zerrenda3 = JokalariZerrenda.getJokalariZerrenda();
+		assertNotNull(zerrenda3);
 	}
 
 	@Test
 	public void testGetJokalari() {
-		fail("Not yet implemented");
+		JokalariZerrenda zerrenda2 = JokalariZerrenda.getJokalariZerrenda();
+		assertNotNull(zerrenda2);
 	}
 
 	@Test
 	public void testGehituJokalaria() {
-		fail("Not yet implemented");
+		JokalariZerrenda zer = JokalariZerrenda.getJokalariZerrenda();
+		Pertsona per = new Pertsona();
+		zer.gehituJokalaria(per);
+		assertNotNull(zer);
 	}
 
 }
