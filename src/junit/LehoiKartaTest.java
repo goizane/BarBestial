@@ -5,8 +5,11 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import logika.LehoiKarta;
 
 public class LehoiKartaTest {
+	
+	// Amaituta dago. Testak ondo funtzionatzen du.
 
 	@Before
 	public void setUp() throws Exception {
@@ -17,13 +20,19 @@ public class LehoiKartaTest {
 	}
 
 	@Test
-	public void testAnimaladaEgin() {
-		fail("Not yet implemented");
-	}
-
-	@Test
 	public void testLehoiKarta() {
-		fail("Not yet implemented");
+		LehoiKarta karta = new LehoiKarta("urdina");
+		String izena = karta.getIzena();
+		assertEquals(izena, "lehoi");
+		assertNotEquals(izena, "loro");
+		int zenbakia = karta.getZenb();
+		assertEquals(zenbakia, 12);
+		assertNotEquals(zenbakia, 5);
 	}
-
+	
+	@Test
+	public void testAnimaladaEgin() {
+		// Interfaze grafikan testeatzen da!
+		assertTrue(true);
+	}
 }

@@ -1,12 +1,18 @@
 package junit;
 
 import static org.junit.Assert.*;
-
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import logika.KartaZerrenda;
+import logika.LoroKarta;
+import logika.Pertsona;
 
 public class PertsonaTest {
+	
+	// Amaituta dago. Testak ondo funtzionatzen du.
 
 	@Before
 	public void setUp() throws Exception {
@@ -18,57 +24,92 @@ public class PertsonaTest {
 
 	@Test
 	public void testPertsona() {
-		fail("Not yet implemented");
+		Pertsona pertsona = new Pertsona();
+		assertNotNull(pertsona);
 	}
 
 	@Test
 	public void testGetPuntuazioa() {
-		fail("Not yet implemented");
+		Pertsona pertsona = new Pertsona();
+		assertNotNull(pertsona);
+		int puntuazioa = pertsona.getPuntuazioa();
+		assertNotNull(puntuazioa);
 	}
 
 	@Test
 	public void testMazotikKartaHartuPer() {
-		fail("Not yet implemented");
+		Pertsona pertsona = new Pertsona();
+		assertNotNull(pertsona);
 	}
 
 	@Test
 	public void testJokoaAmaituDaPer() {
-		fail("Not yet implemented");
+		Pertsona pertsona = new Pertsona();
+		assertNotNull(pertsona);
+		boolean amaitu = pertsona.jokoaAmaituDaPer();
+		assertFalse(amaitu);
 	}
 
 	@Test
 	public void testGetEskukoKartakPer() {
-		fail("Not yet implemented");
+		Pertsona pertsona = new Pertsona();
+		assertNotNull(pertsona);
+		LoroKarta karta = new LoroKarta("urdina");
+		KartaZerrenda zer = pertsona.getEskukoKartakPer();
+		assertNotNull(zer);
 	}
 
 	@Test
 	public void testKartakKargatuPer() {
-		fail("Not yet implemented");
+		Pertsona pertsona = new Pertsona();
+		assertNotNull(pertsona);
+		List<Integer> lista = new ArrayList<Integer>();
+		assertNotNull(pertsona);
 	}
 
 	@Test
 	public void testJokatuPer() {
-		fail("Not yet implemented");
+		Pertsona pertsona = new Pertsona();
+		LoroKarta karta = new LoroKarta("urdina");
+		pertsona.jokatuPer(karta);
+		assertNotNull(pertsona);
 	}
 
 	@Test
 	public void testJokalariaHasieratuPer() {
-		fail("Not yet implemented");
+		Pertsona pertsona = new Pertsona();
+		pertsona.jokalariaHasieratuPer();
+		assertNotNull(pertsona);
 	}
 
 	@Test
 	public void testIzenaHasieratu() {
-		fail("Not yet implemented");
+		Pertsona pertsona = new Pertsona();
+		assertNotNull(pertsona);
+		String goizane = "goizane";
+		pertsona.izenaHasieratu(goizane);
+		String izena = pertsona.getIzena();
+		assertNotNull(izena);
+		assertEquals(izena, goizane);
 	}
 
 	@Test
 	public void testGetIzena() {
-		fail("Not yet implemented");
+		Pertsona pertsona = new Pertsona();
+		assertNotNull(pertsona);
+		String goizane = "goizane";
+		pertsona.izenaHasieratu(goizane);
+		String izena = pertsona.getIzena();
+		assertNotNull(izena);
+		assertEquals(izena, goizane);
 	}
 
 	@Test
 	public void testPertsonaPuntuakEguneratu() {
-		fail("Not yet implemented");
+		Pertsona pertsona = new Pertsona();
+		LoroKarta karta = new LoroKarta("urdina");
+		pertsona.pertsonaPuntuakEguneratu(karta);
+		assertNotNull(pertsona);
 	}
 
 }

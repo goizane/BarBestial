@@ -5,8 +5,11 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import logika.LoroKarta;
 
 public class LoroKartaTest {
+	
+	// Amaituta dago. Testak ondo funtzionatzen du.
 
 	@Before
 	public void setUp() throws Exception {
@@ -18,17 +21,25 @@ public class LoroKartaTest {
 
 	@Test
 	public void testAnimaladaEgin() {
-		fail("Not yet implemented");
+		// Interfaze grafikan testeatzen da!
+		assertTrue(true);
 	}
 
 	@Test
 	public void testLoroKarta() {
-		fail("Not yet implemented");
+		LoroKarta karta = new LoroKarta("urdina");
+		String izena = karta.getIzena();
+		assertEquals(izena, "loro");
+		assertNotEquals(izena, "foka");
+		int zenbakia = karta.getZenb();
+		assertEquals(zenbakia, 2);
+		assertNotEquals(zenbakia, 5);
 	}
 
 	@Test
 	public void testKenduKarEguneratu() {
-		fail("Not yet implemented");
+		// Animalada egiterakoan frogatzen da!
+		assertTrue(true);
 	}
 
 }

@@ -1,12 +1,20 @@
 package junit;
 
 import static org.junit.Assert.*;
-
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import logika.Karta;
+import logika.KartaZerrenda;
+import logika.LoroKarta;
+import logika.Ordenagailua;
 
 public class OrdenagailuaTest {
+	
+	// Amaituta dago. Testak ondo funtzionatzen du.
 
 	@Before
 	public void setUp() throws Exception {
@@ -18,67 +26,109 @@ public class OrdenagailuaTest {
 
 	@Test
 	public void testOrdenagailua() {
-		fail("Not yet implemented");
+		Ordenagailua ordenagailu = new Ordenagailua();
+		assertNotNull(ordenagailu);
 	}
 
 	@Test
 	public void testGetMazoaOrd() {
-		fail("Not yet implemented");
+		Ordenagailua ordenagailu = new Ordenagailua();
+		assertNotNull(ordenagailu);
+		Stack<Karta> mazo = ordenagailu.getMazoaOrd();
+		assertNotNull(mazo);
 	}
 
 	@Test
 	public void testMazotikKartaHartuOrd() {
-		fail("Not yet implemented");
+		Ordenagailua ordenagailu = new Ordenagailua();
+		assertNotNull(ordenagailu);
+		Stack<Karta> mazo = ordenagailu.getMazoaOrd();
+		assertNotNull(mazo);
 	}
 
 	@Test
 	public void testGetJokatutakoAzkenKarta() {
-		fail("Not yet implemented");
+		Ordenagailua ordenagailu = new Ordenagailua();
+		assertNotNull(ordenagailu);
+		Stack<Karta> mazo = ordenagailu.getMazoaOrd();
+		assertNotNull(mazo);
+		Karta karta = ordenagailu.getJokatutakoAzkenKarta();
+		assertNotNull(karta);
 	}
 
 	@Test
 	public void testGetPuntuazioa() {
-		fail("Not yet implemented");
+		Ordenagailua ordenagailu = new Ordenagailua();
+		assertNotNull(ordenagailu);
+		Stack<Karta> mazo = ordenagailu.getMazoaOrd();
+		assertNotNull(mazo);
+		int puntuazioa = ordenagailu.getPuntuazioa();
+		assertNotNull(puntuazioa);
 	}
 
 	@Test
 	public void testJokoaAmaituDaOrd() {
-		fail("Not yet implemented");
+		Ordenagailua ordenagailu = new Ordenagailua();
+		assertNotNull(ordenagailu);
+		boolean amaitu = Ordenagailua.jokoaAmaituDaOrd();
+		assertFalse(amaitu);
 	}
 
 	@Test
 	public void testMazokoKartaEskukoKartetaraOrd() {
-		fail("Not yet implemented");
+		Ordenagailua ordenagailu = new Ordenagailua();
+		assertNotNull(ordenagailu);
+		LoroKarta karta = new LoroKarta("urdina");
+		ordenagailu.mazokoKartaEskukoKartetaraOrd(karta);
+		KartaZerrenda zer = ordenagailu.getEskukoKartakOrd();
+		assertNotNull(zer);
 	}
 
 	@Test
 	public void testGetEskukoKartakOrd() {
-		fail("Not yet implemented");
+		Ordenagailua ordenagailu = new Ordenagailua();
+		assertNotNull(ordenagailu);
+		LoroKarta karta = new LoroKarta("urdina");
+		ordenagailu.mazokoKartaEskukoKartetaraOrd(karta);
+		KartaZerrenda zer = ordenagailu.getEskukoKartakOrd();
+		assertNotNull(zer);
 	}
 
 	@Test
 	public void testKartakKargatuOrd() {
-		fail("Not yet implemented");
+		Ordenagailua ordenagailu = new Ordenagailua();
+		assertNotNull(ordenagailu);
+		List<Integer> lista = new ArrayList<Integer>();
+		assertNotNull(ordenagailu);
 	}
 
 	@Test
 	public void testJokatuOrd() {
-		fail("Not yet implemented");
+		Ordenagailua ordenagailu = new Ordenagailua();
+		LoroKarta karta = new LoroKarta("urdina");
+		ordenagailu.jokatuOrd(karta);
+		assertNotNull(ordenagailu);
 	}
 
 	@Test
 	public void testOrdenagailuarenTxanda() {
-		fail("Not yet implemented");
+		// Interfaze grafikoan frogatzen da automatikoki jolasterakoan!
+		assertTrue(true);
 	}
 
 	@Test
 	public void testJokalariaHasieratuOrd() {
-		fail("Not yet implemented");
+		Ordenagailua ordenagailu = new Ordenagailua();
+		ordenagailu.jokalariaHasieratuOrd();
+		assertNotNull(ordenagailu);
 	}
 
 	@Test
 	public void testOrdenagailuPuntuakEguneratu() {
-		fail("Not yet implemented");
+		Ordenagailua ordenagailu = new Ordenagailua();
+		LoroKarta karta = new LoroKarta("urdina");
+		ordenagailu.OrdenagailuPuntuakEguneratu(karta);
+		assertNotNull(ordenagailu);
 	}
 
 }

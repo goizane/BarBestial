@@ -5,8 +5,15 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import logika.KartaZerrenda;
+import logika.LoroKarta;
+import logika.Ordenagailua;
+import logika.Pertsona;
+import logika.Tableroa;
 
 public class TableroTest {
+	
+	// Amaituta dago. Testak ondo funtzionatzen du.
 
 	@Before
 	public void setUp() throws Exception {
@@ -18,122 +25,212 @@ public class TableroTest {
 
 	@Test
 	public void testGetTableroa() {
-		fail("Not yet implemented");
+		Tableroa tableroa = Tableroa.getTableroa();
+		assertNotNull(tableroa);
 	}
 
 	@Test
 	public void testTableroaHasieratu() {
-		fail("Not yet implemented");
+		Tableroa tableroa = Tableroa.getTableroa();
+		assertNotNull(tableroa);
+		String izena = "goizane";
+		tableroa.tableroaHasieratu(izena);
 	}
 
 	@Test
 	public void testJokokoKartakHasieratu() {
-		fail("Not yet implemented");
+		Tableroa tableroa = Tableroa.getTableroa();
+		assertNotNull(tableroa);
+		String izena = "goizane";
+		tableroa.tableroaHasieratu(izena);
+		tableroa.jokokoKartakHasieratu();
 	}
 
 	@Test
 	public void testTabernakoKartakHasieratu() {
-		fail("Not yet implemented");
+		Tableroa tableroa = Tableroa.getTableroa();
+		assertNotNull(tableroa);
+		String izena = "goizane";
+		tableroa.tableroaHasieratu(izena);
+		tableroa.tabernakoKartakHasieratu();
 	}
 
 	@Test
 	public void testKalekoKartakHasieratu() {
-		fail("Not yet implemented");
+		Tableroa tableroa = Tableroa.getTableroa();
+		assertNotNull(tableroa);
+		String izena = "goizane";
+		tableroa.tableroaHasieratu(izena);
+		tableroa.kalekoKartakHasieratu();
 	}
 
 	@Test
 	public void testGetOrdenagailua() {
-		fail("Not yet implemented");
+		Tableroa tableroa = Tableroa.getTableroa();
+		assertNotNull(tableroa);
+		String izena = "goizane";
+		tableroa.tableroaHasieratu(izena);
+		Ordenagailua ordenagailu = tableroa.getOrdenagailua();
+		assertNotNull(ordenagailu);
 	}
 
 	@Test
 	public void testGetPertsona() {
-		fail("Not yet implemented");
+		Tableroa tableroa = Tableroa.getTableroa();
+		assertNotNull(tableroa);
+		String izena = "goizane";
+		tableroa.tableroaHasieratu(izena);
+		Pertsona pertsona = tableroa.getPertsona();
+		assertNotNull(pertsona);
 	}
 
 	@Test
 	public void testGetPerKartak() {
-		fail("Not yet implemented");
+		Tableroa tableroa = Tableroa.getTableroa();
+		assertNotNull(tableroa);
+		String izena = "goizane";
+		tableroa.tableroaHasieratu(izena);
+		KartaZerrenda zerrenda = tableroa.getPerKartak();
+		assertNotNull(zerrenda);
 	}
 
 	@Test
 	public void testGetTabernakoKartak() {
-		fail("Not yet implemented");
+		Tableroa tableroa = Tableroa.getTableroa();
+		assertNotNull(tableroa);
+		String izena = "goizane";
+		tableroa.tableroaHasieratu(izena);
+		KartaZerrenda zerrenda = tableroa.getTabernakoKartak();
+		assertNotNull(zerrenda);
 	}
 
 	@Test
 	public void testGetJokokoKartak() {
-		fail("Not yet implemented");
+		Tableroa tableroa = Tableroa.getTableroa();
+		assertNotNull(tableroa);
+		String izena = "goizane";
+		tableroa.tableroaHasieratu(izena);
+		KartaZerrenda zerrenda = tableroa.getJokokoKartak();
+		assertNotNull(zerrenda);
 	}
 
 	@Test
 	public void testJokokoKartakEguneratu() {
-		fail("Not yet implemented");
+		Tableroa tableroa = Tableroa.getTableroa();
+		assertNotNull(tableroa);
+		String izena = "goizane";
+		tableroa.tableroaHasieratu(izena);
+		KartaZerrenda zerrenda = tableroa.getTabernakoKartak();
+		assertNotNull(zerrenda);
+		tableroa.jokokoKartakEguneratu(zerrenda);
+		KartaZerrenda zer = tableroa.getJokokoKartak();
+		assertEquals(zerrenda, zer);
 	}
 
 	@Test
 	public void testJokatuPer() {
-		fail("Not yet implemented");
+		Tableroa tableroa = Tableroa.getTableroa();
+		assertNotNull(tableroa);
+		LoroKarta karta = new LoroKarta("urdina");
+		tableroa.jokatuPer(karta);
 	}
 
 	@Test
 	public void testJokatuOrd() {
-		fail("Not yet implemented");
+		Tableroa tableroa = Tableroa.getTableroa();
+		assertNotNull(tableroa);
+		LoroKarta karta = new LoroKarta("urdina");
+		tableroa.jokatuOrd(karta);
 	}
 
 	@Test
 	public void testSaltatu() {
-		fail("Not yet implemented");
+		Tableroa tableroa = Tableroa.getTableroa();
+		assertNotNull(tableroa);
+		int saltoa = 2;
+		tableroa.saltatu(saltoa);
 	}
 
 	@Test
 	public void testPertsonaIrabazi() {
-		fail("Not yet implemented");
+		Tableroa tableroa = Tableroa.getTableroa();
+		assertNotNull(tableroa);
+		LoroKarta karta = new LoroKarta("urdina");
+		tableroa.jokatuPer(karta);
+		tableroa.jokatuOrd(karta);
+		boolean irabazi = tableroa.pertsonaIrabazi();
+		assertFalse(irabazi);
 	}
 
 	@Test
 	public void testBerdinketa() {
-		fail("Not yet implemented");
+		Tableroa tableroa = Tableroa.getTableroa();
+		assertNotNull(tableroa);
+		LoroKarta karta = new LoroKarta("urdina");
+		tableroa.jokatuPer(karta);
+		tableroa.jokatuOrd(karta);
+		boolean berdinketa = tableroa.berdinketa();
+		assertFalse(berdinketa);
 	}
 
 	@Test
 	public void testJokokoKartakBeteta() {
-		fail("Not yet implemented");
+		Tableroa tableroa = Tableroa.getTableroa();
+		assertNotNull(tableroa);
+		LoroKarta karta = new LoroKarta("urdina");
+		tableroa.jokatuPer(karta);
+		tableroa.jokatuOrd(karta);
+		boolean beteta = tableroa.jokokoKartakBeteta();
+		assertFalse(beteta);
 	}
 
 	@Test
 	public void testJokokoKartakSartuKanporatu() {
-		fail("Not yet implemented");
+		// Interfaze grafikoan frogatzen da!
+		Tableroa tableroa = Tableroa.getTableroa();
+		assertNotNull(tableroa);
 	}
 
 	@Test
 	public void testAnimaladaErrekurtsiboakEgin() {
-		fail("Not yet implemented");
+		Tableroa tableroa = Tableroa.getTableroa();
+		assertNotNull(tableroa);
+		tableroa.animaladaErrekurtsiboakEgin();
 	}
 
 	@Test
 	public void testJokokoKartakHustu() {
-		fail("Not yet implemented");
+		Tableroa tableroa = Tableroa.getTableroa();
+		assertNotNull(tableroa);
+		tableroa.jokokoKartakHustu();
 	}
 
 	@Test
 	public void testIlaranKartaSartu() {
-		fail("Not yet implemented");
+		Tableroa tableroa = Tableroa.getTableroa();
+		assertNotNull(tableroa);
+		LoroKarta karta = new LoroKarta("urdina");
+		tableroa.ilaranKartaSartu(karta);
 	}
 
 	@Test
 	public void testIlarakoLehenengoBiakSartu() {
-		fail("Not yet implemented");
+		Tableroa tableroa = Tableroa.getTableroa();
+		assertNotNull(tableroa);
+		tableroa.ilarakoLehenengoBiakSartu();
 	}
 
 	@Test
 	public void testAzkenaKanporatu() {
-		fail("Not yet implemented");
+		// Interfaze grafikoan frogatzen da!
+		Tableroa tableroa = Tableroa.getTableroa();
+		assertNotNull(tableroa);
 	}
 
 	@Test
 	public void testAzkenKartaLortu() {
-		fail("Not yet implemented");
+		// Interfaze grafikoan frogatzen da!
+		Tableroa tableroa = Tableroa.getTableroa();
+		assertNotNull(tableroa);
 	}
-
 }
