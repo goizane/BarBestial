@@ -60,40 +60,40 @@ public class Taula extends JFrame {
 	
 	//KARTAK
 	
-	ImageIcon karta = new ImageIcon("src/fitxategiak/karta.png");
-	ImageIcon kartaHutsa = new ImageIcon("src/fitxategiak/kartaHutsa.jpg");
-	ImageIcon tabernaKarta = new ImageIcon("src/fitxategiak/taberna.png");
-	ImageIcon kaleaKarta =new ImageIcon("src/fitxategiak/zakarrontzia.png");
+	ImageIcon karta = new ImageIcon("fitxategiak/karta.png");
+	ImageIcon kartaHutsa = new ImageIcon("fitxategiak/kartaHutsa.jpg");
+	ImageIcon tabernaKarta = new ImageIcon("fitxategiak/taberna.png");
+	ImageIcon kaleaKarta =new ImageIcon("fitxategiak/zakarrontzia.png");
 	
 	//IRUDI BERDEAK
 	
-	ImageIcon mofetaBerdea = new ImageIcon("src/fitxategiak/mofetaBerdea.png");
-	ImageIcon loroBerdea = new ImageIcon("src/fitxategiak/loroBerdea.png");
-	ImageIcon fokaBerdea = new ImageIcon("src/fitxategiak/fokaBerdea.png");
-	ImageIcon sugeBerdea = new ImageIcon("src/fitxategiak/sugeBerdea.png");
-	ImageIcon zebraBerdea = new ImageIcon("src/fitxategiak/zebraBerdea.png");
-	ImageIcon lehoiBerdea = new ImageIcon("src/fitxategiak/lehoiBerdea.png");
-	ImageIcon kanguroBerdea = new ImageIcon("src/fitxategiak/kanguroBerdea.png");
-	ImageIcon jirafaBerdea = new ImageIcon("src/fitxategiak/jirafaBerdea.png");
-	ImageIcon hipopotamoBerdea = new ImageIcon("src/fitxategiak/hipopotamoBerdea.png");
-	ImageIcon tximinoBerdea = new ImageIcon("src/fitxategiak/tximinoBerdea.png");
-	ImageIcon krokodiloBerdea = new ImageIcon("src/fitxategiak/krokodiloBerdea.png");
-	ImageIcon kamaleoiBerdea = new ImageIcon("src/fitxategiak/kamaleoiBerdea.png");
+	ImageIcon mofetaBerdea = new ImageIcon("fitxategiak/mofetaBerdea.png");
+	ImageIcon loroBerdea = new ImageIcon("fitxategiak/loroBerdea.png");
+	ImageIcon fokaBerdea = new ImageIcon("fitxategiak/fokaBerdea.png");
+	ImageIcon sugeBerdea = new ImageIcon("fitxategiak/sugeBerdea.png");
+	ImageIcon zebraBerdea = new ImageIcon("fitxategiak/zebraBerdea.png");
+	ImageIcon lehoiBerdea = new ImageIcon("fitxategiak/lehoiBerdea.png");
+	ImageIcon kanguroBerdea = new ImageIcon("fitxategiak/kanguroBerdea.png");
+	ImageIcon jirafaBerdea = new ImageIcon("fitxategiak/jirafaBerdea.png");
+	ImageIcon hipopotamoBerdea = new ImageIcon("fitxategiak/hipopotamoBerdea.png");
+	ImageIcon tximinoBerdea = new ImageIcon("fitxategiak/tximinoBerdea.png");
+	ImageIcon krokodiloBerdea = new ImageIcon("fitxategiak/krokodiloBerdea.png");
+	ImageIcon kamaleoiBerdea = new ImageIcon("fitxategiak/kamaleoiBerdea.png");
 	
 	//IRUDI URDINAK
 	
-	ImageIcon mofetaUrdina = new ImageIcon("src/fitxategiak/mofetaUrdina.png");
-	ImageIcon loroUrdina = new ImageIcon("src/fitxategiak/loroUrdina.png");
-	ImageIcon fokaUrdina = new ImageIcon("src/fitxategiak/fokaUrdina.png");
-	ImageIcon sugeUrdina = new ImageIcon("src/fitxategiak/sugeUrdina.png");
-	ImageIcon zebraUrdina = new ImageIcon("src/fitxategiak/zebraUrdina.png");
-	ImageIcon lehoiUrdina = new ImageIcon("src/fitxategiak/lehoiUrdina.png");
-	ImageIcon kanguroUrdina = new ImageIcon("src/fitxategiak/kanguroUrdina.png");
-	ImageIcon jirafaUrdina = new ImageIcon("src/fitxategiak/jirafaUrdina.png");
-	ImageIcon hipopotamoUrdina = new ImageIcon("src/fitxategiak/hipopotamoUrdina.png");
-	ImageIcon tximinoUrdina = new ImageIcon("src/fitxategiak/tximinoUrdina.png");
-	ImageIcon krokodiloUrdina = new ImageIcon("src/fitxategiak/krokodiloUrdina.png");
-	ImageIcon kamaleoiUrdina = new ImageIcon("src/fitxategiak/kamaleoiUrdina.png");
+	ImageIcon mofetaUrdina = new ImageIcon("fitxategiak/mofetaUrdina.png");
+	ImageIcon loroUrdina = new ImageIcon("fitxategiak/loroUrdina.png");
+	ImageIcon fokaUrdina = new ImageIcon("fitxategiak/fokaUrdina.png");
+	ImageIcon sugeUrdina = new ImageIcon("fitxategiak/sugeUrdina.png");
+	ImageIcon zebraUrdina = new ImageIcon("fitxategiak/zebraUrdina.png");
+	ImageIcon lehoiUrdina = new ImageIcon("fitxategiak/lehoiUrdina.png");
+	ImageIcon kanguroUrdina = new ImageIcon("fitxategiak/kanguroUrdina.png");
+	ImageIcon jirafaUrdina = new ImageIcon("fitxategiak/jirafaUrdina.png");
+	ImageIcon hipopotamoUrdina = new ImageIcon("fitxategiak/hipopotamoUrdina.png");
+	ImageIcon tximinoUrdina = new ImageIcon("fitxategiak/tximinoUrdina.png");
+	ImageIcon krokodiloUrdina = new ImageIcon("fitxategiak/krokodiloUrdina.png");
+	ImageIcon kamaleoiUrdina = new ImageIcon("fitxategiak/kamaleoiUrdina.png");
 	
 	
 	JPanel panelNagusia = new JPanel();
